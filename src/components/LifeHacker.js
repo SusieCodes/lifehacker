@@ -10,7 +10,7 @@ export const LifeHacker = () => {
     <>
     <Route
       render={() => {
-        if (sessionStorage.getItem("LifeHacker_user")) {
+        if (sessionStorage.getItem("lifehacker_user")) {
           return (
             <>
               <NavBar />

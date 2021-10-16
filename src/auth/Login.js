@@ -43,7 +43,7 @@ export const Login = () => {
                 <button className="button--close" onClick={e => setExistDialog(false)}>Close</button>
             </dialog>
         
-        <div classname="form__flex">
+        <div className="form__flex">
             <div className="form__flex__inner">
                 <form className="form--login" onSubmit={handleLogin}>
                     <div className="form--login--headline">Welcome To Life Hacker</div>
