@@ -22,7 +22,7 @@ const history = useHistory();
           <Link className="nav__link" to="/friends">Activities</Link>
         </li>
         <li className="nav__item">
-          <Link className="nav__link" to="/messages">To-Do's</Link>
+          <Link className="nav__link" to="/messages">To-Do</Link>
         </li>
         <li className="nav__item">
           <Link className="nav__link" to="/tasks">Notes</Link>
