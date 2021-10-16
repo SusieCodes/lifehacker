@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import LifeHacker from './components/LifeHacker';
+import { BrowserRouter as Router } from "react-router-dom";
+import { LifeHacker } from './components/LifeHacker';
 import reportWebVitals from './reportWebVitals';
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <LifeHacker />
+    <Router>
+      <LifeHacker />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

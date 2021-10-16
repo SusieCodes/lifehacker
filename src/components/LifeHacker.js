@@ -4,14 +4,13 @@ import { ApplicationViews } from "./ApplicationViews"
 import { NavBar } from "./NavBar"
 import { Login } from "../auth/Login"
 import { Register } from "../auth/Register"
-import './LifeHacker.css';
 
-function LifeHacker() {
+export const LifeHacker = () => {
   return (
     <>
     <Route
       render={() => {
-        if (sessionStorage.getItem("lifehacker_user")) {
+        if (sessionStorage.getItem("LifeHacker_user")) {
           return (
             <>
               <NavBar />
@@ -27,11 +26,11 @@ function LifeHacker() {
     <Route path="/login">
       <Login />
     </Route>
+
     <Route path="/register">
       <Register />
     </Route>
-  </>
-  );
-}
 
-export default LifeHacker;
+    </>
+  )
+}
