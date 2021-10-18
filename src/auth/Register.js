@@ -15,7 +15,7 @@ export const Register = () => {
     }
 
     const existingUserCheck = () => {
-        return fetch(`http://localhost:3333/users?email=${registerUser.email}`)
+        return fetch(`http://localhost:8088/users?email=${registerUser.email}`)
             .then(res => res.json())
             .then(user => !!user.length)
     }
@@ -26,7 +26,7 @@ export const Register = () => {
         existingUserCheck()
             .then((userExists) => {
                 if (!userExists) {
-                    fetch("http://localhost:3333/users", {
+                    fetch("http://localhost:8088/users", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
@@ -39,8 +39,8 @@ export const Register = () => {
                         .then(res => res.json())
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
-                                // The user id is saved under the key nutshell_user in session Storage. Change below if needed!
-                                sessionStorage.setItem("nutshell_user", createdUser.id)
+                                // The user id is saved under the key lifehacker_user in session Storage. Change below if needed!
+                                sessionStorage.setItem("lifehacker_user", createdUser.id)
                                 history.push("/")
                             }
                         })

@@ -15,8 +15,8 @@ export const Login = () => {
 
 
     const existingUserCheck = () => {
-        // If your json-server URL is different, please change it below!
-        return fetch(`http://localhost:3333/users?email=${loginUser.email}`)
+        // If your json-server URL is different, please change it below
+        return fetch(`http://localhost:8088/users?email=${loginUser.email}`)
             .then(res => res.json())
             .then(user => user.length ? user[0] : false)
     }
@@ -27,7 +27,8 @@ export const Login = () => {
         existingUserCheck()
             .then(exists => {
                 if (exists) {
-                    // The user id is saved under the key nutshell_user in session Storage. Change below if needed!
+                    // The user id is saved under the key lifehacker_user in session Storage
+                    // Change below if needed
                     sessionStorage.setItem("lifehacker_user", exists.id)
                     history.push("/")
                 } else {

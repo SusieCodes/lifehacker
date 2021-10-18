@@ -15,21 +15,24 @@ const history = useHistory();
                   <img className="logo" src={logo} alt="Life Hacker Logo" />
                 </Link>
       <ul className="nav">
-        <li className="nav__item">
-          <Link className="nav__link" to="/articles">Connections</Link>
+      <li className="nav__item">
+          <Link className="nav__link" to="/">Dashboard</Link>
         </li>
         <li className="nav__item">
-          <Link className="nav__link" to="/friends">Activities</Link>
+          <Link className="nav__link" to="/connections">Connections</Link>
         </li>
         <li className="nav__item">
-          <Link className="nav__link" to="/messages">To-Do</Link>
+          <Link className="nav__link" to="/activities">Activities</Link>
         </li>
         <li className="nav__item">
-          <Link className="nav__link" to="/tasks">Notes</Link>
+          <Link className="nav__link" to="/todos">To-Do</Link>
         </li>
-        <li className="nav__item">
+        {/* <li className="nav__item">
+          <Link className="nav__link" to="/notes">Notes</Link>
+        </li> */}
+        {/* <li className="nav__item">
           <Link className="nav__link" to="/events">Journal</Link>
-        </li>
+        </li> */}
         <li className="nav__item">
           <button className="nav__button" onClick={() => {
             sessionStorage.removeItem("lifehacker_user");

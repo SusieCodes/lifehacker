@@ -1,9 +1,97 @@
 //Author: Susie Stanley
-//Purpose: Output List of Activities to the DOM
+//Purpose: Defines component ActivityBoard that renders a list of all the upcoming and past activities
 
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { ActivityCard } from './ActivityCard';
+import { getAllActivities, deleteActivity } from './ActivityManager';
 
 export const ActivityBoard = () => {
+  // The initial state is an empty array
+  const [ remainingActivities, setRemainingActivities] = useState([]);
+  const [ firstUpcomingActivity, setFirstUpcomingActivity ] = useState({})
+  const [ futureActivities, setFutureActivities ] = useState([])
+  const [ pastActivities, setPastActivities ] = useState([])
+
+// grabs all Activities from API, makes a copy, filters through each Activity and returns array of the objects dated after today
+const getFutureActivities = () => {
+    const today = new Date();
+    const parsedToday = today.getTime()
+    return getAllActivities().then(ActivitiesFromAPI => {
+      const copyOfActivities = [...ActivitiesFromAPI]
+      const futureDatedActivities = copyOfActivities.filter(function (evt) {
+          let evtDate = Date.parse(evt.date);
+          if (evtDate > parsedToday) {
+            return evt
+          }
+      })
+      setFutureActivities(futureDatedActivities);
+    }); 
+  };
+
+// grabs all activities from API, makes a copy, filters through each activity and returns array of the objects dated before today
+  const getPastActivities = () => {
+    const today = new Date();
+    const parsedToday = today.getTime()
+    return getAllActivities().then(ActivitiesFromAPI => {
+      const copyOfActivities = [...ActivitiesFromAPI]
+      const pastDatedActivities = copyOfActivities.filter(function (evt) {
+          let evtDate = Date.parse(evt.date);
+          if (evtDate < parsedToday) {
+            return evt
+          }
+      })
+      pastDatedActivities.reverse() //reverses order of array so most recent Activity is at top of list
+      setPastActivities(pastDatedActivities);
+    }); 
+  };
+
+// saves a copy of futureActivities array from state then grabs the first activity and sets that to state
+  const showFirstUpcomingActivity = () => {
+    const copyOfFutureActivities = [...futureActivities]
+    const firstActivityObj = copyOfFutureActivities.shift()
+    setFirstUpcomingActivity(firstActivityObj)
+  }
+
+// saves a copy of futureActivities array, removes first object and sets remaining activities to state as 'Activities'
+  const showRemainingUpcomingActivities = () => {
+    const copyOfFutureActivities = [...futureActivities]
+    copyOfFutureActivities.shift();
+    const remainingFutureActivities = copyOfFutureActivities;
+    setRemainingActivities(remainingFutureActivities);
+    }
+
+// deletes Activity when button clicked
+  const handleDeleteActivity = id => {
+    deleteActivity(id)
+    .then(() => {
+      getFutureActivities()
+      getPastActivities()
+      showFirstUpcomingActivity()
+      showRemainingUpcomingActivities()
+    });
+  }
+  
+// getFutureActivities gets all future activities from API and saves the array to state as 'futureActivities' on first render only
+  useEffect(() => {
+    getFutureActivities();
+  }, []);
+
+// getPastActivities gets all past activities from API and saves the array to state as 'pastActivities' on first render only
+  useEffect(() => {
+    getPastActivities();
+  }, []);
+
+// showFirstUpcomingActivity makes a copy of all futureActivities, grabs first activity from array and saves it to state as 'firstUpcomingActivity' on first render only
+  useEffect(() => {
+    showFirstUpcomingActivity();
+  }, [futureActivities]);
+
+// showRemainingUpcomingActivities makes a copy of all futureActivities, removes first activity and saves the rest to state as 'activities' on first render only
+  useEffect(() => {
+    showRemainingUpcomingActivities();
+  }, [futureActivities]);
+
 
     return (
         <div className="section-activities">
@@ -11,6 +99,48 @@ export const ActivityBoard = () => {
             <div className="section-activities__header">
             Activities
             </div> 
+        
+            <div className="section__content">
+          <Link to={`/Activities/create`}><button className="add__Activity">+ Add An Activity</button></Link>
         </div>
-    )
-}
+
+        <div className="container">
+
+          <div className="first__upcoming">
+            <h2>UPCOMING ACTIVITIES</h2>
+            {<ActivityCard
+              key={firstUpcomingActivity?.id}
+              activity={firstUpcomingActivity}
+              card="card__content1"
+              handleDeleteActivity={handleDeleteActivity} /> }
+          </div>
+
+          <div className="remaining__upcoming">
+    
+            {remainingActivities.map(activity =>
+              <ActivityCard
+                key={activity?.id}
+                activity={activity}
+                card="card__content2"
+                handleDeleteActivity={handleDeleteActivity} />
+                
+        )}
+          </div>
+
+          <div className="past"><h2>PAST ACTIVITIES</h2>
+            {pastActivities.map(activity =>
+              <ActivityCard
+                key={activity?.id}
+                activity={activity}
+                card="card__content2"
+                handleDeleteActivity={handleDeleteActivity} />
+
+                
+        )}
+          </div>
+
+        </div>
+
+      </div>
+    );
+};
