@@ -9,9 +9,9 @@ import { ActivityEditForm } from "../../src/components/activities/ActivityEditFo
 import { TodoBoard } from "../../src/components/todos/TodoBoard"
 import { TodoForm } from "../../src/components/todos/TodoForm"
 import { TodoEditForm } from "../../src/components/todos/TodoEditForm"
-// import { NoteBoard } from "../../src/components/notes/NoteBoard"
-// import { NoteForm } from "../../src/components/notes/NoteForm"
-// import { NoteEditForm } from "../../src/components/notes/NoteEditForm"
+import { NoteBoard } from "../../src/components/notes/NoteBoard"
+import { NoteForm } from "../../src/components/notes/NoteForm"
+import { NoteEditForm } from "../../src/components/notes/NoteEditForm"
 // import { JournalBoard } from "../../src/components/journals/JournalBoard"
 // import { JournalForm } from "../../src/components/journals/JournalForm"
 // import { JournalEditForm } from "../../src/components/journals/JournalEditForm"
@@ -61,17 +61,17 @@ export const ApplicationViews = () => {
         <TodoEditForm />
       </Route>
 
-      {/* <Route exact path="/notes">
+      <Route exact path="/notes">
         <NoteBoard />
-      </Route> */}
-{/* 
+      </Route>
+
       <Route exact path="/notes/create">
         <NoteForm />
       </Route>
 
       <Route exact path="/notes/:noteId(\d+)/edit">
         <NoteEditForm />
-      </Route> */}
+      </Route>
 
       {/* <Route exact path="/journals">
         <JournalBoard />

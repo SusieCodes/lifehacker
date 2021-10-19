@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import "./LifeHacker.css"
 import logo from "../images/lifehackerlogo.svg";
 import { useHistory } from "react-router";
+// import "./LifeHacker.css"
 
 
 export const NavBar = () => {
@@ -32,9 +32,9 @@ const history = useHistory();
           <Link className="nav__link" to="/todos">To-Do</Link>
         </li>
 
-        {/* <li className="nav__item">
+        <li className="nav__item">
           <Link className="nav__link" to="/notes">Notes</Link>
-        </li> */}
+        </li>
 
         {/* <li className="nav__item">
           <Link className="nav__link" to="/events">Journal</Link>
