@@ -8,7 +8,16 @@ import { useParams, useHistory } from "react-router-dom"
 
 
 export const ActivityEditForm = () => {
-  const [activity, setActivity] = useState({ name: "", date: "", city: "" });
+  const [activity, setActivity] = useState(
+    { 
+      name: "", 
+      date: "", 
+      address: "", 
+      city: "", 
+      zipcode: "", 
+      notes: "" 
+    });
+    
   const [isLoading, setIsLoading] = useState(false);
 
   const {activityId} = useParams();

@@ -59,7 +59,7 @@ export const ActivityForm = () => {
   }
   
 
-	const handleClickSaveActivity = (evt) => {
+	const handleSave = (evt) => {
 		evt.preventDefault() //Prevents the browser from submitting the form
 
 		if ( activity.name === "" || activity.date === "" || activity.city === "" ) {
@@ -108,7 +108,7 @@ export const ActivityForm = () => {
         <div className="form__btns">
 
           <button className="form__btn"
-            onClick={handleClickSaveActivity}>
+            onClick={handleSave}>
             Submit
           </button>
 
