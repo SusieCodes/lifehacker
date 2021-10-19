@@ -56,7 +56,7 @@ export const TodoForm = () => {
 
             <form>
 
-                <div className="form__title">Add New Todo
+                <div className="form__title">Add New To-Do
                 </div>
 
                 <fieldset>
