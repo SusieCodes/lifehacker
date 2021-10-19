@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import logo from "../images/lifehackerlogo.svg";
+import logo from "../images/lifehackerbanner.svg";
 import { useHistory } from "react-router";
-// import "./LifeHacker.css"
+import "./LifeHacker.css"
 
 
 export const NavBar = () => {
