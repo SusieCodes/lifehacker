@@ -62,7 +62,7 @@ const getFutureActivities = () => {
     }
 
 // deletes Activity when button clicked
-  const handleDeleteActivity = id => {
+  const handleDelete = (id) => {
     deleteActivity(id)
     .then(() => {
       getFutureActivities()
@@ -112,7 +112,7 @@ const getFutureActivities = () => {
               key={firstUpcomingActivity?.id}
               activity={firstUpcomingActivity}
               card="card__content1"
-              handleDeleteActivity={handleDeleteActivity} /> }
+              handleDelete={handleDelete} /> }
           </div>
 
           <div className="remaining__upcoming">
@@ -122,7 +122,7 @@ const getFutureActivities = () => {
                 key={activity?.id}
                 activity={activity}
                 card="card__content2"
-                handleDeleteActivity={handleDeleteActivity} />
+                handleDelete={handleDelete} />
                 
         )}
           </div>
@@ -133,7 +133,7 @@ const getFutureActivities = () => {
                 key={activity?.id}
                 activity={activity}
                 card="card__content2"
-                handleDeleteActivity={handleDeleteActivity} />
+                handleDelete={handleDelete} />
 
                 
         )}

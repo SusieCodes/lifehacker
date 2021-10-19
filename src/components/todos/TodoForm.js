@@ -1,5 +1,5 @@
-// Author: Colby Ryan
-// Purpose: Displays a form to add a new todo to your todo list.
+// Author: Susie Stanley
+// Purpose: Creates and displays an input form for user to add a connection
 
 
 import React, { useState } from "react";
@@ -37,7 +37,7 @@ export const TodoForm = () => {
         newTodo[event.target.id] = selectedVal
         setTodo(newTodo)
     }
-    const handleClickSaveTodo = (event) => {
+    const handleSaveTodo = (event) => {
         event.preventDefault()
         const nameList = todo.title
         const dateList = todo.byWhen
@@ -81,7 +81,7 @@ export const TodoForm = () => {
 
                 <div className="form__btns">
 
-                    <button className="form__btn" onClick={handleClickSaveTodo}>Submit</button>
+                    <button className="form__btn" onClick={handleSaveTodo}>Submit</button>
 
                     <button className="form__btn" onClick={ResetForm}>Reset Form</button>
 

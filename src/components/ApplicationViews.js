@@ -1,8 +1,8 @@
 import { Route } from "react-router-dom"
 import { Dashboard } from "../../src/components/dashboard/Dashboard"
 import { ConnectionBoard } from "./userConnections/ConnectionBoard"
-// import { ConnectionForm } from "../../src/components/connections/ConnectionForm"
-// import { ConnectionEditForm } from "../../src/components/connections/ConnectionEditForm"
+import { ConnectionForm } from "../../src/components/userConnections/ConnectionForm"
+import { ConnectionEditForm } from "../../src/components/userConnections/ConnectionEditForm"
 import { ActivityBoard } from "../../src/components/activities/ActivityBoard"
 import { ActivityForm } from "../../src/components/activities/ActivityForm"
 import { ActivityEditForm } from "../../src/components/activities/ActivityEditForm"
@@ -20,22 +20,22 @@ export const ApplicationViews = () => {
 
   return (
     <>
-
-      {/* <Route exact path="/">
+      
+      <Route exact path="/">
         <Dashboard />
-      </Route> */}
+      </Route>
 
-      {/* <Route exact path="/connections">
+      <Route exact path="/connections">
         <ConnectionBoard />
-      </Route> */}
-{/* 
+      </Route>
+
       <Route exact path="/connections/create">
         <ConnectionForm />
       </Route>
 
       <Route exact path="/connections/:connectionId(\d+)/edit">
         <ConnectionEditForm />
-      </Route> */}
+      </Route>
 
       <Route exact path="/activities">
         <ActivityBoard />
