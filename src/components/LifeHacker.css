@@ -45,3 +45,15 @@ html, body {
   align-items: center;
 }
 
+.page {
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
+.page-title {
+  font-size: 38px;
+  font-weight: 600;
+  margin: 30px auto;
+  text-align: center;
+}

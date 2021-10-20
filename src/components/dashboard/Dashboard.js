@@ -12,11 +12,7 @@ return (
     <>
     <div className="page">
 
-      <div className="page__title">
-        
-        <h1>Dashboard</h1>
-        
-      </div>
+      <div className="page-title">Dashboard</div>
 
     </div>
     </>
