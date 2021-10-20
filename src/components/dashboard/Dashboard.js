@@ -10,7 +10,11 @@ return (
     <>
     <div className="dashboard">
 
-      <div className="dashboard__title">Dashboard</div>
+      <div className="dashboard__title">
+        
+        <h1>Dashboard</h1>
+        
+      </div>
 
     </div>
     </>

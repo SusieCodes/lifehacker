@@ -1,7 +1,7 @@
 import React from "react"
 import { Route, Redirect } from "react-router-dom"
 import { ApplicationViews } from "./ApplicationViews"
-import { NavBar } from "./NavBar"
+// import { NavBar } from "./NavBar"
 import { Login } from "../auth/Login"
 import { Register } from "../auth/Register"
 
@@ -13,7 +13,7 @@ export const LifeHacker = () => {
         if (sessionStorage.getItem("lifehacker_user")) {
           return (
             <>
-              <NavBar />
+              {/* <NavBar /> */}
               <ApplicationViews />
             </>
           )
