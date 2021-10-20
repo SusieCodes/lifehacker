@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-// import Typography from '@mui/material/Typography';
-// import Button from '@mui/material/Button';
+// import Toolbar from '@mui/material/Toolbar';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai"
@@ -18,6 +16,8 @@ import "../LifeHacker.css"
 
 function Sidebar() {
   const [ sidebar, setSidebar ] = useState(false)
+
+  const history = useHistory();
 
   const theme = createTheme({
     typography: {
@@ -34,22 +34,26 @@ function Sidebar() {
   <IconContext.Provider value={{color: "#000000", size: "1.5em"}}>
     <ThemeProvider theme={theme}>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" sx={{backgroundColor: "#fff", minHeight: 85, paddingTop: 2, paddingBottom: 2}}>
-          <Toolbar>
-            <Link to="#"
-              className="menu-bars">
-              <GiHamburgerMenu className="menu-icon" onClick={ toggleSidebar } />
-            </Link>
-            <Link>
-              <img className="logo" src={logo} alt="LifeHacker Logo" component="div" sx={{ flexGrow: 1 }}/>
-            </Link>
-            {/* <Typography className="text-spacing" variant="h4" component="div" sx={{ flexGrow: 1 }}>
-              LIFEHACKER
-            </Typography> */}
-            
+        <AppBar position="static" sx={{backgroundColor: "#fff", minHeight: 85}}>
+          <div className="toolbar">
+            <div className="toolbar-left">
+              <Link to="#"
+                className="menu-bars">
+                <GiHamburgerMenu className="menu-icon" onClick={ toggleSidebar } />
+              </Link>
+              <Link to="/dashboard">
+                <div className="logo-wrapper">
+                <img className="logo" src={logo} alt="LifeHacker Logo" />
+                </div>
+              </Link>
+            </div>
+            <div className="toolbar-right">
             <ImageAvatar className="avatar" />
-            <button className="logout" >Logout</button>
-          </Toolbar>
+            <button className="logout" onClick={() => {
+            sessionStorage.removeItem("lifehacker_user");
+            history.push("/login")}}> Logout</button>
+            </div>
+          </div>
         </AppBar>
       </Box>
     </ThemeProvider>

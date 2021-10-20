@@ -24,7 +24,9 @@ export const ApplicationViews = () => {
       <Router>
         <Sidebar />
         <Switch>
-          <Route exact path="/" component={Dashboard} />
+          <Route exact path="/" component={Dashboard} >
+            <Dashboard />
+          </Route>
 
           <Route exact path="/connections" component={ConnectionBoard} />
 

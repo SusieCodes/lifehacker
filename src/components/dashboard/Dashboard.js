@@ -3,14 +3,16 @@
 
 import React from "react";
 // import { Link } from "react-router-dom";
+import "../LifeHacker.css";
+import "../dashboard/Dashboard.css";
 
 export const Dashboard = () => {
 
 return (
     <>
-    <div className="dashboard">
+    <div className="page">
 
-      <div className="dashboard__title">
+      <div className="page__title">
         
         <h1>Dashboard</h1>
         

@@ -1,13 +1,38 @@
-/* .navbar {
-  background-color: mistyrose;
-  height: 125px;
+.toolbar {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toolbar-left {
+  display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-} */
+  margin: 0px 30px 0px 10px;
+}
+
+.logo-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  padding-left: 20px;
+}
+
+.logo {
+  width: 500px;
+  margin: auto 0px;
+}
+
+.toolbar-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
 
 .logout {
-  margin-left: 20px;
+  margin: auto 20px;
   font-size: 22px;
   font-weight: 600;
   color: black;
@@ -24,7 +49,7 @@
 .menu-bars {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 0px;
   font-size: 32px;
   color: #000000;
@@ -41,7 +66,7 @@
 }
 
 .side-menu {
-  background-color: pink;
+  background-color: white;
   width: 250px;
   height: 100vh;
   display: flex;
@@ -69,7 +94,7 @@
 
 .side-text a {
   text-decoration: none;
-  color: #f5f5f5;
+  color: black;
   font-size: 24px;
   width: 95%;
   height: 100%;
@@ -80,7 +105,8 @@
 }
 
 .side-text a:hover {
-  background-color: #f4acb7;
+  color: white;
+  background-color: #D61212;
 }
 
 .side-menu-items {
@@ -88,8 +114,7 @@
 }
 
 .sidebar-toggle {
-  background-color: pink;
-  /* width: 100%; */
+  background-color: white;
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -108,7 +133,3 @@ span {
 .avatar {
   margin-right: 20px;
 }
-
-/* .set-font {
-  font-family: "Poppins", sans-serif;
-} */
