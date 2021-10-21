@@ -1,7 +1,7 @@
 // Author: Susie Stanley
 // Purpose: To display relevant info from database on landing page
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 // import { Link } from "react-router-dom";
 import { TodoDashList } from "../todos/TodoDashList";
 import { formatDate } from "../helper";

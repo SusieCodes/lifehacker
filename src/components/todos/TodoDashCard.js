@@ -2,7 +2,6 @@
 // Purpose: Displays list of To-Do items by user
 
 import React from "react";
-import { Link } from "react-router-dom";
 import { formatDate } from "../helper";
 // import { FaTrash } from "react-icons/fa"
 
