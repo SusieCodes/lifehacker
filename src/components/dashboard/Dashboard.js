@@ -20,7 +20,7 @@ return (
 
         <div className="page-title__headline">Dashboard</div>
 
-        <div className="page-title__right">Today is: <span className="todays-date">{formatDate(Date.now())}</span></div>
+        <div className="page-title__right">Today is: &nbsp;&nbsp;<span className="todays-date">{formatDate(Date.now())}</span></div>
 
       </div>
 
