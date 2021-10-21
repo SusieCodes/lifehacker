@@ -34,7 +34,6 @@ return (
             <div className="dashboard-grid__row1__col1__row1">
 
               {/* START OF ACTIVITY DASHBOARD */}
-
               <div className="activity-container">
                 
                 <h2>Activities</h2>
@@ -51,8 +50,21 @@ return (
             </div>
 
             <div className="dashboard-grid__row1__col1__row2">
-            <div className="note-container"><h2>Notes</h2></div>
-              <div className="journal-container"><h2>Journal</h2></div>
+
+              {/* START OF NOTE DASHBOARD */}
+              <div className="note-container">
+                <h2>Notes</h2>
+
+                <div className="note-text">
+                  
+                </div>
+
+              </div>
+
+              <div className="journal-container">
+                <h2>Journal</h2>
+              </div>
+
             </div>
           
           </div>

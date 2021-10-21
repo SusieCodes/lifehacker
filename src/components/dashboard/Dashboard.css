@@ -283,6 +283,13 @@ button.activity-delete, button.note-delete {
   padding-bottom: 10px;
 }
 
+.note-text {
+  background-image: url("../../images/notecard.svg");
+}
+
+
+
+
 .dash-note {
   display: flex;
   flex-direction: row;
