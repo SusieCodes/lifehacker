@@ -38,7 +38,7 @@ export const TodoBoard = () => {
             
             <div className="section__content">
                 <Link to={`todos/create`}>
-                <button className="add__todo">+ Add A To-Do</button></Link>
+                <button className="add__todo">+ Add To-Do</button></Link>
             </div>
 
             <div className="container">

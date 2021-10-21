@@ -91,7 +91,7 @@ export const ConnectionForm = () => {
 
     <div className="form__flex">
 
-    <div className="form__title">Add Connection</div>
+    <div className="form__title">Add New Connection</div>
 
         <fieldset className="form">
             <dialog className="dialog" open={conflictDialog}>

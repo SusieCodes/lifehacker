@@ -101,7 +101,7 @@ const getFutureActivities = () => {
             </div> 
         
             <div className="section__content">
-          <Link to={`/Activities/create`}><button className="add__Activity">+ Add An Activity</button></Link>
+          <Link to={`/Activities/create`}><button className="add__Activity">+ Add Activity</button></Link>
         </div>
 
         <div className="container">

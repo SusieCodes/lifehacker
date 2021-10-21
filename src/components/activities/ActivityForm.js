@@ -1,5 +1,5 @@
 //Author: Susie Stanley
-//Purpose: Creates and displays an input form for user to add an event
+//Purpose: Creates and displays an input form for user to add an activity
 
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";

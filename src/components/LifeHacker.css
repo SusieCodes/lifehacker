@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+*{
+  box-sizing: border-box;
+  margin: 5px;
+  padding: 0px;
+  font-family: "Poppins", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body {
+  max-width: 1800px;
+  margin: 0px auto;
+  padding: 0px;
+  font-family: "Poppins", sans-serif;
+  background-color: #EEEEEE;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#root {
+  padding: 0px;
+  margin: 0px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+/* .home, .reports, .products {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 90vh;
+  justify-content: flex-start;
+  align-content: center;
+  font-size: 30px;
+  padding: 10px 40px;
+  text-align: center;
+  border: 1px solid red;
+} */
+
+/* .text-spacing {
+  padding-left: 20px;
+} */
+
+.paper-wrapper {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+/* all pages use this flex container */
+.page {
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+background-color: rgb(228, 228, 228);
+border-radius: 0px 0px 20px 20px;
+padding: 0px 30px 30px;
+margin: 15px 5px;
+color: #2B2B2B; 
+box-shadow: 5px 5px 5px lightgray;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.page-title__flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 40px 20px;
+  margin: 10px 0px;
+  /* border: 1px solid green; */
+}
+
+.page-title__left {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: left;
+  /* border: 1px solid blue; */
+}
+
+.welcome-name {
+  color: #D61212;
+  font-weight: 600;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* all pages use this header title */
+.page-title__headline {
+  flex: 1;
+  font-size: 38px;
+  font-weight: 600;
+  text-align: center;
+  /* border: 1px solid black; */
+}
+
+.page-title__right {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: right; 
+  /* border: 1px solid red; */
+}
+
+.todays-date {
+  margin-left: 10px;
+  font-weight: 600;
 }
