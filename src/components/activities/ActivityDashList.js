@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 // import { Link } from 'react-router-dom';
-import { ActivityDashCard } from './ActivityCard';
+import { ActivityDashCard } from './ActivityDashCard';
 import { getAllActivities, deleteActivity } from './ActivityManager';
 
 export const ActivityDashList = () => {
@@ -55,16 +55,11 @@ const getFutureActivities = () => {
 
 
   return (
-      <div className="container">
-
-        <div className="first__upcoming">
+        <>
           {<ActivityDashCard
             key={firstUpcomingActivity?.id}
             activity={firstUpcomingActivity}
-            card="card__content1"
             handleDelete={handleDelete} /> }
-        </div>
-
-      </div>
+        </>
   );
 };

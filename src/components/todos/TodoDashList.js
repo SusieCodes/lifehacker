@@ -14,8 +14,8 @@ export const TodoDashList = ({ todo }) => {
 
   const getTodos = () => {
     return getAllTodos().then(todosFromAPI => {
-        let firstFive = todosFromAPI.splice(0, 4);
-        setTodos(firstFive)
+        let firstFew = todosFromAPI.splice(0, 4);
+        setTodos(firstFew)
     });
 };
 

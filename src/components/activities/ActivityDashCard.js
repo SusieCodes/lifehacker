@@ -2,8 +2,8 @@
 //Purpose: Creates and displays individual activity cards for a single activity that is passed as a prop
 
 import React from "react"
-import { Link } from "react-router-dom";
-// import {FaEdit, FaTrash } from "react-icons/fa"
+// import { Link } from "react-router-dom";
+import { FaTrash } from "react-icons/fa"
 // import { WeatherApp } from "../activities/WeatherApp";
 
 
@@ -13,28 +13,44 @@ const formatDate = (obj) => {
   return formattedDate;
 }
 
-export const ActivityDashCard = ({ activity, handleDeleteActivity, card }) => {
+export const ActivityDashCard = ({ activity, handleDelete }) => {
     return (
     <>
+
           <div className="dash-activity">
 
-            <div><strong>Name:  {activity?.name}</strong></div>
+              <div className="dash-activity__col1">
 
-            <div><strong>Date: </strong> {formatDate(activity?.date)}</div>
+                <div className="dash-activity__wrapper">
 
-            <div><strong>Address: </strong> {activity?.address}</div>
+                  <div  className="dash-activity__name bold">{activity?.name}</div>
 
-            <div><strong>City: </strong> {activity?.city}</div>
+                  <div className="da-inner__wrapper">
+                    <div className="da-inner__left">
+                      <div className="bold">Date:</div>
+                      <div className="bold">Address:</div>
+                      <div className="transparent">City:</div>
+                      <div className="bold">Notes:</div>
+                    </div>
 
-            {/* <div><strong>Zipcode: </strong> {activity?.zipcode}</div> */}
+                    <div className="da-inner__right">
+                      <div>{formatDate(activity?.date)}</div>
+                      <div className="activity-address__highlight">{activity?.address}</div>
+                      <div className="activity-address__highlight">{activity?.city}</div>
+                      <div>{activity?.notes}</div>
+                    </div>
 
-            <div><strong>Notes: </strong> {activity?.notes}</div>
+                </div>
 
-          </div>
+              </div>
 
-          <div className="dash-remove__item">
+            </div>
 
-            <button type="button" className="button sm" onClick={() => handleDeleteActivity(activity?.id)}>delete icon</button>
+            <div className="dash-activity__col2">
+
+              <button type="button" className="activity-delete" onClick={() => handleDelete(activity?.id)}><FaTrash className="delete-icon"/></button>
+
+            </div>
 
           </div>
     </>
