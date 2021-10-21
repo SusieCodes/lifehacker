@@ -1,8 +1,18 @@
+.appbar-flex {
+  background-color: white;
+  padding: 10px 0px;
+  margin: 0px;
+  border-radius: 20px 20px 0px 0px;
+  box-shadow: 5px 5px 5px lightgray;
+}
+
 .toolbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 0px;
+  margin: 5px 0px;
 }
 
 .toolbar-left {
@@ -35,7 +45,6 @@
   margin: auto 20px;
   font-size: 22px;
   font-weight: 600;
-  color: black;
   padding: 5px 15px;
   border: transparent;
   border-radius: 5px;
@@ -67,7 +76,6 @@
 
 .side-menu {
   background-color: white;
-  width: 260px;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -102,7 +110,7 @@
   align-items: center;
   padding: 0px 16px;
   border-radius: 4px;
-  /* border: 1px solid red; */
+  border: 1px solid lightgray;
 }
 
 .side-text a:hover {

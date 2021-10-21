@@ -8,10 +8,16 @@
 }
 
 html, body {
-  margin: 0px;
+  max-width: 1800px;
+  margin: 0px auto;
   padding: 0px;
   font-family: "Poppins", sans-serif;
   background-color: #EEEEEE;
+}
+
+#root {
+  padding: 0px;
+  margin: 0px;
 }
 
 .flex-wrapper {
@@ -21,7 +27,7 @@ html, body {
   border: 1px solid black;
 }
 
-.home, .reports, .products {
+/* .home, .reports, .products {
   display: flex;
   flex-direction: column;
   height: 90vh;
@@ -31,11 +37,11 @@ html, body {
   padding: 10px 40px;
   text-align: center;
   border: 1px solid red;
-}
+} */
 
-.text-spacing {
+/* .text-spacing {
   padding-left: 20px;
-}
+} */
 
 .paper-wrapper {
   display: flex;
@@ -45,15 +51,60 @@ html, body {
   align-items: center;
 }
 
+/* all pages use this flex container */
 .page {
 display: flex;
-flex-direction: row;
-justify-content: center;
+flex-direction: column;
+justify-content: flex-start;
+background-color: rgb(228, 228, 228);
+border-radius: 0px 0px 20px 20px;
+padding: 0px 30px 30px;
+margin: 15px 5px;
+color: #2B2B2B; 
+box-shadow: 5px 5px 5px lightgray;
+
 }
 
-.page-title {
+.page-title__flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 40px 20px;
+  margin: 10px 0px;
+  /* border: 1px solid green; */
+}
+
+.page-title__left {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: left;
+  /* border: 1px solid blue; */
+}
+
+.welcome-name {
+  color: #D61212;
+  font-weight: 600;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* all pages use this header title */
+.page-title__headline {
+  flex: 1;
   font-size: 38px;
   font-weight: 600;
-  margin: 30px auto;
   text-align: center;
+  /* border: 1px solid black; */
+}
+
+.page-title__right {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: right; 
+  /* border: 1px solid red; */
+}
+
+.todays-date {
+  margin-left: 10px;
+  font-weight: 600;
 }

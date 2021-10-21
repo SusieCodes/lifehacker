@@ -24,11 +24,13 @@ export const ApplicationViews = () => {
       <Router>
         <Sidebar />
         <Switch>
-          <Route exact path="/" component={Dashboard} >
+          <Route exact path="/" >
             <Dashboard />
           </Route>
 
-          <Route exact path="/connections" component={ConnectionBoard} />
+          <Route exact path="/connections">
+            <ConnectionBoard />
+          </Route>
 
           {/* <Route exact path="/connections/create">
             <ConnectionForm />

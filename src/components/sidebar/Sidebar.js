@@ -34,7 +34,7 @@ function Sidebar() {
   <IconContext.Provider value={{color: "#000000", size: "1.5em"}}>
     <ThemeProvider theme={theme}>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" sx={{backgroundColor: "#fff", minHeight: 85}}>
+        <div className="appbar-flex">
           <div className="toolbar">
             <div className="toolbar-left">
               <Link to="#"
@@ -51,10 +51,10 @@ function Sidebar() {
             <ImageAvatar className="avatar" />
             <button className="logout" onClick={() => {
             sessionStorage.removeItem("lifehacker_user");
-            history.push("/login")}}> Logout</button>
+            history.push("/login")}}>Logout</button>
             </div>
           </div>
-        </AppBar>
+        </div>
       </Box>
     </ThemeProvider>
     <nav className={ sidebar ? "side-menu active" : "side-menu" }>
