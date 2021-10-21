@@ -30,7 +30,7 @@ export const SidebarData = [
   },
   {
     title: "To-Do List",
-    path: "/todo",
+    path: "/todos",
     icon: <GoIcons.GoChecklist />,
     cName: "side-text"
 
