@@ -19,9 +19,9 @@ export const TodoDashCard = ({ todo, handleCompleteTodo }) => {
                   </div>
 
                   <div className="dash-todo__col2">
-                    <div className="todo__complete">
+                    <div className="todo-complete">
                     <input type="checkbox" className="checkbox" onClick={() => handleCompleteTodo(todo.id)} />
-                    <label>Complete </label>
+                    <label>Completed</label>
                     </div>
                   </div>
 
