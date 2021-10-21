@@ -3,25 +3,12 @@
 
 import React, { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
-import { getAllTodos } from "../todos/TodoManager";
-import { TodoDashCard } from "../todos/TodoDashCard";
-
+import { TodoDashList } from "../todos/TodoDashList";
 import { formatDate } from "../helper";
 import "../LifeHacker.css";
 import "../dashboard/Dashboard.css";
 
-export const Dashboard = () => {
-  const [todos, setTodos] = useState([]);
-
-  const getTodos = () => {
-    return getAllTodos().then(todosFromAPI => {
-        setTodos(todosFromAPI)
-    });
-};
-
-  useEffect(() => {
-    getTodos();
-}, []);  
+export const Dashboard = () => { 
 
 return (
     <>
@@ -60,13 +47,11 @@ return (
 
             <h2>To-Do List</h2>
             
-            {/* ternary statement to show only uncompleted todos */}
-            {todos.map(todo => todo.isCompleted ? 
-              console.log('true') 
-            : <TodoDashCard 
-                key={todo.id} todo={todo} />)}
-
+            <div className="dash-todo__list">
+              <TodoDashList />
             </div>
+
+          </div>
 
         </div>
 

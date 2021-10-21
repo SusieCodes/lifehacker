@@ -12,7 +12,7 @@
 }
 
 .dashboard-grid__row1__col1 {
-  flex: 3;
+  flex: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,7 +41,7 @@
   /* border: 1px solid rgb(155, 155, 155); */
   background-color: white;
   box-shadow: 2px 3px 7px gray;
-  height: 250px;
+  height: 270px;
 }
 
 .dashboard-grid__row1__col1__row2 {
@@ -69,7 +69,7 @@
 /* To-Do dash title */
 .dashboard-grid__row1__col2 h2 {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .dashboard-grid__row2 {
@@ -95,21 +95,43 @@
 }
 
 /* To-Do styling section */
-.dash-todo {
+.dash-todo__list {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 10px 30px;
-  /* margin-left: 20px; */
-  background-color: lightpink;
+}
+
+.dash-todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 12px 30px;
+  margin: 8px 15px;
+  background-color: 	#F0F0F0;
+}
+
+.dash-todo__col1 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dash-todo__col2 {
+  text-align: center;
+  white-space: nowrap;
 }
 
 .dash-todo__title {
+  font-size: 20px;
+  font-weight: 500;
   padding: 0px;
   margin: 0px;
 }
 
 .dash-todo__bywhen {
+  font-size: 18px;
+  font-weight: 400;
   padding: 0px;
   margin: 0px;
 }
