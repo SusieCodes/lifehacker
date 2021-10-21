@@ -1,9 +1,10 @@
 // Author: Susie Stanley
 // Purpose: To display relevant info from database on landing page
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 // import { Link } from "react-router-dom";
 import { TodoDashList } from "../todos/TodoDashList";
+import { ActivityDashList } from "../activities/ActivityDashList";
 import { formatDate } from "../helper";
 import "../LifeHacker.css";
 import "../dashboard/Dashboard.css";
@@ -20,7 +21,7 @@ return (
 
         <div className="page-title__headline">Dashboard</div>
 
-        <div className="page-title__right">Today is: <span className="todays-date">{formatDate(Date.now())}</span></div>
+        <div className="page-title__right">Today is: &nbsp;&nbsp;<span className="todays-date">{formatDate(Date.now())}</span></div>
 
       </div>
 
@@ -31,8 +32,22 @@ return (
           <div className="dashboard-grid__row1__col1">
             
             <div className="dashboard-grid__row1__col1__row1">
-              <div className="activity-container"><h2>Activities</h2></div>
-              <div className="grocery-container"><h2>Groceries</h2></div>
+
+              {/* START OF ACTIVITY DASHBOARD */}
+
+              <div className="activity-container">
+                
+                <h2>Activities</h2>
+
+                <div className="dash-activity__list">
+                  <ActivityDashList />
+                </div>
+
+              </div>
+
+              <div className="grocery-container"><h2>Groceries</h2>
+              </div>
+
             </div>
 
             <div className="dashboard-grid__row1__col1__row2">

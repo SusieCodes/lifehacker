@@ -105,6 +105,7 @@ box-shadow: 5px 5px 5px lightgray;
 }
 
 .todays-date {
-  margin-left: 10px;
+  text-align: right;
+  margin: 0px;
   font-weight: 600;
 }

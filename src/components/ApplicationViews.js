@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Sidebar from './sidebar/Sidebar'
+import { Route } from 'react-router-dom'
+// import Sidebar from './sidebar/Sidebar'
 import { Dashboard } from "../../src/components/dashboard/Dashboard"
 import { ConnectionBoard } from "./userConnections/ConnectionBoard"
 import { ConnectionForm } from "../../src/components/userConnections/ConnectionForm"
@@ -21,10 +21,7 @@ export const ApplicationViews = () => {
 
   return (
     <>
-      <Router>
-        <Sidebar />
-        <Switch>
-          <Route exact path="/" >
+          <Route exact path="/dashboard" >
             <Dashboard />
           </Route>
 
@@ -32,7 +29,7 @@ export const ApplicationViews = () => {
             <ConnectionBoard />
           </Route>
 
-          {/* <Route exact path="/connections/create">
+          <Route exact path="/connections/create">
             <ConnectionForm />
           </Route>
 
@@ -74,7 +71,7 @@ export const ApplicationViews = () => {
 
           <Route exact path="/notes/:noteId(\d+)/edit">
             <NoteEditForm />
-          </Route> */}
+          </Route>
 
           {/* <Route exact path="/journals">
             <JournalBoard />
@@ -87,8 +84,7 @@ export const ApplicationViews = () => {
           <Route exact path="/journals/:journalId(\d+)/edit">
             <JournalEditForm />
           </Route> */}
-        </Switch>
-      </Router>
+
     </>
   );
 };

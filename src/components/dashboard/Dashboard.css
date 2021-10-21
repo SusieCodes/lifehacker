@@ -41,7 +41,7 @@
   /* border: 1px solid rgb(155, 155, 155); */
   background-color: white;
   box-shadow: 2px 3px 7px gray;
-  height: 270px;
+  min-height: 270px;
 }
 
 .dashboard-grid__row1__col1__row2 {
@@ -94,7 +94,7 @@
   box-shadow: 2px 3px 7px gray;
 }
 
-/* To-Do styling section */
+/* To-Do Dash styling */
 .dash-todo__list {
   display: flex;
   flex-direction: column;
@@ -107,7 +107,8 @@
   justify-content: space-evenly;
   padding: 12px 30px;
   margin: 8px 15px;
-  background-color: 	#F0F0F0;
+  /* background-color: 	#F0F0F0; */
+  background-color: #c8e6ea68;
 }
 
 .dash-todo__col1 {
@@ -135,3 +136,191 @@
   padding: 0px;
   margin: 0px;
 }
+
+.todo-complete {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-complete label {
+  padding-left: 6px;
+}
+
+input.checkbox {
+  width: 20px;
+  height: 20px;
+  transition: all .2s ease-in-out;
+}
+
+input.checkbox:hover {
+  transform: scale(1.5);
+  /* color: #D61212; */
+}
+
+/* Activity Dash styling */
+.dash-activity__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.dash-activity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 12px 30px;
+  margin: 8px 25px;
+  background-color: #c8e6ea68;
+}
+
+.bold {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.dash-activity__col1 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  padding: 0px;
+  margin: 0px;
+}
+
+.dash-activity__wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px;
+  margin: 0px;
+  /* border: 1px solid red; */
+}
+
+.dash-activity__name {
+  /* padding-left: 6px; */
+  margin-bottom: 5px;
+  text-align: left;
+  font-size: 22px;
+}
+
+.da-inner__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 0px;
+  margin: 0px;
+  /* border: 1px solid black; */
+}
+
+.da-inner__left {
+  font-size: 18px;
+  /* font-weight: 800; */
+  text-align: left;
+  line-height: 1.3em;
+  white-space: nowrap;
+  margin: 0px;
+  padding: 0px;
+  /* border: 1px solid blue; */
+}
+
+.activity-address__highlight {
+  background-color: #ffffff;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.transparent {
+  color: transparent;
+}
+
+.da-inner__right {
+  font-size: 18px;
+  font-weight: 300;
+  text-align: left;
+  line-height: 1.3em;
+  white-space: nowrap;
+  margin: 0px;
+  padding-left: 10px;
+  /* border: 1px solid green; */
+}
+
+.dash-activity__col2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+button.activity-delete, button.note-delete {
+  flex: 1;
+  align-self: center;
+  border: none;
+  background-color: transparent;
+  margin: auto auto;
+}
+
+.delete-icon {
+  width: 25px;
+  height: 25px;
+  transition: all .2s ease-in-out;
+}
+
+.delete-icon:hover {
+  transform: scale(1.5);
+  color: #D61212;
+}
+
+/* Note Dash styling */
+.dash-note__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.dash-note {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 12px 30px;
+  margin: 8px 25px;
+  background-color: #c8e6ea68;
+}
+
+.dash-note__col1 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  padding: 0px;
+  margin: 0px;
+}
+
+.dash-note__name {
+  /* padding-left: 6px; */
+  margin-bottom: 5px;
+  text-align: left;
+  font-size: 22px;
+}
+
+.dash-note__col2 {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  padding: 0px;
+  margin: 0px;
+}
+
+button.note-delete {
+  flex: 1;
+  align-self: center;
+  border: none;
+  background-color: transparent;
+  margin: auto auto;
+}
+
