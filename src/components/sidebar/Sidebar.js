@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import AppBar from '@mui/material/AppBar';
+// import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 // import Toolbar from '@mui/material/Toolbar';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -10,11 +10,10 @@ import { SidebarData } from "./SidebarData"
 import { ImageAvatar } from "../navbar/ImageAvatar"
 import { IconContext } from "react-icons"
 import logo from "../../images/lifehackerbanner.svg";
-
 import "./Sidebar.css"
 import "../LifeHacker.css"
 
-function Sidebar() {
+export const Sidebar = () => {
   const [ sidebar, setSidebar ] = useState(false)
 
   const history = useHistory();
@@ -81,5 +80,3 @@ function Sidebar() {
   </>
   )
 }
-
-export default Sidebar

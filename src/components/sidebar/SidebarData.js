@@ -1,5 +1,4 @@
 import React from 'react'
-import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons  from "react-icons/io";
 import * as Io5Icons from "react-icons/io5";
@@ -9,7 +8,7 @@ import * as MdIcons from "react-icons/md";
 export const SidebarData = [
   {
     title: "Dashboard",
-    path: "/",
+    path: "/dashboard",
     icon: <AiIcons.AiFillHome />,
     cName: "side-text"
 

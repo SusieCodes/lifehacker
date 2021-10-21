@@ -30,7 +30,7 @@ export const Login = () => {
                     // The user id is saved under the key lifehacker_user in session Storage
                     // Change below if needed
                     sessionStorage.setItem("lifehacker_user", exists.id)
-                    history.push("/")
+                    history.push("/dashboard")
                 } else {
                     setExistDialog(true)
                 }
