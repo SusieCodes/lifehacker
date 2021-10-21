@@ -5,6 +5,8 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import { TodoDashList } from "../todos/TodoDashList";
 import { ActivityDashList } from "../activities/ActivityDashList";
+import { NoteDashList } from "../notes/NoteDashList";
+
 import { formatDate } from "../helper";
 import "../LifeHacker.css";
 import "../dashboard/Dashboard.css";
@@ -55,9 +57,9 @@ return (
               <div className="note-container">
                 <h2>Notes</h2>
 
-                <div className="note-text">
-                  
-                </div>
+                {/* <div className="note-text">
+                <NoteDashList />  
+                </div> */}
 
               </div>
 

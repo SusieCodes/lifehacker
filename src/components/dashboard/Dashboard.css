@@ -8,7 +8,6 @@
   justify-content: center;
   padding: 0px;
   margin: 0px;
-  /* border: 1px solid black; */
 }
 
 .dashboard-grid__row1__col1 {
@@ -38,7 +37,6 @@
   padding-top: 10px;
   margin: 10px;
   border-radius: 5px;
-  /* border: 1px solid rgb(155, 155, 155); */
   background-color: white;
   box-shadow: 2px 3px 7px gray;
   min-height: 270px;
@@ -276,27 +274,33 @@ button.activity-delete, button.note-delete {
 }
 
 /* Note Dash styling */
+.note-container {
+  padding-bottom: 20px;
+}
+
 .dash-note__list {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-bottom: 10px;
+  /* border: 1px solid red; */
 }
 
 .note-text {
   background-image: url("../../images/notecard.svg");
+  background-repeat:no-repeat;
+  min-height: 100%;
+  /* border: 1px solid blue; */
 }
-
-
-
 
 .dash-note {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   padding: 12px 30px;
   margin: 8px 25px;
-  background-color: #c8e6ea68;
+  height: 100%;
+  /* border: 1px solid black; */
 }
 
 .dash-note__col1 {
@@ -306,6 +310,7 @@ button.activity-delete, button.note-delete {
   white-space: nowrap;
   padding: 0px;
   margin: 0px;
+  /* border: 1px solid pink; */
 }
 
 .dash-note__name {
@@ -321,6 +326,7 @@ button.activity-delete, button.note-delete {
   white-space: nowrap;
   padding: 0px;
   margin: 0px;
+  /* border: 1px solid orange; */
 }
 
 button.note-delete {
