@@ -29,7 +29,7 @@
   /* border: 1px solid blue; */
 }
 
-.activity-container, .grocery-container, .note-container, .journal-container {
+.activity-container, .grocery-container, .journal-container, .note-container {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -107,6 +107,7 @@
   margin: 8px 15px;
   /* background-color: 	#F0F0F0; */
   background-color: #c8e6ea68;
+  border-radius: 5px;
 }
 
 .dash-todo__col1 {
@@ -172,6 +173,7 @@ input.checkbox:hover {
   padding: 12px 30px;
   margin: 8px 25px;
   background-color: #c8e6ea68;
+  border-radius: 5px;
 }
 
 .bold {
@@ -254,7 +256,7 @@ input.checkbox:hover {
   justify-content: center;
 }
 
-button.activity-delete, button.note-delete {
+button.activity-delete {
   flex: 1;
   align-self: center;
   border: none;
@@ -274,66 +276,81 @@ button.activity-delete, button.note-delete {
 }
 
 /* Note Dash styling */
-.note-container {
-  padding-bottom: 20px;
-}
-
-.dash-note__list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-bottom: 10px;
-  /* border: 1px solid red; */
+.note-container h2 {
+  margin: 5px 5px 0px;
 }
 
 .note-text {
+  min-height: 260px;
+  margin: 0px;
+  padding: 0px 30px 0px;
+  /* border: 3px solid blue; */
+}
+
+.dash-note__wrapper {
   background-image: url("../../images/notecard.svg");
-  background-repeat:no-repeat;
-  min-height: 100%;
-  /* border: 1px solid blue; */
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 31px;
+  min-width: 300px;
+  height: 255px;
+  /* border: 3px solid red; */
 }
 
 .dash-note {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 12px 30px;
-  margin: 8px 25px;
-  height: 100%;
-  /* border: 1px solid black; */
-}
-
-.dash-note__col1 {
   flex: 1;
   display: flex;
   flex-direction: row;
-  white-space: nowrap;
-  padding: 0px;
+  justify-content: center;
+  padding: 50px 50px 50px 70px;
+}
+
+.dash-note__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-start; 
   margin: 0px;
-  /* border: 1px solid pink; */
+  min-width: 150px;
+  max-width: 175px;
+  /* border: 3px solid pink; */
 }
 
-.dash-note__name {
-  /* padding-left: 6px; */
-  margin-bottom: 5px;
+.top-text {
+  font-size: 18px;
+  font-weight: 600;
   text-align: left;
-  font-size: 22px;
+  margin: 10px 0px 30px;
+  min-width: 155px;
+  /* border: 1px solid red; */
 }
 
-.dash-note__col2 {
+.middle-text {
+  min-width: 155px;
+  /* border: 1px solid blue; */
+}
+
+.dash-note__delete {
   display: flex;
   flex-direction: row;
-  white-space: nowrap;
-  padding: 0px;
+  justify-content: flex-start;
+  padding-top: 20px;
   margin: 0px;
-  /* border: 1px solid orange; */
+  /* border: 2px solid purple; */
 }
 
 button.note-delete {
   flex: 1;
-  align-self: center;
+  align-self: flex-start;
   border: none;
   background-color: transparent;
-  margin: auto auto;
+  margin: 0px;
+  padding: 0px;
+  /* margin: auto auto; */
+  /* border: 1px solid pink; */
 }
 

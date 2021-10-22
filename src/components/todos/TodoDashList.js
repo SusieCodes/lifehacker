@@ -4,16 +4,17 @@
 
 import React, { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
-import { getAllTodos, completeTodo } from "../todos/TodoManager";
+import { getAllTodosByUserId, completeTodo } from "../todos/TodoManager";
 import { TodoDashCard } from "../todos/TodoDashCard";
 // import {FaEdit, FaTrash } from "react-icons/fa"
 
 
 export const TodoDashList = ({ todo }) => {
+  const userId = sessionStorage.getItem("lifehacker_user");
   const [todos, setTodos] = useState([]);
 
   const getTodos = () => {
-    return getAllTodos().then(todosFromAPI => {
+    return getAllTodosByUserId(userId).then(todosFromAPI => {
         let firstFew = todosFromAPI.splice(0, 4);
         setTodos(firstFew)
     });
@@ -21,7 +22,7 @@ export const TodoDashList = ({ todo }) => {
 
   const handleCompleteTodo = id => {
     completeTodo(id)
-        .then(() => getAllTodos().then(setTodos));
+        .then(() => getAllTodosByUserId().then(setTodos));
   }
 
   useEffect(() => {

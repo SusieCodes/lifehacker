@@ -12,6 +12,7 @@ import "../LifeHacker.css";
 import "../dashboard/Dashboard.css";
 
 export const Dashboard = () => { 
+  const userName = sessionStorage.getItem("lifehacker_username");
 
 return (
     <>
@@ -19,7 +20,7 @@ return (
 
       <div className="page-title__flex">
 
-        <div className="page-title__left">Welcome <span className="welcome-name">Susie</span></div>
+        <div className="page-title__left">Welcome <span className="welcome-name">{userName}</span></div>
 
         <div className="page-title__headline">Dashboard</div>
 
@@ -57,9 +58,9 @@ return (
               <div className="note-container">
                 <h2>Notes</h2>
 
-                {/* <div className="note-text">
+                <div className="note-text">
                 <NoteDashList />  
-                </div> */}
+                </div>
 
               </div>
 

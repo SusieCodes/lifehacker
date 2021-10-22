@@ -4,9 +4,10 @@
 import React, { useState, useEffect } from 'react';
 // import { Link } from 'react-router-dom';
 import { ActivityDashCard } from './ActivityDashCard';
-import { getAllActivities, deleteActivity } from './ActivityManager';
+import { getAllActivitiesByUserId, deleteActivity } from './ActivityManager';
 
 export const ActivityDashList = () => {
+  const userId = sessionStorage.getItem("lifehacker_user");
   // The initial state is an empty array
   const [ firstUpcomingActivity, setFirstUpcomingActivity ] = useState({})
   const [ futureActivities, setFutureActivities ] = useState([])
@@ -15,7 +16,7 @@ export const ActivityDashList = () => {
 const getFutureActivities = () => {
     const today = new Date();
     const parsedToday = today.getTime()
-    return getAllActivities().then(ActivitiesFromAPI => {
+    return getAllActivitiesByUserId(userId).then(ActivitiesFromAPI => {
       const copyOfActivities = [...ActivitiesFromAPI]
       const futureDatedActivities = copyOfActivities.filter(function (evt) {
           let evtDate = Date.parse(evt.date);
