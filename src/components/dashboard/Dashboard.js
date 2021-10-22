@@ -5,11 +5,14 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import { TodoDashList } from "../todos/TodoDashList";
 import { ActivityDashList } from "../activities/ActivityDashList";
+import { NoteDashList } from "../notes/NoteDashList";
+
 import { formatDate } from "../helper";
 import "../LifeHacker.css";
 import "../dashboard/Dashboard.css";
 
 export const Dashboard = () => { 
+  const userName = sessionStorage.getItem("lifehacker_username");
 
 return (
     <>
@@ -17,7 +20,7 @@ return (
 
       <div className="page-title__flex">
 
-        <div className="page-title__left">Welcome <span className="welcome-name">Susie</span></div>
+        <div className="page-title__left">Welcome <span className="welcome-name">{userName}</span></div>
 
         <div className="page-title__headline">Dashboard</div>
 
@@ -34,7 +37,6 @@ return (
             <div className="dashboard-grid__row1__col1__row1">
 
               {/* START OF ACTIVITY DASHBOARD */}
-
               <div className="activity-container">
                 
                 <h2>Activities</h2>
@@ -51,8 +53,21 @@ return (
             </div>
 
             <div className="dashboard-grid__row1__col1__row2">
-            <div className="note-container"><h2>Notes</h2></div>
-              <div className="journal-container"><h2>Journal</h2></div>
+
+              {/* START OF NOTE DASHBOARD */}
+              <div className="note-container">
+                <h2>Notes</h2>
+
+                <div className="note-text">
+                <NoteDashList />  
+                </div>
+
+              </div>
+
+              <div className="journal-container">
+                <h2>Journal</h2>
+              </div>
+
             </div>
           
           </div>

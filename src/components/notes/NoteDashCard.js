@@ -11,25 +11,34 @@ const formatDate = (obj) => {
   return formattedDate;
 }
 
-export const NoteDashCard = ({ note, handleDelete }) => {
+export const NoteDashCard = ({ recentNote, handleDelete }) => {
     return (
     <>
+        <div className="dash-note__wrapper">
 
           <div className="dash-note">
 
-              <div className="dash-note__col1">
+            <div className="dash-note__text">
 
-            
-
+              <div className="top-text">
+                {recentNote.title}
               </div>
 
+              <div className="middle-text">
+                {recentNote.text}
+              </div>
+
+            </div>
+
           </div>
 
-          <div className="dash-note__col2">
+          <div className="dash-note__delete">
 
-            <button type="button" className="note-delete" onClick={() => handleDelete(note?.id)}><FaTrash className="delete-icon"/></button>
+            <button type="button" className="note-delete" onClick={() => handleDelete(recentNote?.id)}><FaTrash className="delete-icon"/></button>
 
           </div>
+
+        </div>
     </>
     )
 }

@@ -3,19 +3,22 @@
 
 import React, { useState, useEffect } from 'react';
 import { NoteDashCard } from './NoteDashCard';
-import { getAllNotes, deleteNote } from './NoteManager';
+import { getNotesByUserId, deleteNote } from './NoteManager';
 
 export const NoteDashList = () => {
+  const userId = sessionStorage.getItem("lifehacker_user");
+
   // The initial state is an empty array
   const [ recentNote, setRecentNote ] = useState({})
 
-// grabs all notes from API, splices off the first one and sets it to state
-const getNote = () => {
-  return getAllNotes().then(notesFromAPI => {
-      let firstNote = notesFromAPI.splice(0, 1);
-      setRecentNote(firstNote)
-  });
-};
+  // grabs all notes from API, splices off the first one and sets it to state
+  const getNote = () => {
+    return getNotesByUserId(userId).then(notesFromAPI => {
+      console.log("notesFromAPI is", notesFromAPI)
+        let firstNote = notesFromAPI.splice(0, 1);
+        setRecentNote(firstNote[0])
+    });
+  };
 
 // deletes Activity when button clicked
   const handleDelete = (id) => {
@@ -32,6 +35,7 @@ const getNote = () => {
 
   return (
         <>
+  
           {<NoteDashCard
             key={recentNote?.id}
             recentNote={recentNote}
