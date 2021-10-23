@@ -5,6 +5,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 import { deleteConnection, getConnectionsByUserId } from "./ConnectionManager";
 import { ConnectionCard } from "./ConnectionCard";
+import { formatDate } from "../helper";
+import "../dashboard/Dashboard.css"
+import "../LifeHacker.css"
 
 export const ConnectionBoard = () => {
     const [connections, setConnections] = useState([])
@@ -28,16 +31,52 @@ export const ConnectionBoard = () => {
     }, [])
 
     return (
+<>
+    <div className="page">
+
+        <div className="page-title__flex">
+  
+          <div className="page-title__left">Welcome <span className="welcome-name">{sessionStorage.getItem("lifehacker_username")}</span></div>
+  
+          <div className="page-title__headline">Connections</div>
+  
+          <div className="page-title__right">Today: &nbsp;&nbsp;<span className="todays-date">{formatDate(Date.now())}</span></div>
+  
+        </div>
+
         <div className="section-flex">
 
-            <div className="section-connections__header">
-            Connections
-            </div> 
-
-            <div className="section__content">
+            <div className="section-flex__content">
                 <Link to={`/connections/create`}>
                 <button className="add__connection">+ Add Connection</button>
                 </Link>
+            </div>
+
+            {/* this section is the category headers for the contact cards (using same div names as cards so spacing is identical) */}
+            <div className="dash-connections-header">
+
+                <div className="dc-info">
+
+                    <div className="pic-name">
+
+                        <div className="dc-image"></div>
+
+                        <div className="dc-name bold">NAME</div>
+
+                    </div>
+
+                    <div className="dc-email bold">EMAIL</div>
+
+                    <div className="dc-phone bold">PHONE</div>
+
+                    <div className="dc-bday bold">BIRTHDAY</div>
+
+                </div>
+
+                <div className="dc-icons">
+
+                </div>
+
             </div>
 
             <div className="container">
@@ -45,5 +84,8 @@ export const ConnectionBoard = () => {
             </div>
 
         </div>
+
+    </div>
+</>
     )
 }

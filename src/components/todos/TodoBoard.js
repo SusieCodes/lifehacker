@@ -30,13 +30,9 @@ export const TodoBoard = () => {
     }, []);
 
     return (
-        <div className="section-flex">
-
-            <div className="section-todos__header">
-            To-Do List
-            </div> 
+        <div className="section-flex"> 
             
-            <div className="section__content">
+            <div className="section-flex__content">
                 <Link to={`todos/create`}>
                 <button className="add__todo">+ Add To-Do</button></Link>
             </div>

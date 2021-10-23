@@ -1,6 +1,194 @@
-.connection-image {
-  width: 96px;
-  height: 96px;
+/* Author: Susie Stanley
+Purpose: styling for all Connections pages */
+
+/* ConnectionDetail styling */
+.c-bold {
+  font-weight: 600;
+  background-color: lightgray;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  padding: 7px 0px 5px 25px;
+  margin: 0px;
+}
+
+.c-indent {
+  padding: 8px 20px 8px 30px;
+}
+
+.inner-address {
+  padding: 10px 0px;
+}
+
+.c-address {
+  padding: 0px 20px 0px 30px;
+  margin: 0px;
+}
+
+.connection-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* border: 1px solid red; */
+}
+
+.connection-outer-flex {
+  background-color: rgb(239, 239, 239);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.connection-inner-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* border: 1px solid aqua; */
+}
+
+.connection-user-image {
+  padding: 10px;
+  margin: auto auto;
+  width: 200px;
+  height: 200px;
+  /* border: 1px solid black; */
+}
+
+.connection-user-photo {
+  width: 100%;
+  margin: auto auto;
+  border-radius: 100px;
+  border: 5px solid #99e3eda5;
+}
+
+.connection-info {
+  flex: 1;
+  font-size: 20px;
+  align-self: center;
+  /* border: 1px solid yellow; */
+}
+
+.connection-info__name {
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.connection-inner-flex {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+}
+
+.inner-flex__row1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px;
+  /* border: 1px solid red; */
+}
+
+.inner-flex__row1__col1,
+.inner-flex__row1__col2,
+.inner-flex__row2__col1,
+.inner-flex__row2__col2,
+.inner-flex__row3__col1,
+.inner-flex__row3__col2 {
+  flex: 1;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
   padding: 20px;
-  /* margin: auto 10px; */
+  margin: 10px 0px;
+}
+
+.inner-flex__row1__col1,
+.inner-flex__row2__col1,
+.inner-flex__row3__col1 {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px; 
+}
+
+.inner-flex__row1__col2,
+.inner-flex__row2__col2,
+.inner-flex__row3__col2 {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.inner-flex__row2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px;
+  /* border: 1px solid orange; */
+}
+
+.inner-flex__row3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px;
+  /* border: 1px solid aqua; */
+}
+
+.inner-flex__row4 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 0px;
+  min-width: 1000px;
+  /* padding-left: 20px; */
+  /* border: 1px solid green; */
+}
+
+.inner-flex__row4__full {
+  flex: 1;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+  margin: 10px 0px 0px;
+  border-radius: 8px;
+}
+
+.connection-info__email,
+.connection-info__phone,
+.connection-info__address,
+.connection-info__city,
+.connection-info__state,
+.connection-info__zipcode,
+.connection-info__work,
+.connection-info__relationship,
+.connection-info__bday,
+.connection-info__family,
+.connection-info__pets,
+.connection-info__howWeMet,
+.connection-info__gifts,
+.connection-info__drink,
+.connection-info__dessert,
+.connection-info__notes,
+.connection-info__zodiac,
+.connection-info__personality,
+.connection-info__enneagram
+{
+  background-color: #c8e6ea;
+  border-radius: 5px;
+  margin: 10px;
+  /* border: 1px solid black; */
+}
+
+.connection-info__notes {
+  flex: 1;
+}
+
+/* ConnectionBoard styling */
+.section-flex {
+
+}
+
+.section-flex__content {
+  
 }

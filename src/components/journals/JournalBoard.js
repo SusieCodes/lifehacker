@@ -8,9 +8,6 @@ export const JournalBoard = () => {
     return (
         <div className="section-journals">
 
-            <div className="section-journals__header">
-            Journal Entries
-            </div> 
         </div>
     )
 }
