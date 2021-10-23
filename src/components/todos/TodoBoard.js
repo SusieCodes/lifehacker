@@ -30,7 +30,7 @@ export const TodoBoard = () => {
     }, []);
 
     return (
-        <div className="section-todos">
+        <div className="section-flex">
 
             <div className="section-todos__header">
             To-Do List

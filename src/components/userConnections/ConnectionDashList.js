@@ -23,6 +23,7 @@ export const ConnectionDashList = () => {
         console.log("connectionId is: ", connectionId);
     };
 
+    // invokes getConnections on first render only
     useEffect(() => {
         getConnections();
     }, [])

@@ -242,10 +242,6 @@ input.checkbox:hover {
   background-color: #ffffff;
 }
 
-.bold {
-  font-weight: 800;
-}
-
 .transparent {
   color: transparent;
 }
@@ -504,4 +500,84 @@ button.note-delete {
 .dc-delete-icon:hover {
   transform: scale(1.5);
   color: #D61212;
+}
+
+/* Groceries Dash styling */
+.dash-grocery__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.dash-grocery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 0px 10px;
+  margin: 5px 25px;
+  background-color: #c8e6ea68;
+  border-radius: 5px;
+  /* border: 1px solid red; */
+}
+
+.dash-grocery__col1 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  padding: 0px;
+  margin: 0px;
+  /* border: 1px solid green; */
+}
+
+.dash-grocery__text {
+  padding-left: 10px;
+  margin: auto 0px;
+  text-align: left;
+  font-size: 20px;
+  /* border: 1px solid black; */
+}
+
+.dash-grocery__col2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+button.grocery-delete {
+  flex: 1;
+  align-self: center;
+  border: none;
+  background-color: transparent;
+  padding-top: 5px;
+  margin: 0px auto;
+  /* border: 1px solid black; */
+}
+
+.grocery-delete-icon {
+  width: 18px;
+  height: 18px;
+  transition: all .2s ease-in-out;
+}
+
+.grocery-delete-icon:hover {
+  transform: scale(1.5);
+  color: #D61212;
+}
+
+.see-more {
+  padding: 0px;
+  margin: 0px;
+}
+
+.see-more a {
+  color: #2B2B2B;
+  text-decoration: none;
+}
+
+.see-more a:hover {
+  color: #D61212; 
 }

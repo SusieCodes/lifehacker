@@ -28,7 +28,7 @@ export const ConnectionBoard = () => {
     }, [])
 
     return (
-        <div className="section-connections">
+        <div className="section-flex">
 
             <div className="section-connections__header">
             Connections

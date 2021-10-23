@@ -5,6 +5,7 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import { TodoDashList } from "../todos/TodoDashList";
 import { ActivityDashList } from "../activities/ActivityDashList";
+import { GroceryDashList } from "../groceries/GroceryDashList";
 import { NoteDashList } from "../notes/NoteDashList";
 import { ConnectionDashList } from "../userConnections/ConnectionDashList";
 import { formatDate } from "../helper";
@@ -49,6 +50,11 @@ return (
 
               {/* START OF GROCERY DASHBOARD */}
               <div className="grocery-container"><h2>Groceries</h2>
+
+              <div className="dash-grocery__list">
+                  <GroceryDashList />
+                </div>
+
               </div>
 
             </div>

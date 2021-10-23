@@ -1,5 +1,5 @@
 //Author: Susie Stanley
-//Purpose: Creates and displays individual activity cards for a single activity that is passed as a prop
+//Purpose: Creates and displays individual connection cards for a single connection that is passed as a prop
 
 import React from "react"
 import { Link } from "react-router-dom";

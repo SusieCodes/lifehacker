@@ -94,7 +94,7 @@ const getFutureActivities = () => {
 
 
     return (
-        <div className="section-activities">
+        <div className="section-flex">
 
             <div className="section-activities__header">
             Activities

@@ -28,7 +28,7 @@ export const NoteBoard = () => {
     }, [])
 
     return (
-        <div className="section-notes">
+        <div className="section-flex">
 
             <div className="section-notes__header">
             Notes

@@ -105,7 +105,7 @@ export const ConnectionDetail = () => {
 
         <div className="connection-info__work"> <strong>Work: </strong> {connection.work}</div>
 
-        <div className="connection-info__relationship"> <strong>Relationship: </strong> {connection.city}</div>
+        <div className="connection-info__relationship"> <strong>Relationship: </strong> {connection.relationship}</div>
 
         <div className="connection-info__bday"> <strong>Birthday: </strong> {connection.bday}</div>
 

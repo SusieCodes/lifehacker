@@ -18,7 +18,7 @@ export const NoteDashList = () => {
     });
   };
 
-// deletes Activity when button clicked
+// deletes note when button clicked
   const handleDelete = (id) => {
     deleteNote(id)
     .then(() => {
@@ -26,7 +26,7 @@ export const NoteDashList = () => {
     });
   }
   
-// getFutureActivities gets all future notes from API and saves the array to state as 'futureActivities' on first render only
+// getNote gets most recent note from API and saves it to state on first render only
   useEffect(() => {
     getNote();
   }, []);
