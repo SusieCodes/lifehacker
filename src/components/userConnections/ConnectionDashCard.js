@@ -7,16 +7,10 @@ import { FaTrash } from "react-icons/fa";
 
 
 const formatDate = (date) => {
-  const _date = date.split('-');
-  const formattedDate = _date[1] + "-" + _date[2] +  "-" + _date[0];
-  console.log("formattedDate is: ", formattedDate)
-  return formattedDate;
-}
-
-// const formatDate = (date) => {
-//   const dateObj = new Date(date + 'T00:00:00');
-//   return new Intl.DateTimeFormat('en-US').format(dateObj);
-// }
+    var array = (date).toString().split(/-/g);
+    array.push(array.shift());
+    return array.join('/');
+  };
 
 export const ConnectionDashCard = ({ connection, handleDelete }) => {
     return (
