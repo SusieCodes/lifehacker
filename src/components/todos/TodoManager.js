@@ -1,5 +1,5 @@
 // Author: Susie Stanley
-// Purpose: To fetch todo's from database
+//Purpose: To export multiple components that fetch/update/delete To-Dos info from database
 
 
 const remoteUrl = "http://localhost:8088"

@@ -30,7 +30,7 @@ export const Login = () => {
                     // The user id is saved under the key lifehacker_user in session Storage
                     // Change below if needed
                     sessionStorage.setItem("lifehacker_user", exists.id)
-                    const [ firstname, lastname ] = exists.name.split(" ");
+                    const [ firstname, ] = exists.name.split(" ");
                     sessionStorage.setItem("lifehacker_username", firstname)
                     history.push("/dashboard")
 

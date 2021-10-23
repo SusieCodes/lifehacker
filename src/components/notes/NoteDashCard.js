@@ -24,7 +24,7 @@ export const NoteDashCard = ({ recentNote, handleDelete }) => {
                 {recentNote.title}
               </div>
 
-              <div className="middle-text">
+              <div className="bottom-text">
                 {recentNote.text}
               </div>
 

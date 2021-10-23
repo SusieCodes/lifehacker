@@ -6,7 +6,7 @@ import React from "react";
 import { TodoDashList } from "../todos/TodoDashList";
 import { ActivityDashList } from "../activities/ActivityDashList";
 import { NoteDashList } from "../notes/NoteDashList";
-
+import { ConnectionDashList } from "../userConnections/ConnectionDashList";
 import { formatDate } from "../helper";
 import "../LifeHacker.css";
 import "../dashboard/Dashboard.css";
@@ -47,6 +47,7 @@ return (
 
               </div>
 
+              {/* START OF GROCERY DASHBOARD */}
               <div className="grocery-container"><h2>Groceries</h2>
               </div>
 
@@ -54,7 +55,7 @@ return (
 
             <div className="dashboard-grid__row1__col1__row2">
 
-              {/* START OF NOTE DASHBOARD */}
+              {/* START OF NOTES DASHBOARD */}
               <div className="note-container">
                 <h2>Notes</h2>
 
@@ -64,6 +65,7 @@ return (
 
               </div>
 
+              {/* START OF JOURNAL DASHBOARD */}
               <div className="journal-container">
                 <h2>Journal</h2>
               </div>
@@ -85,9 +87,13 @@ return (
 
         </div>
 
+        {/* START OF CONNECTIONS DASHBOARD */}
         <div className="dashboard-grid__row2">
           <div className="dashboard-grid__row2__row1">
             <h2>Connections</h2>
+
+              <ConnectionDashList />
+
           </div>
 
         </div>
