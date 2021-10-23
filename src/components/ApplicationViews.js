@@ -4,6 +4,7 @@ import { Dashboard } from "../../src/components/dashboard/Dashboard"
 import { ConnectionBoard } from "./userConnections/ConnectionBoard"
 import { ConnectionForm } from "../../src/components/userConnections/ConnectionForm"
 import { ConnectionEditForm } from "../../src/components/userConnections/ConnectionEditForm"
+import { ConnectionDetail } from "../../src/components/userConnections/ConnectionDetail"
 import { ActivityBoard } from "../../src/components/activities/ActivityBoard"
 import { ActivityForm } from "../../src/components/activities/ActivityForm"
 import { ActivityEditForm } from "../../src/components/activities/ActivityEditForm"
@@ -35,6 +36,10 @@ export const ApplicationViews = () => {
 
           <Route exact path="/connections/:connectionId(\d+)/edit">
             <ConnectionEditForm />
+          </Route>
+
+          <Route exact path="/connections/:connectionId(\d+)">
+            <ConnectionDetail />
           </Route>
 
           <Route exact path="/activities">

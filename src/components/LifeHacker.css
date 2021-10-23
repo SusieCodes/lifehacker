@@ -8,7 +8,7 @@
 }
 
 html, body {
-  max-width: 1800px;
+  width: 1800px;
   margin: 0px auto;
   padding: 0px;
   font-family: "Poppins", sans-serif;
@@ -53,7 +53,7 @@ box-shadow: 5px 5px 5px lightgray;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0px 40px 20px;
+  padding: 10px 40px 20px;
   margin: 10px 0px;
   /* border: 1px solid green; */
 }

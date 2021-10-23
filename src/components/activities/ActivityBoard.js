@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ActivityCard } from './ActivityCard';
-import { getAllActivities, deleteActivity } from './ActivityManager';
+import { getAllActivitiesByUserId, deleteActivity } from './ActivityManager';
 
 export const ActivityBoard = () => {
   // The initial state is an empty array
@@ -17,7 +17,7 @@ export const ActivityBoard = () => {
 const getFutureActivities = () => {
     const today = new Date();
     const parsedToday = today.getTime()
-    return getAllActivities().then(ActivitiesFromAPI => {
+    return getAllActivitiesByUserId(sessionStorage.getItem("lifehacker_user")).then(ActivitiesFromAPI => {
       const copyOfActivities = [...ActivitiesFromAPI]
       const futureDatedActivities = copyOfActivities.filter(function (evt) {
           let evtDate = Date.parse(evt.date);
@@ -33,7 +33,7 @@ const getFutureActivities = () => {
   const getPastActivities = () => {
     const today = new Date();
     const parsedToday = today.getTime()
-    return getAllActivities().then(ActivitiesFromAPI => {
+    return getAllActivitiesByUserId(sessionStorage.getItem("lifehacker_user")).then(ActivitiesFromAPI => {
       const copyOfActivities = [...ActivitiesFromAPI]
       const pastDatedActivities = copyOfActivities.filter(function (evt) {
           let evtDate = Date.parse(evt.date);
@@ -94,7 +94,7 @@ const getFutureActivities = () => {
 
 
     return (
-        <div className="section-activities">
+        <div className="section-flex">
 
             <div className="section-activities__header">
             Activities

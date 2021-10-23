@@ -1,28 +1,28 @@
 //Author: Susie Stanley
-//Purpose: Output List of To-Do List items to the DOM
+//Purpose: Outputs A List Of To-Do List Items to the DOM
 
 import React, { useEffect, useState } from "react";
 import { TodoCard } from "./TodoCard";
-import { completeTodo, deleteTodo, getAllTodos } from "./TodoManager";
+import { completeTodo, deleteTodo, getAllTodosByUserId } from "./TodoManager";
 import { Link } from 'react-router-dom';
 
 export const TodoBoard = () => {
     const [todos, setTodos] = useState([]);
 
     const getTodos = () => {
-        return getAllTodos().then(todosFromAPI => {
+        return getAllTodosByUserId(sessionStorage.getItem("lifehacker_user")).then(todosFromAPI => {
             setTodos(todosFromAPI)
         });
     };
 
     const handleDeleteTodo = id => {
         deleteTodo(id)
-            .then(() => getAllTodos().then(setTodos));
+            .then(() => getAllTodosByUserId(sessionStorage.getItem("lifehacker_user")).then(setTodos));
     };
 
     const handleCompleteTodo = id => {
         completeTodo(id)
-            .then(() => getAllTodos().then(setTodos));
+            .then(() => getAllTodosByUserId(sessionStorage.getItem("lifehacker_user")).then(setTodos));
     }
 
     useEffect(() => {
@@ -30,7 +30,7 @@ export const TodoBoard = () => {
     }, []);
 
     return (
-        <div className="section-todos">
+        <div className="section-flex">
 
             <div className="section-todos__header">
             To-Do List

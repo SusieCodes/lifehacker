@@ -1,15 +1,18 @@
 .dashboard-grid {
-
+  margin: 5px;
 }
 
+/* this holds activities, groceries, notes, journal, & todos */
 .dashboard-grid__row1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
   padding: 0px;
   margin: 0px;
+  min-width: 1350px;
 }
 
+/* this holds activities, groceries, notes, & journal */
 .dashboard-grid__row1__col1 {
   flex: 2;
   display: flex;
@@ -20,6 +23,7 @@
   /* border: 1px solid purple; */
 }
 
+/* this holds activities & groceries */
 .dashboard-grid__row1__col1__row1 {
   display: flex;
   flex-direction: row;
@@ -42,6 +46,7 @@
   min-height: 270px;
 }
 
+/* this holds notes & journal */
 .dashboard-grid__row1__col1__row2 {
   display: flex;
   flex-direction: row;
@@ -51,61 +56,71 @@
   /* border: 1px solid red; */
 }
 
+/* this holds todos */
 .dashboard-grid__row1__col2 {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 10px 20px 20px;
+  padding: 10px 0px;
   margin: 10px;
   border-radius: 5px;
-  /* border: 1px solid rgb(155, 155, 155); */
   background-color: white;
   box-shadow: 2px 3px 7px gray;
+  border: 1px solid black;
 }
 
 /* To-Do dash title */
 .dashboard-grid__row1__col2 h2 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 8px;
 }
 
+/* this is outer div of connections */
 .dashboard-grid__row2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0px;
   margin: 0px;
-  /* border: 1px solid black; */
+  min-width: 1350px;
+  /* border: 3px solid pink; */
 }
 
+/* this is inner div of connections */
 .dashboard-grid__row2__row1 {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
-  /* border: 1px solid rgb(184, 184, 184); */
   background-color: white;
-  height: 250px;
+  min-height: 250px;
   box-shadow: 2px 3px 7px gray;
+}
+
+.dashboard-grid__row2__row1 h2 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 /* To-Do Dash styling */
 .dash-todo__list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  padding: 0px 30px;
+  border: 1px solid red;
 }
 
 .dash-todo {
+  flex: 1;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding: 12px 30px;
-  margin: 8px 15px;
-  /* background-color: 	#F0F0F0; */
+  align-self: stretch;
+  padding: 10px 20px;
+  margin: 8px 0px;
   background-color: #c8e6ea68;
   border-radius: 5px;
 }
@@ -118,15 +133,21 @@
 }
 
 .dash-todo__col2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
   text-align: center;
   white-space: nowrap;
+  align-self: center;
+  margin: 0px;
 }
 
 .dash-todo__title {
   font-size: 20px;
   font-weight: 500;
-  padding: 0px;
+  padding-bottom: 2px;
   margin: 0px;
+  white-space: nowrap;
 }
 
 .dash-todo__bywhen {
@@ -134,6 +155,7 @@
   font-weight: 400;
   padding: 0px;
   margin: 0px;
+  white-space: nowrap;
 }
 
 .todo-complete {
@@ -141,6 +163,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin: 0px;
 }
 
 .todo-complete label {
@@ -197,7 +220,6 @@ input.checkbox:hover {
   justify-content: center;
   padding: 0px;
   margin: 0px;
-  /* border: 1px solid red; */
 }
 
 .dash-activity__name {
@@ -213,7 +235,6 @@ input.checkbox:hover {
   justify-content: flex-start;
   padding: 0px;
   margin: 0px;
-  /* border: 1px solid black; */
 }
 
 .da-inner__left {
@@ -224,15 +245,10 @@ input.checkbox:hover {
   white-space: nowrap;
   margin: 0px;
   padding: 0px;
-  /* border: 1px solid blue; */
 }
 
 .activity-address__highlight {
   background-color: #ffffff;
-}
-
-.bold {
-  font-weight: 800;
 }
 
 .transparent {
@@ -247,7 +263,6 @@ input.checkbox:hover {
   white-space: nowrap;
   margin: 0px;
   padding-left: 10px;
-  /* border: 1px solid green; */
 }
 
 .dash-activity__col2 {
@@ -284,7 +299,6 @@ button.activity-delete {
   min-height: 260px;
   margin: 0px;
   padding: 0px 30px 0px;
-  /* border: 3px solid blue; */
 }
 
 .dash-note__wrapper {
@@ -298,7 +312,6 @@ button.activity-delete {
   padding: 0px 31px;
   min-width: 300px;
   height: 255px;
-  /* border: 3px solid red; */
 }
 
 .dash-note {
@@ -306,18 +319,18 @@ button.activity-delete {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 50px 50px 50px 70px;
+  padding: 55px 50px 50px 65px;
 }
 
 .dash-note__text {
   flex: 1;
   display: flex;
   flex-direction: column; 
-  justify-content: flex-start; 
+  justify-content: flex-start;
+  align-items: flex-start; 
   margin: 0px;
   min-width: 150px;
   max-width: 175px;
-  /* border: 3px solid pink; */
 }
 
 .top-text {
@@ -326,12 +339,13 @@ button.activity-delete {
   text-align: left;
   margin: 10px 0px 30px;
   min-width: 155px;
-  /* border: 1px solid red; */
 }
 
-.middle-text {
+.bottom-text {
   min-width: 155px;
-  /* border: 1px solid blue; */
+  text-align: left;
+  padding: 0px;
+  margin: 0px;
 }
 
 .dash-note__delete {
@@ -340,7 +354,6 @@ button.activity-delete {
   justify-content: flex-start;
   padding-top: 20px;
   margin: 0px;
-  /* border: 2px solid purple; */
 }
 
 button.note-delete {
@@ -350,7 +363,230 @@ button.note-delete {
   background-color: transparent;
   margin: 0px;
   padding: 0px;
-  /* margin: auto auto; */
-  /* border: 1px solid pink; */
 }
 
+/* Connections Dash styling */
+.section-connections {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0px 5px 10px;
+  margin: 0px 20px 20px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.dash-connections-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 0px;
+  margin: 10px 5px 0px;
+  background-color: rgba(211, 211, 211, 0.468);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  /* border: 1px solid red; */
+}
+
+.container {
+  margin: 0px 5px;
+  padding: 0px;
+  border-bottom: 1px solid gray;
+}
+
+.dash-connections {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 0px;
+  margin: 0px;
+  background-color: #c8e6ea68;
+  border-top: 1px solid gray;
+}
+
+.dc-info {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 20px;
+  margin: 0px;
+  /* border: 1px solid blue; */
+}
+
+.pic-name {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  flex-wrap: nowrap;
+  /* border: 1px solid black; */
+}
+
+.dc-image {
+  width: 46px;
+  height: 46px;
+  padding: 0px;
+  margin: auto 10px;
+}
+
+.connection-photo {
+  margin: auto auto;
+  border-radius: 23px;
+  border: 3px solid white;
+  width: 100%;
+}
+
+.dc-name {
+  padding-left: 10px;
+  margin: auto 0px;
+  white-space: nowrap;
+}
+
+.dc-email {
+  flex: 1;
+  margin: auto 0px;
+  white-space: nowrap;
+  text-align: left;
+  /* border: 1px solid black; */
+}
+
+.dc-phone {
+  flex: 1;
+  margin: auto 0px;
+  white-space: nowrap;
+  text-align: left;
+  /* border: 1px solid black; */
+}
+
+.dc-bday {
+  flex: 1;
+  margin: auto 0px;
+  white-space: nowrap;
+  text-align: left;
+  /* border: 1px solid black; */
+}
+
+.dc-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  width: 200px;
+}
+
+.dc-details {
+  margin: auto 0px;
+  font-size: 16px;
+  padding: 5px 10px;
+  border: 1px solid rgb(82, 207, 223);
+  background-color: #c8e6ea;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.dc-details a {
+  color: #2B2B2B;
+  text-decoration: none;
+}
+
+.dc-delete {
+  margin: auto 20px;
+  padding-top: 6px;
+  /* border: 1px solid black; */
+}
+
+.dc-delete-icon {
+  margin: auto 10px;
+  width: 25px;
+  height: 25px;
+  transition: all .2s ease-in-out;
+}
+
+.dc-delete-icon:hover {
+  transform: scale(1.5);
+  color: #D61212;
+}
+
+/* Groceries Dash styling */
+.dash-grocery__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.dash-grocery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 0px 10px;
+  margin: 5px 25px;
+  background-color: #c8e6ea68;
+  border-radius: 5px;
+  /* border: 1px solid red; */
+}
+
+.dash-grocery__col1 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  padding: 0px;
+  margin: 0px;
+  /* border: 1px solid green; */
+}
+
+.dash-grocery__text {
+  padding-left: 10px;
+  margin: auto 0px;
+  text-align: left;
+  font-size: 20px;
+  /* border: 1px solid black; */
+}
+
+.dash-grocery__col2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+button.grocery-delete {
+  flex: 1;
+  align-self: center;
+  border: none;
+  background-color: transparent;
+  padding-top: 5px;
+  margin: 0px auto;
+  /* border: 1px solid black; */
+}
+
+.grocery-delete-icon {
+  width: 18px;
+  height: 18px;
+  transition: all .2s ease-in-out;
+}
+
+.grocery-delete-icon:hover {
+  transform: scale(1.5);
+  color: #D61212;
+}
+
+.see-more {
+  padding: 0px;
+  margin: 0px;
+}
+
+.see-more a {
+  color: #2B2B2B;
+  text-decoration: none;
+}
+
+.see-more a:hover {
+  color: #D61212; 
+}

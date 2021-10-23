@@ -33,13 +33,13 @@ export const ConnectionCard = ({ connection, handleDeleteConnection, card }) => 
 
             <div><strong>stateProvince: </strong> {connection?.stateProvince}</div>
 
-            <div><strong>Zipcode: </strong> {connection?.zipcode}</div>
+            <div><strong>Zipcode: </strong> {connection?.zipCode}</div>
 
             <div><strong>Work: </strong> {connection?.notes}</div>
 
             <div><strong>Relationship: </strong> {connection?.relationship}</div>
 
-            <div><strong>Birthday: </strong> {connection?.birthday}</div>
+            <div><strong>Birthday: </strong> {connection?.bday}</div>
 
             <div><strong>Family Members: </strong> {connection?.family}</div>
 

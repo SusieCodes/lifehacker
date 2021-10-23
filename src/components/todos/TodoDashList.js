@@ -1,5 +1,5 @@
 // Author: Susie Stanley
-// Purpose: Displays list of To-Do items by user
+//Purpose: Defines component TodoDashList that renders a list of todo's in chronological order to the dashboard
 
 
 import React, { useState, useEffect } from "react";
@@ -10,12 +10,11 @@ import { TodoDashCard } from "../todos/TodoDashCard";
 
 
 export const TodoDashList = ({ todo }) => {
-  const userId = sessionStorage.getItem("lifehacker_user");
   const [todos, setTodos] = useState([]);
 
   const getTodos = () => {
-    return getAllTodosByUserId(userId).then(todosFromAPI => {
-        let firstFew = todosFromAPI.splice(0, 4);
+    return getAllTodosByUserId(sessionStorage.getItem("lifehacker_user")).then(todosFromAPI => {
+        let firstFew = todosFromAPI.splice(0, 5);
         setTodos(firstFew)
     });
 };
