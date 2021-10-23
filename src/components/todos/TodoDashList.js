@@ -14,7 +14,7 @@ export const TodoDashList = ({ todo }) => {
 
   const getTodos = () => {
     return getAllTodosByUserId(sessionStorage.getItem("lifehacker_user")).then(todosFromAPI => {
-        let firstFew = todosFromAPI.splice(0, 4);
+        let firstFew = todosFromAPI.splice(0, 5);
         setTodos(firstFew)
     });
 };

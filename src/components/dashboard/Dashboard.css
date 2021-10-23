@@ -62,18 +62,18 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 10px 20px 20px;
+  padding: 10px 0px;
   margin: 10px;
   border-radius: 5px;
-  /* border: 1px solid rgb(155, 155, 155); */
   background-color: white;
   box-shadow: 2px 3px 7px gray;
+  border: 1px solid black;
 }
 
 /* To-Do dash title */
 .dashboard-grid__row1__col2 h2 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 8px;
 }
 
 /* this is outer div of connections */
@@ -108,16 +108,19 @@
 .dash-todo__list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  padding: 0px 30px;
+  border: 1px solid red;
 }
 
 .dash-todo {
+  flex: 1;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding: 12px 30px;
-  margin: 8px 15px;
-  /* background-color: 	#F0F0F0; */
+  align-self: stretch;
+  padding: 10px 20px;
+  margin: 8px 0px;
   background-color: #c8e6ea68;
   border-radius: 5px;
 }
@@ -130,14 +133,19 @@
 }
 
 .dash-todo__col2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
   text-align: center;
   white-space: nowrap;
+  align-self: center;
+  margin: 0px;
 }
 
 .dash-todo__title {
   font-size: 20px;
   font-weight: 500;
-  padding: 0px;
+  padding-bottom: 2px;
   margin: 0px;
   white-space: nowrap;
 }
@@ -155,6 +163,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin: 0px;
 }
 
 .todo-complete label {
