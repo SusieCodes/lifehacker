@@ -170,6 +170,15 @@ Dark Gray: #2B2B2B font color throughout
   white-space: nowrap;
 }
 
+.dash-todo__bywhen__red {
+  font-size: 18px;
+  font-weight: 400;
+  color:#D61212;
+  padding: 0px;
+  margin: 0px;
+  white-space: nowrap;
+}
+
 .todo-complete {
   display: flex;
   flex-direction: row;
@@ -190,6 +199,7 @@ input.checkbox {
 
 input.checkbox:hover {
   transform: scale(1.5);
+  color: #27c2d7;
 }
 
 /* Activity Dash styling */
@@ -495,6 +505,7 @@ button.note-delete {
   padding: 5px 10px;
   border: 1px solid rgb(82, 207, 223);
   background-color: #c8e6ea;
+  background-color: #c4f7fe;
   border-radius: 5px;
   white-space: nowrap;
 }
@@ -599,5 +610,6 @@ button.grocery-delete {
 }
 
 .see-more a:hover {
-  color: #D61212; 
+  /* color: #D61212;  */
+  color: #27c2d7;
 }
