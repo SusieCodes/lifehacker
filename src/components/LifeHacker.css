@@ -67,7 +67,9 @@ box-shadow: 5px 5px 5px lightgray;
 }
 
 .welcome-name {
-  color: #D61212;
+  /* color: #D61212; */
+  color: #41C5D8;
+  font-size: 22px;
   font-weight: 600;
   padding: 0px;
   margin: 0px;

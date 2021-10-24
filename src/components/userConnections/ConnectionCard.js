@@ -18,7 +18,7 @@ const formatDate = (date) => {
 export const ConnectionCard = ({ connection, handleDelete }) => {
 
   const handleEdit = () => {
-    history.push(`/connections/${connection?.id}`)
+    history.push(`/connections/${connection?.id}/edit`)
   }
 
   const history = useHistory();
