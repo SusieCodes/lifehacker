@@ -11,7 +11,7 @@ import "./Connections.css"
 export const ConnectionEditForm = () => {
   const [connection, setConnection] = useState(
     { 
-      userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+      userId: "",
       name: "", 
       image: "",
       email: "",
@@ -41,8 +41,6 @@ export const ConnectionEditForm = () => {
   const history = useHistory();
 
   const handleFieldChange = evt => {
-    evt.preventDefault()
-
     const stateToChange = { ...connection };
     stateToChange[evt.target.id] = evt.target.value;
     setConnection(stateToChange);

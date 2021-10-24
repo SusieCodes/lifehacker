@@ -4,6 +4,7 @@
 const url = "http://localhost:8088"
 
 export const getConnectionsByUserId = (userId) => {
+  console.log("getConnectionsByUserId invoked & userId is: ", userId)
     return fetch(`${url}/connections/?userId=${userId}`)
         .then(res => res.json())
 }
