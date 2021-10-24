@@ -51,8 +51,8 @@
 }
 
 .logout:hover {
-  color: white;
-  background-color: #D61212;
+  /* background-color: #D61212; */
+  background-color: #c4f7fe;
 }
 
 .menu-bars {
@@ -114,8 +114,10 @@
 }
 
 .side-text a:hover {
-  color: white;
-  background-color: #D61212;
+  /* color: white; */
+  /* background-color: #D61212; */
+  background-color: #c4f7fe;
+  border: 1px solid black;
 }
 
 .side-menu-items {

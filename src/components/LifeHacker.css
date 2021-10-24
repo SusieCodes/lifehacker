@@ -194,6 +194,7 @@ box-shadow: 5px 5px 5px lightgray;
 
 input {
   font-size: 20px;
+  color: gray;
   padding: 5px;
   border: 1px solid darkgray;
   border-radius: 5px;
