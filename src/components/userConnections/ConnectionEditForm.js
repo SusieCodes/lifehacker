@@ -11,28 +11,30 @@ import "./Connections.css"
 export const ConnectionEditForm = () => {
   const [connection, setConnection] = useState(
     { 
-      // userId: "",
+      userId: "",
       name: "", 
-      // image: "",
-      // email: "",
-      // phone: "",
-      // address: "",
-      // city: "",
-      // stateProvince: "",
-      // zipCode: "",
-      // country: "",
-      // work: "",
-      // relationship: "",
-      // bday: "",
-      // family: "",
-      // pets: "",
-      // howWeMet: "",
-      // giftIdeas: "",
-      // faveDrink: "",
-      // faveDessert: "",
-      // notes: ""
-      // isFave: false
-      // timestamp: Date.now()
+      image: "",
+      email: "",
+      phone: "",
+      address: "",
+      city: "",
+      stateProvince: "",
+      zipCode: "",
+      country: "",
+      work: "",
+      relationship: "",
+      bday: "",
+      family: "",
+      pets: "",
+      howWeMet: "",
+      giftIdeas: "",
+      faveDrink: "",
+      faveDessert: "",
+      notes: "",
+      personality: "",
+      enneagram: "",
+      isFave: false,
+      timestamp: Date.now()
     });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -53,28 +55,31 @@ export const ConnectionEditForm = () => {
     // This is an edit, so we need the info
     const editedConnection = {
       id: connectionId,
-      // userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+      userId: parseInt(sessionStorage.getItem("lifehacker_user")),
       name: connection?.name,
-      // image: connection?.image,
-      // email: connection?.email,
-      // phone: connection?.phone,
-      // address: connection?.address,
-      // city: connection?.city,
-      // stateProvince: connection?.stateProvince,
-      // zipCode: connection?.zipCode,
-      // country: connection?.country,
-      // work: connection?.work,
-      // relationship: connection?.relationship,
-      // bday: connection?.bday,
-      // family: connection?.family,
-      // pets: connection?.pets,
-      // howWeMet: connection?.howWeMet,
-      // giftIdeas: connection?.giftIdeas,
-      // faveDrink: connection?.faveDrink,
-      // faveDessert: connection?.faveDessert,
-      // notes: connection?.notes
-      // timestamp: connection?.timestamp,
-      // isFave: connection?.isFave,
+      image: connection?.image,
+      email: connection?.email,
+      phone: connection?.phone,
+      address: connection?.address,
+      city: connection?.city,
+      stateProvince: connection?.stateProvince,
+      zipCode: connection?.zipCode,
+      country: connection?.country,
+      work: connection?.work,
+      relationship: connection?.relationship,
+      bday: connection?.bday,
+      family: connection?.family,
+      pets: connection?.pets,
+      howWeMet: connection?.howWeMet,
+      giftIdeas: connection?.giftIdeas,
+      faveDrink: connection?.faveDrink,
+      faveDessert: connection?.faveDessert,
+      notes: connection?.notes,
+      zodiac: connection?.zodiac,
+      personality: connection?.personality,
+      enneagram: connection?.enneagram,
+      isFave: connection?.isFave,
+      timestamp: connection?.timestamp
     };
 
   update(editedConnection)
@@ -122,7 +127,7 @@ export const ConnectionEditForm = () => {
                 value={connection?.name}
               />
 
-              {/* <label htmlFor="email">Email:</label>
+              <label htmlFor="email">Email:</label>
               <input
                 type="text"
                 required
@@ -130,9 +135,9 @@ export const ConnectionEditForm = () => {
                 onChange={handleFieldChange}
                 id="email"
                 value={connection?.email}
-              /> */}
+              />
 
-              {/* <label htmlFor="phone">Phone:</label>
+              <label htmlFor="phone">Phone:</label>
               <input
                 type="text"
                 required
@@ -140,9 +145,9 @@ export const ConnectionEditForm = () => {
                 onChange={handleFieldChange}
                 id="phone"
                 value={connection?.phone}
-              /> */}
+              />
 
-              {/* <label htmlFor="address">Address:</label>
+              <label htmlFor="address">Address:</label>
               <input
                 type="text"
                 required
@@ -150,9 +155,9 @@ export const ConnectionEditForm = () => {
                 onChange={handleFieldChange}
                 id="address"
                 value={connection?.address}
-              /> */}
+              />
 
-              {/* <label htmlFor="city">City:</label>
+              <label htmlFor="city">City:</label>
               <input
                 type="text"
                 required
@@ -160,9 +165,9 @@ export const ConnectionEditForm = () => {
                 onChange={handleFieldChange}
                 id="city"
                 value={connection?.city}
-              /> */}
+              />
 
-              {/* <label htmlFor="stateProvince">State/Province:</label>
+              <label htmlFor="stateProvince">State/Province:</label>
               <input
                 type="text"
                 required
@@ -170,9 +175,9 @@ export const ConnectionEditForm = () => {
                 onChange={handleFieldChange}
                 id="stateProvince"
                 value={connection?.stateProvince}
-              /> */}
+              />
 
-              {/* <label htmlFor="zipCode">Zipcode:</label>
+              <label htmlFor="zipCode">Zipcode:</label>
               <input
                 type="text"
                 required
@@ -180,9 +185,9 @@ export const ConnectionEditForm = () => {
                 onChange={handleFieldChange}
                 id="zipCode"
                 value={connection?.zipCode}
-              /> */}
+              />
 
-              {/* <label htmlFor="country">Country:</label>
+              <label htmlFor="country">Country:</label>
               <input
                 type="text"
                 required
@@ -190,9 +195,9 @@ export const ConnectionEditForm = () => {
                 onChange={handleFieldChange}
                 id="country"
                 value={connection?.country}
-              /> */}
+              />
 
-              {/* <label htmlFor="work">Work:</label>
+              <label htmlFor="work">Work:</label>
               <input
                 type="text"
                 required
@@ -200,9 +205,9 @@ export const ConnectionEditForm = () => {
                 onChange={handleFieldChange}
                 id="work"
                 value={connection?.work}
-              /> */}
+              />
 
-              {/* <label htmlFor="relationship">Relationship:</label>
+              <label htmlFor="relationship">Relationship:</label>
               <input
                 type="text"
                 required
@@ -210,9 +215,9 @@ export const ConnectionEditForm = () => {
                 onChange={handleFieldChange}
                 id="relationship"
                 value={connection?.relationship}
-              /> */}
+              />
  
-              {/* <label htmlFor="bday">Birthday:</label>
+              <label htmlFor="bday">Birthday:</label>
               <input
                 type="date"
                 required
@@ -220,9 +225,9 @@ export const ConnectionEditForm = () => {
                 onChange={handleFieldChange}
                 id="bday"
                 value={connection?.bday}
-              /> */}
+              />
 
-              {/* <label htmlFor="family">Family:</label>
+              <label htmlFor="family">Family:</label>
               <input
                 type="text"
                 required
@@ -230,9 +235,9 @@ export const ConnectionEditForm = () => {
                 onChange={handleFieldChange}
                 id="family"
                 value={connection?.family}
-              /> */}
+              />
 
-              {/* <label htmlFor="pets">Pets:</label>
+              <label htmlFor="pets">Pets:</label>
               <input
                 type="text"
                 required
@@ -240,9 +245,9 @@ export const ConnectionEditForm = () => {
                 onChange={handleFieldChange}
                 id="pets"
                 value={connection?.pets}
-              /> */}
+              />
 
-              {/* <label htmlFor="howWeMet">How We Met:</label>
+              <label htmlFor="howWeMet">How We Met:</label>
               <input
                 type="text"
                 required
@@ -250,9 +255,9 @@ export const ConnectionEditForm = () => {
                 onChange={handleFieldChange}
                 id="howWeMet"
                 value={connection?.howWeMet}
-              /> */}
+              />
 
-              {/* <label htmlFor="giftIdeas">Gift Ideas:</label>
+              <label htmlFor="giftIdeas">Gift Ideas:</label>
               <input
                 type="text"
                 required
@@ -260,9 +265,9 @@ export const ConnectionEditForm = () => {
                 onChange={handleFieldChange}
                 id="giftIdeas"
                 value={connection?.giftIdeas}
-              /> */}
+              />
 
-              {/* <label htmlFor="faveDrink">Favorite Drink:</label>
+              <label htmlFor="faveDrink">Favorite Drink:</label>
               <input
                 type="text"
                 required
@@ -270,9 +275,9 @@ export const ConnectionEditForm = () => {
                 onChange={handleFieldChange}
                 id="faveDrink"
                 value={connection?.faveDrink}
-              /> */}
+              />
 
-              {/* <label htmlFor="faveDessert">Favorite Dessert:</label>
+              <label htmlFor="faveDessert">Favorite Dessert:</label>
               <input
                 type="text"
                 required
@@ -280,9 +285,9 @@ export const ConnectionEditForm = () => {
                 onChange={handleFieldChange}
                 id="faveDessert"
                 value={connection?.faveDessert}
-              /> */}
+              />
 
-              {/* <label htmlFor="notes">Notes:</label>
+              <label htmlFor="notes">Notes:</label>
               <input
                 type="text"
                 required
@@ -290,7 +295,7 @@ export const ConnectionEditForm = () => {
                 onChange={handleFieldChange}
                 id="notes"
                 value={connection?.notes}
-              /> */}
+              />
 
             </div>
 
