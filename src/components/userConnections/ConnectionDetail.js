@@ -54,7 +54,7 @@ export const ConnectionDetail = () => {
         console.log("connection obj is: ", connection)
         setConnection({
           userId: sessionStorage.getItem("lifehacker_user"), 
-          name: connection[0].name, 
+          name: connection[0].name,
           image: connection[0].image, 
           email: connection[0].email, 
           phone: connection[0].phone, 
@@ -223,7 +223,7 @@ export const ConnectionDetail = () => {
 
               </div>
 
-            </div> 
+            </div>
 
           </div>
 

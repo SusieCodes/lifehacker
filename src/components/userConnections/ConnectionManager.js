@@ -2,15 +2,25 @@
 //Purpose: To export multiple components that fetch/update/delete connection info from database
 
 const url = "http://localhost:8088"
-
 export const getConnectionsByUserId = (userId) => {
   console.log("getConnectionsByUserId invoked & userId is: ", userId)
-    return fetch(`${url}/connections/?userId=${userId}`)
+    return fetch(`${url}/connections/?userId=${userId}`, {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json"     
+              },
+          })
         .then(res => res.json())
 }
 
 export const getConnectionById = (id) => {
-    return fetch(`${url}/connections/?id=${id}`)
+  console.log("getConnectionsById invoked & id is: ", id)
+    return fetch(`${url}/connections/?id=${id}`, {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json"     
+              },
+          })
         .then(res => res.json())
 }
 

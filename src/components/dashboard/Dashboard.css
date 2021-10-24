@@ -1,3 +1,15 @@
+/* Author: Susie Stanley
+Purpose: Dashboard styling
+
+Colors used:
+Light Blue: #c8e6ea
+Light Blue: #c8e6ea68 (faded)
+Dark Blue: rgb(82, 207, 223) Details button border
+Red: #D61212
+Light Gray: rgba(211, 211, 211, 0.468) Dashboard Connections header
+Dark Gray: #2B2B2B font color throughout
+*/
+
 .dashboard-grid {
   margin: 5px;
 }
@@ -178,7 +190,6 @@ input.checkbox {
 
 input.checkbox:hover {
   transform: scale(1.5);
-  /* color: #D61212; */
 }
 
 /* Activity Dash styling */
@@ -248,7 +259,7 @@ input.checkbox:hover {
 }
 
 .activity-address__highlight {
-  background-color: #ffffff;
+  background-color: white;
 }
 
 .transparent {
@@ -301,6 +312,7 @@ button.activity-delete {
   padding: 0px 30px 0px;
 }
 
+/* Notecard background image */
 .dash-note__wrapper {
   background-image: url("../../images/notecard.svg");
   background-repeat: no-repeat;

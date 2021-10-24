@@ -139,8 +139,6 @@ Purpose: styling for all Connections pages */
   justify-content: flex-start;
   margin: 0px;
   min-width: 1000px;
-  /* padding-left: 20px; */
-  /* border: 1px solid green; */
 }
 
 .inner-flex__row4__full {

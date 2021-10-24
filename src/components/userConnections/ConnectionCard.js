@@ -9,10 +9,10 @@ import {FaEdit, FaTrash } from "react-icons/fa"
 import "../dashboard/Dashboard.css"
 import "./Connections.css"
 
-const formatDate = (date) => {
-  var array = (date).toString().split(/-/g);
+var formatDate = function(date) {
+  var array = (date || '').toString().split(/\-/g);
   array.push(array.shift());
-  return array.join('/');
+  return array.join('/') || null;
 };
 
 export const ConnectionCard = ({ connection, handleDelete }) => {
@@ -32,9 +32,9 @@ export const ConnectionCard = ({ connection, handleDelete }) => {
           <div className="pic-name">
 
             <div className="dc-image">
-              {connection.image !== "" ?
-                <img src={require(`../../images/${connection?.image}`).default} alt={connection?.name} className="connection-photo"/> 
-                : <img src={require(`../../images/default.png`).default} alt="default" className="connection-photo"/>}
+            {connection.image !== "" ?
+                      <img src={require(`../../images/${connection?.image}`).default} alt={connection?.name} className="connection-photo"/> 
+                      : <img src={require(`../../images/default.png`).default} alt="default" className="connection-photo"/>}
             </div>
 
             <div className="dc-name">{connection?.name}
