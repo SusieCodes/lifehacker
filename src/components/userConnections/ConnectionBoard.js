@@ -8,6 +8,7 @@ import { ConnectionCard } from "./ConnectionCard";
 import { formatDate } from "../helper";
 import "../dashboard/Dashboard.css"
 import "../LifeHacker.css"
+import "../userConnections/Connections.css"
 
 export const ConnectionBoard = () => {
     const [connections, setConnections] = useState([])
@@ -44,16 +45,16 @@ export const ConnectionBoard = () => {
   
         </div>
 
+        <div className="section-flex__content">
+                <Link to={`/connections/create`}>
+                <button className="add-connection">+ Add Connection</button>
+                </Link>
+        </div>
+
         <div className="section-flex">
 
-            <div className="section-flex__content">
-                <Link to={`/connections/create`}>
-                <button className="add__connection">+ Add Connection</button>
-                </Link>
-            </div>
-
             {/* this section is the category headers for the contact cards (using same div names as cards so spacing is identical) */}
-            <div className="dash-connections-header">
+            <div className="connections-header">
 
                 <div className="dc-info">
 
@@ -73,7 +74,7 @@ export const ConnectionBoard = () => {
 
                 </div>
 
-                <div className="dc-icons">
+                <div className="connection-icons">
 
                 </div>
 

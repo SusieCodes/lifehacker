@@ -3,6 +3,8 @@
 
 import React from "react"
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom"
+
 import {FaEdit, FaTrash } from "react-icons/fa"
 import "../dashboard/Dashboard.css"
 import "./Connections.css"
@@ -14,6 +16,13 @@ const formatDate = (date) => {
 };
 
 export const ConnectionCard = ({ connection, handleDelete }) => {
+
+  const handleEdit = () => {
+    history.push(`/connections/${connection?.id}`)
+  }
+
+  const history = useHistory();
+
     return (
     <>
   <div className="dash-connections">
@@ -41,13 +50,16 @@ export const ConnectionCard = ({ connection, handleDelete }) => {
 
       </div>
 
-      <div className="dc-icons">
+      <div className="connection-icons">
 
-        <div className="dc-details">
+        <div className="connection-details">
           <Link to={`/connections/${connection?.id}`}>Details</Link>
         </div>
 
-        <div className="dc-delete" onClick={() => handleDelete(connection?.id)}><FaTrash className="dc-delete-icon"/>
+        <div className="connection-delete" onClick={() => handleEdit(connection?.id)}><FaEdit className="connection-edit-icon"/>
+        </div>
+
+        <div className="connection-delete" onClick={() => handleDelete(connection?.id)}><FaTrash className="connection-delete-icon"/>
         </div>
 
       </div>

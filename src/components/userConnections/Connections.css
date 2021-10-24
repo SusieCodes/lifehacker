@@ -185,10 +185,70 @@ Purpose: styling for all Connections pages */
 }
 
 /* ConnectionBoard styling */
-.section-flex {
-
+.connections-header {
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+padding: 0px;
+margin: 10px 5px 0px;
+background-color: white;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
 }
 
-.section-flex__content {
-  
+.connection-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  margin-right: 30px;
+  width: 300px;
+}
+
+
+.connection-details {
+  margin: auto 20px;
+  font-size: 16px;
+  padding: 5px 10px;
+  border: 1px solid rgb(82, 207, 223);
+  background-color: #c8e6ea;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.connection-details a {
+  color: #2B2B2B;
+  text-decoration: none;
+}
+
+.connection-delete {
+  margin: auto 0px;
+  padding-top: 6px;
+  /* border: 1px solid black; */
+}
+
+.connection-edit-icon {
+  margin: auto 20px;
+  width: 30px;
+  height: 30px;
+  transition: all .2s ease-in-out;
+}
+
+.connection-edit-icon:hover {
+  transform: scale(1.5);
+  color: #41C5D8;
+}
+
+.connection-delete-icon {
+  margin: auto 20px;
+  width: 25px;
+  height: 25px;
+  transition: all .2s ease-in-out;
+}
+
+.connection-delete-icon:hover {
+  transform: scale(1.5);
+  color: #D61212;
 }
