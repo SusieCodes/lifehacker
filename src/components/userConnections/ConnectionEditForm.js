@@ -11,28 +11,28 @@ import "./Connections.css"
 export const ConnectionEditForm = () => {
   const [connection, setConnection] = useState(
     { 
-      userId: "",
+      // userId: "",
       name: "", 
-      image: "",
-      email: "",
-      phone: "",
-      address: "",
-      city: "",
-      stateProvince: "",
-      zipCode: "",
-      country: "",
-      work: "",
-      relationship: "",
-      birthday: "",
-      family: "",
-      pets: "",
-      howWeMet: "",
-      giftIdeas: "",
-      favoriteDrink: "",
-      favoriteDessert: "",
-      notes: "",
-      isFave: false,
-      timestamp: Date.now()
+      // image: "",
+      // email: "",
+      // phone: "",
+      // address: "",
+      // city: "",
+      // stateProvince: "",
+      // zipCode: "",
+      // country: "",
+      // work: "",
+      // relationship: "",
+      // bday: "",
+      // family: "",
+      // pets: "",
+      // howWeMet: "",
+      // giftIdeas: "",
+      // faveDrink: "",
+      // faveDessert: "",
+      // notes: ""
+      // isFave: false
+      // timestamp: Date.now()
     });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -52,29 +52,29 @@ export const ConnectionEditForm = () => {
 
     // This is an edit, so we need the info
     const editedConnection = {
-      userId: parseInt(sessionStorage.getItem("lifehacker_user")),
-      name: connection.name,
-      image: connection.image,
-      email: connection.email,
-      phone: connection.phone,
-      address: connection.address,
-      city: connection.city,
-      stateProvince: connection.stateProvince,
-      country: connection.country,
-      zipCode: connection.zipCode,
-      work: connection.work,
-      relationship: connection.relationship,
-      birthday: connection.birthday,
-      family: connection.family,
-      pets: connection.pets,
-      howWeMet: connection.howWeMet,
-      giftIdeas: connection.giftIdeas,
-      faveDrink: connection.faveDrink,
-      faveDessert: connection.faveDessert,
-      timestamp: connection.timestamp,
-      notes: connection.notes,
-      isFave: connection.isFave,
-      id: connectionId
+      id: connectionId,
+      // userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+      name: connection?.name,
+      // image: connection?.image,
+      // email: connection?.email,
+      // phone: connection?.phone,
+      // address: connection?.address,
+      // city: connection?.city,
+      // stateProvince: connection?.stateProvince,
+      // zipCode: connection?.zipCode,
+      // country: connection?.country,
+      // work: connection?.work,
+      // relationship: connection?.relationship,
+      // bday: connection?.bday,
+      // family: connection?.family,
+      // pets: connection?.pets,
+      // howWeMet: connection?.howWeMet,
+      // giftIdeas: connection?.giftIdeas,
+      // faveDrink: connection?.faveDrink,
+      // faveDessert: connection?.faveDessert,
+      // notes: connection?.notes
+      // timestamp: connection?.timestamp,
+      // isFave: connection?.isFave,
     };
 
   update(editedConnection)
@@ -119,178 +119,178 @@ export const ConnectionEditForm = () => {
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 id="name"
-                value={connection.name}
+                value={connection?.name}
               />
 
-              <label htmlFor="email">Email:</label>
+              {/* <label htmlFor="email">Email:</label>
               <input
                 type="text"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 id="email"
-                value={connection.date}
-              />
+                value={connection?.email}
+              /> */}
 
-              <label htmlFor="phone">Phone:</label>
+              {/* <label htmlFor="phone">Phone:</label>
               <input
                 type="text"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 id="phone"
-                value={connection.phone}
-              />
+                value={connection?.phone}
+              /> */}
 
-              <label htmlFor="address">Address:</label>
+              {/* <label htmlFor="address">Address:</label>
               <input
                 type="text"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 id="address"
-                value={connection.address}
-              />
+                value={connection?.address}
+              /> */}
 
-              <label htmlFor="city">City:</label>
+              {/* <label htmlFor="city">City:</label>
               <input
                 type="text"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 id="city"
-                value={connection.city}
-              />
+                value={connection?.city}
+              /> */}
 
-              <label htmlFor="stateProvince">State/Province:</label>
+              {/* <label htmlFor="stateProvince">State/Province:</label>
               <input
                 type="text"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 id="stateProvince"
-                value={connection.stateProvince}
-              />
+                value={connection?.stateProvince}
+              /> */}
 
-              <label htmlFor="zipCode">Zipcode:</label>
+              {/* <label htmlFor="zipCode">Zipcode:</label>
               <input
                 type="text"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 id="zipCode"
-                value={connection.zipCode}
-              />
+                value={connection?.zipCode}
+              /> */}
 
-              <label htmlFor="country">Country:</label>
+              {/* <label htmlFor="country">Country:</label>
               <input
                 type="text"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 id="country"
-                value={connection.country}
-              />
+                value={connection?.country}
+              /> */}
 
-              <label htmlFor="work">Work:</label>
+              {/* <label htmlFor="work">Work:</label>
               <input
                 type="text"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 id="work"
-                value={connection.work}
-              />
+                value={connection?.work}
+              /> */}
 
-              <label htmlFor="relationship">Relationship:</label>
+              {/* <label htmlFor="relationship">Relationship:</label>
               <input
                 type="text"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 id="relationship"
-                value={connection.relationship}
-              />
-
-            <label htmlFor="birthday">Birthday:</label>
+                value={connection?.relationship}
+              /> */}
+ 
+              {/* <label htmlFor="bday">Birthday:</label>
               <input
-                type="text"
+                type="date"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
-                id="birthday"
-                value={connection.birthday}
-              />
+                id="bday"
+                value={connection?.bday}
+              /> */}
 
-              <label htmlFor="family">Family:</label>
+              {/* <label htmlFor="family">Family:</label>
               <input
                 type="text"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 id="family"
-                value={connection.family}
-              />
+                value={connection?.family}
+              /> */}
 
-              <label htmlFor="pets">Pets:</label>
+              {/* <label htmlFor="pets">Pets:</label>
               <input
                 type="text"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 id="pets"
-                value={connection.pets}
-              />
+                value={connection?.pets}
+              /> */}
 
-              <label htmlFor="howWeMet">How We Met:</label>
+              {/* <label htmlFor="howWeMet">How We Met:</label>
               <input
                 type="text"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 id="howWeMet"
-                value={connection.howWeMet}
-              />
+                value={connection?.howWeMet}
+              /> */}
 
-              <label htmlFor="giftIdeas">Gift Ideas:</label>
+              {/* <label htmlFor="giftIdeas">Gift Ideas:</label>
               <input
                 type="text"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 id="giftIdeas"
-                value={connection.giftIdeas}
-              />
+                value={connection?.giftIdeas}
+              /> */}
 
-              <label htmlFor="faveDrink">Favorite Drink:</label>
+              {/* <label htmlFor="faveDrink">Favorite Drink:</label>
               <input
                 type="text"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 id="faveDrink"
-                value={connection.faveDrink}
-              />
+                value={connection?.faveDrink}
+              /> */}
 
-              <label htmlFor="faveDessert">Favorite Dessert:</label>
+              {/* <label htmlFor="faveDessert">Favorite Dessert:</label>
               <input
                 type="text"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 id="faveDessert"
-                value={connection.faveDessert}
-              />
+                value={connection?.faveDessert}
+              /> */}
 
-              <label htmlFor="notes">Notes:</label>
+              {/* <label htmlFor="notes">Notes:</label>
               <input
                 type="text"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 id="notes"
-                value={connection.notes}
-              />
+                value={connection?.notes}
+              /> */}
 
             </div>
 

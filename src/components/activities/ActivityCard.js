@@ -40,9 +40,6 @@ export const ActivityCard = ({ activity, handleDeleteActivity, card }) => {
 
             <button type="button" className="button sm" onClick={() => handleDeleteActivity(activity?.id)}>delete icon</button>
 
-          {/* the WeatherApp component renders the weather button on each ActivityCard */}
-          {/* <WeatherApp activity={activity} /> */}
-
           </div>
 
         </div>
