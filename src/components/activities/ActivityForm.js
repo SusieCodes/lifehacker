@@ -4,9 +4,14 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { addActivity } from "./ActivityManager";
+import { formatDate } from "../helper"
+import "./Activity.css"
+import "../LifeHacker.css"
 
 export const ActivityForm = () => {
-	// Defining initial state of the form inputs with useState()
+  const [conflictDialog, setConflictDialog] = useState(false);
+
+	// Defining initial state of the form inputs with useState
 	const [ activity, setActivity ] = useState({
 		name: "",
 		date: "",
@@ -19,8 +24,6 @@ export const ActivityForm = () => {
 
 	const history = useHistory();
 
-	// When a field changes, it updates state
-  // The return will re-render and display based on the values in state
   const ResetForm = () => {
     setActivity({
       name: "",
@@ -31,7 +34,6 @@ export const ActivityForm = () => {
       notes: "",
       userId: parseInt(sessionStorage.getItem("lifehacker_user"))
     });
-    console.log("resetForm invoked")
   }
 
   const goBack = () => { history.push("/activities") }; //takes user back to list
@@ -49,23 +51,21 @@ export const ActivityForm = () => {
 		setActivity(newActivity)
 	}
 
-  const FiveDigitZipCode = (zipcode) => {
-    var zipcodeformat = /^[0-9]{5}?$/;
-    if(zipcode.match(zipcodeformat)) {
-    }
-    else {
-    return false;
-    }
-  }
+  // const FiveDigitZipCode = (zipcode) => {
+  //   var zipcodeformat = /^[0-9]{5}?$/;
+  //   if(zipcode.match(zipcodeformat)) {
+  //   }
+  //   else {
+  //   return false;
+  //   }
+  // }
   
 
 	const handleSave = (evt) => {
 		evt.preventDefault() //Prevents the browser from submitting the form
 
 		if ( activity.name === "" || activity.date === "" || activity.city === "" ) {
-			window.alert("Please Fill Out All Required Info")
-    } else if ( activity.zipcode.length !== 5 || FiveDigitZipCode(activity.zipcode) ) {
-      window.alert("Please Enter A 5 digit Zipcode") 
+			setConflictDialog(true)
     } else {
 			//invoke addActivity, passing event as an argument
 			//once completed, this changes the url and displays the event list
@@ -75,57 +75,122 @@ export const ActivityForm = () => {
 	}
 
 	return (
-    <div className="form__flex">
-      <form>
-        <div className="form__title">Add New Activity</div>
-        <fieldset>
+<>
+  <div className="page">
+
+    <div className="page-title__flex">
+
+    <div className="page-title__left">Welcome <span className="welcome-name">{sessionStorage.getItem("lifehacker_username")}</span></div>
+
+    <div className="page-title__headline">Add New Activity</div>
+
+    <div className="page-title__right">Today: &nbsp;&nbsp;<span className="todays-date">{formatDate(Date.now())}</span></div>
+
+    </div>  
+
+
+    <div className="form-flex">
+
+        <fieldset className="form">
+
+          <dialog className="dialog" open={conflictDialog}>
+              <div className="dialog-forms">Please Fill Out All Required Fields</div>
+              <button className="button-close" onClick={e => setConflictDialog(false)}>Close</button>
+          </dialog>
 
           <div className="form__group">
-            <label htmlFor="name">Activity name:</label>
-            <input type="text" id="name" onChange={handleControlledInputChange} required autoFocus className="form__group--edit" placeholder="Activity Name" value={activity.name} />
+            <label htmlFor="name">Activity:*</label>
+            <input 
+            type="text" 
+            id="name" 
+            onChange={handleControlledInputChange} 
+            required autoFocus 
+            className="form__group--edit" 
+            placeholder=" Name of Activity" 
+            value={activity.name} />
           </div>
 
           <div className="form__group">
+            <label htmlFor="date">Date:*</label>
+            <input 
+            type="date" 
+            id="date" 
+            onChange={handleControlledInputChange} 
+            required 
+            className="form__group--edit" 
+            value={activity.date} />
+            </div>
 
-            <label htmlFor="date">Date of Activity</label>
-            <input type="date" id="date" onChange={handleControlledInputChange} required className="form__group--edit" value={activity.date} />
-
-            <label htmlFor="city">Activity Address:</label>
-            <input type="text" id="address" onChange={handleControlledInputChange} required className="form__group--edit" placeholder="Activity Address" value={activity.address} />
-
-            <label htmlFor="city">Activity City:</label>
-            <input type="text" id="city" onChange={handleControlledInputChange} required className="form__group--edit" placeholder="Activity City" value={activity.city} />
-
-            <label htmlFor="zipcode">Activity Zipcode:</label>
-            <input type="text" id="zipcode" onChange={handleControlledInputChange} required className="form__group--edit" placeholder="5 digit Zipcode" value={activity.zipcode}/>
-
-            <label htmlFor="city">Activity Notes:</label>
-            <input type="text" id="notes" onChange={handleControlledInputChange} required className="form__group--edit" placeholder="Activity Notes" value={activity.notes} />
-
+          <div className="form__group">
+            <label htmlFor="address">Address:*</label>
+            <input 
+            type="text" 
+            id="address" 
+            onChange={handleControlledInputChange} 
+            required 
+            className="form__group--edit" 
+            placeholder=" Address of Activity" 
+            value={activity.address} />
           </div>
+
+          <div className="form__group">
+            <label htmlFor="city">City:*</label>
+            <input type="text" 
+            id="city" 
+            onChange={handleControlledInputChange} 
+            required 
+            className="form__group--edit" 
+            placeholder=" Name of City" 
+            value={activity.city} />
+          </div>
+
+          <div className="form__group">
+            <label htmlFor="zipcode">Zip/Postal Code:*</label>
+            <input 
+            type="text" id="zipcode" 
+            onChange={handleControlledInputChange} 
+            required 
+            className="form__group--edit" 
+            placeholder=" 90210 or V3C 2XR" 
+            value={activity.zipcode}/>
+          </div>
+
+          <div className="form__group">
+            <label htmlFor="notes">Notes:</label>
+            <input 
+            type="text" 
+            id="notes" 
+            onChange={handleControlledInputChange} 
+            className="form__group--edit" 
+            placeholder=" Bring gloves etc" value={activity.notes} />
+          </div>
+
+          <span className="asterisk-info">Fields with an asterisk * are required</span>
+
         </fieldset>
 
-        <div className="form__btns">
+        <div className="form-btns">
 
-          <button className="form__btn"
+          <button className="form-btn"
             onClick={handleSave}>
             Submit
           </button>
 
-          <button className="form__btn"
+          <button className="form-btn"
             onClick={ResetForm}>
             Reset Form
           </button>
 
-          <button className="form__btn"
+          <button className="form-btn"
             onClick={goBack}>
             Cancel
           </button>
 
         </div>
 
-      </form>
     </div>
+  </div>
+</>
 	)
 };
 

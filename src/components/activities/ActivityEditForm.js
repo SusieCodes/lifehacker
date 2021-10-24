@@ -134,18 +134,18 @@ export const ActivityEditForm = () => {
 
           </fieldset>
 
-          <div className="form__btns">
+          <div className="form-btns">
               
               <button
                 type="button" disabled={isLoading}
                 onClick={updateExistingActivity}
-                className="form__btn">Submit
+                className="form-btn">Submit
                 </button>
 
               <button
                 type="button"
                 onClick={() => history.push(`/activities`)}
-                className="form__btn">Cancel
+                className="form-btn">Cancel
                 </button>
 
           </div>

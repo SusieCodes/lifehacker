@@ -11,6 +11,7 @@ import "../LifeHacker.css"
 export const ConnectionForm = () => {
   const [conflictDialog, setConflictDialog] = useState(false);
 
+    // Defining initial state of the form inputs with useState
     const [connection, setConnection] = useState(
       { 
         userId: parseInt(sessionStorage.getItem("lifehacker_user")),
@@ -41,9 +42,6 @@ export const ConnectionForm = () => {
     );
 
     const history = useHistory();
-
-    // When a field changes, it updates state
-    // The return will re-render and display based on the values in state
 
     const ResetForm = () => {
       setConnection({
@@ -95,7 +93,8 @@ export const ConnectionForm = () => {
           setConflictDialog(true)
         } else {
           console.log("else")
-          addConnection(connection).then(() => history.push("/connections"))
+          addConnection(connection)
+          .then(() => history.push("/connections"))
           }
     }
 
@@ -118,16 +117,17 @@ export const ConnectionForm = () => {
 
             <fieldset className="form">
 
-                    <dialog className="dialog" open={conflictDialog}>
-                            <div className="connection-dialog">Please Input A Name</div>
-                            <button className="button-close" onClick={e => setConflictDialog(false)}>Close</button>
-                    </dialog>
+                <dialog className="dialog-c" open={conflictDialog}>
+                    <div className="dialog-forms__connections">Please Input A Name</div>
+                    <button className="button-close" onClick={e => setConflictDialog(false)}>Close</button>
+                </dialog>
 
                 <div className="form__group">
                     <label htmlFor="name">Name: </label>
                     <input 
                     type="text" 
-                    id="name" 
+                    id="name"
+                    required
                     onChange={handleControlledInputChange} className="form__group--edit" 
                     placeholder=" First &#38; Last Name" />
                 </div>
