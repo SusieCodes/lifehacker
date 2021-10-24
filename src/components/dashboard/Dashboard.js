@@ -13,7 +13,6 @@ import "../LifeHacker.css";
 import "../dashboard/Dashboard.css";
 
 export const Dashboard = () => { 
-  const userName = sessionStorage.getItem("lifehacker_username");
 
 return (
     <>
@@ -21,11 +20,11 @@ return (
 
       <div className="page-title__flex">
 
-        <div className="page-title__left">Welcome <span className="welcome-name">{userName}</span></div>
+        <div className="page-title__left">Welcome <span className="welcome-name">{sessionStorage.getItem("lifehacker_username")}</span></div>
 
         <div className="page-title__headline">Dashboard</div>
 
-        <div className="page-title__right">Today is: &nbsp;&nbsp;<span className="todays-date">{formatDate(Date.now())}</span></div>
+        <div className="page-title__right">Today: &nbsp;&nbsp;<span className="todays-date">{formatDate(Date.now())}</span></div>
 
       </div>
 

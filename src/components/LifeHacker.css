@@ -53,12 +53,13 @@ box-shadow: 5px 5px 5px lightgray;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 10px 40px 20px;
-  margin: 10px 0px;
+  padding: 10px 40px 0px;
+  margin: 0px;
   /* border: 1px solid green; */
 }
 
 .page-title__left {
+  flex: 1;
   font-size: 20px;
   font-weight: 400;
   text-align: left;
@@ -66,7 +67,9 @@ box-shadow: 5px 5px 5px lightgray;
 }
 
 .welcome-name {
-  color: #D61212;
+  /* color: #D61212; */
+  color: #41C5D8;
+  font-size: 22px;
   font-weight: 600;
   padding: 0px;
   margin: 0px;
@@ -82,6 +85,7 @@ box-shadow: 5px 5px 5px lightgray;
 }
 
 .page-title__right {
+  flex: 1;
   font-size: 20px;
   font-weight: 400;
   text-align: right; 
@@ -92,4 +96,51 @@ box-shadow: 5px 5px 5px lightgray;
   text-align: right;
   margin: 0px;
   font-weight: 600;
+}
+
+/* all boards use this styling */
+.section-flex {
+  padding: 0px;
+  margin: 0px;
+  /* border: 1px solid black; */
+}
+
+.section-flex__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0px;
+  margin: 0px;
+  /* border: 1px solid red; */
+}
+
+.add-connection,
+.add-activity,
+.add-note,
+.add-grocery,
+.add-journal,
+.add-todo {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px 20px;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  background-color: #c8e6ea;
+  /* margin-top: 30px; */
+}
+
+/* all detail pages use this button styling */
+.btn-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.details-btn {
+  font-size: 16px;
+  padding: 5px 20px;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  background-color: #c8e6ea;
+  margin-top: 30px;
 }

@@ -20,6 +20,7 @@ export const ConnectionForm = () => {
         city: "",
         stateProvince: "",
         zipCode: "",
+        country: "",
         work: "",
         relationship: "",
         birthday: "",
@@ -48,6 +49,7 @@ export const ConnectionForm = () => {
         city: "",
         stateProvince: "",
         zipCode: "",
+        country: "",
         work: "",
         relationship: "",
         birthday: "",
@@ -130,8 +132,13 @@ export const ConnectionForm = () => {
             </div>
 
             <div className="form__group">
-                <label htmlFor="zipcode">Zipcode: </label>
-                <input type="text" id="zipcode" onChange={handleControlledInputChange} className="form__group--edit" placeholder="5 digit zipcode" />
+                <label htmlFor="zipCode">Zipcode: </label>
+                <input type="text" id="zipCode" onChange={handleControlledInputChange} className="form__group--edit" placeholder="5 digit zipcode" />
+            </div>
+
+            <div className="form__group">
+                <label htmlFor="country">Country: </label>
+                <input type="text" id="country" onChange={handleControlledInputChange} className="form__group--edit" placeholder="Enter Country" />
             </div>
 
             <div className="form__group">

@@ -67,7 +67,7 @@
   border-radius: 5px;
   background-color: white;
   box-shadow: 2px 3px 7px gray;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 /* To-Do dash title */
@@ -110,7 +110,7 @@
   flex-direction: column;
   align-items: center;
   padding: 0px 30px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .dash-todo {
@@ -385,7 +385,6 @@ button.note-delete {
   background-color: rgba(211, 211, 211, 0.468);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-
   /* border: 1px solid red; */
 }
 

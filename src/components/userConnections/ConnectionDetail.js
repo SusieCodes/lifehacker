@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getConnectionById, deleteConnection } from "./ConnectionManager"
 import { useParams, useHistory } from "react-router-dom"
+import { formatDate } from "../helper";
+import "../LifeHacker.css"
 import "./Connections.css"
 
 export const ConnectionDetail = () => {
@@ -14,6 +16,7 @@ export const ConnectionDetail = () => {
       city: "", 
       stateProvince: "", 
       zipCode: "", 
+      country: "",
       work: "", 
       relationship: "", 
       bday: "", 
@@ -23,7 +26,10 @@ export const ConnectionDetail = () => {
       giftIdeas: "", 
       faveDrink: "", 
       faveDessert: "", 
-      notes: "" 
+      notes: "",
+      zodiac: "",
+      personality: "",
+      enneagram: ""
     });
 
   const {connectionId} = useParams();
@@ -38,7 +44,7 @@ export const ConnectionDetail = () => {
   };
 
   const goBack = () => { history.push("/connections")}; //takes user back to list of all connections
-  const goBackToDash = () => { history.push("/dashboard")}; //takes user back to dashboard
+  // const goBackToDash = () => { history.push("/dashboard")}; //takes user back to dashboard
 
   useEffect(() => {
     //use getConnectionById() from ConnectionManager to grab info  and set it to state
@@ -55,7 +61,8 @@ export const ConnectionDetail = () => {
           address: connection[0].address, 
           city: connection[0].city, 
           stateProvince: connection[0].stateProvince, 
-          zipCode: connection[0].zipCode, 
+          zipCode: connection[0].zipCode,
+          country: connection[0].country, 
           work: connection[0].work, 
           relationship: connection[0].relationship, 
           bday: connection[0].bday, 
@@ -65,73 +72,174 @@ export const ConnectionDetail = () => {
           giftIdeas: connection[0].giftIdeas, 
           faveDrink: connection[0].faveDrink, 
           faveDessert: connection[0].faveDessert, 
-          notes: connection[0].notes 
+          notes: connection[0].notes,
+          zodiac: connection[0].zodiac,
+          personality: connection[0].personality,
+          enneagram: connection[0].enneagram 
         });
       });
   }, [connectionId]);
 
   return (
+<>
+    <div className="page">
 
-    <div className="details">
+      <div className="page-title__flex">
 
-      <div className="details__header">
+        <div className="page-title__left">Welcome <span className="welcome-name">{sessionStorage.getItem("lifehacker_username")}</span></div>
 
-      <div className="connection-image">
-                {connection.image !== "" ?
-                  <img src={require(`../../images/default.png`).default} alt={connection?.name} className="connection-photo"/> 
-                  : <img src={require(`../../images/default.png`).default} alt="default" className="connection-photo"/>}
+        <div className="page-title__headline">Connections</div>
+
+        <div className="page-title__right">Today: &nbsp;&nbsp;<span className="todays-date">{formatDate(Date.now())}</span></div>
+
+      </div>
+
+      <div className="connection-flex">
+
+        <div className="connection-outer-flex">
+
+          <div className="connection-user-image">
+                    {connection.image !== "" ?
+                      <img src={require(`../../images/${connection?.image}`).default} alt={connection?.name} className="connection-user-photo"/> 
+                      : <img src={require(`../../images/default.png`).default} alt="default" className="connection-user-photo"/>}
+          </div>
+
+          <div className="connection-info">
+
+            <div className="connection-info__name">
+              <strong>{connection.name}</strong>
+            </div>
+
+            <div className="connection-inner-flex">
+
+              <div className="inner-flex__row1">
+
+                <div className="inner-flex__row1__col1">
+                    <div className="connection-info__email">
+                      <div className="c-bold">Email:</div>
+                      <div className="c-indent">{connection.email}</div>
+                    </div>
+
+                    <div className="connection-info__phone">
+                      <div className="c-bold">Phone:</div>
+                      <div className="c-indent">{connection.phone}</div>
+                    </div>
+
+                    <div className="connection-info__relationship">
+                      <div className="c-bold">Relationship:</div>
+                      <div className="c-indent">{connection.relationship}</div>
+                    </div>
+
+                </div>              
+
+                <div className="inner-flex__row1__col2">
+                    <div className="connection-info__address">
+                      <div className="c-bold">Address:</div>
+                      <div className="inner-address">
+                        <div className="c-address">{connection.address}</div>
+                        <div className="c-address">{connection.city}, {connection.stateProvince} &nbsp; {connection.zipCode}</div>
+                        <div className="c-address">{connection.country}</div>
+
+                      </div>
+                    </div>
+
+                    <div className="connection-info__bday">
+                      <div className="c-bold">Birthday:</div>
+                      <div className="c-indent">{connection.bday}</div>
+                    </div>
+                </div>
+
               </div>
 
-      </div>
+              <div className="inner-flex__row2">
 
-      <div className="connection-info">
+                <div className="inner-flex__row2__col1">
+                <div className="connection-info__work">
+                      <div className="c-bold">Work:</div>
+                      <div className="c-indent">{connection.work}</div>
+                    </div>
+                    <div className="connection-info__gifts">
+                      <div className="c-bold">Gift Ideas:</div>
+                      <div className="c-indent">{connection.giftIdeas}</div>
+                    </div>
+                </div>
 
-        <div className="connection-info__name"><strong>Name: </strong>{connection.name}
+                <div className="inner-flex__row2__col2">
+                    <div className="connection-info__drink">
+                      <div className="c-bold">Favorite Drink:</div>
+                      <div className="c-indent">{connection.faveDrink}</div>
+                    </div>
+
+                    <div className="connection-info__dessert">
+                      <div className="c-bold">Favorite Dessert:</div>
+                      <div className="c-indent">{connection.faveDessert}</div>
+                    </div>
+                </div>
+
+              </div>
+
+              <div className="inner-flex__row3">
+
+                <div className="inner-flex__row3__col1">
+                    <div className="connection-info__zodiac">
+                      <div className="c-bold">Zodiac Sign:</div>
+                      <div className="c-indent">{connection.zodiac}</div>
+                    </div>
+                    <div className="connection-info__personality">
+                      <div className="c-bold">Personality Style:</div>
+                      <div className="c-indent">{connection.personality}</div>
+                    </div>
+                    <div className="connection-info__enneagram">
+                      <div className="c-bold">Enneagram:</div>
+                      <div className="c-indent">{connection.enneagram}</div>
+                    </div>
+                </div>
+
+                <div className="inner-flex__row3__col2">
+                    <div className="connection-info__family">
+                      <div className="c-bold">Family Members:</div>
+                      <div className="c-indent">{connection.family}</div>
+                    </div>
+                    <div className="connection-info__pets">
+                      <div className="c-bold">Pets:</div>
+                      <div className="c-indent">{connection.pets}</div>
+                    </div>
+                    <div className="connection-info__howWeMet">
+                      <div className="c-bold">How We Met:</div>
+                      <div className="c-indent">{connection.howWeMet}</div>
+                    </div>
+                </div>
+
+              </div>
+
+              <div className="inner-flex__row4">
+
+                <div className="inner-flex__row4__full">
+                <div className="connection-info__notes">
+                      <div className="c-bold">Notes:</div>
+                      <div className="c-indent">{connection.notes}</div>
+                    </div>
+                </div>
+
+              </div>
+
+            </div> 
+
+          </div>
+
+          <div className="btn-flex">
+
+              <button className="details-btn" type="button" onClick={goBack}>Connections</button>
+              {/* <button className="details-btn" type="button" onClick={goBackToDash}>Dashboard</button> */}
+              <button className="details-btn" type="button" onClick={handleDelete}>Delete</button>
+
+          </div>
+
         </div>
-          
-        <div className="connection-info__email"><strong>Email: </strong> {connection.email}
-        </div>
 
-        <div className="connection-info__phone"><strong>Phone: </strong> {connection.phone}
-        </div>
-
-        <div className="connection-info__location"> <strong>Address: </strong> {connection.address}</div>
-
-        <div className="connection-info__email"> <strong>City: </strong> {connection.city}</div>
-
-        <div className="connection-info__email"> <strong>State or Province: </strong> {connection.stateProvince}</div>
-
-        <div className="connection-info__zipcode"> <strong>Zipcode: </strong> {connection.zipCode}</div>
-
-        <div className="connection-info__work"> <strong>Work: </strong> {connection.work}</div>
-
-        <div className="connection-info__relationship"> <strong>Relationship: </strong> {connection.relationship}</div>
-
-        <div className="connection-info__bday"> <strong>Birthday: </strong> {connection.bday}</div>
-
-        <div className="connection-info__family"> <strong>Family: </strong> {connection.family}</div>
-
-        <div className="connection-info__pets"> <strong>Pets: </strong> {connection.pets}</div>
-
-        <div className="connection-info__howmet"> <strong>How We Met: </strong> {connection.howWeMet}</div>
-
-        <div className="connection-info__gifts"> <strong>Gift Ideas: </strong> {connection.giftIdeas}</div>
-
-        <div className="connection-info__drink"> <strong>Favorite Drink: </strong> {connection.faveDrink}</div>
-
-        <div className="connection-info__dessert"> <strong>Favorite Dessert: </strong> {connection.faveDessert}</div>
-
-        <div className="connection-info__notes"> <strong>Notes: </strong> {connection.notes}</div>
-
-      </div>
-
-      <div className="btn-flex">
-
-        <button className="details-btn" type="button" onClick={goBack}>All Connections</button>
-        <button className="details-btn" type="button" onClick={goBackToDash}>Dashboard</button>
-        <button className="details-btn" type="button" onClick={handleDelete}>Delete</button>
       </div>
 
     </div>
+</>
   );
 }

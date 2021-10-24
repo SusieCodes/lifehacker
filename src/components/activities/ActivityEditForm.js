@@ -5,7 +5,7 @@
 import React, { useState, useEffect } from "react"
 import { update, getActivityById } from "./ActivityManager"
 import { useParams, useHistory } from "react-router-dom"
-
+import "./Activity.css"
 
 export const ActivityEditForm = () => {
   const [activity, setActivity] = useState(
