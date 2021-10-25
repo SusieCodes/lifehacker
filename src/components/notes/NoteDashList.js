@@ -31,13 +31,17 @@ export const NoteDashList = () => {
     getNote();
   }, []);
 
+console.log("recentNote is saved as: ", recentNote)
+
   return (
-        <>
-  
-          {<NoteDashCard
-            key={recentNote?.id}
-            recentNote={recentNote}
-            handleDelete={handleDelete} /> }
+        <> {/* ternary statement that show cards if they exist and message if none exist yet */}
+          {recentNote ?
+            <NoteDashCard
+              key={recentNote?.id}
+              recentNote={recentNote}
+              handleDelete={handleDelete} />
+            : <div className="note-spacing">No Notes Yet</div>
+          } 
         </>
   );
 };

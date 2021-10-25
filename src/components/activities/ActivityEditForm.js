@@ -59,7 +59,7 @@ export const ActivityEditForm = () => {
         setActivity(activity);
         setIsLoading(false);
       });
-  }, []);
+  }, [activityId]);
 
   return (
 <>

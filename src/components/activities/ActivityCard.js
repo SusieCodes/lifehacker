@@ -13,7 +13,7 @@ const formatDate = (obj) => {
   return formattedDate;
 }
 
-export const ActivityCard = ({ activity, handleDeleteActivity }) => {
+export const ActivityCard = ({ activity, handleDelete }) => {
     return (
     <>
         <div className="card">
@@ -46,7 +46,7 @@ export const ActivityCard = ({ activity, handleDeleteActivity }) => {
             <button 
               type="button" 
               className="form-btn" 
-              onClick={() => handleDeleteActivity(activity?.id)}>
+              onClick={() => handleDelete(activity?.id)}>
                 Delete
             </button>
 

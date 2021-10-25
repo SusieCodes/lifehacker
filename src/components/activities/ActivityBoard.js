@@ -19,13 +19,11 @@ export const ActivityBoard = () => {
 const getFutureActivities = () => {
     const today = new Date();
     const parsedToday = today.getTime()
-    return getAllActivitiesByUserId(sessionStorage.getItem("lifehacker_user")).then(ActivitiesFromAPI => {
+    getAllActivitiesByUserId(sessionStorage.getItem("lifehacker_user")).then(ActivitiesFromAPI => {
       const copyOfActivities = [...ActivitiesFromAPI]
-      const futureDatedActivities = copyOfActivities.filter(function (evt) {
+      const futureDatedActivities = copyOfActivities.filter((evt) => {
           let evtDate = Date.parse(evt.date);
-          if (evtDate > parsedToday) {
-            return evt
-          }
+          return evtDate > parsedToday
       })
       setFutureActivities(futureDatedActivities);
     }); 
@@ -35,13 +33,11 @@ const getFutureActivities = () => {
   const getPastActivities = () => {
     const today = new Date();
     const parsedToday = today.getTime()
-    return getAllActivitiesByUserId(sessionStorage.getItem("lifehacker_user")).then(ActivitiesFromAPI => {
+    getAllActivitiesByUserId(sessionStorage.getItem("lifehacker_user")).then(ActivitiesFromAPI => {
       const copyOfActivities = [...ActivitiesFromAPI]
-      const pastDatedActivities = copyOfActivities.filter(function (evt) {
+      const pastDatedActivities = copyOfActivities.filter((evt) => {
           let evtDate = Date.parse(evt.date);
-          if (evtDate < parsedToday) {
-            return evt
-          }
+          return evtDate < parsedToday
       })
       pastDatedActivities.reverse() //reverses order of array so most recent Activity is at top of list
       setPastActivities(pastDatedActivities);
@@ -84,13 +80,9 @@ const getFutureActivities = () => {
     getPastActivities();
   }, []);
 
-// showFirstUpcomingActivity makes a copy of all futureActivities, grabs first activity from array and saves it to state as 'firstUpcomingActivity' on first render only
+// showFirstUpcomingActivity makes a copy of all futureActivities, grabs first activity from array and saves it to state as 'firstUpcomingActivity'
   useEffect(() => {
     showFirstUpcomingActivity();
-  }, [futureActivities]);
-
-// showRemainingUpcomingActivities makes a copy of all futureActivities, removes first activity and saves the rest to state as 'activities' on first render only
-  useEffect(() => {
     showRemainingUpcomingActivities();
   }, [futureActivities]);
 

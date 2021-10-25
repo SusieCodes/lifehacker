@@ -8,8 +8,6 @@ export const TodoDashCard = ({ todo, handleCompleteTodo }) => {
     const today = Date.now()
     const byWhen = Date.parse(todo.byWhen)
     let byWhenCheck = true;
-    console.log("byWhen is : ", byWhen)
-    console.log("today is ", today)
 
     if (byWhen < today) {
       byWhenCheck = false;

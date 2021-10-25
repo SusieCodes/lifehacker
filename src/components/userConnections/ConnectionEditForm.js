@@ -34,7 +34,8 @@ export const ConnectionEditForm = () => {
       notes: "",
       personality: "",
       enneagram: "",
-      timestamp: Date.now()
+      timestamp: Date.now(),
+      isFave: false
     });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -55,30 +56,30 @@ export const ConnectionEditForm = () => {
     // This is an edit, so we need the info
     const editedConnection = {
       id: connectionId,
-      userId: connection?.userId,
-      name: connection?.name,
-      image: connection?.image,
-      email: connection?.email,
-      phone: connection?.phone,
-      address: connection?.address,
-      city: connection?.city,
-      stateProvince: connection?.stateProvince,
-      zipCode: connection?.zipCode,
-      country: connection?.country,
-      work: connection?.work,
-      relationship: connection?.relationship,
-      bday: connection?.bday,
-      family: connection?.family,
-      pets: connection?.pets,
-      howWeMet: connection?.howWeMet,
-      giftIdeas: connection?.giftIdeas,
-      faveDrink: connection?.faveDrink,
-      faveDessert: connection?.faveDessert,
-      notes: connection?.notes,
-      zodiac: connection?.zodiac,
-      personality: connection?.personality,
-      enneagram: connection?.enneagram,
-      timestamp: connection?.timestamp
+      userId: connection.userId,
+      name: connection.name,
+      image: connection.image,
+      email: connection.email,
+      phone: connection.phone,
+      address: connection.address,
+      city: connection.city,
+      stateProvince: connection.stateProvince,
+      zipCode: connection.zipCode,
+      country: connection.country,
+      work: connection.work,
+      relationship: connection.relationship,
+      bday: connection.bday,
+      family: connection.family,
+      pets: connection.pets,
+      howWeMet: connection.howWeMet,
+      giftIdeas: connection.giftIdeas,
+      faveDrink: connection.faveDrink,
+      faveDessert: connection.faveDessert,
+      notes: connection.notes,
+      zodiac: connection.zodiac,
+      personality: connection.personality,
+      enneagram: connection.enneagram,
+      timestamp: connection.timestamp
     };
 
   update(editedConnection)
@@ -89,10 +90,12 @@ export const ConnectionEditForm = () => {
   useEffect(() => {
     getConnectionById(connectionId)
       .then(connection => {
-        setConnection(connection);
+        setConnection(connection[0]);
         setIsLoading(false);
       });
-  }, []);
+  }, [connectionId]); //wont cause infinite look because it comes from params
+
+console.log("connection is ", connection)
 
   return (
     <>
@@ -116,252 +119,253 @@ export const ConnectionEditForm = () => {
 
                 <label htmlFor="name">Name:</label>
                 <input
+                  name="name"
                   type="text"
                   required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="name"
-                  value={connection?.name}
+                  value={connection.name}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="email">Email:</label>
                 <input
+                  name="email"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="email"
-                  value={connection?.email}
+                  value={connection.email}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="phone">Phone:</label>
                 <input
+                  name="phone"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="phone"
-                  value={connection?.phone}
+                  value={connection.phone}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="address">Address:</label>
                 <input
+                  name="address"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="address"
-                  value={connection?.address}
+                  value={connection.address}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="city">City:</label>
                 <input
+                  name="city"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="city"
-                  value={connection?.city}
+                  value={connection.city}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="stateProvince">State/Province:</label>
                 <input
+                  name="stateProvince"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="stateProvince"
-                  value={connection?.stateProvince}
+                  value={connection.stateProvince}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="zipCode">Zipcode:</label>
                 <input
+                  name="zipCode"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="zipCode"
-                  value={connection?.zipCode}
+                  value={connection.zipCode}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="country">Country:</label>
                 <input
+                  name="country"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="country"
-                  value={connection?.country}
+                  value={connection.country}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="work">Work:</label>
                 <input
+                  name="work"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="work"
-                  value={connection?.work}
+                  value={connection.work}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="relationship">Relationship:</label>
                 <input
+                  name="relationship"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="relationship"
-                  value={connection?.relationship}
+                  value={connection.relationship}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="bday">Birthday:</label>
                 <input
+                  name="bday"
                   type="date"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="bday"
-                  value={connection?.bday}
+                  value={connection.bday}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="family">Family:</label>
                 <input
+                  name="family"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="family"
-                  value={connection?.family}
+                  value={connection.family}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="pets">Pets:</label>
                 <input
+                  name="pets"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="pets"
-                  value={connection?.pets}
+                  value={connection.pets}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="howWeMet">How We Met:</label>
                 <input
+                  name="howWeMet"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="howWeMet"
-                  value={connection?.howWeMet}
+                  value={connection.howWeMet}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="giftIdeas">Gift Ideas:</label>
                 <input
+                  name="giftIdeas"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="giftIdeas"
-                  value={connection?.giftIdeas}
+                  value={connection.giftIdeas}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="faveDrink">Favorite Drink:</label>
                 <input
+                  name="faveDrink"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="faveDrink"
-                  value={connection?.faveDrink}
+                  value={connection.faveDrink}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="faveDessert">Favorite Dessert:</label>
                 <input
+                  name="faveDessert"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="faveDessert"
-                  value={connection?.faveDessert}
+                  value={connection.faveDessert}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="notes">Notes:</label>
                 <input
+                  name="notes"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="notes"
-                  value={connection?.notes}
+                  value={connection.notes}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="zodiac">Zodiac:</label>
                 <input
+                  name="zodiac"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="zodiac"
-                  value={connection?.zodiac}
+                  value={connection.zodiac}
                 />
               </div> 
 
               <div className="form__group">
                 <label htmlFor="personality">Personality:</label>
                 <input
+                  name="personality"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="personality"
-                  value={connection?.personality}
+                  value={connection.personality}
                 />
               </div>
 
               <div className="form__group">
                 <label htmlFor="enneagram">Enneagram:</label>
                 <input
+                  name="enneagram"
                   type="text"
-                  required
                   className="form__group--edit"
                   onChange={handleFieldChange}
                   id="enneagram"
-                  value={connection?.enneagram}
+                  value={connection.enneagram}
                 />
               </div>
 
@@ -387,6 +391,8 @@ export const ConnectionEditForm = () => {
             </div>
 
         </div>
+
+       
 
     </div>
     </>

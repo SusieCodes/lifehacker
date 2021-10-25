@@ -5,6 +5,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 import { deleteConnection, getConnectionsByUserId } from "./ConnectionManager";
 import { ConnectionCard } from "./ConnectionCard";
+import { ConnectionDummyCard } from "./ConnectionDummyCard";
+
 import { formatDate } from "../helper";
 import "../dashboard/Dashboard.css"
 import "../LifeHacker.css"
@@ -80,9 +82,15 @@ export const ConnectionBoard = () => {
 
             </div>
 
+            {/* ternary statement that show cards if they exist and message if none exist yet */}
+            {connections[0] ?
             <div className="container">
                 {connections.map(connection => <ConnectionCard key={connection.id} connection={connection} handleDelete={handleDelete} />)}
             </div>
+            :   <div className="container">
+                    <ConnectionDummyCard />
+                </div>
+            }
 
         </div>
 

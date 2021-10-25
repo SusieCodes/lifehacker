@@ -5,13 +5,6 @@ import React from "react"
 import { Link } from "react-router-dom";
 // import {FaEdit, FaTrash } from "react-icons/fa"
 
-
-const formatDate = (obj) => {
-  const date = new Date(obj);
-  const formattedDate = date.toDateString(); // converts date object to a string that displays in format "Sun Jul 22 2018"
-  return formattedDate;
-}
-
 export const NoteCard = ({ note, handleDeleteNote, card }) => {
     return (
     <>

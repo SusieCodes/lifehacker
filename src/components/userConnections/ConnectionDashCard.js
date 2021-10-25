@@ -22,9 +22,11 @@ export const ConnectionDashCard = ({ connection, handleDelete }) => {
             <div className="pic-name">
 
               <div className="dc-image">
-                {connection.image !== "" ?
-                  <img src={require(`../../images/default.png`).default} alt={connection?.name} className="connection-photo"/> 
-                  : <img src={require(`../../images/default.png`).default} alt="default" className="connection-photo"/>}
+
+            {connection.image !== "" ?
+                <img src={require(`../../images/${connection.image}`).default} alt={connection.name} className="connection-photo"/> 
+                : <img src={require(`../../images/default.png`).default} alt="default" className="connection-photo"/>
+            }
               </div>
 
               <div className="dc-name">{connection?.name}

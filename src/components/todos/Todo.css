@@ -25,7 +25,7 @@ Dark Gray: #2b2b2b font color throughout
 }
 
 .todo-complete {
-  border: 1px solid black;
+  border: transparent;
 }
 
 .todo-icons {

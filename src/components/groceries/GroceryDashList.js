@@ -37,6 +37,9 @@ export const GroceryDashList = () => {
 
   return (
         <>
+
+          {firstFewItems[0] ?
+          <>
           <div className="dash-grocery__list">
           {firstFewItems.map(grocery => <GroceryDashCard key={grocery?.id} grocery={grocery} handleDelete={handleDelete} />)}
           </div>
@@ -44,6 +47,9 @@ export const GroceryDashList = () => {
           <div className="see-more">
             <Link to="/groceries">See Full List</Link>
           </div>
+          </>
+          : <div>No Groceries Yet</div>
+          }
         </>
   );
 };
