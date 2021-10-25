@@ -56,6 +56,7 @@ background-color: rgb(228, 228, 228);
 border-radius: 0px 0px 20px 20px;
 padding: 0px 30px 30px;
 margin: 15px 5px;
+min-height: 800px;
 color: #2B2B2B; 
 box-shadow: 5px 5px 5px lightgray;
 
@@ -263,3 +264,12 @@ input::placeholder {
   padding: 5px 10px;
   margin: 0px 5px 0px;
 }
+
+/* Styling for Board Cards */
+/* .card {
+  padding: 10px 0px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 2px 3px 7px gray;
+} */

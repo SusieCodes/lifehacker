@@ -15,19 +15,17 @@ const formatDate = (obj) => {
 export const NoteCard = ({ note, handleDeleteNote, card }) => {
     return (
     <>
-        <div className={card}>
+        <div className="note-card">
         
-          <div className="note__info">
+          <div className="note-info">
 
             <div><strong>Title:  {note?.title}</strong></div>
 
-            <div>{formatDate(note?.dayTime)}</div>
-
-            <div>{note?.post}</div>
+            <div>{note?.text}</div>
 
           </div>
 
-          <div className="remove__item">
+          <div className="remove-item">
 
             <Link to={`/notes/${note?.id}/edit`}><button className="button sm">edit icon</button></Link>
 

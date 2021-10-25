@@ -56,10 +56,12 @@ export const ConnectionCard = ({ connection, handleDelete }) => {
           <Link to={`/connections/${connection?.id}`}>Details</Link>
         </div>
 
-        <div className="connection-delete" onClick={() => handleEdit(connection?.id)}><FaEdit className="connection-edit-icon"/>
+        <div className="connection-delete" onClick={() => handleEdit(connection?.id)}>
+          <FaEdit className="connection-edit-icon"/>
         </div>
 
-        <div className="connection-delete" onClick={() => handleDelete(connection?.id)}><FaTrash className="connection-delete-icon"/>
+        <div className="connection-delete" onClick={() => handleDelete(connection?.id)}>
+          <FaTrash className="connection-delete-icon"/>
         </div>
 
       </div>

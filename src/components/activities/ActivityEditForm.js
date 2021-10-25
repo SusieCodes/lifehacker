@@ -5,7 +5,9 @@
 import React, { useState, useEffect } from "react"
 import { update, getActivityById } from "./ActivityManager"
 import { useParams, useHistory } from "react-router-dom"
+import { formatDate } from "../helper"
 import "./Activity.css"
+import "../LifeHacker.css"
 
 export const ActivityEditForm = () => {
   const [activity, setActivity] = useState(
@@ -15,7 +17,8 @@ export const ActivityEditForm = () => {
       address: "", 
       city: "", 
       zipcode: "", 
-      notes: "" 
+      notes: "", 
+      userId: parseInt(sessionStorage.getItem("lifehacker_user")) 
     });
     
   const [isLoading, setIsLoading] = useState(false);
@@ -41,7 +44,8 @@ export const ActivityEditForm = () => {
       address: activity.address,
       city: activity.city,
       zipcode: activity.zipcode,
-      notes: activity.notes
+      notes: activity.notes,
+      userId: activity.userId
     };
 
   update(editedActivity)
@@ -58,101 +62,115 @@ export const ActivityEditForm = () => {
   }, []);
 
   return (
-    <>
-    <div className="form__flex">
+<>
+    <div className="page">
 
-        <form>
+      <div className="page-title__flex">
 
-          <div className="form__title">Edit Activity
-          </div>
+      <div className="page-title__left">Welcome <span className="welcome-name">{sessionStorage.getItem("lifehacker_username")}</span></div>
 
-          <fieldset>
+      <div className="page-title__headline">Edit Activity</div>
 
-            <div className="form__group">
+      <div className="page-title__right">Today: &nbsp;&nbsp;<span className="todays-date">{formatDate(Date.now())}</span></div>
 
-              <label htmlFor="name">Activity Name:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="name"
-                value={activity.name}
-              />
+      </div>
 
-              <label htmlFor="date">Activity Date:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="date"
-                value={activity.date}
-              />
+      <div className="form-flex">
 
-              <label htmlFor="address">Activity Address:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="address"
-                value={activity.address}
-              />
+            <fieldset className="form">
 
-              <label htmlFor="city">Activity City:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="city"
-                value={activity.city}
-              />
+              <div className="form__group">
+                <label htmlFor="name">Name:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="name"
+                  value={activity.name}
+                />
+              </div>
 
-              <label htmlFor="zipcode">Activity Zipcode:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="zipcode"
-                value={activity.zipcode}
-              />
+              <div className="form__group">
+                <label htmlFor="date">Date:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="date"
+                  value={activity.date}
+                />
+              </div>
 
-              <label htmlFor="notes">Activity Notes:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="notes"
-                value={activity.notes}
-              />
+              <div className="form__group">
+                <label htmlFor="address">Address:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="address"
+                  value={activity.address}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="city">City:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="city"
+                  value={activity.city}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="zipcode">Zip/Postal Code:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="zipcode"
+                  value={activity.zipcode}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="notes">Notes:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="notes"
+                  value={activity.notes}
+                />
+              </div>
+
+            </fieldset>
+
+            <div className="form-btns">
+                
+                <button
+                  type="button" disabled={isLoading}
+                  onClick={updateExistingActivity}
+                  className="form-btn">Submit
+                  </button>
+
+                <button
+                  type="button"
+                  onClick={() => history.push(`/activities`)}
+                  className="form-btn">Cancel
+                  </button>
 
             </div>
 
-          </fieldset>
-
-          <div className="form-btns">
-              
-              <button
-                type="button" disabled={isLoading}
-                onClick={updateExistingActivity}
-                className="form-btn">Submit
-                </button>
-
-              <button
-                type="button"
-                onClick={() => history.push(`/activities`)}
-                className="form-btn">Cancel
-                </button>
-
-          </div>
-
-        </form>
-
-      </div>
-    </>
+        </div>
+    </div>
+</>
   );
 }

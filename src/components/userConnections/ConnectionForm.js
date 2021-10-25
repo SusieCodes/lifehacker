@@ -73,15 +73,11 @@ export const ConnectionForm = () => {
     }
 
     const handleControlledInputChange = (evt) => {
-      /* Because we are changing a state object or array,
-      we are creating a copy, making changes, and then setting state */
+
       const newConnection = { ...connection }
       let selectedVal = evt.target.value
   
-      /* Sets the property to the new value
-      using object bracket notation. */
       newConnection[evt.target.id] = selectedVal
-      // update state
       setConnection(newConnection)
     }
 
@@ -92,7 +88,6 @@ export const ConnectionForm = () => {
           console.log("connection.name === ''")
           setConflictDialog(true)
         } else {
-          console.log("else")
           addConnection(connection)
           .then(() => history.push("/connections"))
           }

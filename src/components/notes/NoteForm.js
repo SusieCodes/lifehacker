@@ -4,8 +4,14 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { addNote } from "./NoteManager";
+import { formatDate } from "../helper"
+import "./Note.css"
+import "../LifeHacker.css"
 
 export const NoteForm = () => {
+  const [conflictDialog, setConflictDialog] = useState(false);
+
+
 	// Defining initial state of the form inputs with useState()
 	const [ note, setNote ] = useState({
 		title: "",
@@ -44,50 +50,70 @@ export const NoteForm = () => {
 	const handleSave = (evt) => {
 		evt.preventDefault() //Prevents the browser from submitting the form
 
-		if ( note.title === "" || note.post === "" ) {
-			window.alert("Please Fill Out All Required Info")
+		if ( note.title === "" || note.text === "" ) {
+      setConflictDialog(true)
     } else {
-			//invoke addNote, passing event as an argument
-			//once completed, this changes the url and displays the event list
 			addNote(note)
 				.then(() => history.push("/notes"))
 		}
 	}
 
 	return (
-    <div className="form__flex">
-      <form>
-        <div className="form__title">Add New Note</div>
-        <fieldset>
+<>
 
-          <div className="form__group">
-            <label htmlFor="name">Note Title:</label>
-            <input type="text" id="title" onChange={handleControlledInputChange} required autoFocus className="form__group--edit" placeholder="Note Title" value={note.title} />
+    <div className="page">
 
-            <label htmlFor="text">Text:</label>
-            <input type="text" id="text" onChange={handleControlledInputChange} required className="form__group--edit" placeholder="Enter text" value={note.text} />
+      <div className="page-title__flex">
 
-          </div>
-        </fieldset>
+        <div className="page-title__left">Welcome <span className="welcome-name">{sessionStorage.getItem("lifehacker_username")}</span></div>
 
-        <div className="form__btns">
+        <div className="page-title__headline">Add A New Note</div>
 
-          <button className="form__btn"
-            onClick={handleSave}>
-            Submit
-          </button>
-
-          <button className="form__btn"
-            onClick={ResetForm}>
-            Reset Form
-          </button>
-
-          <button className="form__btn" onClick={() => history.push("/notes")}>Cancel</button>
+        <div className="page-title__right">Today: &nbsp;&nbsp;<span className="todays-date">{formatDate(Date.now())}</span></div>
 
         </div>
 
-      </form>
+      <div className="form-flex">
+
+          <fieldset className="form">
+
+          <dialog className="dialog" open={conflictDialog}>
+              <div className="dialog-forms">Please Fill In Title and Text</div>
+              <button className="button-close" onClick={e => setConflictDialog(false)}>Close</button>
+          </dialog>
+
+            <div className="form__group">
+              <label htmlFor="name">Title:</label>
+              <input type="text" id="title" onChange={handleControlledInputChange} required autoFocus className="form__group--edit" placeholder="Note Title" value={note.title} />
+            </div>
+
+            <div className="form__group">
+              <label htmlFor="text">Text:</label>
+              <input type="text" id="text" onChange={handleControlledInputChange} required className="form__group--edit" placeholder="Enter text" value={note.text} />
+            </div>
+
+          </fieldset>
+
+          <div className="form-btns">
+
+            <button className="form-btn"
+              onClick={handleSave}>
+              Submit
+            </button>
+
+            <button className="form-btn"
+              onClick={ResetForm}>
+              Reset Form
+            </button>
+
+            <button className="form-btn" onClick={() => history.push("/notes")}>Cancel</button>
+
+          </div>
+
+      </div>
+
     </div>
+</>
 	)
 };
 

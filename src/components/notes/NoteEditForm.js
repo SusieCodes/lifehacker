@@ -5,7 +5,9 @@
 import React, { useState, useEffect } from "react"
 import { update, getNoteById } from "./NoteManager"
 import { useParams, useHistory } from "react-router-dom"
-
+import { formatDate } from "../helper"
+import "./Note.css"
+import "../LifeHacker.css"
 
 export const NoteEditForm = () => {
   const [note, setNote] = useState(
@@ -54,61 +56,70 @@ export const NoteEditForm = () => {
   }, []);
 
   return (
-    <>
-    <div className="form__flex">
+<>
 
-        <form>
+    <div className="page">
 
-          <div className="form__title">Edit Note
-          </div>
+        <div className="page-title__flex">
 
-          <fieldset>
+        <div className="page-title__left">Welcome <span className="welcome-name">{sessionStorage.getItem("lifehacker_username")}</span></div>
 
-            <div className="form__group">
+        <div className="page-title__headline">Edit Note</div>
 
-              <label htmlFor="name">Note Title:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="title"
-                value={note.title}
-              />
+        <div className="page-title__right">Today: &nbsp;&nbsp;<span className="todays-date">{formatDate(Date.now())}</span></div>
 
-              <label htmlFor="text">Text</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="text"
-                value={note.text}
-              />
+        </div>
+
+        <div className="form-flex">
+
+            <fieldset className="form">
+
+              <div className="form__group">
+                  <label htmlFor="name">Title:</label>
+                  <input
+                    type="text"
+                    required
+                    className="form__group--edit"
+                    onChange={handleFieldChange}
+                    id="title"
+                    value={note.title}
+                  />
+                </div>
+
+                <div className="form__group">
+                  <label htmlFor="text">Text</label>
+                  <input
+                    type="text"
+                    required
+                    className="form__group--edit"
+                    onChange={handleFieldChange}
+                    id="text"
+                    value={note.text}
+                  />
+                </div>
+
+            </fieldset>
+
+            <div className="form-btns">
+                
+                <button
+                  type="button" disabled={isLoading}
+                  onClick={updateExistingNote}
+                  className="form-btn">Submit
+                  </button>
+
+                <button
+                  type="button"
+                  onClick={() => history.push(`/notes`)}
+                  className="form-btn">Cancel
+                  </button>
 
             </div>
 
-          </fieldset>
+        </div>
 
-          <div className="form__btns">
-              
-              <button
-                type="button" disabled={isLoading}
-                onClick={updateExistingNote}
-                className="form__btn">Submit
-                </button>
+    </div>
 
-              <button
-                type="button"
-                onClick={() => history.push(`/notes`)}
-                className="form__btn">Cancel
-                </button>
-
-          </div>
-
-        </form>
-
-      </div>
-    </>
+</>
   );
 }

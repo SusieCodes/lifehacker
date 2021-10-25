@@ -4,8 +4,8 @@
 
 const remoteUrl = "http://localhost:8088"
 
-export const getAllTodosByUserId = (UserId) => {
-    return fetch(`${remoteUrl}/todos/?userId=${UserId}&_sort=byWhen&_order=asc`)
+export const getAllTodosByUserId = (userId) => {
+    return fetch(`${remoteUrl}/todos/?userId=${userId}&_sort=byWhen&_order=asc`)
         .then(res => res.json())
 }
 

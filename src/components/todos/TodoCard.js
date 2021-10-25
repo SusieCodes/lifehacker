@@ -4,36 +4,61 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-// import {FaEdit, FaTrash } from "react-icons/fa"
+import {FaEdit, FaTrash } from "react-icons/fa"
 
 
-export const TodoCard = ({ todo, handleDeleteTodo, handleCompleteTodo }) => {
+export const TodoCard = ({ todo, handleDelete, handleCompleteTodo }) => {
 
     if (todo.userId === parseInt(sessionStorage.getItem("lifehacker_user"))) {
         return (
             <>
-                <div className="card__content--todo">
+                <div className="todo-card">
 
-                    <div className="todo__info">
+                    <div className="todo-info">
 
-                            <label className="todo__section">
-                                <div className="todo__title"><strong>{todo.title}</strong></div>
+                            <label className="todo-section">
+                                <div className="todo-title"><strong>{todo.title}</strong></div>
                                 <div><strong>By When: </strong> {todo.byWhen}</div>
                             </label>
 
                     </div>
 
-                    <div className="todo__btns">
-                        <div className="todo__complete">
-                        <input type="checkbox" className="checkbox" onClick={() => handleCompleteTodo(todo.id)} />
+                    <div className="todo-complete">
+                        <input 
+                            type="checkbox" 
+                            className="checkbox" 
+                            onClick={() => handleCompleteTodo(todo.id)} />
                         <label>Complete </label>
-                        </div>
+                    </div>
 
-                        <div className="todo__edit__btns">
-                        <Link to={`/todos/${todo?.id}/edit`}><button className="button sm">edit icon</button></Link>
+                    {/* <div className="form-btns">
 
-                        <button type="button" className="button sm" onClick={() => handleDeleteTodo(todo?.id)}>delete icon</button>
-                        </div>
+                        <Link to={`/todos/${todo?.id}/edit`}>
+                            <button 
+                            className="form-btn__sm">
+                                Edit
+                            </button>
+                        </Link>
+
+                        <button 
+                            type="button" 
+                            className="form-btn_sm" 
+                            onClick={() => handleDelete(todo?.id)}>
+                                Delete
+                        </button>
+
+                    </div> */}
+
+                    <div className="todo-icons">
+
+                    <Link to={`/todos/${todo?.id}/edit`} className="todo-edit">
+                        <FaEdit className="todo-edit-icon"/>
+                    </Link>
+
+                    <div className="todo-delete" onClick={() => handleDelete(todo?.id)}>
+                        <FaTrash className="todo-delete-icon"/>
+                    </div>
+
                     </div>
 
                 </div>

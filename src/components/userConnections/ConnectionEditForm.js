@@ -108,285 +108,285 @@ export const ConnectionEditForm = () => {
 
       </div>
 
-    <div className="form-flex">
+      <div className="form-flex">
 
-          <fieldset className="form">
+            <fieldset className="form">
 
-            <div className="form__group">
+              <div className="form__group">
 
-              <label htmlFor="name">Name:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="name"
-                value={connection?.name}
-              />
+                <label htmlFor="name">Name:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="name"
+                  value={connection?.name}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="email">Email:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="email"
+                  value={connection?.email}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="phone">Phone:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="phone"
+                  value={connection?.phone}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="address">Address:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="address"
+                  value={connection?.address}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="city">City:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="city"
+                  value={connection?.city}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="stateProvince">State/Province:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="stateProvince"
+                  value={connection?.stateProvince}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="zipCode">Zipcode:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="zipCode"
+                  value={connection?.zipCode}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="country">Country:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="country"
+                  value={connection?.country}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="work">Work:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="work"
+                  value={connection?.work}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="relationship">Relationship:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="relationship"
+                  value={connection?.relationship}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="bday">Birthday:</label>
+                <input
+                  type="date"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="bday"
+                  value={connection?.bday}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="family">Family:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="family"
+                  value={connection?.family}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="pets">Pets:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="pets"
+                  value={connection?.pets}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="howWeMet">How We Met:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="howWeMet"
+                  value={connection?.howWeMet}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="giftIdeas">Gift Ideas:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="giftIdeas"
+                  value={connection?.giftIdeas}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="faveDrink">Favorite Drink:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="faveDrink"
+                  value={connection?.faveDrink}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="faveDessert">Favorite Dessert:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="faveDessert"
+                  value={connection?.faveDessert}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="notes">Notes:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="notes"
+                  value={connection?.notes}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="zodiac">Zodiac:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="zodiac"
+                  value={connection?.zodiac}
+                />
+              </div> 
+
+              <div className="form__group">
+                <label htmlFor="personality">Personality:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="personality"
+                  value={connection?.personality}
+                />
+              </div>
+
+              <div className="form__group">
+                <label htmlFor="enneagram">Enneagram:</label>
+                <input
+                  type="text"
+                  required
+                  className="form__group--edit"
+                  onChange={handleFieldChange}
+                  id="enneagram"
+                  value={connection?.enneagram}
+                />
+              </div>
+
+            </fieldset>
+
+            <div className="form-btns">
+                
+                <button
+                  type="button" 
+                  disabled={isLoading}
+                  className="form-btn"
+                  onClick={updateExistingConnection}>
+                    Submit
+                  </button>
+
+                <button
+                  type="button"
+                  className="form-btn"
+                  onClick={() => history.push(`/connections`)}>
+                    Cancel
+                  </button>
+
             </div>
 
-            <div className="form__group">
-              <label htmlFor="email">Email:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="email"
-                value={connection?.email}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="phone">Phone:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="phone"
-                value={connection?.phone}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="address">Address:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="address"
-                value={connection?.address}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="city">City:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="city"
-                value={connection?.city}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="stateProvince">State/Province:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="stateProvince"
-                value={connection?.stateProvince}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="zipCode">Zipcode:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="zipCode"
-                value={connection?.zipCode}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="country">Country:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="country"
-                value={connection?.country}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="work">Work:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="work"
-                value={connection?.work}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="relationship">Relationship:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="relationship"
-                value={connection?.relationship}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="bday">Birthday:</label>
-              <input
-                type="date"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="bday"
-                value={connection?.bday}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="family">Family:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="family"
-                value={connection?.family}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="pets">Pets:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="pets"
-                value={connection?.pets}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="howWeMet">How We Met:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="howWeMet"
-                value={connection?.howWeMet}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="giftIdeas">Gift Ideas:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="giftIdeas"
-                value={connection?.giftIdeas}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="faveDrink">Favorite Drink:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="faveDrink"
-                value={connection?.faveDrink}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="faveDessert">Favorite Dessert:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="faveDessert"
-                value={connection?.faveDessert}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="notes">Notes:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="notes"
-                value={connection?.notes}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="zodiac">Zodiac:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="zodiac"
-                value={connection?.zodiac}
-              />
-            </div> 
-
-            <div className="form__group">
-              <label htmlFor="personality">Personality:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="personality"
-                value={connection?.personality}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="enneagram">Enneagram:</label>
-              <input
-                type="text"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                id="enneagram"
-                value={connection?.enneagram}
-              />
-            </div>
-
-          </fieldset>
-
-          <div className="form-btns">
-              
-              <button
-                type="button" 
-                disabled={isLoading}
-                className="form-btn"
-                onClick={updateExistingConnection}>
-                  Submit
-                </button>
-
-              <button
-                type="button"
-                className="form-btn"
-                onClick={() => history.push(`/connections`)}>
-                  Cancel
-                </button>
-
-          </div>
-
-      </div>
+        </div>
 
     </div>
     </>

@@ -1,0 +1,79 @@
+/* Author: Susie Stanley
+Purpose: To Do pages styling
+
+Colors used:
+Light Blue: #c8e6ea
+Light Blue: #c8e6ea68 (faded)
+Dark Blue: rgb(82, 207, 223) Details button border
+Red: #D61212
+Light Gray: rgba(211, 211, 211, 0.468) Dashboard Connections header
+Dark Gray: #2b2b2b font color throughout
+*/
+.todo-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px 0px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 2px 3px 7px gray;
+}
+
+.todo-info {
+  border: 1px solid black;
+}
+
+.todo-complete {
+  border: 1px solid black;
+}
+
+.todo-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  margin-right: 30px;
+  /* width: 300px; */
+  border: 1px solid black;
+}
+
+.todo-delete {
+  margin: auto 0px;
+  padding-top: 2px;
+  /* border: 1px solid black; */
+}
+
+.todo-edit {
+  margin: auto 0px;
+  padding: 0px;
+  /* border: 1px solid black; */
+}
+
+.todo-edit-icon {
+  color: #2b2b2b;
+  margin: auto 20px;
+  width: 30px;
+  height: 30px;
+  transition: all .2s ease-in-out;
+}
+
+.todo-edit-icon:hover {
+  transform: scale(1.5);
+  color: #41C5D8;
+}
+
+.todo-delete-icon {
+  color: #2b2b2b;
+  margin: auto 20px;
+  width: 28px;
+  height: 28px;
+  transition: all .2s ease-in-out;
+}
+
+.todo-delete-icon:hover {
+  transform: scale(1.5);
+  color: #D61212;
+}

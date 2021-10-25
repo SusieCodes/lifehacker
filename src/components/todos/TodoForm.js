@@ -5,10 +5,14 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import { addTodo } from "./TodoManager";
-
+import { formatDate } from "../helper"
+import "./Todo.css"
+import "../LifeHacker.css"
 
 
 export const TodoForm = () => {
+    const [conflictDialog, setConflictDialog] = useState(false);
+
     const [todo, setTodo] = useState({
         title: "",
         byWhen: "",
@@ -25,73 +29,105 @@ export const TodoForm = () => {
             isCompleted: false,
             userId: parseInt(sessionStorage.getItem("lifehacker_user"))
         });
-        console.log("resetForm invoked")
       }
 
     const handleControlledInputChange = (event) => {
+
         const newTodo = { ...todo }
         let selectedVal = event.target.value
-        if (event.target.id.includes("Id")) {
-            selectedVal = parseInt(selectedVal)
-        }
+            // selectedVal = parseInt(selectedVal)
+
         newTodo[event.target.id] = selectedVal
         setTodo(newTodo)
     }
-    const handleSaveTodo = (event) => {
-        event.preventDefault()
-        const nameList = todo.title
-        const dateList = todo.byWhen
 
-        if (nameList === "" || dateList === "") {
-            window.alert("Please fill out all required info")
-        } else {
+    const handleSave = (event) => {
+        event.preventDefault() //Prevents the browser from submitting the form
+        if (todo.title === "" || todo.byWhen === "") {
+            setConflictDialog(true)
+          } else {
             addTodo(todo)
-                .then(() => history.push("/todos"))
-        }
+            .then(() => history.push("/todos"))
+            }
     }
 
     return (
-        <>
-        <div className="form__flex">
+<>
+        <div className="page">
 
-            <form>
+            <div className="page-title__flex">
 
-                <div className="form__title">Add New To-Do
-                </div>
+            <div className="page-title__left">Welcome <span className="welcome-name">{sessionStorage.getItem("lifehacker_username")}</span></div>
 
-                <fieldset>
+            <div className="page-title__headline">Add A New To-Do</div>
+
+            <div className="page-title__right">Today: &nbsp;&nbsp;<span className="todays-date">{formatDate(Date.now())}</span></div>
+
+            </div>
+
+            <div className="form-flex">
+
+                <fieldset className="form">
+
+                    <dialog className="dialog" open={conflictDialog}>
+                        <div className="dialog-forms">Please Fill In A Title and Choose A Date</div>
+                        <button className="button-close" onClick={e => setConflictDialog(false)}>Close</button>
+                    </dialog>
 
                     <div className="form__group">
-
-                        <label htmlFor="title">Enter To-Do: </label>
-
-                        <input type="text" id="title" onChange={handleControlledInputChange} required autoFocus className="form__group--edit" placeholder="To-Do" value={todo.title} />
-
+                        <label htmlFor="title">To-Do List Item: </label>
+                        <input 
+                        type="text" 
+                        id="title" 
+                        onChange={handleControlledInputChange} 
+                        required autoFocus 
+                        className="form__group--edit" placeholder="Do Laundry etc" 
+                        value={todo.title}
+                        />
                     </div>
 
                     <div className="form__group">
-
                         <label htmlFor="byWhen">Select 'By When': </label>
-
-                        <input type="date" id="byWhen" onChange={handleControlledInputChange} required className="form__group--edit" value={todo.byWhen} />
-
+                        <input 
+                        type="date" 
+                        id="byWhen" 
+                        onChange={handleControlledInputChange} 
+                        required 
+                        className="form__group--edit" 
+                        value={todo.byWhen}
+                        />
                     </div>
 
                 </fieldset>
 
-                <div className="form__btns">
+                <div className="form-btns">
 
-                    <button className="form__btn" onClick={handleSaveTodo}>Submit</button>
+                    <button
+                        type="button"
+                        className="form-btn" 
+                        onClick={handleSave}>
+                            Submit
+                    </button>
 
-                    <button className="form__btn" onClick={ResetForm}>Reset Form</button>
+                    <button 
+                        type="button"
+                        className="form-btn" 
+                        onClick={ResetForm}>
+                            Reset Form
+                    </button>
 
-                    <button type="button" className="form__btn" onClick={() => { history.push("/todos") }}>Cancel</button>
+                    <button 
+                        type="button" 
+                        className="form-btn" 
+                        onClick={() => { history.push("/todos") }}>
+                            Cancel
+                    </button>
 
                 </div>
-
-            </form>
                 
+            </div>
+
         </div>
-        </>
+</>
     )
 }

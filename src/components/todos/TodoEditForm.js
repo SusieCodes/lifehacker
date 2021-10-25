@@ -4,6 +4,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router";
 import { getTodoById, update } from "./TodoManager";
+import { formatDate } from "../helper"
+import "./Todo.css"
+import "../LifeHacker.css"
 
 export const TodoEditForm = () => {
     const [todo, setTodo] = useState({ title: "", byWhen: "" })
@@ -42,19 +45,26 @@ export const TodoEditForm = () => {
     }, []);
 
     return (
-        <>
-        <div className="form__flex">
+<>
 
-            <form>
+    <div className="page">
 
-                <div className="form__title">Edit To-Do
-                </div>
+        <div className="page-title__flex">
 
-                <fieldset>
+        <div className="page-title__left">Welcome <span className="welcome-name">{sessionStorage.getItem("lifehacker_username")}</span></div>
+
+        <div className="page-title__headline">Edit To Do Item</div>
+
+        <div className="page-title__right">Today: &nbsp;&nbsp;<span className="todays-date">{formatDate(Date.now())}</span></div>
+
+        </div>
+
+        <div className="form-flex">
+
+                <fieldset className="form">
 
                     <div className="form__group">
-
-                        <label htmlFor="title">To-Do Title</label>
+                        <label htmlFor="title">To-Do</label>
                         <input
                             type="text"
                             required
@@ -63,7 +73,8 @@ export const TodoEditForm = () => {
                             id="title"
                             value={todo.title}
                         />
-
+                    </div>
+                    <div className="form__group">
                         <label htmlFor="byWhen">By When</label>
                         <input
                             type="date"
@@ -73,31 +84,30 @@ export const TodoEditForm = () => {
                             id="byWhen"
                             value={todo.byWhen}
                         />
-
                     </div>
 
                 </fieldset>
 
 
-                <div className="form__btns">
+                <div className="form-btns">
 
                         <button
                             type="button" disabled={isLoading}
                             onClick={updateExistingTodo}
-                            className="form__btn">Submit
+                            className="form-btn">Submit
                         </button>
 
                         <button
                             type="button"
                             onClick={() => history.push(`/todos`)}
-                            className="form__btn">Cancel
+                            className="form-btn">Cancel
                         </button>
                         
                 </div>
 
-            </form>
-
         </div>
-        </>
+
+    </div>
+</>
     )
 }
