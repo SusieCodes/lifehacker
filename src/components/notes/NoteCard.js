@@ -5,7 +5,7 @@ import React from "react"
 import { Link } from "react-router-dom";
 // import {FaEdit, FaTrash } from "react-icons/fa"
 
-export const NoteCard = ({ note, handleDeleteNote, card }) => {
+export const NoteCard = ({ note, handleDelete }) => {
     return (
     <>
         <div className="note-card">
@@ -14,15 +14,15 @@ export const NoteCard = ({ note, handleDeleteNote, card }) => {
 
             <div><strong>Title:  {note?.title}</strong></div>
 
-            <div>{note?.text}</div>
+            <div>{note.text}</div>
 
           </div>
 
           <div className="remove-item">
 
-            <Link to={`/notes/${note?.id}/edit`}><button className="button sm">edit icon</button></Link>
+            <Link to={`/notes/${note.id}/edit`}><button className="button sm">edit icon</button></Link>
 
-            <button type="button" className="button sm" onClick={() => handleDeleteNote(note?.id)}>delete icon</button>
+            <button type="button" className="button sm" onClick={() => handleDelete(note.id)}>delete icon</button>
 
 
           </div>

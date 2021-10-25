@@ -3,23 +3,13 @@
 
 const url = "http://localhost:8088"
 export const getConnectionsByUserId = (userId) => {
-    return fetch(`${url}/connections/?userId=${userId}`, {
-              method: "GET",
-              headers: {
-                "Content-Type": "application/json"     
-              },
-          })
+    return fetch(`${url}/connections/?userId=${userId}`)
         .then(res => res.json())
 }
 
 export const getConnectionById = (id) => {
   console.log("getConnectionsById invoked & id is: ", id)
-    return fetch(`${url}/connections/?id=${id}`, {
-              method: "GET",
-              headers: {
-                "Content-Type": "application/json"     
-              },
-          })
+    return fetch(`${url}/connections/?id=${id}`)
         .then(res => res.json())
 }
 

@@ -10,17 +10,17 @@ export const NoteBoard = () => {
     const [notes, setNotes] = useState([])
 
     const getNotes = () => {
-        console.log("getNotes function invoked")
-        getNotesByUserId(sessionStorage.getItem("lifehacker_user")).then(response => {
-            console.log("response is: ", response)
-            setNotes(response);
+        getNotesByUserId(sessionStorage.getItem("lifehacker_user"))
+				.then(notesFromAPI => {
+            setNotes(notesFromAPI);
         })
     }
 
-    const handleDelete = (noteId) => {
-        //invoke the delete function and re-direct to the list
-        deleteNote(noteId).then(() => getNotesByUserId(sessionStorage.getItem("lifehacker_user")).then(setNotes))
-        console.log("noteId is: ", noteId);
+    const handleDelete = (id) => {
+        deleteNote(id)
+        .then(() => {
+            getNotes()
+        })
     };
 
     useEffect(() => {
@@ -41,7 +41,12 @@ export const NoteBoard = () => {
             </div>
 
             <div className="container">
-                {notes.map(note => <NoteCard key={note.id} note={note} handleDelete={handleDelete} />)}
+                {notes.map(note => 
+                  <NoteCard 
+									key={note.id} 
+									note={note} 
+									handleDelete={handleDelete} />
+								)}
             </div>
 
         </div>

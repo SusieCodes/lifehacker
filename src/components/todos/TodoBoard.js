@@ -2,27 +2,31 @@
 //Purpose: Outputs A List Of To-Do List Items to the DOM
 
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import { TodoCard } from "./TodoCard";
 import { completeTodo, deleteTodo, getAllTodosByUserId } from "./TodoManager";
-import { Link } from 'react-router-dom';
 
 export const TodoBoard = () => {
     const [todos, setTodos] = useState([]);
 
     const getTodos = () => {
-        return getAllTodosByUserId(sessionStorage.getItem("lifehacker_user")).then(todosFromAPI => {
+        getAllTodosByUserId(sessionStorage.getItem("lifehacker_user"))
+        .then(todosFromAPI => {
             setTodos(todosFromAPI)
-        });
-    };
+        })
+    }
 
     const handleDelete = (id) => {
         deleteTodo(id)
-            .then(() => getAllTodosByUserId(sessionStorage.getItem("lifehacker_user")).then(setTodos));
+				.then(() => {
+						getTodos()
+				})
     };
 
     const handleCompleteTodo = (id) => {
         completeTodo(id)
-            .then(() => getAllTodosByUserId(sessionStorage.getItem("lifehacker_user")).then(setTodos));
+            .then(() => getAllTodosByUserId(sessionStorage.getItem("lifehacker_user"))
+						.then(setTodos));
     }
 
     useEffect(() => {

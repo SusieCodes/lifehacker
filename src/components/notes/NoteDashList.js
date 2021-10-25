@@ -12,7 +12,6 @@ export const NoteDashList = () => {
   // grabs all notes from API, splices off the first one and sets it to state
   const getNote = () => {
     return getNotesByUserId(sessionStorage.getItem("lifehacker_user")).then(notesFromAPI => {
-      console.log("notesFromAPI is", notesFromAPI)
         let firstNote = notesFromAPI.splice(0, 1);
         setRecentNote(firstNote[0])
     });
@@ -30,8 +29,6 @@ export const NoteDashList = () => {
   useEffect(() => {
     getNote();
   }, []);
-
-console.log("recentNote is saved as: ", recentNote)
 
   return (
         <> {/* ternary statement that show cards if they exist and message if none exist yet */}

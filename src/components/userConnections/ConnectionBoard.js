@@ -16,17 +16,14 @@ export const ConnectionBoard = () => {
     const [connections, setConnections] = useState([])
 
     const getConnections = () => {
-        console.log("getConnections function invoked")
-        getConnectionsByUserId(sessionStorage.getItem("lifehacker_user")).then(response => {
-            console.log("response is: ", response)
-            setConnections(response);
+        getConnectionsByUserId(sessionStorage.getItem("lifehacker_user")).then(userConnections => {
+            setConnections(userConnections);
         })
     }
 
     const handleDelete = (connectionId) => {
         //invoke the delete function and re-direct to the list
         deleteConnection(connectionId).then(() => getConnectionsByUserId(sessionStorage.getItem("lifehacker_user")).then(setConnections))
-        console.log("connectionId is: ", connectionId);
     };
 
     useEffect(() => {

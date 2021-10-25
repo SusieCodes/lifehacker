@@ -31,7 +31,6 @@ export const NoteForm = () => {
       dayTime: Date.now(),
       userId: parseInt(sessionStorage.getItem("lifehacker_user"))
     });
-    console.log("resetForm invoked")
   }
 
 	const handleControlledInputChange = (evt) => {

@@ -70,6 +70,7 @@ export const ConnectionForm = () => {
         enneagram: "",
         timestamp: Date.now()
       })
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     const handleControlledInputChange = (evt) => {
@@ -124,7 +125,9 @@ export const ConnectionForm = () => {
                     id="name"
                     required
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" First &#38; Last Name" />
+                    placeholder=" First &#38; Last Name"
+                    value={connection.name}
+                    />
                 </div>
 
                 <div className="form__group">
@@ -133,7 +136,9 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="email" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" name@email.com" />
+                    placeholder=" name@email.com" 
+                    value={connection.email}
+                    />
                 </div>
 
                 <div className="form__group">
@@ -142,7 +147,9 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="phone" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" XXX-XXX-XXXX" />
+                    placeholder=" XXX-XXX-XXXX" 
+                    value={connection.phone}
+                    />
                 </div>
 
                 <div className="form__group">
@@ -151,7 +158,9 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="address" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" Enter Street Address" />
+                    placeholder=" Enter Street Address" 
+                    value={connection.address}
+                    />
                 </div>
 
                 <div className="form__group">
@@ -160,7 +169,9 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="city" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" Enter City" />
+                    placeholder=" Enter City" 
+                    value={connection.city}
+                    />
                 </div>
 
                 <div className="form__group">
@@ -169,7 +180,9 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="stateProvince" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" Enter 2 Letter Code" />
+                    placeholder=" Enter 2 Letter Code" 
+                    value={connection.stateProvince}
+                    />
                 </div>
 
                 <div className="form__group">
@@ -178,7 +191,9 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="zipCode" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" 90210 or V3C 2XR" />
+                    placeholder=" 90210 or V3C 2XR" 
+                    value={connection.zipCode}
+                    />
                 </div>
 
                 <div className="form__group">
@@ -187,7 +202,8 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="country" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" USA, Canada etc" />
+                    placeholder=" USA, Canada etc" 
+                    value={connection.country}/>
                 </div>
 
                 <div className="form__group">
@@ -196,7 +212,9 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="work" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" Company/Industry" />
+                    placeholder=" Company/Industry" 
+                    value={connection.work}
+                    />
                 </div>
 
                 <div className="form__group">
@@ -205,7 +223,9 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="relationship" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" Friend, sibling etc" />
+                    placeholder=" Friend, sibling etc" 
+                    value={connection.relationship}
+                    />
                 </div>
 
                 <div className="form__group light-font">
@@ -213,7 +233,9 @@ export const ConnectionForm = () => {
                     <input 
                     type="date" 
                     id="bday" 
-                    onChange={handleControlledInputChange} className="form__group--edit" />
+                    onChange={handleControlledInputChange} className="form__group--edit" 
+                    value={connection.bday}
+                    />
                 </div>
 
                 <div className="form__group">
@@ -222,7 +244,9 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="family" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" Spouse, children etc" />
+                    placeholder=" Spouse, children etc" 
+                    value={connection.family}
+                    />
                 </div>
 
                 <div className="form__group">
@@ -231,7 +255,9 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="pets" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" Pet names &#38; bdays" />
+                    placeholder=" Pet names &#38; bdays" 
+                    value={connection.pets}
+                    />
                 </div>
 
                 <div className="form__group">
@@ -240,7 +266,9 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="howWeMet" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" How Did You Meet?" />
+                    placeholder=" How Did You Meet?" 
+                    value={connection.howWeMet}
+                    />
                 </div>
 
                 <div className="form__group">
@@ -249,7 +277,9 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="giftIdeas" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" Gifts or stores" />
+                    placeholder=" Gifts or stores" 
+                    value={connection.giftIdeas}
+                    />
                 </div>
 
                 <div className="form__group">
@@ -258,7 +288,9 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="faveDrink" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" Wine, beer, juice etc" />
+                    placeholder=" Wine, beer, juice etc" 
+                    value={connection.faveDrink}
+                    />
                 </div>
 
                 <div className="form__group">
@@ -267,7 +299,9 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="faveDessert" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" Cake, ice cream etc" />
+                    placeholder=" Cake, ice cream etc" 
+                    value={connection.faveDessert}
+                    />
                 </div>
 
                 <div className="form__group">
@@ -276,7 +310,9 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="notes" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" General notes" />
+                    placeholder=" General notes" 
+                    value={connection.notes}
+                    />
                 </div>
 
                 <div className="form__group">
@@ -285,7 +321,9 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="zodiac" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" Aquarius, Libra etc" />
+                    placeholder=" Aquarius, Libra etc" 
+                    value={connection.zodiac}
+                    />
                 </div>
 
                 <div className="form__group">
@@ -294,7 +332,9 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="personality" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" e.g. INTJ" />
+                    placeholder=" e.g. INTJ" 
+                    value={connection.personality}
+                    />
                 </div>
 
                 <div className="form__group">
@@ -303,7 +343,9 @@ export const ConnectionForm = () => {
                     type="text" 
                     id="enneagram" 
                     onChange={handleControlledInputChange} className="form__group--edit" 
-                    placeholder=" Number" />
+                    placeholder=" Number" 
+                    value={connection.enneagram}
+                    />
                 </div>
 
             </fieldset>
@@ -311,23 +353,24 @@ export const ConnectionForm = () => {
             <div className="form-btns">
 
                 <button 
-                  type="button" 
-                  className="form-btn" 
-                  onClick={handleSave}>
-                    Submit
+                    type="button" 
+                    className="form-btn" 
+                    onClick={handleSave}>
+                        Submit
                 </button>
 
                 <button 
-                  type="button"
-                  className="form-btn"
-                  onClick={ResetForm}>
-                    Reset Form
+                    type="button"
+                    className="form-btn"
+                    onClick={ResetForm}>
+                        Reset Form
                 </button>
 
-                <button 
-                  className="form-btn" 
-                  onClick={() => history.push("/connections")}>
-                    Cancel
+                <button
+                    type="button"
+                    className="form-btn" 
+                    onClick={() => history.push("/connections")}>
+                        Cancel
                 </button>
 
             </div>

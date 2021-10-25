@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom";
+import "../../src/components/LifeHacker.css"
 
 export const Register = () => {
 
@@ -66,8 +67,8 @@ export const Register = () => {
                 <button className="button--close" onClick={e => setConflictDialog(false)}>Close</button>
             </dialog>
 
-            <div classname="form__flex">
-                <div className="form__flex__inner">
+            <div className="form-flex">
+                <div className="form-flex-inner">
                     <form className="form--login" onSubmit={handleRegister}>
                         <h1 className="register--headline">Please Register for Life Hacker</h1>
                         <fieldset>
@@ -77,8 +78,17 @@ export const Register = () => {
                             <label htmlFor="inputEmail"> Email address </label>
                             <input type="email" name="email" id="email" className="form__group--edit" placeholder="Email address" required value={registerUser.email} onChange={handleInputChange} />
 
-                            <div className="form__btns">
-                            <button type="submit" className="register__btn"> Register </button>
+                            <div className="form-btns">
+
+                                <button type="submit" className="form-btn"> Register </button>
+
+                                <button
+                                    type="button"
+                                    className="form-btn"
+                                    onClick={() => history.push(`/login`)}>
+                                        Cancel
+                                </button>
+
                             </div>
                         </fieldset>
                     </form>

@@ -134,7 +134,7 @@ const getFutureActivities = () => {
 
                 {pastActivities.map(activity =>
                   <ActivityCard
-                    key={activity?.id}
+                    key={activity.id}
                     activity={activity}
                     card="card__content2"
                     handleDelete={handleDelete} />

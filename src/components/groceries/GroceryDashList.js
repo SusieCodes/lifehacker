@@ -13,7 +13,6 @@ export const GroceryDashList = () => {
 // grabs all Groceries from API, makes a copy, slices the first 5 items to display on dashboard
   const getGroceries = () => {
     const groceryList = getGroceriesByUserId(sessionStorage.getItem("lifehacker_user")).then(groceries => {
-      console.log("groceries are: ", groceries)
       const copyOfGroceries = [...groceries]
       const listForDash = copyOfGroceries.slice(0, 3)
       setFirstFewItems(listForDash);

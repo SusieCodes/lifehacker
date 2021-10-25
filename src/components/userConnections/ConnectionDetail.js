@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getConnectionById, deleteConnection } from "./ConnectionManager"
 import { useParams, useHistory } from "react-router-dom"
+import { FaEdit } from "react-icons/fa"
 import { formatDate } from "../helper";
 import "../LifeHacker.css"
 import "./Connections.css"
@@ -44,14 +45,16 @@ export const ConnectionDetail = () => {
   };
 
   const goBack = () => { history.push("/connections")}; //takes user back to list of all connections
-  // const goBackToDash = () => { history.push("/dashboard")}; //takes user back to dashboard
+
+  const handleEdit = () => { 
+    history.push(`/connections/${connectionId}/edit`)
+  }  
 
   useEffect(() => {
     //use getConnectionById() from ConnectionManager to grab info  and set it to state
     console.log("useEffect", connectionId)
     getConnectionById(connectionId)
       .then(connection => {
-        console.log("connection obj is: ", connection)
         setConnection({
           userId: sessionStorage.getItem("lifehacker_user"), 
           name: connection[0].name,
@@ -100,7 +103,7 @@ export const ConnectionDetail = () => {
 
           <div className="connection-user-image">
                     {connection.image !== "" ?
-                      <img src={require(`../../images/${connection?.image}`).default} alt={connection?.name} className="connection-user-photo"/> 
+                      <img src={require(`../../images/${connection.image}`).default} alt={connection.name} className="connection-user-photo"/> 
                       : <img src={require(`../../images/default.png`).default} alt="default" className="connection-user-photo"/>}
           </div>
 
@@ -230,7 +233,11 @@ export const ConnectionDetail = () => {
           <div className="btn-flex">
 
               <button className="details-btn" type="button" onClick={goBack}>Connections</button>
-              {/* <button className="details-btn" type="button" onClick={goBackToDash}>Dashboard</button> */}
+
+              <div className="connection-delete" onClick={handleEdit}>
+                <FaEdit className="connection-edit-icon"/>
+              </div>
+
               <button className="details-btn" type="button" onClick={handleDelete}>Delete</button>
 
           </div>

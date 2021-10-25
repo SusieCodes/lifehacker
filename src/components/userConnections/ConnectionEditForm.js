@@ -34,8 +34,7 @@ export const ConnectionEditForm = () => {
       notes: "",
       personality: "",
       enneagram: "",
-      timestamp: Date.now(),
-      isFave: false
+      timestamp: Date.now()
     });
 
   const [isLoading, setIsLoading] = useState(false);
