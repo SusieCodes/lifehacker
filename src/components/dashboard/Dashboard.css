@@ -1,3 +1,16 @@
+/* Author: Susie Stanley
+Purpose: Dashboard styling
+
+Colors used:
+Light Blue: #c8e6ea
+Light Blue: #c8e6ea68 (faded)
+Dark Blue: rgb(82, 207, 223) Details button border
+Red: #D61212
+Light Gray: rgba(211, 211, 211, 0.468) Dashboard Connections header
+Dark Gray: #2b2b2b font color throughout
+Bright Blue: #c4f7fe highlights and buttons
+*/
+
 .dashboard-grid {
   margin: 5px;
 }
@@ -158,6 +171,15 @@
   white-space: nowrap;
 }
 
+.dash-todo__bywhen__red {
+  font-size: 18px;
+  font-weight: 400;
+  color:#D61212;
+  padding: 0px;
+  margin: 0px;
+  white-space: nowrap;
+}
+
 .todo-complete {
   display: flex;
   flex-direction: row;
@@ -178,7 +200,7 @@ input.checkbox {
 
 input.checkbox:hover {
   transform: scale(1.5);
-  /* color: #D61212; */
+  color: #27c2d7;
 }
 
 /* Activity Dash styling */
@@ -248,7 +270,7 @@ input.checkbox:hover {
 }
 
 .activity-address__highlight {
-  background-color: #ffffff;
+  background-color: white;
 }
 
 .transparent {
@@ -301,6 +323,7 @@ button.activity-delete {
   padding: 0px 30px 0px;
 }
 
+/* Notecard background image */
 .dash-note__wrapper {
   background-image: url("../../images/notecard.svg");
   background-repeat: no-repeat;
@@ -482,7 +505,8 @@ button.note-delete {
   font-size: 16px;
   padding: 5px 10px;
   border: 1px solid rgb(82, 207, 223);
-  background-color: #c8e6ea;
+  /* background-color: #c8e6ea; */
+  background-color: #c4f7fe;
   border-radius: 5px;
   white-space: nowrap;
 }
@@ -587,5 +611,6 @@ button.grocery-delete {
 }
 
 .see-more a:hover {
-  color: #D61212; 
+  /* color: #D61212;  */
+  color: #27c2d7;
 }

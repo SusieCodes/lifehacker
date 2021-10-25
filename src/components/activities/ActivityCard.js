@@ -13,12 +13,12 @@ const formatDate = (obj) => {
   return formattedDate;
 }
 
-export const ActivityCard = ({ activity, handleDeleteActivity, card }) => {
+export const ActivityCard = ({ activity, handleDeleteActivity }) => {
     return (
     <>
-        <div className={card}>
+        <div className="card">
         
-          <div className="activity__info">
+          <div className="activity-info">
 
             <div><strong>Name:  {activity?.name}</strong></div>
 
@@ -34,11 +34,21 @@ export const ActivityCard = ({ activity, handleDeleteActivity, card }) => {
 
           </div>
 
-          <div className="remove__item">
+          <div className="form-btns">
 
-            <Link to={`/activities/${activity?.id}/edit`}><button className="button sm">edit icon</button></Link>
+            <Link to={`/activities/${activity?.id}/edit`}>
+              <button 
+              className="form-btn">
+                Edit
+              </button>
+            </Link>
 
-            <button type="button" className="button sm" onClick={() => handleDeleteActivity(activity?.id)}>delete icon</button>
+            <button 
+              type="button" 
+              className="form-btn" 
+              onClick={() => handleDeleteActivity(activity?.id)}>
+                Delete
+            </button>
 
           </div>
 

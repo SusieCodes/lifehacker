@@ -3,10 +3,19 @@
 
 import React from "react";
 import { formatDate } from "../helper";
-// import { FaTrash } from "react-icons/fa"
-
 
 export const TodoDashCard = ({ todo, handleCompleteTodo }) => {
+    const today = Date.now()
+    const byWhen = Date.parse(todo.byWhen)
+    let byWhenCheck = true;
+    console.log("byWhen is : ", byWhen)
+    console.log("today is ", today)
+
+    if (byWhen < today) {
+      byWhenCheck = false;
+    } else {
+      byWhenCheck = true;
+    }
 
     if (todo.userId === parseInt(sessionStorage.getItem("lifehacker_user"))) {
         return (
@@ -14,8 +23,14 @@ export const TodoDashCard = ({ todo, handleCompleteTodo }) => {
                 <div className="dash-todo">
 
                   <div className="dash-todo__col1">
+
                     <div className="dash-todo__title"><strong>{todo.title}</strong></div>
-                    <div className="dash-todo__bywhen"><strong>By When: </strong> {formatDate(todo.byWhen)}</div>
+                    
+                    { byWhenCheck ?
+                      <div className="dash-todo__bywhen"> <strong>By When: </strong> {formatDate(todo.byWhen)}</div> 
+                    : <div className="dash-todo__bywhen__red">                    <strong>By When:</strong> {formatDate(todo.byWhen)}</div> 
+                    }
+
                   </div>
 
                   <div className="dash-todo__col2">

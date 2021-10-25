@@ -15,12 +15,12 @@ export const TodoBoard = () => {
         });
     };
 
-    const handleDeleteTodo = id => {
+    const handleDelete = (id) => {
         deleteTodo(id)
             .then(() => getAllTodosByUserId(sessionStorage.getItem("lifehacker_user")).then(setTodos));
     };
 
-    const handleCompleteTodo = id => {
+    const handleCompleteTodo = (id) => {
         completeTodo(id)
             .then(() => getAllTodosByUserId(sessionStorage.getItem("lifehacker_user")).then(setTodos));
     }
@@ -37,14 +37,17 @@ export const TodoBoard = () => {
                 <button className="add__todo">+ Add To-Do</button></Link>
             </div>
 
-            <div className="container">
+            <div className="todo-container">
 
                 {/* ternary statement to show only uncompleted todos */}
                 {todos.map(todo => todo.isCompleted ? 
                     console.log('true') 
                     : <TodoCard 
-                        key={todo.id} todo={todo} 
-                        handleDeleteTodo={handleDeleteTodo} handleCompleteTodo={handleCompleteTodo} />)}
+                        key={todo.id} 
+                        todo={todo} 
+                        handleDelete={handleDelete} 
+                        handleCompleteTodo={handleCompleteTodo} 
+                      />)}
 
             </div>
 

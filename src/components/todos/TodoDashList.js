@@ -6,8 +6,6 @@ import React, { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
 import { getAllTodosByUserId, completeTodo } from "../todos/TodoManager";
 import { TodoDashCard } from "../todos/TodoDashCard";
-// import {FaEdit, FaTrash } from "react-icons/fa"
-
 
 export const TodoDashList = ({ todo }) => {
   const [todos, setTodos] = useState([]);
@@ -18,6 +16,11 @@ export const TodoDashList = ({ todo }) => {
         setTodos(firstFew)
     });
 };
+
+  // const handleCompleteTodo = id => {
+  //   completeTodo(id)
+  //       .then(() => getTodos());
+  // }
 
   const handleCompleteTodo = id => {
     completeTodo(id)
