@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function Input(props) {
-  const {id, type="text", value, onChange, label} = props
+export const Input = (props) => {
+  const { id, type = 'text', value, onChange, label } = props
   return (
     <div className="form__group">
-      <label htmlFor="country">{label}</label>
+      <label htmlFor={id}>{label}</label>
       <input
         name={id}
         type={type}
@@ -13,6 +13,6 @@ export default function Input(props) {
         id={id}
         value={value}
       />
-  </div>
+    </div>
   )
 }
