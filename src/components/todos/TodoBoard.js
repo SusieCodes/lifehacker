@@ -4,14 +4,14 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { TodoCard } from './TodoCard'
-import { completeTodo, deleteTodo, getAllTodosByUserId } from './TodoManager'
+import { completeTodo, deleteTodo, getTodosByUserId } from './TodoManager'
 import { WelcomeBar } from '../../components/navbar/WelcomeBar'
 
 export const TodoBoard = () => {
   const [todos, setTodos] = useState([])
 
   const getTodos = () => {
-    getAllTodosByUserId(sessionStorage.getItem('lifehacker_user')).then(
+    getTodosByUserId(sessionStorage.getItem('lifehacker_user')).then(
       (todosFromAPI) => {
         setTodos(todosFromAPI)
       }
@@ -26,9 +26,7 @@ export const TodoBoard = () => {
 
   const handleCompleteTodo = (id) => {
     completeTodo(id).then(() =>
-      getAllTodosByUserId(sessionStorage.getItem('lifehacker_user')).then(
-        setTodos
-      )
+      getTodosByUserId(sessionStorage.getItem('lifehacker_user')).then(setTodos)
     )
   }
 
