@@ -17,11 +17,9 @@ const getFutureActivities = () => {
     const parsedToday = today.getTime()
     return getAllActivitiesByUserId(sessionStorage.getItem("lifehacker_user")).then(ActivitiesFromAPI => {
       const copyOfActivities = [...ActivitiesFromAPI]
-      const futureDatedActivities = copyOfActivities.filter(function (evt) {
+      const futureDatedActivities = copyOfActivities.filter((evt) =>{
           let evtDate = Date.parse(evt.date);
-          if (evtDate > parsedToday) {
-            return evt
-          }
+          return evtDate > parsedToday
       })
       setFutureActivities(futureDatedActivities);
     }); 
@@ -56,10 +54,13 @@ const getFutureActivities = () => {
 
   return (
         <>
-          {<ActivityDashCard
-            key={firstUpcomingActivity?.id}
+          {firstUpcomingActivity ?
+          <ActivityDashCard
+            key={firstUpcomingActivity.id}
             activity={firstUpcomingActivity}
-            handleDelete={handleDelete} /> }
+            handleDelete={handleDelete} />
+          : <div>No Activities Yet</div>
+          }
         </>
   );
 };

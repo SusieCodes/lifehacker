@@ -53,7 +53,7 @@ export const NoteEditForm = () => {
         setNote(note);
         setIsLoading(false);
       });
-  }, []);
+  }, [noteId]);
 
   return (
 <>

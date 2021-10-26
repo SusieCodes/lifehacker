@@ -49,9 +49,11 @@ export const Login = () => {
         
         <div className="form__flex">
             <div className="form__flex__inner">
+
                 <form className="form--login" onSubmit={handleLogin}>
                     <div className="form--login--headline">Welcome To Life Hacker</div>
                     <div className="form--login--subtitle">Please Sign In</div>
+                    
                     <fieldset>
 
                         <label htmlFor="inputEmail"> Email address </label>
@@ -63,14 +65,20 @@ export const Login = () => {
                             value={loginUser.email}
                             onChange={handleInputChange} />
 
-                        <div className="form__btns">
-                            <button type="submit" className="login__btn">
-                                Sign In
+                        <div className="form-btns">
+
+                            <button 
+                                type="submit" 
+                                className="form-btn">
+                                    Sign In
                             </button>
+
                         </div>
 
                     </fieldset>
+
                 </form>
+
             </div>
         </div>
             <div className="link--register">

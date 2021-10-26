@@ -28,7 +28,7 @@ export const TodoForm = () => {
             byWhen: "",
             isCompleted: false,
             userId: parseInt(sessionStorage.getItem("lifehacker_user"))
-        });
+        })
       }
 
     const handleControlledInputChange = (event) => {

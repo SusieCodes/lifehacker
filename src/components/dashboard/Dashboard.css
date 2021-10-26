@@ -324,6 +324,10 @@ button.activity-delete {
 }
 
 /* Notecard background image */
+.note-spacing {
+  margin-top: 10px;
+}
+
 .dash-note__wrapper {
   background-image: url("../../images/notecard.svg");
   background-repeat: no-repeat;

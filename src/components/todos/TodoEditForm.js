@@ -9,7 +9,14 @@ import "./Todo.css"
 import "../LifeHacker.css"
 
 export const TodoEditForm = () => {
-    const [todo, setTodo] = useState({ title: "", byWhen: "" })
+    const [todo, setTodo] = useState(
+        { 
+        title: "", 
+        byWhen: "", 
+        isCompleted: false, 
+        userId: parseInt(sessionStorage.getItem("lifehacker_user"))
+        })
+
     const [isLoading, setIsLoading] = useState(false);
 
     const { todoId } = useParams();
@@ -28,7 +35,7 @@ export const TodoEditForm = () => {
             id: todoId,
             title: todo.title,
             byWhen: todo.byWhen,
-            isCompleted: false,
+            isCompleted: todo.isCompleted,
             userId: todo.userId
         };
 
@@ -42,7 +49,7 @@ export const TodoEditForm = () => {
                 setTodo(todo)
                 setIsLoading(false);
             });
-    }, []);
+    }, [todoId]);
 
     return (
 <>

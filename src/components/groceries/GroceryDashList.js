@@ -13,7 +13,6 @@ export const GroceryDashList = () => {
 // grabs all Groceries from API, makes a copy, slices the first 5 items to display on dashboard
   const getGroceries = () => {
     const groceryList = getGroceriesByUserId(sessionStorage.getItem("lifehacker_user")).then(groceries => {
-      console.log("groceries are: ", groceries)
       const copyOfGroceries = [...groceries]
       const listForDash = copyOfGroceries.slice(0, 3)
       setFirstFewItems(listForDash);
@@ -37,6 +36,9 @@ export const GroceryDashList = () => {
 
   return (
         <>
+
+          {firstFewItems[0] ?
+          <>
           <div className="dash-grocery__list">
           {firstFewItems.map(grocery => <GroceryDashCard key={grocery?.id} grocery={grocery} handleDelete={handleDelete} />)}
           </div>
@@ -44,6 +46,9 @@ export const GroceryDashList = () => {
           <div className="see-more">
             <Link to="/groceries">See Full List</Link>
           </div>
+          </>
+          : <div>No Groceries Yet</div>
+          }
         </>
   );
 };

@@ -1,9 +1,15 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom";
+import "../../src/components/LifeHacker.css"
 
 export const Register = () => {
 
-    const [registerUser, setRegisterUser] = useState({ firstName: "", lastName: "", email: "" })
+    const [registerUser, setRegisterUser] = useState(
+        { 
+            name: "", 
+            email: "" ,
+            image: ""
+        })
     const [conflictDialog, setConflictDialog] = useState(false)
 
     const history = useHistory()
@@ -32,8 +38,9 @@ export const Register = () => {
                             "Content-Type": "application/json"
                         },
                         body: JSON.stringify({
+                            name: `${registerUser.name}`,
                             email: registerUser.email,
-                            name: `${registerUser.firstName} ${registerUser.lastName}`
+                            image: "default.png"
                         })
                     })
                         .then(res => res.json())
@@ -60,22 +67,28 @@ export const Register = () => {
                 <button className="button--close" onClick={e => setConflictDialog(false)}>Close</button>
             </dialog>
 
-            <div classname="form__flex">
-                <div className="form__flex__inner">
+            <div className="form-flex">
+                <div className="form-flex-inner">
                     <form className="form--login" onSubmit={handleRegister}>
                         <h1 className="register--headline">Please Register for Life Hacker</h1>
                         <fieldset>
-                            <label htmlFor="firstName"> First Name </label>
-                            <input type="text" name="firstName" id="firstName" className="form__group--edit" placeholder="First name" required autoFocus value={registerUser.firstName} onChange={handleInputChange} />
-
-                            <label htmlFor="lastName"> Last Name </label>
-                            <input type="text" name="lastName" id="lastName" className="form__group--edit" placeholder="Last name" required value={registerUser.lastName} onChange={handleInputChange} />
+                            <label htmlFor="name"> Name </label>
+                            <input type="text" name="name" id="name" className="form__group--edit" placeholder="Full Name" required autoFocus value={registerUser.name} onChange={handleInputChange} />
         
                             <label htmlFor="inputEmail"> Email address </label>
                             <input type="email" name="email" id="email" className="form__group--edit" placeholder="Email address" required value={registerUser.email} onChange={handleInputChange} />
 
-                            <div className="form__btns">
-                            <button type="submit" className="register__btn"> Sign in </button>
+                            <div className="form-btns">
+
+                                <button type="submit" className="form-btn"> Register </button>
+
+                                <button
+                                    type="button"
+                                    className="form-btn"
+                                    onClick={() => history.push(`/login`)}>
+                                        Cancel
+                                </button>
+
                             </div>
                         </fieldset>
                     </form>

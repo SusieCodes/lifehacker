@@ -1,10 +1,10 @@
 import React from 'react'
 import { WelcomeBar } from '../navbar/WelcomeBar'
 
-export const GroceryForm = () => {
+export const GroceryEditForm = () => {
   return (
     <div className="page">
-      <WelcomeBar title="Add Groceries" />
+      <WelcomeBar title="Edit Groceries" />
     </div>
   )
 }

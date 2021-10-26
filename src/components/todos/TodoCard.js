@@ -16,10 +16,10 @@ export const TodoCard = ({ todo, handleDelete, handleCompleteTodo }) => {
 
                     <div className="todo-info">
 
-                            <label className="todo-section">
-                                <div className="todo-title"><strong>{todo.title}</strong></div>
-                                <div><strong>By When: </strong> {todo.byWhen}</div>
-                            </label>
+                        <label className="todo-section">
+                            <div className="todo-title"><strong>{todo.title}</strong></div>
+                            <div><strong>By When: </strong> {todo.byWhen}</div>
+                        </label>
 
                     </div>
 

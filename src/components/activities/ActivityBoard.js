@@ -1,159 +1,145 @@
 //Author: Susie Stanley
 //Purpose: Defines component ActivityBoard that renders a list of all the upcoming and past activities
 
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ActivityCard } from './ActivityCard';
-import { getAllActivitiesByUserId, deleteActivity } from './ActivityManager';
-import { formatDate } from "../helper";
-import "../activities/Activity.css"
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { ActivityCard } from './ActivityCard'
+import { getAllActivitiesByUserId, deleteActivity } from './ActivityManager'
+import { WelcomeBar } from '../../components/navbar/WelcomeBar'
+import '../activities/Activity.css'
 
 export const ActivityBoard = () => {
   // The initial state is an empty array
-  const [ remainingActivities, setRemainingActivities] = useState([]);
-  const [ firstUpcomingActivity, setFirstUpcomingActivity ] = useState({})
-  const [ futureActivities, setFutureActivities ] = useState([])
-  const [ pastActivities, setPastActivities ] = useState([])
+  const [remainingActivities, setRemainingActivities] = useState([])
+  const [firstUpcomingActivity, setFirstUpcomingActivity] = useState({})
+  const [futureActivities, setFutureActivities] = useState([])
+  const [pastActivities, setPastActivities] = useState([])
 
-// grabs all Activities from API, makes a copy, filters through each Activity and returns array of the objects dated after today
-const getFutureActivities = () => {
-    const today = new Date();
+  // grabs all Activities from API, makes a copy, filters through each Activity and returns array of the objects dated after today
+  const getFutureActivities = () => {
+    const today = new Date()
     const parsedToday = today.getTime()
-    return getAllActivitiesByUserId(sessionStorage.getItem("lifehacker_user")).then(ActivitiesFromAPI => {
-      const copyOfActivities = [...ActivitiesFromAPI]
-      const futureDatedActivities = copyOfActivities.filter(function (evt) {
-          let evtDate = Date.parse(evt.date);
-          if (evtDate > parsedToday) {
-            return evt
-          }
-      })
-      setFutureActivities(futureDatedActivities);
-    }); 
-  };
+    getAllActivitiesByUserId(sessionStorage.getItem('lifehacker_user')).then(
+      (ActivitiesFromAPI) => {
+        const copyOfActivities = [...ActivitiesFromAPI]
+        const futureDatedActivities = copyOfActivities.filter((evt) => {
+          let evtDate = Date.parse(evt.date)
+          return evtDate > parsedToday
+        })
+        setFutureActivities(futureDatedActivities)
+      }
+    )
+  }
 
-// grabs all activities from API, makes a copy, filters through each activity and returns array of the objects dated before today
+  // grabs all activities from API, makes a copy, filters through each activity and returns array of the objects dated before today
   const getPastActivities = () => {
-    const today = new Date();
+    const today = new Date()
     const parsedToday = today.getTime()
-    return getAllActivitiesByUserId(sessionStorage.getItem("lifehacker_user")).then(ActivitiesFromAPI => {
-      const copyOfActivities = [...ActivitiesFromAPI]
-      const pastDatedActivities = copyOfActivities.filter(function (evt) {
-          let evtDate = Date.parse(evt.date);
-          if (evtDate < parsedToday) {
-            return evt
-          }
-      })
-      pastDatedActivities.reverse() //reverses order of array so most recent Activity is at top of list
-      setPastActivities(pastDatedActivities);
-    }); 
-  };
+    getAllActivitiesByUserId(sessionStorage.getItem('lifehacker_user')).then(
+      (ActivitiesFromAPI) => {
+        const copyOfActivities = [...ActivitiesFromAPI]
+        const pastDatedActivities = copyOfActivities.filter((evt) => {
+          let evtDate = Date.parse(evt.date)
+          return evtDate < parsedToday
+        })
+        pastDatedActivities.reverse() //reverses order of array so most recent Activity is at top of list
+        setPastActivities(pastDatedActivities)
+      }
+    )
+  }
 
-// saves a copy of futureActivities array from state then grabs the first activity and sets that to state
+  // saves a copy of futureActivities array from state then grabs the first activity and sets that to state
   const showFirstUpcomingActivity = () => {
     const copyOfFutureActivities = [...futureActivities]
     const firstActivityObj = copyOfFutureActivities.shift()
     setFirstUpcomingActivity(firstActivityObj)
   }
 
-// saves a copy of futureActivities array, removes first object and sets remaining activities to state as 'Activities'
+  // saves a copy of futureActivities array, removes first object and sets remaining activities to state as 'Activities'
   const showRemainingUpcomingActivities = () => {
     const copyOfFutureActivities = [...futureActivities]
-    copyOfFutureActivities.shift();
-    const remainingFutureActivities = copyOfFutureActivities;
-    setRemainingActivities(remainingFutureActivities);
-    }
+    copyOfFutureActivities.shift()
+    const remainingFutureActivities = copyOfFutureActivities
+    setRemainingActivities(remainingFutureActivities)
+  }
 
-// deletes Activity when button clicked
+  // deletes Activity when button clicked
   const handleDelete = (id) => {
-    deleteActivity(id)
-    .then(() => {
+    deleteActivity(id).then(() => {
       getFutureActivities()
       getPastActivities()
       showFirstUpcomingActivity()
       showRemainingUpcomingActivities()
-    });
+    })
   }
-  
-// getFutureActivities gets all future activities from API and saves the array to state as 'futureActivities' on first render only
+
+  // getFutureActivities gets all future activities from API and saves the array to state as 'futureActivities' on first render only
   useEffect(() => {
-    getFutureActivities();
-  }, []);
+    getFutureActivities()
+  }, [])
 
-// getPastActivities gets all past activities from API and saves the array to state as 'pastActivities' on first render only
+  // getPastActivities gets all past activities from API and saves the array to state as 'pastActivities' on first render only
   useEffect(() => {
-    getPastActivities();
-  }, []);
+    getPastActivities()
+  }, [])
 
-// showFirstUpcomingActivity makes a copy of all futureActivities, grabs first activity from array and saves it to state as 'firstUpcomingActivity' on first render only
+  // showFirstUpcomingActivity makes a copy of all futureActivities, grabs first activity from array and saves it to state as 'firstUpcomingActivity'
   useEffect(() => {
-    showFirstUpcomingActivity();
-  }, [futureActivities]);
+    showFirstUpcomingActivity()
+    showRemainingUpcomingActivities()
+  }, [futureActivities])
 
-// showRemainingUpcomingActivities makes a copy of all futureActivities, removes first activity and saves the rest to state as 'activities' on first render only
-  useEffect(() => {
-    showRemainingUpcomingActivities();
-  }, [futureActivities]);
+  return (
+    <>
+      <div className="page">
+        <WelcomeBar title="Activities" />
 
+        <div className="section-flex">
+          <div className="section-flex__content">
+            <Link to={`/activities/create`}>
+              <button className="add__Activity">+ Add Activity</button>
+            </Link>
+          </div>
 
-    return (
-<>
-    <div className="page">
-
-        <div className="page-title__flex">
-
-          <div className="page-title__left">Welcome <span className="welcome-name">{sessionStorage.getItem("lifehacker_username")}</span></div>
-
-          <div className="page-title__headline">Activities</div>
-
-          <div className="page-title__right">Today: &nbsp;&nbsp;<span className="todays-date">{formatDate(Date.now())}</span></div>
-
-        </div>
-
-        <div className="section-flex"> 
-        
-            <div className="section-flex__content">
-              <Link to={`/activities/create`}><button className="add__Activity">+ Add Activity</button></Link>
-            </div>
-
-            <div className="container">
-
-              <div className="first__upcoming">
-                <h2>UPCOMING ACTIVITIES</h2>
-                {<ActivityCard
+          <div className="container">
+            <div className="first__upcoming">
+              <h2>UPCOMING ACTIVITIES</h2>
+              {
+                <ActivityCard
                   key={firstUpcomingActivity?.id}
                   activity={firstUpcomingActivity}
                   card="card__content1"
-                  handleDelete={handleDelete} /> }
-              </div>
-
-              <div className="remaining__upcoming">
-        
-                {remainingActivities.map(activity =>
-                  <ActivityCard
-                    key={activity?.id}
-                    activity={activity}
-                    card="card__content2"
-                    handleDelete={handleDelete} />  
-                )}
-              </div>
-
-              <div className="past">
-                <h2>PAST ACTIVITIES</h2>
-
-                {pastActivities.map(activity =>
-                  <ActivityCard
-                    key={activity?.id}
-                    activity={activity}
-                    card="card__content2"
-                    handleDelete={handleDelete} />
-                )}
-              </div>
-
+                  handleDelete={handleDelete}
+                />
+              }
             </div>
 
-        </div>
+            <div className="remaining__upcoming">
+              {remainingActivities.map((activity) => (
+                <ActivityCard
+                  key={activity?.id}
+                  activity={activity}
+                  card="card__content2"
+                  handleDelete={handleDelete}
+                />
+              ))}
+            </div>
 
-    </div> 
-</>
-    )
-};
+            <div className="past">
+              <h2>PAST ACTIVITIES</h2>
+
+              {pastActivities.map((activity) => (
+                <ActivityCard
+                  key={activity.id}
+                  activity={activity}
+                  card="card__content2"
+                  handleDelete={handleDelete}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}

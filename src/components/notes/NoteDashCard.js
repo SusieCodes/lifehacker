@@ -27,7 +27,7 @@ export const NoteDashCard = ({ recentNote, handleDelete }) => {
 
           <div className="dash-note__delete">
 
-            <button type="button" className="note-delete" onClick={() => handleDelete(recentNote?.id)}><FaTrash className="delete-icon"/></button>
+            <button type="button" className="note-delete" onClick={() => handleDelete(recentNote.id)}><FaTrash className="delete-icon"/></button>
 
           </div>
 
