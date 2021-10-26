@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom'
 import { ActivityCard } from './ActivityCard'
 import { getAllActivitiesByUserId, deleteActivity } from './ActivityManager'
 import { WelcomeBar } from '../../components/navbar/WelcomeBar'
-import '../activities/Activity.css'
+import './Activity.css'
+import '../LifeHacker.css'
 
 export const ActivityBoard = () => {
   // The initial state is an empty array
@@ -97,46 +98,55 @@ export const ActivityBoard = () => {
         <div className="section-flex">
           <div className="section-flex__content">
             <Link to={`/activities/create`}>
-              <button className="add__Activity">+ Add Activity</button>
+              <button className="add-activity">+ Add Activity</button>
             </Link>
           </div>
 
-          <div className="container">
-            <div className="first__upcoming">
-              <h2>UPCOMING ACTIVITIES</h2>
-              {
-                <ActivityCard
-                  key={firstUpcomingActivity?.id}
-                  activity={firstUpcomingActivity}
-                  card="card__content1"
-                  handleDelete={handleDelete}
-                />
-              }
+          <div className="board-container__activity">
+            <div className="first-upcoming">
+              <div className="column-center">
+                <h2>NEXT ACTIVITY</h2>
+                {
+                  <ActivityCard
+                    key={firstUpcomingActivity?.id}
+                    activity={firstUpcomingActivity}
+                    card="card-content1"
+                    handleDelete={handleDelete}
+                  />
+                }
+              </div>
             </div>
 
-            <div className="remaining__upcoming">
-              {remainingActivities.map((activity) => (
-                <ActivityCard
-                  key={activity?.id}
-                  activity={activity}
-                  card="card__content2"
-                  handleDelete={handleDelete}
-                />
-              ))}
+            {/* <div className="upcoming-past-wrapper"> */}
+            <div className="remaining-upcoming">
+              <div className="column-center">
+                <h2>UPCOMING ACTIVITIES</h2>
+                {remainingActivities.map((activity) => (
+                  <ActivityCard
+                    key={activity?.id}
+                    activity={activity}
+                    card="card-content2"
+                    handleDelete={handleDelete}
+                  />
+                ))}
+              </div>
             </div>
 
             <div className="past">
-              <h2>PAST ACTIVITIES</h2>
+              <div className="column-center">
+                <h2>PAST ACTIVITIES</h2>
 
-              {pastActivities.map((activity) => (
-                <ActivityCard
-                  key={activity.id}
-                  activity={activity}
-                  card="card__content2"
-                  handleDelete={handleDelete}
-                />
-              ))}
+                {pastActivities.map((activity) => (
+                  <ActivityCard
+                    key={activity?.id}
+                    activity={activity}
+                    card="card-content2"
+                    handleDelete={handleDelete}
+                  />
+                ))}
+              </div>
             </div>
+            {/* </div> */}
           </div>
         </div>
       </div>

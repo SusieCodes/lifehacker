@@ -7,6 +7,101 @@ Light Blue: #c8e6ea68 (faded)
 Dark Blue: rgb(82, 207, 223) Details button border
 Red: #D61212
 Light Gray: rgba(211, 211, 211, 0.468) Dashboard Connections header
-Dark Gray: #2B2B2B font color throughout
+Dark Gray: #2b2b2b font color throughout
 */
 
+.board-container__activity {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px 100px;
+  /* border: 1px solid green; */
+}
+
+.upcoming-past-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.first-upcoming,
+.remaining-upcoming,
+.past {
+  flex-basis: 1;
+  padding: 20px;
+  margin: 20px 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px lightgray;
+  /* border: 2px solid black; */
+}
+
+.column-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 20px; */
+  /* border: 1px solid pink; */
+}
+
+.activity-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 10px 30px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  background-color: #c8e6ea68;
+}
+
+.activity-info {
+  padding-bottom: 10px;
+}
+
+.activity-notes {
+  width: 185px;
+  white-space: normal;
+  /* border: 1px solid black; */
+}
+
+.activity-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px;
+  /* border: 1px solid black; */
+}
+
+.activity-edit-icon {
+  color: #2b2b2b;
+  padding: 0px;
+  margin: 0px 15px;
+  width: 35px;
+  height: 35px;
+  transition: all 0.2s ease-in-out;
+  /* border: 1px solid red; */
+}
+
+.activity-edit-icon:hover {
+  transform: scale(1.5);
+  color: #41c5d8;
+}
+
+.activity-delete-icon {
+  color: #2b2b2b;
+  padding: 0px;
+  margin: 0px 15px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.2s ease-in-out;
+  /* border: 1px solid green; */
+}
+
+.activity-delete-icon:hover {
+  transform: scale(1.5);
+  color: #d61212;
+}

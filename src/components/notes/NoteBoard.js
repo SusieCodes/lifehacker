@@ -29,15 +29,13 @@ export const NoteBoard = () => {
   }, [])
 
   return (
-    <div className="page">
-      <WelcomeBar title="Notes" />
+    <>
+      <div className="page">
+        <WelcomeBar title="Notes" />
 
-      <div className="section-flex">
-        <div className="section-notes__header">Notes</div>
-
-        <div className="section__content">
+        <div className="section-flex__content">
           <Link to={`/notes/create`}>
-            <button className="add__note">+ Add Note</button>
+            <button className="add-note">+ Add Note</button>
           </Link>
         </div>
 
@@ -47,6 +45,6 @@ export const NoteBoard = () => {
           ))}
         </div>
       </div>
-    </div>
+    </>
   )
 }
