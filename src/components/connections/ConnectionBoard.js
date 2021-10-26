@@ -40,13 +40,13 @@ export const ConnectionBoard = () => {
       <div className="page">
         <WelcomeBar title="Connections" />
 
-        <div className="section-flex__content">
-          <Link to={`/connections/create`}>
-            <button className="add-connection">+ Add Connection</button>
-          </Link>
-        </div>
-
         <div className="section-flex">
+          <div className="section-flex__content">
+            <Link to={`/connections/create`}>
+              <button className="add-connection">+ Add Connection</button>
+            </Link>
+          </div>
+
           {/* this section is the category headers for the contact cards (using same div names as cards so spacing is identical) */}
           <div className="connections-header">
             <div className="dc-info">

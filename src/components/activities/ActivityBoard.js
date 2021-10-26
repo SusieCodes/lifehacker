@@ -97,29 +97,29 @@ export const ActivityBoard = () => {
         <div className="section-flex">
           <div className="section-flex__content">
             <Link to={`/activities/create`}>
-              <button className="add__Activity">+ Add Activity</button>
+              <button className="add-activity">+ Add Activity</button>
             </Link>
           </div>
 
           <div className="container">
-            <div className="first__upcoming">
+            <div className="first-upcoming">
               <h2>UPCOMING ACTIVITIES</h2>
               {
                 <ActivityCard
                   key={firstUpcomingActivity?.id}
                   activity={firstUpcomingActivity}
-                  card="card__content1"
+                  card="card-content1"
                   handleDelete={handleDelete}
                 />
               }
             </div>
 
-            <div className="remaining__upcoming">
+            <div className="remaining-upcoming">
               {remainingActivities.map((activity) => (
                 <ActivityCard
                   key={activity?.id}
                   activity={activity}
-                  card="card__content2"
+                  card="card-content2"
                   handleDelete={handleDelete}
                 />
               ))}
@@ -132,7 +132,7 @@ export const ActivityBoard = () => {
                 <ActivityCard
                   key={activity.id}
                   activity={activity}
-                  card="card__content2"
+                  card="card-content2"
                   handleDelete={handleDelete}
                 />
               ))}
