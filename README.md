@@ -392,75 +392,75 @@ Create database.json file inside of the src directory and paste the following JS
     }
   ],
   "activities": [
-{
-      "id": 1,
+    {
       "name": "Drs Appointment",
       "date": "2021-11-05",
       "address": "123 Maple St",
       "city": "Nashville, TN",
       "zipcode": "37029",
       "notes": "Bring test results",
-      "userId": 1
+      "userId": 1,
+      "id": 1
     },
     {
-      "id": 2,
       "name": "Book Club",
       "date": "2021-12-05",
       "address": "123 Jackson St",
       "city": "Nashville, TN",
       "zipcode": "37064",
       "notes": "She will be arriving on Sunday",
-      "userId": 1
+      "userId": 1,
+      "id": 2
     },
     {
-      "id": 3,
       "name": "Volunteer At Mission",
-      "date": "2021-12-25",
+      "date": "2021-09-25",
       "address": "639 Lafayette St",
       "city": "Nashville, TN",
       "zipcode": "37203",
       "notes": "Wear comfy shoes",
-      "userId": 1
+      "userId": 1,
+      "id": 3
     },
     {
-      "id": 4,
       "name": "Franks Birthday",
-      "date": "2022-09-03",
+      "date": "2021-09-03",
       "address": "123 Dutch Rd",
       "city": "Nashville, TN",
       "zipcode": "37064",
       "notes": "Post on FB",
-      "userId": 1
+      "userId": 1,
+      "id": 4
     },
     {
-      "id": 5,
       "name": "Grandma's Birthday",
       "date": "2021-09-08",
       "address": "123 Oak St",
       "city": "Nashville, TN",
       "zipcode": "37064",
       "notes": "Bring gift and snacks",
-      "userId": 1
+      "userId": 1,
+      "id": 5
     },
     {
-      "id": 6,
       "name": "Hiking With Friends",
       "date": "2021-11-15",
       "address": "Falls Creek Falls",
       "city": "Nashville, TN",
       "zipcode": "37064",
       "notes": "Pack light",
-      "userId": 1
+      "userId": 1,
+      "id": 6
     },
     {
-      "id": 7,
       "name": "Dinner Downtown with Ashley",
       "date": "2021-11-04",
       "address": "823 Main Street",
       "city": "Franklin, TN",
       "zipcode": "37064",
       "notes": "Bring flowers",
-      "userId": 1
+      "userId": 1,
+      "id": 7
     },
     {
       "name": "Parent Teacher Night",
@@ -470,7 +470,7 @@ Create database.json file inside of the src directory and paste the following JS
       "zipcode": "37027",
       "notes": "Ask about enrichment",
       "userId": 1,
-      "id": 10
+      "id": 8
     }
   ],
   "todos": [
@@ -599,21 +599,21 @@ Create database.json file inside of the src directory and paste the following JS
       "post": "My sister helped me come up with a brilliant idea for my capstone and I'm excited to write up my proposal",
       "dayTime": 1634354755599,
       "userId": 1,
-      "id": 1,
+      "id": 1
     },
     {
       "title": "Had a great day!",
       "post": "The sun was shining and my pup and I hung out on the back patio and soaked in the sun",
       "dayTime": 1634354755599,
       "userId": 1,
-      "id": 2,
+      "id": 2
     },
     {
       "title": "Life Is Good",
       "post": "Super stoked to get working on my project today... the next 2 weeks will be all grind baby!",
       "dayTime": 1634354755599,
       "userId": 1,
-      "id": 3,
+      "id": 3
     }
   ]
 }

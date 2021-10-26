@@ -8,6 +8,7 @@ Dark Blue: rgb(82, 207, 223) Details button border
 Red: #D61212
 Light Gray: rgba(211, 211, 211, 0.468) Dashboard Connections header
 Dark Gray: #2B2B2B font color throughout
+Shadow: box-shadow: 5px 5px 5px lightgray;
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');

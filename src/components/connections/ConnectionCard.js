@@ -14,11 +14,11 @@ var formatDate = function (date) {
 }
 
 export const ConnectionCard = ({ connection, handleDelete }) => {
+  const history = useHistory()
+
   const handleEdit = () => {
     history.push(`/connections/${connection?.id}/edit`)
   }
-
-  const history = useHistory()
 
   return (
     <>
@@ -26,10 +26,10 @@ export const ConnectionCard = ({ connection, handleDelete }) => {
         <div className="dc-info">
           <div className="pic-name">
             <div className="dc-image">
-              {connection.image !== '' ? (
+              {connection?.image !== '' ? (
                 <img
-                  src={require(`../../images/${connection.image}`).default}
-                  alt={connection.name}
+                  src={require(`../../images/${connection?.image}`).default}
+                  alt={connection?.name}
                   className="connection-photo"
                 />
               ) : (
@@ -44,16 +44,16 @@ export const ConnectionCard = ({ connection, handleDelete }) => {
             <div className="dc-name">{connection?.name}</div>
           </div>
 
-          <div className="dc-email">{connection.email}</div>
+          <div className="dc-email">{connection?.email}</div>
 
-          <div className="dc-phone">{connection.phone}</div>
+          <div className="dc-phone">{connection?.phone}</div>
 
           <div className="dc-bday">{formatDate(connection?.bday)}</div>
         </div>
 
         <div className="connection-icons">
           <div className="connection-details">
-            <Link to={`/connections/${connection.id}`}>Details</Link>
+            <Link to={`/connections/${connection?.id}`}>Details</Link>
           </div>
 
           <div
@@ -65,7 +65,7 @@ export const ConnectionCard = ({ connection, handleDelete }) => {
 
           <div
             className="connection-delete"
-            onClick={() => handleDelete(connection.id)}
+            onClick={() => handleDelete(connection?.id)}
           >
             <FaTrash className="connection-delete-icon" />
           </div>
