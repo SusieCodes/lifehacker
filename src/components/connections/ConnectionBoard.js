@@ -9,7 +9,7 @@ import { ConnectionDummyCard } from './ConnectionDummyCard'
 import { WelcomeBar } from '../../components/navbar/WelcomeBar'
 import '../dashboard/Dashboard.css'
 import '../LifeHacker.css'
-import '../userConnections/Connections.css'
+import '../connections/Connections.css'
 
 export const ConnectionBoard = () => {
   const [connections, setConnections] = useState([])
