@@ -7,7 +7,6 @@ Purpose: styling for all Connections pages */
   background-color: lightgray;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-
   padding: 7px 0px 5px 25px;
   margin: 0px;
 }
@@ -107,7 +106,7 @@ Purpose: styling for all Connections pages */
 .inner-flex__row2__col1,
 .inner-flex__row3__col1 {
   border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px; 
+  border-bottom-left-radius: 5px;
 }
 
 .inner-flex__row1__col2,
@@ -170,8 +169,7 @@ Purpose: styling for all Connections pages */
 .connection-info__notes,
 .connection-info__zodiac,
 .connection-info__personality,
-.connection-info__enneagram
-{
+.connection-info__enneagram {
   background-color: #c8e6ea;
   border-radius: 5px;
   margin: 10px;
@@ -184,14 +182,14 @@ Purpose: styling for all Connections pages */
 
 /* ConnectionBoard styling */
 .connections-header {
-display: flex;
-flex-direction: row;
-justify-content: space-evenly;
-padding: 0px;
-margin: 10px 5px 0px;
-background-color: white;
-border-top-left-radius: 5px;
-border-top-right-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 0px;
+  margin: 10px 5px 0px;
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .connection-icons {
@@ -205,7 +203,6 @@ border-top-right-radius: 5px;
   width: 300px;
 }
 
-
 .connection-details {
   margin: auto 20px;
   font-size: 16px;
@@ -217,7 +214,7 @@ border-top-right-radius: 5px;
 }
 
 .connection-details a {
-  color: #2B2B2B;
+  color: #2b2b2b;
   text-decoration: none;
 }
 
@@ -231,22 +228,22 @@ border-top-right-radius: 5px;
   margin: auto 20px;
   width: 30px;
   height: 30px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .connection-edit-icon:hover {
   transform: scale(1.5);
-  color: #41C5D8;
+  color: #41c5d8;
 }
 
 .connection-delete-icon {
   margin: auto 20px;
   width: 25px;
   height: 25px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .connection-delete-icon:hover {
   transform: scale(1.5);
-  color: #D61212;
+  color: #d61212;
 }

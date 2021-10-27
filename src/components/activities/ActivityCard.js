@@ -4,13 +4,9 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { FaEdit, FaTrash } from "react-icons/fa";
-// import { WeatherApp } from "../activities/WeatherApp";
+import { formatStringDate } from "../helper";
 
-const formatDate = (obj) => {
-  const date = new Date(obj);
-  const formattedDate = date.toDateString(); // converts date object to a string that displays in format "Sun Jul 22 2018"
-  return formattedDate;
-};
+// import { WeatherApp } from "../activities/WeatherApp";
 
 // converts 24 hr time to 12 hr
 const formatTime = (time) => {
@@ -63,7 +59,7 @@ export const ActivityCard = ({ activity, handleDelete }) => {
               </div>
 
               <div className="da-inner__right">
-                <div>{formatDate(activity?.date)}</div>
+                <div>{formatStringDate(activity?.date)}</div>
                 {activity?.time ? (
                   <div>{formatTime(activity?.time)}</div>
                 ) : (

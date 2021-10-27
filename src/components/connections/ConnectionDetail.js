@@ -1,86 +1,86 @@
-import React, { useState, useEffect } from 'react'
-import { getConnectionById, deleteConnection } from './ConnectionManager'
-import { useParams, useHistory } from 'react-router-dom'
-import { FaEdit } from 'react-icons/fa'
-import { WelcomeBar } from '../../components/navbar/WelcomeBar'
-import '../LifeHacker.css'
-import './Connections.css'
+import React, { useState, useEffect } from "react";
+import { getConnectionById, deleteConnection } from "./ConnectionManager";
+import { useParams, useHistory } from "react-router-dom";
+import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import "../LifeHacker.css";
+import "./Connections.css";
 
 export const ConnectionDetail = () => {
   const [connection, setConnection] = useState({
-    userId: sessionStorage.getItem('lifehacker_user'),
-    name: '',
-    image: '',
-    email: '',
-    phone: '',
-    address: '',
-    city: '',
-    stateProvince: '',
-    zipCode: '',
-    country: '',
-    work: '',
-    relationship: '',
-    bday: '',
-    family: '',
-    pets: '',
-    howWeMet: '',
-    giftIdeas: '',
-    faveDrink: '',
-    faveDessert: '',
-    notes: '',
-    zodiac: '',
-    personality: '',
-    enneagram: '',
-  })
+    userId: sessionStorage.getItem("lifehacker_user"),
+    name: "",
+    image: "",
+    email: "",
+    phone: "",
+    address: "",
+    city: "",
+    stateProvince: "",
+    zipCode: "",
+    country: "",
+    work: "",
+    relationship: "",
+    bday: "",
+    family: "",
+    pets: "",
+    howWeMet: "",
+    giftIdeas: "",
+    faveDrink: "",
+    faveDessert: "",
+    notes: "",
+    zodiac: "",
+    personality: "",
+    enneagram: "",
+  });
 
-  const { connectionId } = useParams()
-  const history = useHistory()
+  const { connectionId } = useParams();
+  const history = useHistory();
 
   const handleDelete = () => {
-    console.log('handleDelete invoked')
+    console.log("handleDelete invoked");
     //invokes the delete function in Connection Manager and re-directs to connection list.
-    deleteConnection(connectionId).then(() => history.push('/connections'))
-  }
+    deleteConnection(connectionId).then(() => history.push("/connections"));
+  };
 
   const goBack = () => {
-    history.push('/connections')
-  } //takes user back to list of all connections
+    history.push("/connections");
+  }; //takes user back to list of all connections
 
   const handleEdit = () => {
-    history.push(`/connections/${connectionId}/edit`)
-  }
+    history.push(`/connections/${connectionId}/edit`);
+  };
 
   useEffect(() => {
     //use getConnectionById() from ConnectionManager to grab info  and set it to state
-    console.log('useEffect', connectionId)
+    console.log("useEffect", connectionId);
     getConnectionById(connectionId).then((connection) => {
+      console.log("connection inside get ConnectionById is ", connection);
       setConnection({
-        userId: sessionStorage.getItem('lifehacker_user'),
-        name: connection[0].name,
-        image: connection[0].image,
-        email: connection[0].email,
-        phone: connection[0].phone,
-        address: connection[0].address,
-        city: connection[0].city,
-        stateProvince: connection[0].stateProvince,
-        zipCode: connection[0].zipCode,
-        country: connection[0].country,
-        work: connection[0].work,
-        relationship: connection[0].relationship,
-        bday: connection[0].bday,
-        family: connection[0].family,
-        pets: connection[0].pets,
-        howWeMet: connection[0].howWeMet,
-        giftIdeas: connection[0].giftIdeas,
-        faveDrink: connection[0].faveDrink,
-        faveDessert: connection[0].faveDessert,
-        notes: connection[0].notes,
-        zodiac: connection[0].zodiac,
-        personality: connection[0].personality,
-        enneagram: connection[0].enneagram,
-      })
-    })
-  }, [connectionId])
+        userId: sessionStorage.getItem("lifehacker_user"),
+        name: connection.name,
+        image: connection.image,
+        email: connection.email,
+        phone: connection.phone,
+        address: connection.address,
+        city: connection.city,
+        stateProvince: connection.stateProvince,
+        zipCode: connection.zipCode,
+        country: connection.country,
+        work: connection.work,
+        relationship: connection.relationship,
+        bday: connection.bday,
+        family: connection.family,
+        pets: connection.pets,
+        howWeMet: connection.howWeMet,
+        giftIdeas: connection.giftIdeas,
+        faveDrink: connection.faveDrink,
+        faveDessert: connection.faveDessert,
+        notes: connection.notes,
+        zodiac: connection.zodiac,
+        personality: connection.personality,
+        enneagram: connection.enneagram,
+      });
+    });
+  }, [connectionId]);
 
   return (
     <>
@@ -90,7 +90,7 @@ export const ConnectionDetail = () => {
         <div className="connection-flex">
           <div className="connection-outer-flex">
             <div className="connection-user-image">
-              {connection.image !== '' ? (
+              {connection.image !== "" ? (
                 <img
                   src={require(`../../images/${connection.image}`).default}
                   alt={connection.name}
@@ -135,7 +135,7 @@ export const ConnectionDetail = () => {
                       <div className="inner-address">
                         <div className="c-address">{connection.address}</div>
                         <div className="c-address">
-                          {connection.city}, {connection.stateProvince} &nbsp;{' '}
+                          {connection.city}, {connection.stateProvince} &nbsp;{" "}
                           {connection.zipCode}
                         </div>
                         <div className="c-address">{connection.country}</div>
@@ -218,25 +218,27 @@ export const ConnectionDetail = () => {
             </div>
 
             <div className="btn-flex">
-              <button className="details-btn" type="button" onClick={goBack}>
+              <div className="details-btn" onClick={goBack}>
                 Connections
-              </button>
-
-              <div className="connection-delete" onClick={handleEdit}>
-                <FaEdit className="connection-edit-icon" />
               </div>
 
-              <button
+              <div
                 className="details-btn"
-                type="button"
-                onClick={handleDelete}
+                onClick={() => handleEdit(connection?.id)}
+              >
+                Edit
+              </div>
+
+              <div
+                className="details-btn"
+                onClick={() => handleDelete(connection?.id)}
               >
                 Delete
-              </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};

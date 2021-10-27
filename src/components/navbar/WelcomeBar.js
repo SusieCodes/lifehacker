@@ -1,15 +1,16 @@
-import React from 'react'
-import { formatDate } from '../helper'
-import '../LifeHacker.css'
+import React from "react";
+import { formatDate } from "../helper";
+import "../LifeHacker.css";
 
 export const WelcomeBar = (props) => {
-  const { title } = props
+  console.log("welcome bar invoked");
+  const { title } = props;
   return (
     <div className="page-title__flex">
       <div className="page-title__left">
-        Welcome{' '}
+        Welcome{" "}
         <span className="welcome-name">
-          {sessionStorage.getItem('lifehacker_username')}
+          {sessionStorage.getItem("lifehacker_username")}
         </span>
       </div>
 
@@ -20,5 +21,5 @@ export const WelcomeBar = (props) => {
         <span className="todays-date">{formatDate(Date.now())}</span>
       </div>
     </div>
-  )
-}
+  );
+};

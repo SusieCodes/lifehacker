@@ -1,31 +1,31 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { deleteGrocery, getGroceriesByUserId } from './GroceryManager'
-import { GroceryCard } from './GroceryCard'
-import { WelcomeBar } from '../navbar/WelcomeBar'
-import '../LifeHacker.css'
-import './Grocery.css'
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { deleteGrocery, getGroceriesByUserId } from "./GroceryManager";
+import { GroceryCard } from "./GroceryCard";
+import { WelcomeBar } from "../navbar/WelcomeBar";
+import "../LifeHacker.css";
+import "./Grocery.css";
 
 export const GroceryBoard = () => {
-  const [groceries, setGroceries] = useState([])
+  const [groceries, setGroceries] = useState([]);
 
   const getGroceries = () => {
-    getGroceriesByUserId(sessionStorage.getItem('lifehacker_user')).then(
+    getGroceriesByUserId(sessionStorage.getItem("lifehacker_user")).then(
       (userGroceries) => {
-        setGroceries(userGroceries)
+        setGroceries(userGroceries);
       }
-    )
-  }
+    );
+  };
 
   const handleDelete = (id) => {
     deleteGrocery(id).then(() => {
-      getGroceries()
-    })
-  }
+      getGroceries();
+    });
+  };
 
   useEffect(() => {
-    getGroceries()
-  }, [])
+    getGroceries();
+  }, []);
 
   return (
     <>
@@ -53,5 +53,5 @@ export const GroceryBoard = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
