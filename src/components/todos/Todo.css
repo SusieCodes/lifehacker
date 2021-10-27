@@ -9,35 +9,93 @@ Red: #D61212
 Light Gray: rgba(211, 211, 211, 0.468) Dashboard Connections header
 Dark Gray: #2b2b2b font color throughout
 */
+
+.board-container__todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.todo-card-list {
+  padding: 20px;
+  background-color: white;
+  box-shadow: 2px 3px 7px gray;
+  border-radius: 5px;
+  border: none;
+}
+
+/* start of individual todo card */
 .todo-card {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 10px 0px;
-  margin: 10px;
+  padding: 10px;
+  margin: 20px;
   border-radius: 5px;
-  background-color: white;
-  box-shadow: 2px 3px 7px gray;
+  background-color: #c8e6ea68;
 }
 
 .todo-info {
-  border: 1px solid black;
+  flex: 3;
+  margin: 15px;
+  /* border: 3px solid orange; */
+}
+
+.todo-section {
+  padding: 0px;
+  margin: 0px;
+  /* border: 2px solid pink; */
+}
+
+.todo-title {
+  font-size: 22px;
+  font-weight: 600;
+  padding: 0px;
+  margin: 0px;
+  white-space: nowrap;
+  /* border: 1px solid black; */
+}
+
+.todo-bywhen {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0px;
+  margin: 0px;
+  white-space: nowrap;
+  /* border: 1px solid black; */
+}
+
+.todo-bywhen__red {
+  font-size: 18px;
+  color: #d61212;
+  font-weight: 600;
+  padding: 0px;
+  margin: 0px;
+  white-space: nowrap;
+  /* border: 1px solid red; */
 }
 
 .todo-complete {
-  border: transparent;
+  flex: 1;
+  padding: 0px;
+  margin: 15px;
+  white-space: nowrap;
+  /* margin: 0px 20px; */
+  /* border: 1px solid transparent; */
+  /* border: 2px solid yellow; */
 }
 
 .todo-icons {
+  flex: 1;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
   flex-wrap: nowrap;
   white-space: nowrap;
-  margin-right: 30px;
-  /* width: 300px; */
-  border: 1px solid black;
+  padding: 0px;
+  margin: 15px;
+  /* border: 2px solid green; */
 }
 
 .todo-delete {
@@ -57,23 +115,23 @@ Dark Gray: #2b2b2b font color throughout
   margin: auto 20px;
   width: 30px;
   height: 30px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .todo-edit-icon:hover {
   transform: scale(1.5);
-  color: #41C5D8;
+  color: #41c5d8;
 }
 
 .todo-delete-icon {
   color: #2b2b2b;
-  margin: auto 20px;
+  margin: auto auto;
   width: 28px;
   height: 28px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .todo-delete-icon:hover {
   transform: scale(1.5);
-  color: #D61212;
+  color: #d61212;
 }

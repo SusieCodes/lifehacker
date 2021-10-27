@@ -1,37 +1,33 @@
 //Author: Susie Stanley
 //Purpose: Displays all user's connections (friends/family)
 
-import React, { useState, useEffect } from 'react'
-import { deleteConnection, getConnectionsByUserId } from './ConnectionManager'
-import { ConnectionDashCard } from './ConnectionDashCard'
-import { ConnectionDummyCard } from './ConnectionDummyCard'
+import React, { useState, useEffect } from "react";
+import { deleteConnection, getConnectionsByUserId } from "./ConnectionManager";
+import { ConnectionDashCard } from "./ConnectionDashCard";
+import { ConnectionDummyCard } from "./ConnectionDummyCard";
 
 export const ConnectionDashList = () => {
-  const [connections, setConnections] = useState([])
+  const [connections, setConnections] = useState([]);
 
   //gets all the user's connections and sets it to state
   const getConnections = () => {
-    getConnectionsByUserId(sessionStorage.getItem('lifehacker_user')).then(
+    getConnectionsByUserId(sessionStorage.getItem("lifehacker_user")).then(
       (connectionsFromAPI) => {
-        let firstFew = connectionsFromAPI.splice(0, 5)
-        setConnections(firstFew)
+        let firstFew = connectionsFromAPI.splice(0, 5);
+        setConnections(firstFew);
       }
-    )
-  }
+    );
+  };
 
   const handleDelete = (connectionId) => {
     //invokes the delete function and re-direct to the list
-    deleteConnection(connectionId).then(() =>
-      getConnectionsByUserId(sessionStorage.getItem('lifehacker_user')).then(
-        setConnections
-      )
-    )
-  }
+    deleteConnection(connectionId).then(() => getConnections());
+  };
 
   // invokes getConnections on first render only
   useEffect(() => {
-    getConnections()
-  }, [])
+    getConnections();
+  }, []);
 
   return (
     <>
@@ -73,5 +69,5 @@ export const ConnectionDashList = () => {
         )}
       </div>
     </>
-  )
-}
+  );
+};
