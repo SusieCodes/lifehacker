@@ -121,6 +121,7 @@ Dark Gray: #2b2b2b font color throughout
 .todo-edit-icon:hover {
   transform: scale(1.5);
   color: #41c5d8;
+  cursor: pointer;
 }
 
 .todo-delete-icon {
@@ -134,4 +135,5 @@ Dark Gray: #2b2b2b font color throughout
 .todo-delete-icon:hover {
   transform: scale(1.5);
   color: #d61212;
+  cursor: pointer;
 }

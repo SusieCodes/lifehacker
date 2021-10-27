@@ -4,7 +4,7 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { FaEdit, FaTrash } from "react-icons/fa";
-import { formatDateNoDay } from "../helper";
+import { formatDateNoWeekday } from "../helper";
 import "../dashboard/Dashboard.css";
 import "./Connections.css";
 
@@ -50,7 +50,7 @@ export const ConnectionCard = ({ connection, handleDelete }) => {
 
           <div className="dc-phone">{connection?.phone}</div>
 
-          <div className="dc-bday">{formatDateNoDay(connection?.bday)}</div>
+          <div className="dc-bday">{formatDateNoWeekday(connection?.bday)}</div>
         </div>
 
         <div className="connection-icons">

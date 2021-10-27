@@ -159,6 +159,7 @@ body {
   padding: 5px 20px;
   border: 2px solid lightgray;
   border-radius: 5px;
+  cursor: pointer;
   background-color: #c8e6ea;
   /* background-color: #c4f7fe; */
   margin-top: 30px;
@@ -178,6 +179,7 @@ body {
   border-radius: 5px;
   padding: 7px 15px;
   margin: 10px;
+  cursor: pointer;
 }
 
 /* Styling for all Create and Edit forms */
@@ -268,6 +270,7 @@ input::placeholder {
   border-radius: 5px;
   padding: 5px 10px;
   margin: 0px 5px 0px;
+  cursor: pointer;
 }
 
 /* Styling for Board Cards */

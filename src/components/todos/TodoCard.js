@@ -5,6 +5,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { formatStringDate } from "../helper";
+import "./Todo.css";
+import "../LifeHacker.css";
 
 export const TodoCard = ({ todo, handleDelete, handleCompleteTodo }) => {
   const today = Date.now();
