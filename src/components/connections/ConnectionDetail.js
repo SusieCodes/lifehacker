@@ -136,8 +136,8 @@ export const ConnectionDetail = () => {
                       <div className="inner-address">
                         <div className="c-address">{connection.address}</div>
                         <div className="c-address">
-                          {connection.city}, {connection.stateProvince} &nbsp;{" "}
-                          {connection.zipCode}
+                          {connection.city} &nbsp; {connection.stateProvince}{" "}
+                          &nbsp; {connection.zipCode}
                         </div>
                         <div className="c-address">{connection.country}</div>
                       </div>
@@ -146,7 +146,9 @@ export const ConnectionDetail = () => {
                     <div className="connection-info__bday">
                       <div className="c-bold">Birthday:</div>
                       <div className="c-indent">
-                        {formatDateNoWeekday(connection.bday)}
+                        {connection.bday !== "" ? (
+                          <>{formatDateNoWeekday(connection?.bday)}</>
+                        ) : null}
                       </div>
                     </div>
                   </div>

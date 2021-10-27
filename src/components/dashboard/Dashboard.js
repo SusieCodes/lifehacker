@@ -62,7 +62,7 @@ export const Dashboard = () => {
                 <div className="note-container">
                   <h2>Notes</h2>
 
-                  <div className="note-text">
+                  <div className="dash-note-text">
                     <NoteDashList />
                   </div>
                 </div>

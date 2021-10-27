@@ -30,7 +30,7 @@ Dark Gray: #2b2b2b font color throughout
 .past {
   flex-basis: 1;
   padding: 20px;
-  margin: 20px 20px;
+  margin: 0px 20px;
   background-color: white;
   border-radius: 5px;
   box-shadow: 5px 5px 5px lightgray;
@@ -67,7 +67,7 @@ Dark Gray: #2b2b2b font color throughout
   /* border: 1px solid black; */
 }
 
-.note-spacer {
+.activity-note-spacer {
   margin-top: 10px;
 }
 
