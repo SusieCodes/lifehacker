@@ -1,16 +1,17 @@
 // Author: Susie Stanley
 // Purpose: To display relevant info from database on landing page
 
-import React from 'react'
+import React from "react";
 // import { Link } from "react-router-dom";
-import { TodoDashList } from '../todos/TodoDashList'
-import { ActivityDashList } from '../activities/ActivityDashList'
-import { GroceryDashList } from '../groceries/GroceryDashList'
-import { NoteDashList } from '../notes/NoteDashList'
-import { ConnectionDashList } from '../connections/ConnectionDashList'
-import { formatDate } from '../helper'
-import '../LifeHacker.css'
-import '../dashboard/Dashboard.css'
+import { TodoDashList } from "../todos/TodoDashList";
+import { ActivityDashList } from "../activities/ActivityDashList";
+import { GroceryDashList } from "../groceries/GroceryDashList";
+import { NoteDashList } from "../notes/NoteDashList";
+import { JournalDashList } from "../journals/JournalDashList";
+import { ConnectionDashList } from "../connections/ConnectionDashList";
+import { formatDate } from "../helper";
+import "../LifeHacker.css";
+import "../dashboard/Dashboard.css";
 
 export const Dashboard = () => {
   return (
@@ -18,9 +19,9 @@ export const Dashboard = () => {
       <div className="page">
         <div className="page-title__flex">
           <div className="page-title__left">
-            Welcome{' '}
+            Welcome{" "}
             <span className="welcome-name">
-              {sessionStorage.getItem('lifehacker_username')}
+              {sessionStorage.getItem("lifehacker_username")}
             </span>
           </div>
 
@@ -69,6 +70,10 @@ export const Dashboard = () => {
                 {/* START OF JOURNAL DASHBOARD */}
                 <div className="journal-container">
                   <h2>Journal</h2>
+
+                  <div className="dash-journal__list">
+                    <JournalDashList />
+                  </div>
                 </div>
               </div>
             </div>
@@ -94,5 +99,5 @@ export const Dashboard = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
