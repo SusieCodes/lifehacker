@@ -3,7 +3,6 @@ import { formatDate } from "../helper";
 import "../LifeHacker.css";
 
 export const WelcomeBar = (props) => {
-  console.log("welcome bar invoked");
   const { title } = props;
   return (
     <div className="page-title__flex">

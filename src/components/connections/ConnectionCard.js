@@ -4,7 +4,7 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { FaEdit, FaTrash } from "react-icons/fa";
-import { formatDateNoDay } from "../helper";
+import { formatJustMonthDay } from "../helper";
 import "../dashboard/Dashboard.css";
 import "./Connections.css";
 
@@ -43,14 +43,16 @@ export const ConnectionCard = ({ connection, handleDelete }) => {
               )}
             </div>
 
-            <div className="dc-name">{connection?.name}</div>
+            <div className="dc-name">
+              {"  "} {connection?.name}
+            </div>
           </div>
 
           <div className="dc-email">{connection?.email}</div>
 
           <div className="dc-phone">{connection?.phone}</div>
 
-          <div className="dc-bday">{formatDateNoDay(connection?.bday)}</div>
+          <div className="dc-bday">{formatJustMonthDay(connection?.bday)}</div>
         </div>
 
         <div className="connection-icons">

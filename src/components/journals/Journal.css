@@ -1,0 +1,120 @@
+/* Author: Susie Stanley
+Purpose: Journal styling
+
+Colors used:
+Light Blue: #c8e6ea
+Light Blue: #c8e6ea68 (faded)
+Dark Blue: rgb(82, 207, 223) Details button border
+Red: #D61212
+Light Gray: rgba(211, 211, 211, 0.468) Dashboard Connections header
+Dark Gray: #2B2B2B font color throughout
+*/
+
+.board-container__journal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.journal-card-list {
+  padding: 20px;
+  background-color: white;
+  box-shadow: 2px 3px 7px gray;
+  border-radius: 5px;
+  border: none;
+}
+
+/* start of individual journal card */
+.journal-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 22px;
+  padding: 0px 0px 0px 20px;
+  margin: 20px;
+  border-radius: 5px;
+  background-color: #c8e6ea68;
+}
+
+.journal-info {
+  flex: 4;
+  padding: 10px 15px;
+  white-space: wrap;
+  width: 700px;
+  /* border: 1px solid red; */
+}
+
+.journal-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.journal-post {
+  font-size: 20px;
+  font-weight: 400;
+  padding: 10px 15px;
+  margin: 10px 0px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.journal-date {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0px;
+  margin: 0px;
+}
+
+.journal-spacer {
+  margin-right: 7px;
+}
+
+.journal-icons {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  /* width: 300px; */
+  /* border: 1px solid red; */
+}
+
+.journal-delete {
+  margin: auto 0px;
+  padding-top: 6px;
+  /* border: 1px solid black; */
+}
+
+.journal-edit-icon {
+  margin: auto 0px;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.journal-edit-icon:hover {
+  transform: scale(1.5);
+  color: #41c5d8;
+}
+
+.journal-delete-icon {
+  margin: 3px 0px;
+  margin-left: 10px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.journal-delete-icon:hover {
+  transform: scale(1.5);
+  color: #d61212;
+}

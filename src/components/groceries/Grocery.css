@@ -1,5 +1,5 @@
 /* Author: Susie Stanley
-Purpose: Global styling
+Purpose: Grocery styling
 
 Colors used:
 Light Blue: #c8e6ea
@@ -32,6 +32,7 @@ Dark Gray: #2B2B2B font color throughout
   font-size: 22px;
   padding: 0px;
   margin: 10px;
+  border-radius: 5px;
   background-color: #c8e6ea68;
 }
 

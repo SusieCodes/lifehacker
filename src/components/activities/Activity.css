@@ -93,6 +93,7 @@ Dark Gray: #2b2b2b font color throughout
 .activity-edit-icon:hover {
   transform: scale(1.5);
   color: #41c5d8;
+  cursor: pointer;
 }
 
 .activity-delete-icon {
@@ -108,4 +109,5 @@ Dark Gray: #2b2b2b font color throughout
 .activity-delete-icon:hover {
   transform: scale(1.5);
   color: #d61212;
+  cursor: pointer;
 }

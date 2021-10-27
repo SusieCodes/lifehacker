@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getConnectionById, deleteConnection } from "./ConnectionManager";
 import { useParams, useHistory } from "react-router-dom";
 import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import { formatDateNoWeekday } from "../helper";
 import "../LifeHacker.css";
 import "./Connections.css";
 
@@ -144,7 +145,9 @@ export const ConnectionDetail = () => {
 
                     <div className="connection-info__bday">
                       <div className="c-bold">Birthday:</div>
-                      <div className="c-indent">{connection.bday}</div>
+                      <div className="c-indent">
+                        {formatDateNoWeekday(connection.bday)}
+                      </div>
                     </div>
                   </div>
                 </div>

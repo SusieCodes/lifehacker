@@ -4,36 +4,9 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { FaEdit, FaTrash } from "react-icons/fa";
-import { formatStringDate } from "../helper";
-
-// import { WeatherApp } from "../activities/WeatherApp";
-
-// converts 24 hr time to 12 hr
-const formatTime = (time) => {
-  console.log("time is ", time);
-  let time_part_array = time.split(":");
-  console.log("time_part_array is ", time_part_array);
-  console.log("type of time_part_array is ", typeof time_part_array);
-  console.log("time_part_array[0] is ", time_part_array[0]);
-
-  let ampm = "AM";
-  console.log("ampm is ", ampm);
-  if (time_part_array[0] >= 12) {
-    ampm = "PM";
-  }
-  if (time_part_array[0] <= 9) {
-    time_part_array[0] = time_part_array[0].toString();
-    time_part_array[0] = time_part_array[0].slice(1);
-  }
-  if (time_part_array[0] > 12) {
-    time_part_array[0] = time_part_array[0] - 12;
-  }
-
-  const formatted_time =
-    time_part_array[0] + ":" + time_part_array[1] + " " + ampm;
-  console.log("formatted_time is ", formatted_time);
-  return formatted_time;
-};
+import { formatStringDate, formatTime } from "../helper";
+import "../LifeHacker.css";
+import "./Activity.css";
 
 export const ActivityCard = ({ activity, handleDelete }) => {
   const history = useHistory();
