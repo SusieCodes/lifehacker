@@ -46,7 +46,10 @@ Bright Blue: #c4f7fe highlights and buttons
   /* border: 1px solid blue; */
 }
 
-.activity-container, .grocery-container, .journal-container, .note-container {
+.activity-container,
+.grocery-container,
+.journal-container,
+.note-container {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -174,7 +177,7 @@ Bright Blue: #c4f7fe highlights and buttons
 .dash-todo__bywhen__red {
   font-size: 18px;
   font-weight: 400;
-  color:#D61212;
+  color: #d61212;
   padding: 0px;
   margin: 0px;
   white-space: nowrap;
@@ -195,7 +198,7 @@ Bright Blue: #c4f7fe highlights and buttons
 input.checkbox {
   width: 20px;
   height: 20px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 input.checkbox:hover {
@@ -271,6 +274,11 @@ input.checkbox:hover {
 
 .activity-address__highlight {
   background-color: white;
+  padding: 0px 5px;
+}
+
+.card-spacer {
+  padding: 3px 0px;
 }
 
 .transparent {
@@ -304,12 +312,12 @@ button.activity-delete {
 .delete-icon {
   width: 25px;
   height: 25px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .delete-icon:hover {
   transform: scale(1.5);
-  color: #D61212;
+  color: #d61212;
 }
 
 /* Note Dash styling */
@@ -352,9 +360,9 @@ button.activity-delete {
 .dash-note__text {
   flex: 1;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start; 
+  align-items: flex-start;
   margin: 0px;
   min-width: 150px;
   max-width: 175px;
@@ -516,7 +524,7 @@ button.note-delete {
 }
 
 .dc-details a {
-  color: #2B2B2B;
+  color: #2b2b2b;
   text-decoration: none;
 }
 
@@ -530,12 +538,12 @@ button.note-delete {
   margin: auto 10px;
   width: 25px;
   height: 25px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .dc-delete-icon:hover {
   transform: scale(1.5);
-  color: #D61212;
+  color: #d61212;
 }
 
 /* Groceries Dash styling */
@@ -596,12 +604,12 @@ button.grocery-delete {
 .grocery-delete-icon {
   width: 18px;
   height: 18px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .grocery-delete-icon:hover {
   transform: scale(1.5);
-  color: #D61212;
+  color: #d61212;
 }
 
 .see-more {
@@ -610,7 +618,7 @@ button.grocery-delete {
 }
 
 .see-more a {
-  color: #2B2B2B;
+  color: #2b2b2b;
   text-decoration: none;
 }
 
