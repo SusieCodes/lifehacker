@@ -1,60 +1,62 @@
 //Author: Susie Stanley
 //Purpose: Creates and displays form for user to edit an existing activity
 
-import React, { useState, useEffect } from 'react'
-import { update, getActivityById } from './ActivityManager'
-import { useParams, useHistory } from 'react-router-dom'
-import { WelcomeBar } from '../navbar/WelcomeBar'
-import './Activity.css'
-import '../LifeHacker.css'
+import React, { useState, useEffect } from "react";
+import { update, getActivityById } from "./ActivityManager";
+import { useParams, useHistory } from "react-router-dom";
+import { WelcomeBar } from "../navbar/WelcomeBar";
+import "./Activity.css";
+import "../LifeHacker.css";
 
 export const ActivityEditForm = () => {
   const [activity, setActivity] = useState({
-    name: '',
-    date: '',
-    address: '',
-    city: '',
-    zipcode: '',
-    notes: '',
-    userId: parseInt(sessionStorage.getItem('lifehacker_user')),
-  })
+    name: "",
+    date: "",
+    time: "",
+    address: "",
+    city: "",
+    zipcode: "",
+    notes: "",
+    userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+  });
 
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
-  const { activityId } = useParams()
-  const history = useHistory()
+  const { activityId } = useParams();
+  const history = useHistory();
 
   const handleFieldChange = (evt) => {
-    const stateToChange = { ...activity }
-    stateToChange[evt.target.id] = evt.target.value
-    setActivity(stateToChange)
-  }
+    const stateToChange = { ...activity };
+    stateToChange[evt.target.id] = evt.target.value;
+    setActivity(stateToChange);
+  };
 
   const updateExistingActivity = (evt) => {
-    evt.preventDefault()
-    setIsLoading(true)
+    evt.preventDefault();
+    setIsLoading(true);
 
     // This is an edit, so we need the id
     const editedActivity = {
       id: activityId,
-      name: activity.name,
-      date: activity.date,
-      address: activity.address,
-      city: activity.city,
-      zipcode: activity.zipcode,
-      notes: activity.notes,
-      userId: activity.userId,
-    }
+      name: activity?.name,
+      date: activity?.date,
+      time: activity?.time,
+      address: activity?.address,
+      city: activity?.city,
+      zipcode: activity?.zipcode,
+      notes: activity?.notes,
+      userId: activity?.userId,
+    };
 
-    update(editedActivity).then(() => history.push('/activities'))
-  }
+    update(editedActivity).then(() => history.push("/activities"));
+  };
 
   useEffect(() => {
     getActivityById(activityId).then((activity) => {
-      setActivity(activity)
-      setIsLoading(false)
-    })
-  }, [activityId])
+      setActivity(activity);
+      setIsLoading(false);
+    });
+  }, [activityId]);
 
   return (
     <>
@@ -84,6 +86,18 @@ export const ActivityEditForm = () => {
                 onChange={handleFieldChange}
                 id="date"
                 value={activity.date}
+              />
+            </div>
+
+            <div className="form__group">
+              <label htmlFor="time">Time:</label>
+              <input
+                type="time"
+                required
+                className="form__group--edit"
+                onChange={handleFieldChange}
+                id="time"
+                value={activity.time}
               />
             </div>
 
@@ -157,5 +171,5 @@ export const ActivityEditForm = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};

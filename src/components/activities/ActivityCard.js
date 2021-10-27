@@ -1,23 +1,51 @@
 //Author: Susie Stanley
 //Purpose: Creates and displays individual activity cards for a single activity that is passed as a prop
 
-import React from 'react'
-import { useHistory } from 'react-router-dom'
-import { FaEdit, FaTrash } from 'react-icons/fa'
+import React from "react";
+import { useHistory } from "react-router-dom";
+import { FaEdit, FaTrash } from "react-icons/fa";
 // import { WeatherApp } from "../activities/WeatherApp";
 
 const formatDate = (obj) => {
-  const date = new Date(obj)
-  const formattedDate = date.toDateString() // converts date object to a string that displays in format "Sun Jul 22 2018"
-  return formattedDate
-}
+  const date = new Date(obj);
+  const formattedDate = date.toDateString(); // converts date object to a string that displays in format "Sun Jul 22 2018"
+  return formattedDate;
+};
+
+// converts 24 hr time to 12 hr
+const formatTime = (time) => {
+  console.log("time is ", time);
+  let time_part_array = time.split(":");
+  console.log("time_part_array is ", time_part_array);
+  console.log("type of time_part_array is ", typeof time_part_array);
+  console.log("time_part_array[0] is ", time_part_array[0]);
+
+  let ampm = "AM";
+  console.log("ampm is ", ampm);
+  if (time_part_array[0] >= 12) {
+    ampm = "PM";
+  }
+  if (time_part_array[0] <= 9) {
+    time_part_array[0] = time_part_array[0].toString();
+    time_part_array[0] = time_part_array[0].slice(1);
+  }
+  if (time_part_array[0] > 12) {
+    time_part_array[0] = time_part_array[0] - 12;
+  }
+
+  const formatted_time =
+    time_part_array[0] + ":" + time_part_array[1] + " " + ampm;
+  console.log("formatted_time is ", formatted_time);
+  return formatted_time;
+};
 
 export const ActivityCard = ({ activity, handleDelete }) => {
-  const history = useHistory()
+  const history = useHistory();
 
   const handleEdit = () => {
-    history.push(`/activities/${activity?.id}/edit`)
-  }
+    history.push(`/activities/${activity?.id}/edit`);
+  };
+
   return (
     <>
       <div className="activity-card">
@@ -28,20 +56,28 @@ export const ActivityCard = ({ activity, handleDelete }) => {
             <div className="da-inner__wrapper">
               <div className="da-inner__left">
                 <div className="bold">Date:</div>
-                <div className="bold">Address:</div>
-                <div className="transparent">City:</div>
-                <div className="bold">Notes:</div>
+                <div className="bold">Time:</div>
+                <div className="bold card-spacer">Address:</div>
+                <div className="transparent card-spacer">City:</div>
+                <div className="bold note-spacer">Notes:</div>
               </div>
 
               <div className="da-inner__right">
                 <div>{formatDate(activity?.date)}</div>
-                <div className="activity-address__highlight">
+                {activity?.time ? (
+                  <div>{formatTime(activity?.time)}</div>
+                ) : (
+                  <div>check time</div>
+                )}
+                <div className="activity-address__highlight card-spacer">
                   {activity?.address}
                 </div>
-                <div className="activity-address__highlight">
+                <div className="activity-address__highlight card-spacer">
                   {activity?.city}
                 </div>
-                <div className="activity-notes">{activity?.notes}</div>
+                <div className="activity-notes note-spacer">
+                  {activity?.notes}
+                </div>
               </div>
             </div>
           </div>
@@ -64,5 +100,5 @@ export const ActivityCard = ({ activity, handleDelete }) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};

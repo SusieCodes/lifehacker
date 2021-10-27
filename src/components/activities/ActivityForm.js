@@ -1,57 +1,59 @@
 //Author: Susie Stanley
 //Purpose: Creates and displays an input form for user to add an activity
 
-import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
-import { addActivity } from './ActivityManager'
-import { WelcomeBar } from '../navbar/WelcomeBar'
-import './Activity.css'
-import '../LifeHacker.css'
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { addActivity } from "./ActivityManager";
+import { WelcomeBar } from "../navbar/WelcomeBar";
+import "./Activity.css";
+import "../LifeHacker.css";
 
 export const ActivityForm = () => {
-  const [conflictDialog, setConflictDialog] = useState(false)
+  const [conflictDialog, setConflictDialog] = useState(false);
 
   // Defining initial state of the form inputs with useState
   const [activity, setActivity] = useState({
-    name: '',
-    date: '',
-    address: '',
-    city: '',
-    zipcode: '',
-    notes: '',
-    userId: parseInt(sessionStorage.getItem('lifehacker_user')),
-  })
+    name: "",
+    date: "",
+    time: "",
+    address: "",
+    city: "",
+    zipcode: "",
+    notes: "",
+    userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+  });
 
-  const history = useHistory()
+  const history = useHistory();
 
   const ResetForm = () => {
     setActivity({
-      name: '',
-      date: '',
-      address: '',
-      city: '',
-      zipcode: '',
-      notes: '',
-      userId: parseInt(sessionStorage.getItem('lifehacker_user')),
-    })
-  }
+      name: "",
+      date: "",
+      time: "",
+      address: "",
+      city: "",
+      zipcode: "",
+      notes: "",
+      userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+    });
+  };
 
   const goBack = () => {
-    history.push('/activities')
-  } //takes user back to list
+    history.push("/activities");
+  }; //takes user back to list
 
   const handleControlledInputChange = (evt) => {
     /* Because we are changing a state object or array,
 		we are creating a copy, making changes, and then setting state */
-    const newActivity = { ...activity }
-    let selectedVal = evt.target.value
+    const newActivity = { ...activity };
+    let selectedVal = evt.target.value;
 
     /* Sets the property to the new value
 		using object bracket notation. */
-    newActivity[evt.target.id] = selectedVal
+    newActivity[evt.target.id] = selectedVal;
     // update state
-    setActivity(newActivity)
-  }
+    setActivity(newActivity);
+  };
 
   // const FiveDigitZipCode = (zipcode) => {
   //   var zipcodeformat = /^[0-9]{5}?$/;
@@ -63,16 +65,16 @@ export const ActivityForm = () => {
   // }
 
   const handleSave = (evt) => {
-    evt.preventDefault() //Prevents the browser from submitting the form
+    evt.preventDefault(); //Prevents the browser from submitting the form
 
-    if (activity.name === '' || activity.date === '' || activity.city === '') {
-      setConflictDialog(true)
+    if (activity.name === "" || activity.date === "" || activity.city === "") {
+      setConflictDialog(true);
     } else {
       //invoke addActivity, passing event as an argument
       //once completed, this changes the url and displays the event list
-      addActivity(activity).then(() => history.push('/activities'))
+      addActivity(activity).then(() => history.push("/activities"));
     }
-  }
+  };
 
   return (
     <>
@@ -116,6 +118,18 @@ export const ActivityForm = () => {
                 required
                 className="form__group--edit"
                 value={activity.date}
+              />
+            </div>
+
+            <div className="form__group">
+              <label htmlFor="date">Time:*</label>
+              <input
+                type="time"
+                id="time"
+                onChange={handleControlledInputChange}
+                required
+                className="form__group--edit"
+                value={activity.time}
               />
             </div>
 
@@ -191,5 +205,5 @@ export const ActivityForm = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};

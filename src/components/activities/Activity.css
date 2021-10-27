@@ -67,6 +67,10 @@ Dark Gray: #2b2b2b font color throughout
   /* border: 1px solid black; */
 }
 
+.note-spacer {
+  margin-top: 10px;
+}
+
 .activity-icons {
   display: flex;
   flex-direction: row;
