@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "../components/LifeHacker.css";
 import "./Auth.css";
+import "../../src/components/LifeHacker.css";
 
 export const Login = () => {
   const [loginUser, setLoginUser] = useState({ email: "" });
@@ -43,7 +44,10 @@ export const Login = () => {
     <main className="container-login">
       <dialog className="dialog dialog-auth" open={existDialog}>
         <div className="login-dialog">User does not exist</div>
-        <button className="button-close" onClick={(e) => setExistDialog(false)}>
+        <button
+          className="login-button-close"
+          onClick={(e) => setExistDialog(false)}
+        >
           Close
         </button>
       </dialog>
@@ -56,14 +60,14 @@ export const Login = () => {
 
             <fieldset>
               <label htmlFor="inputEmail" className="login-label">
-                {" "}
-                Email address{" "}
+                Email address:
               </label>
               <input
                 type="email"
+                name="email"
                 id="email"
                 className="form__group--edit"
-                placeholder="Email address"
+                placeholder="name@email.com"
                 required
                 autoFocus
                 value={loginUser.email}
@@ -71,7 +75,7 @@ export const Login = () => {
               />
 
               <div className="form-btns">
-                <button type="submit" className="form-btn">
+                <button type="submit" className="login-btn">
                   Sign In
                 </button>
               </div>

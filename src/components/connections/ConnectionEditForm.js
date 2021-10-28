@@ -80,7 +80,7 @@ export const ConnectionEditForm = () => {
       timestamp: connection.timestamp,
     };
 
-    update(editedConnection).then(() => history.push("/connections"));
+    update(editedConnection).then(() => history.goBack());
   };
 
   useEffect(() => {
@@ -259,7 +259,7 @@ export const ConnectionEditForm = () => {
             <button
               type="button"
               className="form-btn"
-              onClick={() => history.push(`/connections`)}
+              onClick={() => history.goBack()}
             >
               Cancel
             </button>
