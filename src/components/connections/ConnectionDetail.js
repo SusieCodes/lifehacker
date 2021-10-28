@@ -136,9 +136,10 @@ export const ConnectionDetail = () => {
                       <div className="inner-address">
                         <div className="c-address">{connection.address}</div>
                         <div className="c-address">
-                          {connection.city} &nbsp; {connection.stateProvince}{" "}
-                          &nbsp; {connection.zipCode}
+                          {connection.city}&nbsp;
+                          {connection.stateProvince}
                         </div>
+                        <div className="c-address">{connection.zipCode}</div>
                         <div className="c-address">{connection.country}</div>
                       </div>
                     </div>
