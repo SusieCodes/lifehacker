@@ -643,7 +643,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## Created by Susie Stanley
 
-### If you have any questions about this project, please reach out via Linkedin and I would be more than happy to address any queries or comments
+#### If you have any questions about this project, please reach out via Linkedin and I would be more than happy to address any queries or comments
 
 - LinkedIn - [Susie Stanley](https://www.linkedin.com/in/susie-stanley/)
 - GitHub - [@SusieCodes](https://github.com/SusieCodes)
