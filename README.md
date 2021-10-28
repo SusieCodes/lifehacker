@@ -18,7 +18,7 @@
 
 ## Description
 
-Life Hacker is a React App built for users to have the capability to post and view news articles, local events, and message posts/private messages with their added friends. It focuses on a sleek, simple, and mellow design that makes it easy for the user to digest the content of the webpage. We achieved this by selecting a pastel-like color scheme and structuring the layout of the page in a spacious, yet condensed way. We focused on creating an elegant design while also having strong user functionality.
+Life Hacker is a React App built for users to plan their activities, post journal entries, make a grocery list, create digital sticky notes as reminders, post journal entries, and it centers around a robust contact list that lets you keep track of important information about the people y ou care about so you never forget significant dates and information. I used different shades of blue so the user will feel calm, trusting, and serene while using this web-based app.
 
 ---
 
