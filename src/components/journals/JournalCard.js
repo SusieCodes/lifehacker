@@ -5,10 +5,12 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { formatDate } from "../helper";
+import "../LifeHacker.css";
+import "./Journal.css";
 
 export const JournalCard = ({ journal, handleDelete }) => {
   const handleEdit = () => {
-    history.push(`/groceries/${journal?.id}/edit`);
+    history.push(`/journals/${journal?.id}/edit`);
   };
 
   const history = useHistory();

@@ -28,7 +28,7 @@ export const ActivityCard = ({ activity, handleDelete }) => {
                 <div className="bold">Time:</div>
                 <div className="bold card-spacer">Address:</div>
                 <div className="transparent card-spacer">City:</div>
-                <div className="bold note-spacer">Notes:</div>
+                <div className="bold activity-note-spacer">Notes:</div>
               </div>
 
               <div className="da-inner__right">

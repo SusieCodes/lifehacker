@@ -1,5 +1,5 @@
 /* Author: Susie Stanley
-Purpose: To Do pages styling
+Purpose: Note pages styling
 
 Colors used:
 Light Blue: #c8e6ea
@@ -10,3 +10,154 @@ Light Gray: rgba(211, 211, 211, 0.468) Dashboard Connections header
 Dark Gray: #2b2b2b font color throughout
 */
 
+/* NoteBoard Note styling */
+.board-container__note {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0px 0px;
+  border-radius: 5px;
+  /* border: 2px solid aqua; */
+}
+
+.note-card-list {
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 3px 7px gray;
+  /* border: 2px solid lime; */
+}
+
+.noteboard-note__wrapper {
+  background-image: url("../../images/notecard.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 31px;
+  margin: 0px 10px;
+  min-width: 350px;
+  min-height: 200px;
+  /* border: 3px solid yellow; */
+}
+
+.noteboard-note {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 55px 0px 50px 60px;
+  /* border: 3px solid pink; */
+}
+
+.noteboard-note__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-left: 8px;
+  margin: 0px;
+  width: 125px;
+  height: 120px;
+  /* border: 1px solid black; */
+}
+
+.note-top-text {
+  flex: 1;
+  /* display: flex;
+  flex-direction: row;
+  align-items: center; */
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+  line-height: 1.2;
+  padding: 0px 10px 0px;
+  margin: 0px;
+  width: 100%;
+  /* border: 2px solid red; */
+}
+
+.note-bottom-text {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 18px;
+  text-align: left;
+  line-height: 1.2;
+  padding: 5px 15px 0px 10px;
+  margin: 0px;
+  width: 100%;
+  /* border: 1px solid blue; */
+}
+
+.note__delete {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-top: 20px;
+  margin: 0px;
+}
+
+button.note-delete {
+  flex: 1;
+  align-self: flex-start;
+  border: none;
+  background-color: transparent;
+  margin: 0px;
+  padding: 0px;
+}
+
+.noteboard-icons {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  padding: 0px;
+  padding-bottom: 10px;
+  margin: 0px;
+  /* border: 1px solid purple; */
+}
+
+.noteboard-delete {
+  margin: auto 0px;
+  padding-top: 6px;
+  /* border: 1px solid black; */
+}
+
+.noteboard-edit-icon {
+  margin: auto 0px;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.noteboard-edit-icon:hover {
+  transform: scale(1.5);
+  color: #41c5d8;
+}
+
+.noteboard-delete-icon {
+  margin: 3px 0px;
+  margin-left: 10px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.noteboard-delete-icon:hover {
+  transform: scale(1.5);
+  color: #d61212;
+}
+/* end of NoteBoard Note styling */

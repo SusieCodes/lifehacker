@@ -41,15 +41,7 @@ body {
   /* border: 1px solid black; */
 }
 
-/* .paper-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-} */
-
-/* all pages use this flex container */
+/* WelcomeBar styling */
 .page {
   display: flex;
   flex-direction: column;
@@ -58,7 +50,7 @@ body {
   border-radius: 0px 0px 20px 20px;
   padding: 0px 30px 30px;
   margin: 10px 5px;
-  min-height: 800px;
+  min-height: 80vh;
   color: #2b2b2b;
   box-shadow: 5px 5px 5px lightgray;
 }
@@ -119,7 +111,7 @@ body {
   justify-content: center;
   padding: 0px;
   margin: 0px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .section-flex__content {
@@ -128,7 +120,7 @@ body {
   justify-content: center;
   padding: 0px;
   margin: 0px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .add-connection,
@@ -272,12 +264,3 @@ input::placeholder {
   margin: 0px 5px 0px;
   cursor: pointer;
 }
-
-/* Styling for Board Cards */
-/* .card {
-  padding: 10px 0px;
-  margin: 10px;
-  border-radius: 5px;
-  background-color: white;
-  box-shadow: 2px 3px 7px gray;
-} */

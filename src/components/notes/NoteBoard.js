@@ -1,50 +1,54 @@
 //Author: Susie Stanley
 //Purpose: Displays all user's notes
 
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { deleteNote, getNotesByUserId } from './NoteManager'
-import { NoteCard } from './NoteCard'
-import { WelcomeBar } from '../../components/navbar/WelcomeBar'
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { deleteNote, getNotesByUserId } from "./NoteManager";
+import { NoteCard } from "./NoteCard";
+import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import "../LifeHacker.css";
+import "./Note.css";
 
 export const NoteBoard = () => {
-  const [notes, setNotes] = useState([])
+  const [notes, setNotes] = useState([]);
 
   const getNotes = () => {
-    getNotesByUserId(sessionStorage.getItem('lifehacker_user')).then(
+    getNotesByUserId(sessionStorage.getItem("lifehacker_user")).then(
       (notesFromAPI) => {
-        setNotes(notesFromAPI)
+        setNotes(notesFromAPI);
       }
-    )
-  }
+    );
+  };
 
   const handleDelete = (id) => {
     deleteNote(id).then(() => {
-      getNotes()
-    })
-  }
+      getNotes();
+    });
+  };
 
   useEffect(() => {
-    getNotes()
-  }, [])
+    getNotes();
+  }, []);
 
   return (
     <>
       <div className="page">
         <WelcomeBar title="Notes" />
 
-        <div className="section-flex__content">
-          <Link to={`/notes/create`}>
-            <button className="add-note">+ Add Note</button>
-          </Link>
-        </div>
+        <div className="section-flex">
+          <div className="section-flex__content">
+            <Link to={`/notes/create`}>
+              <button className="add-note">+ Add Note</button>
+            </Link>
+          </div>
 
-        <div className="container">
-          {notes.map((note) => (
-            <NoteCard key={note.id} note={note} handleDelete={handleDelete} />
-          ))}
+          <div className="board-container__note">
+            {notes.map((note) => (
+              <NoteCard key={note.id} note={note} handleDelete={handleDelete} />
+            ))}
+          </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};

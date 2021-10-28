@@ -2,7 +2,6 @@
 export const formatDate = (obj) => {
   const date = new Date(obj);
   let formattedDate = date.toDateString();
-
   //next line checks to see if the first digit of day is 0
   const checkZero = formattedDate.charAt(8);
   // console.log("charAt inside formatDate returns", formattedDate.charAt(8));
@@ -17,17 +16,12 @@ export const formatDate = (obj) => {
 export const formatStringDate = (dateStr) => {
   const newDateStr = new Date(dateStr + "T12:00:00");
   let formattedDate = newDateStr.toDateString();
-  console.log("formattedDate inside formatStringDate is: ", formattedDate);
   // this next part adds comma after day of the month
-  formattedDate = formattedDate.slice(0, 10) + ", " + formattedDate.slice(10);
+  // formattedDate = formattedDate.slice(0, 10) + ", " + formattedDate.slice(10);
   // this next part adds a space after day of the month
   // formattedDate = formattedDate.slice(0, 10) + "  " + formattedDate.slice(10);
   //next line checks to see if the first digit of day is 0
   const checkZero = formattedDate.charAt(8);
-  console.log(
-    "charAt inside formatStringDate returns ",
-    formattedDate.charAt(8)
-  );
   if (checkZero === "0") {
     // this part takes off the leading 0
     formattedDate = formattedDate.slice(0, 8) + formattedDate.slice(9);
@@ -81,8 +75,9 @@ export const formatDateFromIntStr = (milliseconds) => {
   const newDateStr = new Date(milliseconds + 43200000);
   let formattedDate = newDateStr.toDateString();
   let formattedDateNoDay = formattedDate.slice(3);
-  formattedDateNoDay =
-    formattedDateNoDay.slice(0, 7) + "," + formattedDateNoDay.slice(7); // this part adds comma after day of the month
+  // this next part adds comma after day of the month
+  // formattedDateNoDay =
+  // formattedDateNoDay.slice(0, 7) + "," + formattedDateNoDay.slice(7);
   const checkZero = formattedDateNoDay.charAt(5);
   if (checkZero === "0") {
     // this part takes off the leading 0
@@ -92,7 +87,7 @@ export const formatDateFromIntStr = (milliseconds) => {
   return formattedDateNoDay;
 };
 
-// converts 24 hr time to 12 hr (e.g. input 18:00 output is 6:00 PM)
+// converts 24 hr time to 12 hr (e.g. input 18:00, output is 6:00 PM)
 export const formatTime = (time) => {
   let time_part_array = time.split(":");
   let ampm = "AM";
@@ -107,7 +102,6 @@ export const formatTime = (time) => {
   if (time_part_array[0] > 12) {
     time_part_array[0] = time_part_array[0] - 12;
   }
-
   const formatted_time =
     time_part_array[0] + ":" + time_part_array[1] + " " + ampm;
   return formatted_time;
