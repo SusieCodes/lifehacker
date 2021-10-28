@@ -1,7 +1,7 @@
 /* Author: Susie Stanley
 Purpose: Global styling
 
-Colors used:
+Site colors used:
 Light Blue: #c8e6ea
 Light Blue: #c8e6ea68 (faded)
 Dark Blue: rgb(82, 207, 223) Details button border
@@ -9,6 +9,7 @@ Red: #D61212
 Light Gray: rgba(211, 211, 211, 0.468) Dashboard Connections header
 Dark Gray: #2B2B2B font color throughout
 Shadow: box-shadow: 5px 5px 5px lightgray;
+Bright Blue: #c4f7fe highlights, hover on links, and buttons
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
@@ -204,6 +205,11 @@ input {
 input::placeholder {
   color: rgb(198, 198, 198);
   opacity: 1;
+}
+
+.form__group--edit:focus {
+  outline-color: #c4f7fe;
+  /* border: 0; */
 }
 
 .asterisk-info {
