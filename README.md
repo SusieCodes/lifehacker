@@ -41,19 +41,7 @@ Life Hacker is a React App built for users to plan their activities, post journa
 Run commands inside of LifeHacker Directory.
 
 ```
-npm install npm@latest -g
-```
-
-```
 npm install
-```
-
-```
-npm install react-icons --save
-```
-
-```
-npm install @mui/material @emotion/react @emotion/styled
 ```
 
 ---
