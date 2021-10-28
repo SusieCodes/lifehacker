@@ -1,18 +1,19 @@
-import * as React from 'react'
-import Avatar from '@mui/material/Avatar'
-import Stack from '@mui/material/Stack'
-import user from '../../images/default.png'
+import * as React from "react";
+import Avatar from "@mui/material/Avatar";
+import Stack from "@mui/material/Stack";
 
-export const ImageAvatar = () => {
+export const ImageAvatar = (obj) => {
+  console.log("obj.user is: ", obj.user);
+  console.log("obj.user.name is: ", obj.user.name);
+  console.log("obj.user.image is: ", obj.user.image);
+
   return (
     <Stack direction="row" spacing={2}>
       <Avatar
-        alt="app user"
-        src={user}
-        sx={{ width: 60, height: 60, border: 2, borderColor: 'lightgray' }}
+        alt={obj?.user.name}
+        src={obj?.user.image}
+        sx={{ width: 60, height: 60, border: 2, borderColor: "lightgray" }}
       />
     </Stack>
-  )
-}
-
-export default ImageAvatar
+  );
+};

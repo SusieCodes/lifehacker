@@ -16,17 +16,12 @@ export const formatDate = (obj) => {
 export const formatStringDate = (dateStr) => {
   const newDateStr = new Date(dateStr + "T12:00:00");
   let formattedDate = newDateStr.toDateString();
-  console.log("formattedDate inside formatStringDate is: ", formattedDate);
   // this next part adds comma after day of the month
   // formattedDate = formattedDate.slice(0, 10) + ", " + formattedDate.slice(10);
   // this next part adds a space after day of the month
   // formattedDate = formattedDate.slice(0, 10) + "  " + formattedDate.slice(10);
   //next line checks to see if the first digit of day is 0
   const checkZero = formattedDate.charAt(8);
-  console.log(
-    "charAt inside formatStringDate returns ",
-    formattedDate.charAt(8)
-  );
   if (checkZero === "0") {
     // this part takes off the leading 0
     formattedDate = formattedDate.slice(0, 8) + formattedDate.slice(9);

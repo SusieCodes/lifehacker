@@ -4,17 +4,19 @@
 const url = "http://localhost:8088";
 
 export const getJournalsByUserId = (UserId) => {
-  return fetch(`${url}/journals/?userId=${UserId}`).then((res) => res.json());
+  return fetch(
+    `${url}/journals/?userId=${UserId}&_sort=dayTime&_order=asc`
+  ).then((res) => res.json());
 };
 
-export const getAllJournals = () => {
-  return fetch(`${url}/journals`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then((res) => res.json());
-};
+// export const getAllJournals = () => {
+//   return fetch(`${url}/journals`, {
+//     method: "GET",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   }).then((res) => res.json());
+// };
 
 export const addJournal = (newJournal) => {
   return fetch(`${url}/journals`, {
