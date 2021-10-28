@@ -1,89 +1,87 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import "../components/LifeHacker.css";
+import "./Auth.css";
 
 export const Login = () => {
-    const [loginUser, setLoginUser] = useState({ email: "" })
-    const [existDialog, setExistDialog] = useState(false)
+  const [loginUser, setLoginUser] = useState({ email: "" });
+  const [existDialog, setExistDialog] = useState(false);
 
-    const history = useHistory()
+  const history = useHistory();
 
-    const handleInputChange = (event) => {
-        const newUser = { ...loginUser }
-        newUser[event.target.id] = event.target.value
-        setLoginUser(newUser)
-    }
+  const handleInputChange = (event) => {
+    const newUser = { ...loginUser };
+    newUser[event.target.id] = event.target.value;
+    setLoginUser(newUser);
+  };
 
+  const existingUserCheck = () => {
+    // If your json-server URL is different, please change it below
+    return fetch(`http://localhost:8088/users?email=${loginUser.email}`)
+      .then((res) => res.json())
+      .then((user) => (user.length ? user[0] : false));
+  };
 
-    const existingUserCheck = () => {
-        // If your json-server URL is different, please change it below
-        return fetch(`http://localhost:8088/users?email=${loginUser.email}`)
-            .then(res => res.json())
-            .then(user => user.length ? user[0] : false)
-    }
+  const handleLogin = (e) => {
+    e.preventDefault();
 
-    const handleLogin = (e) => {
-        e.preventDefault()
+    existingUserCheck().then((exists) => {
+      if (exists) {
+        // The user id is saved under the key lifehacker_user in session Storage
+        // Change below if needed
+        sessionStorage.setItem("lifehacker_user", exists.id);
+        const [firstname] = exists.name.split(" ");
+        sessionStorage.setItem("lifehacker_username", firstname);
+        history.push("/dashboard");
+      } else {
+        setExistDialog(true);
+      }
+    });
+  };
 
-        existingUserCheck()
-            .then(exists => {
-                if (exists) {
-                    // The user id is saved under the key lifehacker_user in session Storage
-                    // Change below if needed
-                    sessionStorage.setItem("lifehacker_user", exists.id)
-                    const [ firstname, ] = exists.name.split(" ");
-                    sessionStorage.setItem("lifehacker_username", firstname)
-                    history.push("/dashboard")
+  return (
+    <main className="container-login">
+      <dialog className="dialog dialog-auth" open={existDialog}>
+        <div className="login-dialog">User does not exist</div>
+        <button className="button-close" onClick={(e) => setExistDialog(false)}>
+          Close
+        </button>
+      </dialog>
 
-                } else {
-                    setExistDialog(true)
-                }
-            })
-    }
+      <div className="form-flex">
+        <div className="form-flex__inner">
+          <form className="form-login" onSubmit={handleLogin}>
+            <div className="form-login__headline">Welcome To Life Hacker</div>
+            <div className="form-login__subtitle">Please Sign In</div>
 
-    return (
-        <main className="container--login">
-            <dialog className="dialog dialog--auth" open={existDialog}>
-                <div className="login__dialog">User does not exist</div>
-                <button className="button--close" onClick={e => setExistDialog(false)}>Close</button>
-            </dialog>
-        
-        <div className="form__flex">
-            <div className="form__flex__inner">
+            <fieldset>
+              <label htmlFor="inputEmail" className="login-label">
+                {" "}
+                Email address{" "}
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="form__group--edit"
+                placeholder="Email address"
+                required
+                autoFocus
+                value={loginUser.email}
+                onChange={handleInputChange}
+              />
 
-                <form className="form--login" onSubmit={handleLogin}>
-                    <div className="form--login--headline">Welcome To Life Hacker</div>
-                    <div className="form--login--subtitle">Please Sign In</div>
-                    
-                    <fieldset>
-
-                        <label htmlFor="inputEmail"> Email address </label>
-                        <input type="email"
-                            id="email"
-                            className="form__group--edit"
-                            placeholder="Email address"
-                            required autoFocus
-                            value={loginUser.email}
-                            onChange={handleInputChange} />
-
-                        <div className="form-btns">
-
-                            <button 
-                                type="submit" 
-                                className="form-btn">
-                                    Sign In
-                            </button>
-
-                        </div>
-
-                    </fieldset>
-
-                </form>
-
-            </div>
+              <div className="form-btns">
+                <button type="submit" className="form-btn">
+                  Sign In
+                </button>
+              </div>
+            </fieldset>
+          </form>
         </div>
-            <div className="link--register">
-                <Link to="/register">Register for an account</Link>
-            </div>
-        </main>
-    )
-}
+      </div>
+      <div className="link-register">
+        <Link to="/register">Register for an account</Link>
+      </div>
+    </main>
+  );
+};

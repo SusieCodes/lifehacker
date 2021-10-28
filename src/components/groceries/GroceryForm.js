@@ -1,48 +1,44 @@
-import React, { useState } from 'react'
-import { useHistory } from 'react-router'
-import { addGrocery } from './GroceryManager'
-import { WelcomeBar } from '../navbar/WelcomeBar'
-import './Grocery.css'
-import '../LifeHacker.css'
+import React, { useState } from "react";
+import { useHistory } from "react-router";
+import { addGrocery } from "./GroceryManager";
+import { WelcomeBar } from "../navbar/WelcomeBar";
+import "./Grocery.css";
+import "../LifeHacker.css";
 
 export const GroceryForm = () => {
-  const [conflictDialog, setConflictDialog] = useState(false)
+  const [conflictDialog, setConflictDialog] = useState(false);
 
   const [grocery, setGrocery] = useState({
-    text: '',
-    userId: parseInt(sessionStorage.getItem('lifehacker_user')),
-  })
+    text: "",
+    userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+  });
 
-  const history = useHistory()
+  const history = useHistory();
 
   const ResetForm = () => {
     setGrocery({
-      text: '',
-      userId: parseInt(sessionStorage.getItem('lifehacker_user')),
-    })
-  }
+      text: "",
+      userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+    });
+  };
 
   const handleControlledInputChange = (event) => {
-    const newGrocery = { ...grocery }
-    let selectedVal = event.target.value
-    // selectedVal = parseInt(selectedVal)
-
-    newGrocery[event.target.id] = selectedVal
-    setGrocery(newGrocery)
-  }
+    const newGrocery = { ...grocery };
+    let selectedVal = event.target.value;
+    // selectedVal = parseInt(selectedVal);
+    newGrocery[event.target.id] = selectedVal;
+    setGrocery(newGrocery);
+  };
 
   const handleSave = (event) => {
-    event.preventDefault() //Prevents the browser from submitting the form
-    // if (grocery.text === '') {
-    //   setConflictDialog(true)
-    // } else {
-    addGrocery(grocery).then(() => history.push('/groceries'))
+    event.preventDefault(); //Prevents the browser from submitting the form
+    addGrocery(grocery).then(() => history.push("/groceries"));
     // }
-  }
+  };
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Add Groceries" />
+        <WelcomeBar title="Add New Groceries" />
 
         <div className="form-flex">
           <fieldset className="form">
@@ -86,7 +82,7 @@ export const GroceryForm = () => {
               type="button"
               className="form-btn"
               onClick={() => {
-                history.push('/groceries')
+                history.push("/groceries");
               }}
             >
               Cancel
@@ -95,5 +91,5 @@ export const GroceryForm = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
