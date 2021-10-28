@@ -1,6 +1,6 @@
 # Life Hacker
 
-![Project Image](https://github.com/SusieCodes/lifehacker/blob/main/src/images/LifeHackerdashboard.png)
+![Project Image](https://github.com/SusieCodes/lifehacker/blob/main/src/images/lifehackerdashboard.png)
 
 > Everything you need to keep up with your friends in a Nutshell!
 
