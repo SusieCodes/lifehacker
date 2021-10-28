@@ -1,54 +1,54 @@
 //Author: Susie Stanley
 //Purpose: Creates and displays form for user to edit an existing note
 
-import React, { useState, useEffect } from 'react'
-import { update, getNoteById } from './NoteManager'
-import { useParams, useHistory } from 'react-router-dom'
-import { WelcomeBar } from '../navbar/WelcomeBar'
-import './Note.css'
-import '../LifeHacker.css'
+import React, { useState, useEffect } from "react";
+import { update, getNoteById } from "./NoteManager";
+import { useParams, useHistory } from "react-router-dom";
+import { WelcomeBar } from "../navbar/WelcomeBar";
+import "./Note.css";
+import "../LifeHacker.css";
 
 export const NoteEditForm = () => {
   const [note, setNote] = useState({
-    title: '',
-    text: '',
+    title: "",
+    text: "",
     dayTime: Date.now(),
-    userId: parseInt(sessionStorage.getItem('lifehacker_user')),
-  })
+    userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+  });
 
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
-  const { noteId } = useParams()
-  const history = useHistory()
+  const { noteId } = useParams();
+  const history = useHistory();
 
   const handleFieldChange = (evt) => {
-    const stateToChange = { ...note }
-    stateToChange[evt.target.id] = evt.target.value
-    setNote(stateToChange)
-  }
+    const stateToChange = { ...note };
+    stateToChange[evt.target.id] = evt.target.value;
+    setNote(stateToChange);
+  };
 
   const updateExistingNote = (evt) => {
-    evt.preventDefault()
-    setIsLoading(true)
+    evt.preventDefault();
+    setIsLoading(true);
 
     // This is an edit, so we need the id
     const editedNote = {
       id: noteId,
-      title: '',
-      text: '',
+      title: note.title,
+      text: note.text,
       dayTime: Date.now(),
-      userId: parseInt(sessionStorage.getItem('lifehacker_user')),
-    }
+      userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+    };
 
-    update(editedNote).then(() => history.push('/notes'))
-  }
+    update(editedNote).then(() => history.push("/notes"));
+  };
 
   useEffect(() => {
     getNoteById(noteId).then((note) => {
-      setNote(note)
-      setIsLoading(false)
-    })
-  }, [noteId])
+      setNote(note);
+      setIsLoading(false);
+    });
+  }, [noteId]);
 
   return (
     <>
@@ -103,5 +103,5 @@ export const NoteEditForm = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};

@@ -1,59 +1,59 @@
 //Author: Susie Stanley
 //Purpose: Creates and displays an input form for user to add a note
 
-import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
-import { addNote } from './NoteManager'
-import { WelcomeBar } from '../../components/navbar/WelcomeBar'
-import './Note.css'
-import '../LifeHacker.css'
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { addNote } from "./NoteManager";
+import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import "./Note.css";
+import "../LifeHacker.css";
 
 export const NoteForm = () => {
-  const [conflictDialog, setConflictDialog] = useState(false)
+  const [conflictDialog, setConflictDialog] = useState(false);
 
   // Defining initial state of the form inputs with useState()
   const [note, setNote] = useState({
-    title: '',
-    text: '',
+    title: "",
+    text: "",
     dayTime: Date.now(),
-    userId: parseInt(sessionStorage.getItem('lifehacker_user')),
-  })
+    userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+  });
 
-  const history = useHistory()
+  const history = useHistory();
 
   // When a field changes, it updates state
   // The return will re-render and display based on the values in state
   const ResetForm = () => {
     setNote({
-      title: '',
-      text: '',
+      title: "",
+      text: "",
       dayTime: Date.now(),
-      userId: parseInt(sessionStorage.getItem('lifehacker_user')),
-    })
-  }
+      userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+    });
+  };
 
   const handleControlledInputChange = (evt) => {
     /* Because we are changing a state object or array,
 		we are creating a copy, making changes, and then setting state */
-    const newNote = { ...note }
-    let selectedVal = evt.target.value
+    const newNote = { ...note };
+    let selectedVal = evt.target.value;
 
     /* Sets the property to the new value
 		using object bracket notation. */
-    newNote[evt.target.id] = selectedVal
+    newNote[evt.target.id] = selectedVal;
     // update state
-    setNote(newNote)
-  }
+    setNote(newNote);
+  };
 
   const handleSave = (evt) => {
-    evt.preventDefault() //Prevents the browser from submitting the form
+    evt.preventDefault(); //Prevents the browser from submitting the form
 
-    if (note.title === '' || note.text === '') {
-      setConflictDialog(true)
+    if (note.title === "" || note.text === "") {
+      setConflictDialog(true);
     } else {
-      addNote(note).then(() => history.push('/notes'))
+      addNote(note).then(() => history.push("/notes"));
     }
-  }
+  };
 
   return (
     <>
@@ -109,12 +109,12 @@ export const NoteForm = () => {
               Reset Form
             </button>
 
-            <button className="form-btn" onClick={() => history.push('/notes')}>
+            <button className="form-btn" onClick={() => history.push("/notes")}>
               Cancel
             </button>
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
