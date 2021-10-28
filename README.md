@@ -1,6 +1,6 @@
 # Life Hacker
 
-![Project Image](https://github.com/SusieCodes/lifehacker/blob/main/src/images/lifehackerdashboard.png)
+![Project Image](https://github.com/SusieCodes/lifehacker/blob/main/src/images/LifeHackerdashboard.png)
 
 > Everything you need to keep up with your friends in a Nutshell!
 
@@ -619,7 +619,7 @@ Create database.json file inside of the src directory and paste the following JS
 }
 ```
 
-![ERD Image](https://github.com/SusieCodes/lifehacker/blob/main/src/images/lifehackerERD.png)
+![ERD Image](https://github.com/SusieCodes/lifehacker/blob/main/src/images/LifeHackerERD.png)
 
 [Back To The Top](#lifehacker)
 
