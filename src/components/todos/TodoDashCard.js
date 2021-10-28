@@ -2,7 +2,7 @@
 // Purpose: Displays list of To-Do items by user
 
 import React from "react";
-import { formatDate } from "../helper";
+import { formatStringDate } from "../helper";
 import "../LifeHacker.css";
 import "../dashboard/Dashboard.css";
 
@@ -29,12 +29,12 @@ export const TodoDashCard = ({ todo, handleCompleteTodo }) => {
             {byWhenCheck ? (
               <div className="dash-todo__bywhen">
                 {" "}
-                <strong>By When: </strong> {formatDate(todo.byWhen)}
+                <strong>By When: </strong> {formatStringDate(todo.byWhen)}
               </div>
             ) : (
               <div className="dash-todo__bywhen__red">
                 {" "}
-                <strong>By When:</strong> {formatDate(todo.byWhen)}
+                <strong>By When:</strong> {formatStringDate(todo.byWhen)}
               </div>
             )}
           </div>
