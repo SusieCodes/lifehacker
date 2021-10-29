@@ -247,3 +247,37 @@ Purpose: styling for all Connections pages */
   transform: scale(1.5);
   color: #d61212;
 }
+
+/* Connection Input Form styling */
+.upload-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-image-text {
+  margin-right: 15px;
+}
+
+.upload-wrapper {
+  padding: 0px;
+  margin: 0px;
+}
+
+.upload-input {
+  width: 350px;
+  margin: auto 0px;
+}
+
+.upload-btn {
+  font-size: 18px;
+  font-weight: 600;
+  width: 100px;
+  background-color: #c4f7fe;
+  border: 1px solid rgba(82, 207, 223, 0.359);
+  border-radius: 5px;
+  padding: 7px 0px 5px;
+  margin: 10px;
+  cursor: pointer;
+}

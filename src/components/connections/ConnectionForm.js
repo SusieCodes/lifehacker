@@ -1,92 +1,95 @@
 //Author: Susie Stanley
 //Purpose: Creates and displays an input form for user to add a connection
 
-import React, { useState } from 'react'
-import { useHistory } from 'react-router'
-import { addConnection } from './ConnectionManager'
-import { WelcomeBar } from '../../components/navbar/WelcomeBar'
-import './Connections.css'
-import '../LifeHacker.css'
+import React, { useState } from "react";
+import { useHistory } from "react-router";
+import { addConnection } from "./ConnectionManager";
+import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import { Upload } from "../uploads/Upload";
+import Axios from "axios";
+import { Image } from "cloudinary-react";
+import "./Connections.css";
+import "../LifeHacker.css";
 
 export const ConnectionForm = () => {
-  const [conflictDialog, setConflictDialog] = useState(false)
+  const [conflictDialog, setConflictDialog] = useState(false);
 
   // Defining initial state of the form inputs with useState
   const [connection, setConnection] = useState({
-    userId: parseInt(sessionStorage.getItem('lifehacker_user')),
-    name: '',
-    image: 'default.png',
-    email: '',
-    phone: '',
-    address: '',
-    city: '',
-    stateProvince: '',
-    zipCode: '',
-    country: '',
-    work: '',
-    relationship: '',
-    bday: '',
-    family: '',
-    pets: '',
-    howWeMet: '',
-    giftIdeas: '',
-    faveDrink: '',
-    faveDessert: '',
-    notes: '',
-    zodiac: '',
-    personality: '',
-    enneagram: '',
+    userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+    name: "",
+    image: "default.png",
+    email: "",
+    phone: "",
+    address: "",
+    city: "",
+    stateProvince: "",
+    zipCode: "",
+    country: "",
+    work: "",
+    relationship: "",
+    bday: "",
+    family: "",
+    pets: "",
+    howWeMet: "",
+    giftIdeas: "",
+    faveDrink: "",
+    faveDessert: "",
+    notes: "",
+    zodiac: "",
+    personality: "",
+    enneagram: "",
     timestamp: Date.now(),
-  })
+  });
 
-  const history = useHistory()
+  const history = useHistory();
 
   const ResetForm = () => {
     setConnection({
-      userId: parseInt(sessionStorage.getItem('lifehacker_user')),
-      name: '',
-      image: 'default.png',
-      email: '',
-      phone: '',
-      address: '',
-      city: '',
-      stateProvince: '',
-      zipCode: '',
-      country: '',
-      work: '',
-      relationship: '',
-      bday: '',
-      family: '',
-      pets: '',
-      howWeMet: '',
-      giftIdeas: '',
-      faveDrink: '',
-      faveDessert: '',
-      notes: '',
-      zodiac: '',
-      personality: '',
-      enneagram: '',
+      userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+      name: "",
+      image: "default.png",
+      email: "",
+      phone: "",
+      address: "",
+      city: "",
+      stateProvince: "",
+      zipCode: "",
+      country: "",
+      work: "",
+      relationship: "",
+      bday: "",
+      family: "",
+      pets: "",
+      howWeMet: "",
+      giftIdeas: "",
+      faveDrink: "",
+      faveDessert: "",
+      notes: "",
+      zodiac: "",
+      personality: "",
+      enneagram: "",
       timestamp: Date.now(),
-    })
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
+    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const handleControlledInputChange = (evt) => {
-    const newConnection = { ...connection }
-    let selectedVal = evt.target.value
+    const newConnection = { ...connection };
+    let selectedVal = evt.target.value;
 
-    newConnection[evt.target.id] = selectedVal
-    setConnection(newConnection)
-  }
+    newConnection[evt.target.id] = selectedVal;
+    setConnection(newConnection);
+  };
 
   const handleSave = (evt) => {
-    evt.preventDefault() //Prevents the browser from submitting the form
-    if (connection.name === '') {
-      setConflictDialog(true)
+    evt.preventDefault(); //Prevents the browser from submitting the form
+    if (connection.name === "") {
+      setConflictDialog(true);
     } else {
-      addConnection(connection).then(() => history.push('/connections'))
+      addConnection(connection).then(() => history.push("/connections"));
     }
-  }
+  };
 
   return (
     <>
@@ -118,6 +121,11 @@ export const ConnectionForm = () => {
                 placeholder=" First &#38; Last Name"
                 value={connection.name}
               />
+            </div>
+
+            <div className="upload-section">
+              <Upload />
+              <Image cloudName="dllowdq2w" />
             </div>
 
             <div className="form__group">
@@ -372,7 +380,7 @@ export const ConnectionForm = () => {
             <button
               type="button"
               className="form-btn"
-              onClick={() => history.push('/connections')}
+              onClick={() => history.push("/connections")}
             >
               Cancel
             </button>
@@ -380,5 +388,5 @@ export const ConnectionForm = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};

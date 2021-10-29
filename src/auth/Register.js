@@ -75,7 +75,7 @@ export const Register = () => {
             <div className="form-register__headline">
               Please Register for Life Hacker
             </div>
-            <fieldset>
+            <fieldset className="login-fieldset">
               <label htmlFor="name" className="login-label">
                 Name:
               </label>

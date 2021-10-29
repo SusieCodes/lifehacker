@@ -54,7 +54,7 @@ form {
   background-color: #c8e6ea68;
 }
 
-fieldset {
+.login-fieldset {
   display: flex;
   flex-direction: row;
   justify-content: center;

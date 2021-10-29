@@ -49,7 +49,9 @@ export const ConnectionDashCard = ({ connection, handleDelete }) => {
 
           <div className="dc-phone">{connection?.phone}</div>
 
-          <div className="dc-bday">{formatJustMonthDay(connection?.bday)}</div>
+          <div className="dc-bday">
+            {connection.bday ? formatJustMonthDay(connection?.bday) : null}
+          </div>
         </div>
 
         <div className="dc-icons">

@@ -8,7 +8,10 @@ import "../dashboard/Dashboard.css";
 
 export const TodoDashCard = ({ todo, handleCompleteTodo }) => {
   const today = Date.now();
-  const byWhen = Date.parse(todo.byWhen);
+  console.log("today is ", today);
+  let byWhen = Date.parse(todo.byWhen);
+  byWhen = byWhen + 43200000;
+  console.log("byWhen is ", byWhen);
   let byWhenCheck = true;
 
   if (byWhen < today) {

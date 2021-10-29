@@ -58,7 +58,7 @@ export const Login = () => {
             <div className="form-login__headline">Welcome To Life Hacker</div>
             <div className="form-login__subtitle">Please Sign In</div>
 
-            <fieldset>
+            <fieldset className="login-fieldset">
               <label htmlFor="inputEmail" className="login-label">
                 Email address:
               </label>
