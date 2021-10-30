@@ -145,3 +145,11 @@ span {
 .avatar {
   margin-right: 20px;
 }
+
+.avatar-photo {
+  margin: auto 10px;
+  border: 3px solid lightgray;
+  border-radius: 35px;
+  /* border: 3px solid white; */
+  width: 70px;
+}

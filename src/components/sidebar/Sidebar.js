@@ -7,7 +7,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import { SidebarData } from "./SidebarData";
-import { ImageAvatar } from "../navbar/ImageAvatar";
+// import { ImageAvatar } from "../navbar/ImageAvatar";
 import { getUserById } from "../users/userManager";
 import { IconContext } from "react-icons";
 import logo from "../../images/lifehackerbanner.svg";
@@ -68,7 +68,20 @@ export const Sidebar = () => {
                   </Link>
                 </div>
                 <div className="toolbar-right">
-                  <ImageAvatar className="avatar" key={user?.id} user={user} />
+                  {/* <ImageAvatar className="avatar" key={user?.id} user={user} /> */}
+                  {user?.image ? (
+                    <img
+                      src={user?.image}
+                      alt={user?.name}
+                      className="avatar-photo"
+                    />
+                  ) : (
+                    <img
+                      src={require(`../../images/default.png`).default}
+                      alt="default-user"
+                      className="avatar-photo"
+                    />
+                  )}
                   <button
                     className="logout"
                     onClick={() => {
