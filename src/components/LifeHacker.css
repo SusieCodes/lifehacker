@@ -130,7 +130,7 @@ body {
 .add-grocery,
 .add-journal,
 .add-todo {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   padding: 5px 20px;
   border: 2px solid lightgray;
