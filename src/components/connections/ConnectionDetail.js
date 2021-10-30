@@ -37,24 +37,24 @@ export const ConnectionDetail = () => {
   const history = useHistory();
 
   const handleDelete = () => {
-    console.log("handleDelete invoked");
+    // console.log("handleDelete invoked");
     //invokes the delete function in Connection Manager and re-directs to connection list.
     deleteConnection(connectionId).then(() => history.push("/connections"));
   };
 
   const goBack = () => {
     history.push("/connections");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }; //takes user back to list of all connections
 
   const handleEdit = () => {
     history.push(`/connections/${connectionId}/edit`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
     //use getConnectionById() from ConnectionManager to grab info  and set it to state
-    console.log("useEffect", connectionId);
     getConnectionById(connectionId).then((connection) => {
-      console.log("connection inside get ConnectionById is ", connection);
       setConnection({
         userId: sessionStorage.getItem("lifehacker_user"),
         name: connection.name,
@@ -86,14 +86,14 @@ export const ConnectionDetail = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Add New Connection" />
+        <WelcomeBar title="Connection Details" />
 
         <div className="connection-flex">
           <div className="connection-outer-flex">
             <div className="connection-user-image">
               {connection.image !== "" ? (
                 <img
-                  src={require(`../../images/${connection.image}`).default}
+                  src={connection.image}
                   alt={connection.name}
                   className="connection-user-photo"
                 />

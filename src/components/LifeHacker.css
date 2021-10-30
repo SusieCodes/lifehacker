@@ -24,7 +24,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 html,
 body {
   width: 1800px;
-  margin: 0px auto;
+  margin: 10px auto;
   padding: 0px;
   font-family: "Poppins", sans-serif;
   background-color: #eeeeee;
@@ -130,7 +130,7 @@ body {
 .add-grocery,
 .add-journal,
 .add-todo {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   padding: 5px 20px;
   border: 2px solid lightgray;

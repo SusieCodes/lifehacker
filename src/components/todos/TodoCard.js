@@ -10,7 +10,8 @@ import "../LifeHacker.css";
 
 export const TodoCard = ({ todo, handleDelete, handleCompleteTodo }) => {
   const today = Date.now();
-  const byWhen = Date.parse(todo.byWhen);
+  let byWhen = Date.parse(todo.byWhen);
+  byWhen = byWhen + 43200000;
   let byWhenCheck = true;
 
   if (byWhen < today) {

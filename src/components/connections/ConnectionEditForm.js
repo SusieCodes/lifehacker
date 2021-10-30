@@ -41,6 +41,37 @@ export const ConnectionEditForm = () => {
   const { connectionId } = useParams();
   const history = useHistory();
 
+  // start of upload function
+  const [clickedStyle, setClickedStyle] = useState("no-uploaded-image");
+  const [image, setImage] = useState("");
+
+  const [loading, setLoading] = useState(false);
+
+  const uploadImage = async (evt) => {
+    const files = evt.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "wp84lxqy");
+    setLoading(true);
+
+    const res = await fetch(
+      "	https://api.cloudinary.com/v1_1/dllowdq2w/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+
+    const file = await res.json();
+    setImage(file.secure_url);
+    // console.log("image is ", image);
+    // console.log("file.secure_url is ", file.secure_url);
+    // console.log("image type is ", typeof image);
+    setLoading(false);
+    setClickedStyle("uploaded-image");
+  };
+  // end of upload function
+
   const handleFieldChange = (evt) => {
     const stateToChange = { ...connection };
     stateToChange[evt.target.id] = evt.target.value;
@@ -97,6 +128,51 @@ export const ConnectionEditForm = () => {
 
         <div className="form-flex">
           <fieldset className="form">
+            <div className="connection-edit-image">
+              {connection.image !== "" ? (
+                <img
+                  src={connection.image}
+                  alt={connection.name}
+                  className="connection-user-photo"
+                />
+              ) : (
+                <img
+                  src={require(`../../images/default.png`).default}
+                  alt="default"
+                  className="connection-user-photo"
+                />
+              )}
+            </div>
+
+            <div className="upload-section">
+              <div className="upload-wrapper">
+                <div className="upload-image-text">Image: </div>
+                <input
+                  type="file"
+                  id="image"
+                  name="file"
+                  className="upload-input"
+                  placeholder="Choose Image"
+                  onChange={uploadImage}
+                />
+              </div>
+            </div>
+
+            <div className="uploaded-image-section">
+              {loading ? (
+                <div className="loading">Loading...</div>
+              ) : (
+                <div className="uploaded-image-wrapper">
+                  <img
+                    src={image}
+                    alt=""
+                    width="150"
+                    className={clickedStyle}
+                  />
+                </div>
+              )}
+            </div>
+
             <Input
               id="name"
               value={connection?.name}
@@ -259,7 +335,10 @@ export const ConnectionEditForm = () => {
             <button
               type="button"
               className="form-btn"
-              onClick={() => history.goBack()}
+              onClick={() => {
+                history.goBack();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
             >
               Cancel
             </button>

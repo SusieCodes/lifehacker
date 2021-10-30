@@ -5,7 +5,7 @@ const url = "http://localhost:8088";
 
 export const getJournalsByUserId = (UserId) => {
   return fetch(
-    `${url}/journals/?userId=${UserId}&_sort=dayTime&_order=asc`
+    `${url}/journals/?userId=${UserId}&_sort=dayTime&_order=desc`
   ).then((res) => res.json());
 };
 

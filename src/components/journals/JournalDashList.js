@@ -40,9 +40,8 @@ export const JournalDashList = () => {
         <>
           <div className="dash-journal__list">
             {firstFewItems.map((journal) => (
-              <Link to="/journals">
+              <Link to="/journals" key={journal.id}>
                 <JournalDashCard
-                  key={journal?.id}
                   journal={journal}
                   handleDelete={handleDelete}
                 />

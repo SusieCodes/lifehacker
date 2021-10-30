@@ -82,10 +82,10 @@
   display: flex;
   justify-content: center;
   position: fixed;
-  top: 0;
+  top: 30;
   left: -100%;
   transition: 850ms;
-  box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
 .side-menu.active {
@@ -116,16 +116,13 @@
 }
 
 .side-text a:hover {
-  /* color: white; */
-  /* background-color: #D61212; */
   background-color: #c4f7fe;
-  /* border: 1px solid darkgray; */
   border: 1px solid #4feaff;
 }
 
 .side-menu-items {
-padding: 0px;
-margin: 0px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .sidebar-toggle {
@@ -147,4 +144,12 @@ span {
 
 .avatar {
   margin-right: 20px;
+}
+
+.avatar-photo {
+  margin: auto 10px;
+  border: 3px solid lightgray;
+  border-radius: 35px;
+  /* border: 3px solid white; */
+  width: 70px;
 }
