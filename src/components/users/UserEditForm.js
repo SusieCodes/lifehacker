@@ -1,5 +1,5 @@
 //Author: Susie Stanley
-//Purpose: Creates and displays form for user to edit an existing user
+//Purpose: Creates and displays form for user to edit an their account
 
 import React, { useState, useEffect } from "react";
 import { update, getUserById } from "./UserManager";
@@ -53,9 +53,6 @@ export const UserEditForm = () => {
 
     const file = await res.json();
     setImage(file.secure_url);
-    // console.log("image is ", image);
-    // console.log("file.secure_url is ", file.secure_url);
-    // console.log("image type is ", typeof image);
     setLoading(false);
     setClickedStyle("uploaded-image");
   };
@@ -75,7 +72,7 @@ export const UserEditForm = () => {
     const editedUser = {
       id: userId,
       name: user.name,
-      image: user.image,
+      image: image ? image : user.image,
       email: user.email,
       phone: user.phone,
       address: user.address,
