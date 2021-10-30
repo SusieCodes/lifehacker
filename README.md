@@ -64,6 +64,8 @@ npm install
    npm start
    ```
 
+3. To login, use email address 'taylor@email.com' to see full functionality using dummy data from the database OR register as a new user to create all your own content
+
 ---
 
 ### Local API using JSON server
@@ -643,8 +645,6 @@ Create database.json file inside of the src directory and paste the following JS
   ]
 }
 ```
-
-#### To login, use email address taylor@email.com to see full functionality using dummy data or register as a new user to create all your own content
 
 ![ERD Image](https://github.com/SusieCodes/lifehacker/blob/main/src/images/LifeHackerERD.png)
 

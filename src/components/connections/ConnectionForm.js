@@ -38,6 +38,7 @@ export const ConnectionForm = () => {
     zodiac: "",
     personality: "",
     enneagram: "",
+    isFave: false,
     timestamp: Date.now(),
   });
 
@@ -99,6 +100,7 @@ export const ConnectionForm = () => {
       zodiac: "",
       personality: "",
       enneagram: "",
+      isFave: false,
       timestamp: Date.now(),
     });
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -140,6 +142,7 @@ export const ConnectionForm = () => {
         zodiac: connection.zodiac,
         personality: connection.personality,
         enneagram: connection.enneagram,
+        isFave: connection.isFave,
         timestamp: Date.now(),
       };
       addConnection(newConnection).then(() => history.push("/connections"));

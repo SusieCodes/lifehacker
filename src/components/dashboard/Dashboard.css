@@ -499,6 +499,10 @@ button.note-delete {
 }
 
 .dc-bday {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   flex: 1;
   margin: auto 0px;
   white-space: nowrap;

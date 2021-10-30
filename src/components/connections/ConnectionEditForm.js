@@ -121,7 +121,7 @@ export const ConnectionEditForm = () => {
       setIsLoading(false);
       // setImage(connection.image);
     });
-  }, [connectionId]); //wont cause infinite look because it comes from params
+  }, [connectionId]); //wont cause infinite loop because it comes from params
 
   return (
     <>

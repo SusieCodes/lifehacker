@@ -37,3 +37,15 @@ export const update = (editedConnection) => {
     body: JSON.stringify(editedConnection),
   }).then((data) => data.json());
 };
+
+export const changeFave = (id, fave) => {
+  return fetch(`${url}/connections/${id}`, {
+    method: "PATCH",
+    body: JSON.stringify({
+      isFave: fave,
+    }),
+    headers: {
+      "Content-type": "application/json",
+    },
+  }).then((res) => res.json());
+};

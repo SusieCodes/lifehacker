@@ -1,39 +1,39 @@
 //Author: Susie Stanley
 //Purpose: Displays all user's connections (friends/family)
 
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { deleteConnection, getConnectionsByUserId } from './ConnectionManager'
-import { ConnectionCard } from './ConnectionCard'
-import { ConnectionDummyCard } from './ConnectionDummyCard'
-import { WelcomeBar } from '../../components/navbar/WelcomeBar'
-import '../dashboard/Dashboard.css'
-import '../LifeHacker.css'
-import '../connections/Connections.css'
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { deleteConnection, getConnectionsByUserId } from "./ConnectionManager";
+import { ConnectionCard } from "./ConnectionCard";
+import { ConnectionDummyCard } from "./ConnectionDummyCard";
+import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import "../dashboard/Dashboard.css";
+import "../LifeHacker.css";
+import "../connections/Connections.css";
 
 export const ConnectionBoard = () => {
-  const [connections, setConnections] = useState([])
+  const [connections, setConnections] = useState([]);
 
   const getConnections = () => {
-    getConnectionsByUserId(sessionStorage.getItem('lifehacker_user')).then(
+    getConnectionsByUserId(sessionStorage.getItem("lifehacker_user")).then(
       (userConnections) => {
-        setConnections(userConnections)
+        setConnections(userConnections);
       }
-    )
-  }
+    );
+  };
 
   const handleDelete = (connectionId) => {
     //invoke the delete function and re-direct to the list
     deleteConnection(connectionId).then(() =>
-      getConnectionsByUserId(sessionStorage.getItem('lifehacker_user')).then(
+      getConnectionsByUserId(sessionStorage.getItem("lifehacker_user")).then(
         setConnections
       )
-    )
-  }
+    );
+  };
 
   useEffect(() => {
-    getConnections()
-  }, [])
+    getConnections();
+  }, []);
 
   return (
     <>
@@ -85,5 +85,5 @@ export const ConnectionBoard = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
