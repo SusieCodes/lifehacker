@@ -312,10 +312,10 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 }
 
 .uploaded-image {
-  border-radius: 10px;
+  border-radius: 75px;
   border: 4px solid #c4f7fe;
   align-self: flex-end;
-  margin: 5px auto 10px;
+  margin: 5px auto 0px;
 }
 
 .form__group--email {

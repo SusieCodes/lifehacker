@@ -48,6 +48,7 @@ export const ConnectionEditForm = () => {
   const [loading, setLoading] = useState(false);
 
   const uploadImage = async (evt) => {
+    console.log("uploadImage invoked");
     const files = evt.target.files;
     const data = new FormData();
     data.append("file", files[0]);
@@ -55,7 +56,7 @@ export const ConnectionEditForm = () => {
     setLoading(true);
 
     const res = await fetch(
-      "	https://api.cloudinary.com/v1_1/dllowdq2w/image/upload",
+      "https://api.cloudinary.com/v1_1/dllowdq2w/image/upload",
       {
         method: "POST",
         body: data,
@@ -64,9 +65,6 @@ export const ConnectionEditForm = () => {
 
     const file = await res.json();
     setImage(file.secure_url);
-    // console.log("image is ", image);
-    // console.log("file.secure_url is ", file.secure_url);
-    // console.log("image type is ", typeof image);
     setLoading(false);
     setClickedStyle("uploaded-image");
   };
@@ -87,7 +85,7 @@ export const ConnectionEditForm = () => {
       id: connectionId,
       userId: connection.userId,
       name: connection.name,
-      image: connection.image,
+      image: image ? image : connection.image,
       email: connection.email,
       phone: connection.phone,
       address: connection.address,
@@ -111,13 +109,17 @@ export const ConnectionEditForm = () => {
       timestamp: Date.now(),
     };
 
-    update(editedConnection).then(() => history.goBack());
+    update(editedConnection).then(() => {
+      history.goBack();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   };
 
   useEffect(() => {
     getConnectionById(connectionId).then((connection) => {
       setConnection(connection);
       setIsLoading(false);
+      // setImage(connection.image);
     });
   }, [connectionId]); //wont cause infinite look because it comes from params
 
@@ -153,7 +155,9 @@ export const ConnectionEditForm = () => {
                   name="file"
                   className="upload-input"
                   placeholder="Choose Image"
-                  onChange={uploadImage}
+                  onChange={(evt) => {
+                    uploadImage(evt);
+                  }}
                 />
               </div>
             </div>

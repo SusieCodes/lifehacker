@@ -80,7 +80,7 @@ Create database.json file inside of the src directory and paste the following JS
       "phone": "425-555-1212",
       "address": "123 Othello Dr",
       "city": "Anytown",
-      "stateProvince": "UT",
+      "stateProvince": "TN",
       "zipCode": "91514",
       "country": "USA",
       "bday": "1986-05-05",

@@ -106,7 +106,6 @@ export const UserDetail = () => {
                         <div className="c-address">
                           {user.zipCode} {""} {user.country}
                         </div>
-                        {/* <div className="c-address">{user.country}</div> */}
                       </div>
                     </div>
 
