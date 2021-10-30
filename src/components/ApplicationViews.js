@@ -1,24 +1,26 @@
-import { Route } from 'react-router-dom'
-import { Dashboard } from '../../src/components/dashboard/Dashboard'
-import { ConnectionBoard } from './connections/ConnectionBoard'
-import { ConnectionForm } from '../../src/components/connections/ConnectionForm'
-import { ConnectionEditForm } from '../../src/components/connections/ConnectionEditForm'
-import { ConnectionDetail } from '../../src/components/connections/ConnectionDetail'
-import { ActivityBoard } from '../../src/components/activities/ActivityBoard'
-import { ActivityForm } from '../../src/components/activities/ActivityForm'
-import { ActivityEditForm } from '../../src/components/activities/ActivityEditForm'
-import { TodoBoard } from '../../src/components/todos/TodoBoard'
-import { TodoForm } from '../../src/components/todos/TodoForm'
-import { TodoEditForm } from '../../src/components/todos/TodoEditForm'
-import { NoteBoard } from '../../src/components/notes/NoteBoard'
-import { NoteForm } from '../../src/components/notes/NoteForm'
-import { NoteEditForm } from '../../src/components/notes/NoteEditForm'
-import { GroceryBoard } from '../../src/components/groceries/GroceryBoard'
-import { GroceryForm } from '../../src/components/groceries/GroceryForm'
-import { GroceryEditForm } from '../../src/components/groceries/GroceryEditForm'
-import { JournalBoard } from '../../src/components/journals/JournalBoard'
-import { JournalForm } from '../../src/components/journals/JournalForm'
-import { JournalEditForm } from '../../src/components/journals/JournalEditForm'
+import { Route } from "react-router-dom";
+import { Dashboard } from "../../src/components/dashboard/Dashboard";
+import { ConnectionBoard } from "./connections/ConnectionBoard";
+import { ConnectionForm } from "../../src/components/connections/ConnectionForm";
+import { ConnectionEditForm } from "../../src/components/connections/ConnectionEditForm";
+import { ConnectionDetail } from "../../src/components/connections/ConnectionDetail";
+import { UserDetail } from "./users/UserDetail";
+import { UserEditForm } from "../../src/components/users/UserEditForm";
+import { ActivityBoard } from "../../src/components/activities/ActivityBoard";
+import { ActivityForm } from "../../src/components/activities/ActivityForm";
+import { ActivityEditForm } from "../../src/components/activities/ActivityEditForm";
+import { TodoBoard } from "../../src/components/todos/TodoBoard";
+import { TodoForm } from "../../src/components/todos/TodoForm";
+import { TodoEditForm } from "../../src/components/todos/TodoEditForm";
+import { NoteBoard } from "../../src/components/notes/NoteBoard";
+import { NoteForm } from "../../src/components/notes/NoteForm";
+import { NoteEditForm } from "../../src/components/notes/NoteEditForm";
+import { GroceryBoard } from "../../src/components/groceries/GroceryBoard";
+import { GroceryForm } from "../../src/components/groceries/GroceryForm";
+import { GroceryEditForm } from "../../src/components/groceries/GroceryEditForm";
+import { JournalBoard } from "../../src/components/journals/JournalBoard";
+import { JournalForm } from "../../src/components/journals/JournalForm";
+import { JournalEditForm } from "../../src/components/journals/JournalEditForm";
 
 export const ApplicationViews = () => {
   return (
@@ -41,6 +43,14 @@ export const ApplicationViews = () => {
 
       <Route exact path="/connections/:connectionId(\d+)">
         <ConnectionDetail />
+      </Route>
+
+      <Route exact path="/users/:userId(\d+)">
+        <UserDetail />
+      </Route>
+
+      <Route exact path="/users/:userId(\d+)/edit">
+        <UserEditForm />
       </Route>
 
       <Route exact path="/activities">
@@ -103,5 +113,5 @@ export const ApplicationViews = () => {
         <JournalEditForm />
       </Route>
     </>
-  )
-}
+  );
+};

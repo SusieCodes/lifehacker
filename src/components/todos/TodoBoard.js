@@ -49,7 +49,7 @@ export const TodoBoard = () => {
             {/* ternary statement to show only uncompleted todos */}
             {todos.map((todo) =>
               todo.isCompleted ? (
-                console.log("true")
+                console.log("")
               ) : (
                 <TodoCard
                   key={todo.id}

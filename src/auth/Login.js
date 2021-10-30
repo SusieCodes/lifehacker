@@ -29,7 +29,6 @@ export const Login = () => {
     existingUserCheck().then((exists) => {
       if (exists) {
         // The user id is saved under the key lifehacker_user in session Storage
-        // Change below if needed
         sessionStorage.setItem("lifehacker_user", exists.id);
         const [firstname] = exists.name.split(" ");
         sessionStorage.setItem("lifehacker_username", firstname);
