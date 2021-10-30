@@ -74,34 +74,18 @@ Create database.json file inside of the src directory and paste the following JS
 {
   "users": [
     {
-      "name": "Susie Stanley",
-      "email": "me@me.com",
-      "image": "susie.svg",
-      "id": 1
-    },
-    {
-      "email": "susie@test.com",
-      "name": "Susie Q",
-      "image": "",
-      "id": 2
-    },
-    {
-      "name": "Brenda",
-      "email": "brenda@myob.com",
-      "image": "",
-      "id": 3
-    },
-    {
-      "name": "Cindy Adams",
-      "email": "susie.stanley@kw.com",
-      "image": "",
-      "id": 4
-    },
-    {
       "name": "Taylor",
-      "email": "user@email.com",
-      "image": "",
-      "id": 5
+      "email": "taylor@email.com",
+      "image": "https://res.cloudinary.com/dllowdq2w/image/upload/v1635608386/taylor_c9zfvb.png",
+      "phone": "425-555-1212",
+      "address": "123 Othello Dr",
+      "city": "Anytown",
+      "stateProvince": "UT",
+      "zipCode": "91514",
+      "country": "USA",
+      "bday": "1986-05-05",
+      "timestamp": 1635611882958,
+      "id": 1
     }
   ],
   "connections": [
@@ -659,6 +643,8 @@ Create database.json file inside of the src directory and paste the following JS
   ]
 }
 ```
+
+#### To login, use email address taylor@email.com to see full functionality using dummy data or register as a new user to create all your own content
 
 ![ERD Image](https://github.com/SusieCodes/lifehacker/blob/main/src/images/LifeHackerERD.png)
 

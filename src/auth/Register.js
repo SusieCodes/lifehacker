@@ -53,6 +53,7 @@ export const Register = () => {
             zipCode: registerUser.zipCode,
             country: registerUser.country,
             bday: registerUser.bday,
+            timestamp: Date.now(),
           }),
         })
           .then((res) => res.json())

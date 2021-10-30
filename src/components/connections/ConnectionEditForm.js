@@ -108,7 +108,7 @@ export const ConnectionEditForm = () => {
       zodiac: connection.zodiac,
       personality: connection.personality,
       enneagram: connection.enneagram,
-      timestamp: connection.timestamp,
+      timestamp: Date.now(),
     };
 
     update(editedConnection).then(() => history.goBack());
