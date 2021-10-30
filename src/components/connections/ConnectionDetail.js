@@ -44,10 +44,12 @@ export const ConnectionDetail = () => {
 
   const goBack = () => {
     history.push("/connections");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }; //takes user back to list of all connections
 
   const handleEdit = () => {
     history.push(`/connections/${connectionId}/edit`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -86,14 +88,14 @@ export const ConnectionDetail = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Add New Connection" />
+        <WelcomeBar title="Connection Details" />
 
         <div className="connection-flex">
           <div className="connection-outer-flex">
             <div className="connection-user-image">
               {connection.image !== "" ? (
                 <img
-                  src={require(`../../images/${connection.image}`).default}
+                  src={connection.image}
                   alt={connection.name}
                   className="connection-user-photo"
                 />

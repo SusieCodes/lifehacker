@@ -1,38 +1,60 @@
 import React, { useState } from "react";
-import Axios from "axios";
-import { Image } from "cloudinary-react";
+// import Axios from "axios";
+// import { Image } from "cloudinary-react";
 
 export const Upload = () => {
-  const [imageSelected, setImageSelected] = useState();
+  const [image, setImage] = useState("");
 
-  const uploadImage = () => {
-    // console.log("files[0] is: ", files[0]);
-    const formData = new FormData();
-    formData.append("file", imageSelected);
-    formData.append("upload_preset", "wp84lxqy");
+  const [loading, setLoading] = useState(false);
 
-    Axios.post(
-      "http://api.cloudinary.com/v1_1/dllowdq2w/image/upload",
-      formData
-    ).then((response) => {
-      console.log(response);
-    });
+  const uploadImage = async (e) => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "wp84lxqy");
+    setLoading(true);
+    // Axios.post(
+    //   "http://api.cloudinary.com/v1_1/dllowdq2w/image/upload",
+    //   data
+    // ).then((response) => {
+    //   console.log(response);
+    // });
+
+    const res = await fetch(
+      "	https://api.cloudinary.com/v1_1/dllowdq2w/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+
+    const file = await res.json();
+    setImage(file.secure_url);
+    console.log("image is ", image);
+    console.log("image type is ", typeof image);
+    setLoading(false);
   };
 
   return (
     <>
-      <div className="upload-image-text">Image: </div>
       <div className="upload-wrapper">
+        <div className="upload-image-text">Image: </div>
         <input
           type="file"
+          name="file"
           className="upload-input"
-          onChange={(event) => {
-            setImageSelected(event.target.files[0]);
-          }}
+          placeholder="Choose Image"
+          onChange={uploadImage}
         />
-        <button className="upload-btn" onClick={uploadImage}>
-          Upload
-        </button>
+      </div>
+      <div className="uploaded-image-section">
+        {loading ? (
+          <div className="loading">Loading...</div>
+        ) : (
+          <div className="uploaded-image-wrapper">
+            <img src={image} alt="" width="150" className="uploaded-image" />
+          </div>
+        )}
       </div>
     </>
   );

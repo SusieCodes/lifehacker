@@ -5,20 +5,19 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 import { addConnection } from "./ConnectionManager";
 import { WelcomeBar } from "../../components/navbar/WelcomeBar";
-import { Upload } from "../uploads/Upload";
-import Axios from "axios";
-import { Image } from "cloudinary-react";
+// import { Upload } from "../uploads/Upload";
+// import Axios from "axios";
+// import { Image } from "cloudinary-react";
 import "./Connections.css";
 import "../LifeHacker.css";
 
 export const ConnectionForm = () => {
   const [conflictDialog, setConflictDialog] = useState(false);
-
   // Defining initial state of the form inputs with useState
   const [connection, setConnection] = useState({
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
     name: "",
-    image: "default.png",
+    image: "",
     email: "",
     phone: "",
     address: "",
@@ -44,11 +43,42 @@ export const ConnectionForm = () => {
 
   const history = useHistory();
 
+  // start of upload function
+  const [clickedStyle, setClickedStyle] = useState("no-uploaded-image");
+  const [image, setImage] = useState("");
+
+  const [loading, setLoading] = useState(false);
+
+  const uploadImage = async (evt) => {
+    const files = evt.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "wp84lxqy");
+    setLoading(true);
+
+    const res = await fetch(
+      "	https://api.cloudinary.com/v1_1/dllowdq2w/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+
+    const file = await res.json();
+    setImage(file.secure_url);
+    // console.log("image is ", image);
+    // console.log("file.secure_url is ", file.secure_url);
+    // console.log("image type is ", typeof image);
+    setLoading(false);
+    setClickedStyle("uploaded-image");
+  };
+  // end of upload function
+
   const ResetForm = () => {
     setConnection({
       userId: parseInt(sessionStorage.getItem("lifehacker_user")),
       name: "",
-      image: "default.png",
+      image: "",
       email: "",
       phone: "",
       address: "",
@@ -77,7 +107,6 @@ export const ConnectionForm = () => {
   const handleControlledInputChange = (evt) => {
     const newConnection = { ...connection };
     let selectedVal = evt.target.value;
-
     newConnection[evt.target.id] = selectedVal;
     setConnection(newConnection);
   };
@@ -87,7 +116,33 @@ export const ConnectionForm = () => {
     if (connection.name === "") {
       setConflictDialog(true);
     } else {
-      addConnection(connection).then(() => history.push("/connections"));
+      const newConnection = {
+        userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+        name: connection.name,
+        image: image,
+        email: connection.email,
+        phone: connection.phone,
+        address: connection.address,
+        city: connection.city,
+        stateProvince: connection.stateProvince,
+        zipCode: connection.zipCode,
+        country: connection.country,
+        work: connection.work,
+        relationship: connection.relationship,
+        bday: connection.bday,
+        family: connection.family,
+        pets: connection.pets,
+        howWeMet: connection.howWeMet,
+        giftIdeas: connection.giftIdeas,
+        faveDrink: connection.faveDrink,
+        faveDessert: connection.faveDessert,
+        notes: connection.notes,
+        zodiac: connection.zodiac,
+        personality: connection.personality,
+        enneagram: connection.enneagram,
+        timestamp: Date.now(),
+      };
+      addConnection(newConnection).then(() => history.push("/connections"));
     }
   };
 
@@ -124,11 +179,35 @@ export const ConnectionForm = () => {
             </div>
 
             <div className="upload-section">
-              <Upload />
-              <Image cloudName="dllowdq2w" />
+              <div className="upload-wrapper">
+                <div className="upload-image-text">Image: </div>
+                <input
+                  type="file"
+                  id="image"
+                  name="file"
+                  className="upload-input"
+                  placeholder="Choose Image"
+                  // value={connection.image}
+                  onChange={uploadImage}
+                />
+              </div>
+              <div className="uploaded-image-section">
+                {loading ? (
+                  <div className="loading">Loading...</div>
+                ) : (
+                  <div className="uploaded-image-wrapper">
+                    <img
+                      src={image}
+                      alt=""
+                      width="150"
+                      className={clickedStyle}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
 
-            <div className="form__group">
+            <div className="form__group--email">
               <label htmlFor="email">Email: </label>
               <input
                 type="text"

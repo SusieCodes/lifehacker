@@ -24,7 +24,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 html,
 body {
   width: 1800px;
-  margin: 0px auto;
+  margin: 10px auto;
   padding: 0px;
   font-family: "Poppins", sans-serif;
   background-color: #eeeeee;
