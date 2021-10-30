@@ -37,7 +37,7 @@ export const ConnectionDetail = () => {
   const history = useHistory();
 
   const handleDelete = () => {
-    console.log("handleDelete invoked");
+    // console.log("handleDelete invoked");
     //invokes the delete function in Connection Manager and re-directs to connection list.
     deleteConnection(connectionId).then(() => history.push("/connections"));
   };
@@ -54,9 +54,7 @@ export const ConnectionDetail = () => {
 
   useEffect(() => {
     //use getConnectionById() from ConnectionManager to grab info  and set it to state
-    console.log("useEffect", connectionId);
     getConnectionById(connectionId).then((connection) => {
-      console.log("connection inside get ConnectionById is ", connection);
       setConnection({
         userId: sessionStorage.getItem("lifehacker_user"),
         name: connection.name,

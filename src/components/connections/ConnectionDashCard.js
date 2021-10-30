@@ -29,7 +29,7 @@ export const ConnectionDashCard = ({ connection, handleDelete }) => {
             <div className="dc-image">
               {connection.image !== "" ? (
                 <img
-                  src={require(`../../images/${connection?.image}`).default}
+                  src={connection?.image}
                   alt={connection?.name}
                   className="connection-photo"
                 />

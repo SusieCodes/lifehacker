@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 // import Axios from "axios";
-// import { Image } from "cloudinary-react";
 
 export const Upload = () => {
   const [image, setImage] = useState("");

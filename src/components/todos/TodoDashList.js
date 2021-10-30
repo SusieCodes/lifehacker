@@ -15,9 +15,7 @@ export const TodoDashList = () => {
       (todosFromAPI) => {
         const completedTodos = [];
         todosFromAPI.forEach((todo) => {
-          !todo.isCompleted
-            ? completedTodos.push(todo)
-            : console.log("completed");
+          !todo.isCompleted ? completedTodos.push(todo) : console.log("");
         });
         let firstFew = completedTodos.splice(0, 5);
         setTodos(firstFew);
