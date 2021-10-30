@@ -414,7 +414,7 @@ Create database.json file inside of the src directory and paste the following JS
     {
       "title": "Update My Resume",
       "byWhen": "2021-11-05",
-      "isCompleted": true,
+      "isCompleted": false,
       "userId": 1,
       "id": 2
     },

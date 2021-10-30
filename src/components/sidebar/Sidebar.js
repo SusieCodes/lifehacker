@@ -8,7 +8,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import { SidebarData } from "./SidebarData";
 // import { ImageAvatar } from "../navbar/ImageAvatar";
-import { getUserById } from "../users/userManager";
+import { getUserById } from "../users/UserManager";
 import { IconContext } from "react-icons";
 import logo from "../../images/lifehackerbanner.svg";
 import "./Sidebar.css";

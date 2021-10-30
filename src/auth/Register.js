@@ -8,6 +8,13 @@ export const Register = () => {
     name: "",
     email: "",
     image: "",
+    phone: "",
+    address: "",
+    city: "",
+    stateProvince: "",
+    zipCode: "",
+    country: "",
+    bday: "",
   });
   const [conflictDialog, setConflictDialog] = useState(false);
 
@@ -36,16 +43,25 @@ export const Register = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            name: `${registerUser.name}`,
+            name: registerUser.name,
             email: registerUser.email,
-            image: "default.png",
+            image: registerUser.image,
+            phone: registerUser.phone,
+            address: registerUser.address,
+            city: registerUser.city,
+            stateProvince: registerUser.stateProvince,
+            zipCode: registerUser.zipCode,
+            country: registerUser.country,
+            bday: registerUser.bday,
           }),
         })
           .then((res) => res.json())
           .then((createdUser) => {
             if (createdUser.hasOwnProperty("id")) {
-              // The user id is saved under the key lifehacker_user in session Storage. Change below if needed!
+              // The user id is saved under the key lifehacker_user in session Storage
               sessionStorage.setItem("lifehacker_user", createdUser.id);
+              const [firstname] = createdUser.name.split(" ");
+              sessionStorage.setItem("lifehacker_username", firstname);
               history.push("/dashboard");
             }
           });
