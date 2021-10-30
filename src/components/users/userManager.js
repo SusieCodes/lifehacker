@@ -1,5 +1,5 @@
 //Author: Susie Stanley
-//Purpose: Fetch calls to get users
+//Purpose: Fetch calls to get User info
 
 const url = "http://localhost:8088";
 

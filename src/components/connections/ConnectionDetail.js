@@ -3,6 +3,9 @@ import { getConnectionById, deleteConnection } from "./ConnectionManager";
 import { useParams, useHistory } from "react-router-dom";
 import { WelcomeBar } from "../../components/navbar/WelcomeBar";
 import { formatDateNoWeekday } from "../helper";
+import { Checkbox } from "@mui/material";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
+import { changeFave } from "./ConnectionManager";
 import "../LifeHacker.css";
 import "./Connections.css";
 
@@ -31,21 +34,25 @@ export const ConnectionDetail = () => {
     zodiac: "",
     personality: "",
     enneagram: "",
+    isFave: false,
   });
 
   const { connectionId } = useParams();
   const history = useHistory();
 
   const handleDelete = () => {
-    // console.log("handleDelete invoked");
-    //invokes the delete function in Connection Manager and re-directs to connection list.
+    //invokes the delete function in Connection Manager and re-directs to connection list
     deleteConnection(connectionId).then(() => history.push("/connections"));
+  };
+
+  const handleFave = (e) => {
+    changeFave(connectionId, e.target.checked);
   };
 
   const goBack = () => {
     history.push("/connections");
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }; //takes user back to list of all connections
+  };
 
   const handleEdit = () => {
     history.push(`/connections/${connectionId}/edit`);
@@ -79,6 +86,7 @@ export const ConnectionDetail = () => {
         zodiac: connection.zodiac,
         personality: connection.personality,
         enneagram: connection.enneagram,
+        isFave: connection.isFave,
       });
     });
   }, [connectionId]);
@@ -109,6 +117,13 @@ export const ConnectionDetail = () => {
             <div className="connection-info">
               <div className="connection-info__name">
                 <strong>{connection.name}</strong>
+                <Checkbox
+                  color="error"
+                  icon={<FavoriteBorder />}
+                  checkedIcon={<Favorite />}
+                  defaultChecked={connection.isFave}
+                  onChange={(e) => handleFave(e)}
+                />
               </div>
 
               <div className="connection-inner-flex">

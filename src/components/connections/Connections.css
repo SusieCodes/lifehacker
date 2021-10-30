@@ -207,6 +207,10 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   border-top-right-radius: 5px;
 }
 
+.checkbox {
+  margin-right: 90px;
+}
+
 .connection-icons {
   display: flex;
   flex-direction: row;

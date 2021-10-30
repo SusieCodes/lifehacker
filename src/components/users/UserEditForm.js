@@ -95,7 +95,7 @@ export const UserEditForm = () => {
       setUser(user);
       setIsLoading(false);
     });
-  }, [userId]); //wont cause infinite look because it comes from params
+  }, [userId]); //wont cause infinite loop because it comes from params
 
   return (
     <>

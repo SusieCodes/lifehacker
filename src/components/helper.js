@@ -106,3 +106,10 @@ export const formatTime = (time) => {
     time_part_array[0] + ":" + time_part_array[1] + " " + ampm;
   return formatted_time;
 };
+
+// this converts YYYY-MM-DD into MM/DD/YYYY
+export const changeDateFormat = (date) => {
+  let array = (date || "").toString().split(/-/g);
+  array.push(array.shift());
+  return array.join("/") || null;
+};

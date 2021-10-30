@@ -3,23 +3,23 @@
 
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
+import { Checkbox } from "@mui/material";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
+import { changeFave } from "./ConnectionManager";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { formatJustMonthDay } from "../helper";
 import "../dashboard/Dashboard.css";
 import "./Connections.css";
-
-// this converts YYYY-MM-DD into MM/DD/YYYY
-// let changeDateFormat = function (date) {
-//   let array = (date || "").toString().split(/-/g);
-//   array.push(array.shift());
-//   return array.join("/") || null;
-// };
 
 export const ConnectionCard = ({ connection, handleDelete }) => {
   const history = useHistory();
 
   const handleEdit = () => {
     history.push(`/connections/${connection?.id}/edit`);
+  };
+
+  const handleFave = (e) => {
+    changeFave(connection.id, e.target.checked);
   };
 
   return (
@@ -54,6 +54,15 @@ export const ConnectionCard = ({ connection, handleDelete }) => {
 
           <div className="dc-bday">
             {connection.bday ? formatJustMonthDay(connection?.bday) : null}
+            <div className="checkbox">
+              <Checkbox
+                color="error"
+                icon={<FavoriteBorder />}
+                checkedIcon={<Favorite />}
+                defaultChecked={connection.isFave}
+                onChange={(e) => handleFave(e)}
+              />
+            </div>
           </div>
         </div>
 
