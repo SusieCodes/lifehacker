@@ -1,4 +1,5 @@
-/* Author: Susie Stanley
+/* 
+Author: Susie Stanley
 Purpose: Dashboard styling
 
 Site colors used:
@@ -11,6 +12,19 @@ Dark Gray: #2b2b2b font color throughout
 Shadow: box-shadow: 5px 5px 5px lightgray;
 Bright Blue: #c4f7fe highlights, hover on links, and buttons
 */
+
+h2 {
+  font-weight: 600;
+}
+
+.bold {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.med-bold {
+  font-weight: 500;
+}
 
 .dashboard-grid {
   margin: 5px;
@@ -63,6 +77,15 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   min-height: 270px;
 }
 
+.activity-container a,
+.grocery-container a,
+.journal-container a,
+.note-container a {
+  text-decoration: none;
+  color: #2b2b2b;
+  margin: 0px;
+}
+
 /* this holds notes & journal */
 .dashboard-grid__row1__col1__row2 {
   display: flex;
@@ -85,6 +108,12 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   background-color: white;
   box-shadow: 2px 3px 7px gray;
   /* border: 1px solid black; */
+}
+
+.dashboard-grid__row1__col2 a {
+  text-decoration: none;
+  color: #2b2b2b;
+  margin: 0px;
 }
 
 /* To-Do dash title */
@@ -114,6 +143,17 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   background-color: white;
   min-height: 250px;
   box-shadow: 2px 3px 7px gray;
+}
+
+.dashboard-grid__row2__row1 a {
+  text-decoration: none;
+  color: #2b2b2b;
+  margin: 0px;
+}
+
+.dashboard-grid__row1__col2 h2 {
+  text-align: center;
+  margin-bottom: 8px;
 }
 
 .dashboard-grid__row2__row1 h2 {
@@ -196,13 +236,13 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   padding-left: 6px;
 }
 
-input.checkbox {
+input.checkbox-todo {
   width: 20px;
   height: 20px;
   transition: all 0.2s ease-in-out;
 }
 
-input.checkbox:hover {
+input.checkbox-todo:hover {
   transform: scale(1.5);
   color: #27c2d7;
 }
@@ -215,19 +255,19 @@ input.checkbox:hover {
   padding-bottom: 10px;
 }
 
+.dash-activity__list a {
+  text-decoration: none;
+  color: #2b2b2b;
+}
+
 .dash-activity {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 12px 30px;
-  margin: 8px 25px;
+  margin: 8px 30px;
   background-color: #c8e6ea68;
   border-radius: 5px;
-}
-
-.bold {
-  font-size: 20px;
-  font-weight: 800;
 }
 
 .dash-activity__col1 {
@@ -249,7 +289,7 @@ input.checkbox:hover {
 }
 
 .dash-activity__name {
-  /* padding-left: 6px; */
+  font-weight: 500;
   margin-bottom: 5px;
   text-align: left;
   font-size: 22px;
@@ -310,52 +350,56 @@ button.activity-delete {
   margin: auto auto;
 }
 
-.delete-icon {
+.a-delete-icon {
   width: 25px;
   height: 25px;
   transition: all 0.2s ease-in-out;
 }
 
-.delete-icon:hover {
+.a-delete-icon:hover {
   transform: scale(1.5);
   color: #d61212;
 }
 
 /* Note Dash styling */
+.note-container {
+  background-image: url("../../images/notecard.svg");
+  background-repeat: no-repeat;
+  background-position: 40px 25px;
+  background-size: 80%;
+  border: 1px solid black;
+}
 .note-container h2 {
+  background-color: transparent;
   margin: 5px 5px 0px;
+  /* border: 1px solid black; */
 }
 
-.dash-note-text {
-  min-height: 260px;
-  margin: 0px;
-  padding: 0px 30px 0px;
-}
-
-/* Notecard background image */
 .note-spacing {
   margin-top: 10px;
 }
 
 .dash-note__wrapper {
-  background-image: url("../../images/notecard.svg");
-  background-repeat: no-repeat;
-  background-position: center left;
-  background-size: 80%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding: 0px 31px;
-  min-width: 300px;
-  height: 255px;
+  justify-content: flex-end;
+  padding-right: 17px;
+  /* border: 1px solid red; */
+}
+
+.dash-note__wrapper a {
+  padding-right: 50px;
+  /* border: 2px solid pink; */
+  width: 290px;
 }
 
 .dash-note {
   flex: 1;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  padding: 55px 50px 50px 55px;
+  justify-content: flex-start;
+  padding: 25px 0px 0px 0px;
+  /* border: 2px solid blue; */
 }
 
 .dash-note__text {
@@ -365,23 +409,26 @@ button.activity-delete {
   justify-content: flex-start;
   align-items: flex-start;
   margin: 0px;
-  min-width: 150px;
-  max-width: 175px;
+  width: 200px;
+  /* border: 2px solid yellow; */
 }
 
 .top-text {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 500;
   text-align: left;
   margin: 10px 0px 30px;
-  min-width: 155px;
+  min-width: 200px;
+  /* border: 1px solid black; */
 }
 
 .bottom-text {
-  min-width: 155px;
+  font-size: 18px;
+  min-width: 200px;
   text-align: left;
   padding: 0px;
   margin: 0px;
+  /* border: 1px solid aqua; */
 }
 
 .dash-note__delete {
@@ -389,7 +436,8 @@ button.activity-delete {
   flex-direction: row;
   justify-content: flex-start;
   padding-top: 20px;
-  margin: 0px;
+  /* margin: 0px; */
+  /* border: 1px solid black; */
 }
 
 button.note-delete {
@@ -399,6 +447,17 @@ button.note-delete {
   background-color: transparent;
   margin: 0px;
   padding: 0px;
+}
+
+.n-delete-icon {
+  width: 25px;
+  height: 25px;
+  transition: all 0.2s ease-in-out;
+}
+
+.n-delete-icon:hover {
+  transform: scale(1.5);
+  color: #d61212;
 }
 
 /* Connections Dash styling */
@@ -425,6 +484,7 @@ button.note-delete {
 }
 
 .container {
+  background-color: white;
   margin: 0px 5px;
   padding: 0px;
   border-bottom: 1px solid gray;
@@ -436,7 +496,8 @@ button.note-delete {
   justify-content: space-evenly;
   padding: 0px;
   margin: 0px;
-  background-color: #c8e6ea68;
+  background-color: #c8e6ea5d;
+  /* background-color: transparent; */
   border-top: 1px solid gray;
 }
 
@@ -460,22 +521,33 @@ button.note-delete {
 }
 
 .dc-image {
-  width: 46px;
-  height: 46px;
+  width: 60px;
+  height: 60px;
   padding: 0px;
-  margin: 5px;
+  margin: 0px;
 }
 
 .connection-photo {
   margin: auto auto;
-  border-radius: 23px;
+  border-radius: 30px;
   border: 3px solid white;
   width: 100%;
 }
 
 .dc-name {
   font-size: 22px;
-  font-weight: 600px;
+  font-weight: 500;
+  padding-left: 15px;
+  margin: auto 0px;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.dc-name a {
+  text-decoration: none;
+  color: #2b2b2b;
+  font-size: 22px;
+  font-weight: 500;
   padding-left: 15px;
   margin: auto 0px;
   white-space: nowrap;
@@ -524,14 +596,19 @@ button.note-delete {
   margin: auto 0px;
   font-size: 16px;
   padding: 5px 10px;
-  border: 1px solid rgb(82, 207, 223);
-  /* background-color: #c8e6ea; */
-  background-color: #c4f7fe;
+  border: 2px solid lightgray;
+  background-color: #c8e6ea;
   border-radius: 5px;
   white-space: nowrap;
 }
 
+.dc-details:hover {
+  border: 2px solid darkgray;
+  background-color: #c4f7fe;
+}
+
 .dc-details a {
+  font-weight: 500;
   color: #2b2b2b;
   text-decoration: none;
 }
@@ -585,7 +662,7 @@ button.note-delete {
 .dash-grocery {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  align-content: center;
   padding: 0px 10px;
   margin: 5px 25px;
   background-color: #c8e6ea68;
@@ -593,18 +670,24 @@ button.note-delete {
   /* border: 1px solid red; */
 }
 
+.dash-grocery a {
+  flex: 4;
+  margin: auto 0px;
+}
+
 .dash-grocery__col1 {
-  flex: 1;
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
   white-space: nowrap;
   padding: 0px;
-  margin: 0px;
-  /* border: 1px solid green; */
+  /* border: 2px solid green; */
 }
 
 .dash-grocery__text {
-  padding-left: 10px;
+  align-self: center;
+  padding-left: 5px;
   margin: auto 0px;
   text-align: left;
   font-size: 20px;
@@ -612,26 +695,25 @@ button.note-delete {
 }
 
 .dash-grocery__col2 {
+  flex: 1;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 0px;
   margin: 0px;
+  /* border: 1px solid black; */
 }
 
 button.grocery-delete {
-  flex: 1;
   align-self: center;
   border: none;
   background-color: transparent;
   padding-top: 5px;
-  margin: 0px auto;
+  margin: 0px;
   /* border: 1px solid black; */
 }
 
 .grocery-delete-icon {
-  width: 18px;
-  height: 18px;
   transition: all 0.2s ease-in-out;
 }
 
@@ -646,13 +728,16 @@ button.grocery-delete {
 }
 
 .see-more a {
-  color: #2b2b2b;
+  color: #27c2d7;
   text-decoration: none;
+  border-radius: 10px;
+  padding: 3px 10px;
 }
 
 .see-more a:hover {
-  /* color: #D61212;  */
-  color: #27c2d7;
+  color: black;
+  background-color: #c8e6ea68;
+  border-radius: 10px;
 }
 
 /* Journal Dash styling */
@@ -673,7 +758,7 @@ button.grocery-delete {
   flex-direction: row;
   justify-content: space-evenly;
   padding: 7px 10px;
-  margin: 1px 25px;
+  margin: 6px 25px;
   background-color: #c8e6ea68;
   border-radius: 5px;
   /* border: 1px solid red; */
@@ -724,19 +809,4 @@ button.journal-delete {
 .journal-delete-icon:hover {
   transform: scale(1.5);
   color: #d61212;
-}
-
-.see-more {
-  padding: 0px;
-  margin: 0px;
-}
-
-.see-more a {
-  color: #2b2b2b;
-  text-decoration: none;
-}
-
-.see-more a:hover {
-  /* color: #D61212;  */
-  color: #27c2d7;
 }

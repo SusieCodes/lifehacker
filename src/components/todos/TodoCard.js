@@ -46,7 +46,7 @@ export const TodoCard = ({ todo, handleDelete, handleCompleteTodo }) => {
           <div className="todo-complete">
             <input
               type="checkbox"
-              className="checkbox"
+              className="checkbox-todo"
               onClick={() => handleCompleteTodo(todo?.id)}
             />
             <label>Complete </label>

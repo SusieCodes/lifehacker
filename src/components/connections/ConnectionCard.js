@@ -44,7 +44,9 @@ export const ConnectionCard = ({ connection, handleDelete }) => {
             </div>
 
             <div className="dc-name">
-              {"  "} {connection?.name}
+              <Link to={`/connections/${connection?.id}`}>
+                {"  "} {connection?.name}
+              </Link>
             </div>
           </div>
 

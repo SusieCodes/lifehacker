@@ -1,4 +1,5 @@
-/* Author: Susie Stanley
+/* 
+Author: Susie Stanley
 Purpose: Global styling
 
 Site colors used:
@@ -12,7 +13,7 @@ Shadow: box-shadow: 5px 5px 5px lightgray;
 Bright Blue: #c4f7fe highlights, hover on links, and buttons
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap");
 
 * {
   box-sizing: border-box;
@@ -39,7 +40,6 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* border: 1px solid black; */
 }
 
 /* WelcomeBar styling */
@@ -62,19 +62,16 @@ body {
   justify-content: space-between;
   padding: 20px 40px 0px;
   margin: 0px;
-  /* border: 1px solid green; */
 }
 
 .page-title__left {
   flex: 1;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 500;
   text-align: left;
-  /* border: 1px solid blue; */
 }
 
 .welcome-name {
-  /* color: #D61212; */
   color: #41c5d8;
   font-size: 22px;
   font-weight: 600;
@@ -82,27 +79,24 @@ body {
   margin: 0px;
 }
 
-/* all pages use this header title */
 .page-title__headline {
   flex: 1;
   font-size: 38px;
   font-weight: 600;
   text-align: center;
-  /* border: 1px solid black; */
 }
 
 .page-title__right {
   flex: 1;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 500;
   text-align: right;
-  /* border: 1px solid red; */
 }
 
 .todays-date {
   text-align: right;
   margin: 0px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* all boards use this styling */
@@ -133,10 +127,22 @@ body {
   font-size: 18px;
   font-weight: 600;
   padding: 5px 20px;
-  border: 2px solid lightgray;
+  /* border: 2px solid lightgray; */
+  border: 2px solid white;
   border-radius: 5px;
   background-color: #c8e6ea;
   /* margin-top: 30px; */
+}
+
+.add-connection:hover,
+.add-activity:hover,
+.add-note:hover,
+.add-grocery:hover,
+.add-journal:hover,
+.add-todo:hover {
+  border: 2px solid darkgray;
+  background-color: #c4f7fe;
+  cursor: pointer;
 }
 
 /* all detail pages use this button styling */
@@ -148,7 +154,7 @@ body {
 
 .details-btn {
   font-size: 18px;
-  font-weight: 100;
+  font-weight: 500;
   padding: 5px 20px;
   border: 2px solid lightgray;
   border-radius: 5px;
@@ -156,6 +162,11 @@ body {
   background-color: #c8e6ea;
   /* background-color: #c4f7fe; */
   margin-top: 30px;
+}
+
+.details-btn:hover {
+  border: 2px solid darkgray;
+  background-color: #c4f7fe;
 }
 
 /* all form buttons use this styling */
@@ -167,12 +178,17 @@ body {
 .form-btn {
   font-size: 20px;
   font-weight: 600;
-  background-color: #c4f7fe;
-  border: 1px solid rgba(82, 207, 223, 0.359);
+  background-color: #c8e6ea;
+  border: 2px solid lightgray;
   border-radius: 5px;
   padding: 7px 15px;
   margin: 10px;
   cursor: pointer;
+}
+
+.form-btn:hover {
+  border: 2px solid darkgray;
+  background-color: #c4f7fe;
 }
 
 /* Styling for all Create and Edit forms */

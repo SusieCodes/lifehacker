@@ -3,6 +3,9 @@
 
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
+import { Checkbox } from "@mui/material";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
+import { changeFave } from "./ConnectionManager";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { formatJustMonthDay } from "../helper";
 import "./Connections.css";
@@ -21,36 +24,65 @@ export const ConnectionDashCard = ({ connection, handleDelete }) => {
     history.push(`/connections/${connection?.id}/edit`);
   };
 
+  const handleFave = (e) => {
+    changeFave(connection.id, e.target.checked);
+  };
+
   return (
     <>
       <div className="dash-connections">
         <div className="dc-info">
           <div className="pic-name">
             <div className="dc-image">
-              {connection.image !== "" ? (
-                <img
-                  src={connection?.image}
-                  alt={connection?.name}
-                  className="connection-photo"
-                />
-              ) : (
-                <img
-                  src={require(`../../images/default.png`).default}
-                  alt="default-user"
-                  className="connection-photo"
-                />
-              )}
+              <Link to={`/connections/${connection?.id}`}>
+                {connection.image !== "" ? (
+                  <img
+                    src={connection?.image}
+                    alt={connection?.name}
+                    className="connection-photo"
+                  />
+                ) : (
+                  <img
+                    src={require(`../../images/default.png`).default}
+                    alt="default-user"
+                    className="connection-photo"
+                  />
+                )}
+              </Link>
             </div>
 
-            <div className="dc-name">{connection?.name}</div>
+            <div className="dc-name">
+              <Link to={`/connections/${connection?.id}`}>
+                {connection?.name}
+              </Link>
+            </div>
           </div>
 
-          <div className="dc-email">{connection?.email}</div>
+          <div className="dc-email">
+            <Link to={`/connections/${connection?.id}`}>
+              {connection?.email}
+            </Link>
+          </div>
 
-          <div className="dc-phone">{connection?.phone}</div>
+          <div className="dc-phone">
+            <Link to={`/connections/${connection?.id}`}>
+              {connection?.phone}
+            </Link>
+          </div>
 
           <div className="dc-bday">
-            {connection.bday ? formatJustMonthDay(connection?.bday) : null}
+            <Link to={`/connections/${connection?.id}`}>
+              {connection.bday ? formatJustMonthDay(connection?.bday) : null}
+            </Link>
+            <div className="checkbox">
+              <Checkbox
+                color="error"
+                icon={<FavoriteBorder />}
+                checkedIcon={<Favorite />}
+                defaultChecked={connection.isFave}
+                onChange={(e) => handleFave(e)}
+              />
+            </div>
           </div>
         </div>
 

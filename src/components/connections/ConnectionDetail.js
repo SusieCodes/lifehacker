@@ -116,7 +116,7 @@ export const ConnectionDetail = () => {
 
             <div className="connection-info">
               <div className="connection-info__name">
-                <strong>{connection.name}</strong>
+                {connection.name}
                 <Checkbox
                   color="error"
                   icon={<FavoriteBorder />}
