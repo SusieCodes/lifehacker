@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
-// import AppBar from '@mui/material/AppBar';
 import Box from "@mui/material/Box";
-// import Toolbar from '@mui/material/Toolbar';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import { SidebarData } from "./SidebarData";
-// import { ImageAvatar } from "../navbar/ImageAvatar";
 import { getUserById } from "../users/UserManager";
 import { IconContext } from "react-icons";
 import logo from "../../images/lifehackerbanner.svg";
@@ -68,20 +65,21 @@ export const Sidebar = () => {
                   </Link>
                 </div>
                 <div className="toolbar-right">
-                  {/* <ImageAvatar className="avatar" key={user?.id} user={user} /> */}
-                  {user?.image ? (
-                    <img
-                      src={user?.image}
-                      alt={user?.name}
-                      className="avatar-photo"
-                    />
-                  ) : (
-                    <img
-                      src={require(`../../images/default.png`).default}
-                      alt="default-user"
-                      className="avatar-photo"
-                    />
-                  )}
+                  <Link to={`/users/${user?.id}`}>
+                    {user?.image ? (
+                      <img
+                        src={user?.image}
+                        alt={user?.name}
+                        className="avatar-photo"
+                      />
+                    ) : (
+                      <img
+                        src={require(`../../images/default.png`).default}
+                        alt="default-user"
+                        className="avatar-photo"
+                      />
+                    )}
+                  </Link>
                   <button
                     className="logout"
                     onClick={() => {

@@ -9,7 +9,8 @@ import "./Note.css";
 import "../LifeHacker.css";
 
 export const NoteForm = () => {
-  const [conflictDialog, setConflictDialog] = useState(false);
+  const [conflictDialog1, setConflictDialog1] = useState(false);
+  const [conflictDialog2, setConflictDialog2] = useState(false);
 
   // Defining initial state of the form inputs with useState()
   const [note, setNote] = useState({
@@ -49,7 +50,9 @@ export const NoteForm = () => {
     evt.preventDefault(); //Prevents the browser from submitting the form
 
     if (note.title === "" || note.text === "") {
-      setConflictDialog(true);
+      setConflictDialog1(true);
+    } else if (note.title.length > 30 || note.text.length > 30) {
+      setConflictDialog2(true);
     } else {
       addNote(note).then(() => history.push("/notes"));
     }
@@ -62,11 +65,22 @@ export const NoteForm = () => {
 
         <div className="form-flex">
           <fieldset className="form">
-            <dialog className="dialog" open={conflictDialog}>
+            <dialog className="dialog" open={conflictDialog1}>
               <div className="dialog-forms">Please Fill In Title and Text</div>
               <button
                 className="button-close"
-                onClick={(e) => setConflictDialog(false)}
+                onClick={(e) => setConflictDialog1(false)}
+              >
+                Close
+              </button>
+            </dialog>
+            <dialog className="dialog" open={conflictDialog2}>
+              <div className="dialog-forms">
+                Title and text must each be 30 characters or less
+              </div>
+              <button
+                className="button-close"
+                onClick={(e) => setConflictDialog2(false)}
               >
                 Close
               </button>

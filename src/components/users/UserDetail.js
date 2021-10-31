@@ -77,9 +77,7 @@ export const UserDetail = () => {
             </div>
 
             <div className="user-info">
-              <div className="user-info__name">
-                <strong>{user.name}</strong>
-              </div>
+              <div className="user-info__name">{user.name}</div>
 
               <div className="user-inner-flex">
                 <div className="u-inner-flex__row1">

@@ -24,11 +24,11 @@ export const ActivityCard = ({ activity, handleDelete }) => {
 
             <div className="da-inner__wrapper">
               <div className="da-inner__left">
-                <div className="bold">Date:</div>
-                <div className="bold">Time:</div>
-                <div className="bold card-spacer">Address:</div>
+                <div className="med-bold">Date:</div>
+                <div className="med-bold">Time:</div>
+                <div className="med-bold card-spacer">Address:</div>
                 <div className="transparent card-spacer">City:</div>
-                <div className="bold activity-note-spacer">Notes:</div>
+                <div className="med-bold activity-note-spacer">Notes:</div>
               </div>
 
               <div className="da-inner__right">

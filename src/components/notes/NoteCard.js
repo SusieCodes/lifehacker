@@ -18,32 +18,16 @@ export const NoteCard = ({ note, handleDelete }) => {
   return (
     <>
       <div className="note-card-list">
-        {/* <div className="note-card">
-          <div className="note-info">
-            <div className="note-title">
-              <strong>Title: {note?.title}</strong>
-            </div>
-
-            <div className="note-text">{note.text}</div>
-          </div>
-
-          <div className="note-icons">
-            <div className="note-delete" onClick={() => handleEdit(note?.id)}>
-              <FaEdit className="note-edit-icon" />
-            </div>
-
-            <div className="note-delete" onClick={() => handleDelete(note?.id)}>
-              <FaTrash className="note-delete-icon" />
-            </div>
-          </div>
-        </div> */}
-
         <div className="noteboard-note__wrapper">
           <div className="noteboard-note">
             <div className="noteboard-note__text">
-              <div className="note-top-text">{note?.title}</div>
+              <div className="note-top-text">
+                <div className="text-wrapper">{note?.title}</div>
+              </div>
 
-              <div className="note-bottom-text">{note?.text}</div>
+              <div className="note-bottom-text">
+                <div className="text-wrapper">{note?.text}</div>
+              </div>
             </div>
           </div>
         </div>

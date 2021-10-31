@@ -367,7 +367,7 @@ button.activity-delete {
   background-repeat: no-repeat;
   background-position: 40px 25px;
   background-size: 80%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 .note-container h2 {
   background-color: transparent;

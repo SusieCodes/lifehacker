@@ -79,7 +79,7 @@ form {
 .form-login__headline {
   text-align: center;
   font-size: 48px;
-  font-weight: 600;
+  font-weight: 500;
   margin: 20px;
 }
 
@@ -92,7 +92,7 @@ form {
 .login-label {
   margin: 0px 10px;
   font-size: 24px;
-  font-weight: 600px;
+  font-weight: 500;
 }
 
 .login-indent {
@@ -125,6 +125,6 @@ form {
 .form-register__headline {
   text-align: center;
   font-size: 38px;
-  font-weight: 600;
+  font-weight: 500;
   margin: 20px;
 }

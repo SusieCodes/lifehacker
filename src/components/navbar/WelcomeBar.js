@@ -1,15 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { formatDate } from "../helper";
 import "../LifeHacker.css";
 
 export const WelcomeBar = (props) => {
+  const userName = sessionStorage.getItem("lifehacker_username");
+  const userId = parseInt(sessionStorage.getItem("lifehacker_user"));
   const { title } = props;
+
   return (
     <div className="page-title__flex">
       <div className="page-title__left">
         Welcome{" "}
         <span className="welcome-name">
-          {sessionStorage.getItem("lifehacker_username")}
+          <Link to={`/users/${userId}`}>{userName}</Link>
         </span>
       </div>
 
