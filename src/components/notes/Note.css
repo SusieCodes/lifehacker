@@ -1,13 +1,16 @@
-/* Author: Susie Stanley
+/* 
+Author: Susie Stanley
 Purpose: Note pages styling
 
-Colors used:
+Site colors used:
 Light Blue: #c8e6ea
 Light Blue: #c8e6ea68 (faded)
 Dark Blue: rgb(82, 207, 223) Details button border
 Red: #D61212
 Light Gray: rgba(211, 211, 211, 0.468) Dashboard Connections header
 Dark Gray: #2b2b2b font color throughout
+Shadow: box-shadow: 5px 5px 5px lightgray;
+Bright Blue: #c4f7fe highlights, hover on links, and buttons
 */
 
 /* NoteBoard Note styling */
@@ -73,7 +76,7 @@ Dark Gray: #2b2b2b font color throughout
   flex-direction: row;
   align-items: center; */
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   text-align: left;
   line-height: 1.2;
   padding: 0px 10px 0px;

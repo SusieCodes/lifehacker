@@ -2,7 +2,7 @@
 // Purpose: To display relevant info from database on landing page
 
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { TodoDashList } from "../todos/TodoDashList";
 import { ActivityDashList } from "../activities/ActivityDashList";
 import { GroceryDashList } from "../groceries/GroceryDashList";
@@ -40,7 +40,9 @@ export const Dashboard = () => {
               <div className="dashboard-grid__row1__col1__row1">
                 {/* START OF ACTIVITY DASHBOARD */}
                 <div className="activity-container">
-                  <h2>Activities</h2>
+                  <Link to="/activities">
+                    <h2>Activities</h2>
+                  </Link>
 
                   <div className="dash-activity__list">
                     <ActivityDashList />
@@ -49,8 +51,9 @@ export const Dashboard = () => {
 
                 {/* START OF GROCERY DASHBOARD */}
                 <div className="grocery-container">
-                  <h2>Groceries</h2>
-
+                  <Link to="/groceries">
+                    <h2>Groceries</h2>
+                  </Link>
                   <div className="dash-grocery__list">
                     <GroceryDashList />
                   </div>
@@ -60,8 +63,9 @@ export const Dashboard = () => {
               <div className="dashboard-grid__row1__col1__row2">
                 {/* START OF NOTES DASHBOARD */}
                 <div className="note-container">
-                  <h2>Notes</h2>
-
+                  <Link to="/notes">
+                    <h2>Notes</h2>
+                  </Link>
                   <div className="dash-note-text">
                     <NoteDashList />
                   </div>
@@ -69,8 +73,9 @@ export const Dashboard = () => {
 
                 {/* START OF JOURNAL DASHBOARD */}
                 <div className="journal-container">
-                  <h2>Journal</h2>
-
+                  <Link to="/journals">
+                    <h2>Journal</h2>
+                  </Link>
                   <div className="dash-journal__list">
                     <JournalDashList />
                   </div>
@@ -80,8 +85,9 @@ export const Dashboard = () => {
 
             {/* START OF TO-DO DASHBOARD */}
             <div className="dashboard-grid__row1__col2">
-              <h2>To-Do List</h2>
-
+              <Link to="/todos">
+                <h2>To-Do List</h2>
+              </Link>
               <div className="dash-todo__list">
                 <TodoDashList />
               </div>
@@ -91,8 +97,9 @@ export const Dashboard = () => {
           {/* START OF CONNECTIONS DASHBOARD */}
           <div className="dashboard-grid__row2">
             <div className="dashboard-grid__row2__row1">
-              <h2>Connections</h2>
-
+              <Link to="/connections">
+                <h2>Connections</h2>
+              </Link>
               <ConnectionDashList />
             </div>
           </div>

@@ -14,13 +14,13 @@ export const ActivityDashList = () => {
   // grabs all Activities from API, makes a copy, filters through each Activity and returns array of the objects dated after today
   const getFutureActivities = () => {
     const today = new Date();
-    const parsedToday = today.getTime();
+    const parsedToday = today.getTime() - 43200000;
     return getAllActivitiesByUserId(
       sessionStorage.getItem("lifehacker_user")
     ).then((ActivitiesFromAPI) => {
       const copyOfActivities = [...ActivitiesFromAPI];
       const futureDatedActivities = copyOfActivities.filter((evt) => {
-        let evtDate = Date.parse(evt.date);
+        let evtDate = Date.parse(evt.date) + 43200000;
         return evtDate > parsedToday;
       });
       setFutureActivities(futureDatedActivities);

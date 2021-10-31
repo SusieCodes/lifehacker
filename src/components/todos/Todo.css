@@ -1,13 +1,16 @@
-/* Author: Susie Stanley
-Purpose: To Do pages styling
+/* 
+Author: Susie Stanley
+Purpose: To-Do pages styling
 
-Colors used:
+Site colors used:
 Light Blue: #c8e6ea
 Light Blue: #c8e6ea68 (faded)
 Dark Blue: rgb(82, 207, 223) Details button border
 Red: #D61212
 Light Gray: rgba(211, 211, 211, 0.468) Dashboard Connections header
 Dark Gray: #2b2b2b font color throughout
+Shadow: box-shadow: 5px 5px 5px lightgray;
+Bright Blue: #c4f7fe highlights, hover on links, and buttons
 */
 
 .board-container__todo {

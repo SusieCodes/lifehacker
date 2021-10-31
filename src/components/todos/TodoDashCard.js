@@ -23,19 +23,17 @@ export const TodoDashCard = ({ todo, handleCompleteTodo }) => {
       <>
         <div className="dash-todo">
           <div className="dash-todo__col1">
-            <div className="dash-todo__title">
-              <strong>{todo.title}</strong>
-            </div>
+            <div className="dash-todo__title">{todo.title}</div>
 
             {byWhenCheck ? (
               <div className="dash-todo__bywhen">
                 {" "}
-                <strong>By When: </strong> {formatStringDate(todo.byWhen)}
+                By When: &nbsp;&nbsp;{formatStringDate(todo.byWhen)}
               </div>
             ) : (
               <div className="dash-todo__bywhen__red">
                 {" "}
-                <strong>By When:</strong> {formatStringDate(todo.byWhen)}
+                By When: &nbsp;&nbsp;{formatStringDate(todo.byWhen)}
               </div>
             )}
           </div>
@@ -44,7 +42,7 @@ export const TodoDashCard = ({ todo, handleCompleteTodo }) => {
             <div className="todo-complete">
               <input
                 type="checkbox"
-                className="checkbox"
+                className="checkbox-todo"
                 onClick={() => handleCompleteTodo(todo.id)}
               />
               <label>Completed</label>
