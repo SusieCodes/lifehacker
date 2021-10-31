@@ -51,7 +51,7 @@ export const NoteForm = () => {
 
     if (note.title === "" || note.text === "") {
       setConflictDialog1(true);
-    } else if (note.title.length > 30 || note.text.length > 30) {
+    } else if (note.title.length >= 30 || note.text.length >= 30) {
       setConflictDialog2(true);
     } else {
       addNote(note).then(() => history.push("/notes"));

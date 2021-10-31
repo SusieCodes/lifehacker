@@ -12,9 +12,14 @@ export const NoteDashCard = ({ recentNote, handleDelete }) => {
         <Link to="/notes">
           <div className="dash-note">
             <div className="dash-note__text">
-              <div className="top-text">{recentNote.title}</div>
+              <div className="top-text">
+                {" "}
+                <div className="dn-text-wrapper">{recentNote?.title}</div>
+              </div>
 
-              <div className="bottom-text">{recentNote.text}</div>
+              <div className="bottom-text">
+                <div className="dn-text-wrapper">{recentNote?.text}</div>
+              </div>
             </div>
           </div>
         </Link>

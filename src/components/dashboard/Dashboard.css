@@ -390,7 +390,7 @@ button.activity-delete {
 .dash-note__wrapper a {
   padding-right: 50px;
   /* border: 2px solid pink; */
-  width: 290px;
+  width: 300px;
 }
 
 .dash-note {
@@ -398,7 +398,9 @@ button.activity-delete {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  padding: 25px 0px 0px 0px;
+  align-content: center;
+  padding: 0px;
+  min-height: 190px;
   /* border: 2px solid blue; */
 }
 
@@ -406,28 +408,41 @@ button.activity-delete {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
   margin: 0px;
   width: 200px;
-  /* border: 2px solid yellow; */
+  /* border: 2px solid chartreuse; */
 }
 
 .top-text {
   font-size: 22px;
   font-weight: 500;
   text-align: left;
-  margin: 10px 0px 30px;
-  min-width: 200px;
+  line-height: 1.2;
+  margin: 0px 0px 30px;
+  width: 100%;
+  padding: 0px;
   /* border: 1px solid black; */
+}
+
+.dn-text-wrapper {
+  margin: 0px;
+  width: 100%;
+  padding: 0px 10px;
+  overflow-wrap: break-word;
+  /* border: 1px solid red; */
 }
 
 .bottom-text {
   font-size: 18px;
   min-width: 200px;
   text-align: left;
+  line-height: 1.2;
   padding: 0px;
   margin: 0px;
+  width: 100%;
   /* border: 1px solid aqua; */
 }
 
