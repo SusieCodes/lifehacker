@@ -5,6 +5,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import "./Grocery.css";
 
 export const GroceryCard = ({ grocery, handleDelete }) => {
   const handleEdit = () => {
@@ -43,8 +44,8 @@ export const GroceryCard = ({ grocery, handleDelete }) => {
 export const GroceryPrintCard = ({ grocery }) => {
   return (
     <>
-      <div className="grocery-card">
-        <div className="grocery-info">
+      <div className="print-grocery-card">
+        <div className="print-grocery-list">
           <div>{grocery.text}</div>
         </div>
 

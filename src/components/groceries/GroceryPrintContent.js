@@ -5,7 +5,7 @@ import { GroceryPrintCard } from "./GroceryCard";
 import "../LifeHacker.css";
 import "./Grocery.css";
 
-export const GroceryPrintContent = () => {
+export const ComponentToPrint = () => {
   const [groceries, setGroceries] = useState([]);
 
   const getGroceries = () => {
@@ -25,9 +25,9 @@ export const GroceryPrintContent = () => {
       <div className="print-container__grocery">
         <div className="grocery-card-list">
           <div className="print-header">Grocery List</div>
-          {groceries.map((grocery) => (
-            <GroceryPrintCard key={grocery.id} grocery={grocery} />
-          ))}
+          {/* {groceries.map((grocery) => ( 
+          <GroceryPrintCard key={grocery.id} grocery={grocery} />
+          {/* ))} */}
         </div>
       </div>
     </>

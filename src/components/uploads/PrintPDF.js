@@ -18,7 +18,7 @@ export class ComponentToPrint extends React.Component {
   }
 }
 
-const Example = () => {
+export const Example = () => {
   const componentRef = useRef();
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,

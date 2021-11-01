@@ -104,23 +104,46 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 }
 
 /* GroceryPrintCard styling */
-.grocery-print-container {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-}
-
-.print-container__grocery {
+.print-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 30px;
+  width: 600px;
+  border: 2px solid black;
+}
+.print-grocery-container {
+  align-self: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 550px;
+  border: 1px solid red;
+}
+
+.print-grocery-info {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  border: 1px solid green;
 }
 
 .print-header {
   font-size: 24px;
   margin-bottom: 20px;
   text-align: center;
+  border: 1px solid orange;
+}
+
+.print-grocery-card {
+  width: 400px;
+  border: 1px solid aqua;
+}
+
+.print-grocery-list {
+}
+
+.grocery-icons {
 }
 
 .grocery-check {
@@ -139,13 +162,13 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 }
 
 .print-btn {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
   background-color: #c8e6ea;
   border: 2px solid lightgray;
   border-radius: 5px;
-  padding: 7px 15px;
-  margin: 10px auto;
+  padding: 3px 15px;
+  margin: 20px auto;
   cursor: pointer;
-  width: 200px;
+  /* width: 100px; */
 }
