@@ -102,3 +102,50 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   transform: scale(1.5);
   color: #d61212;
 }
+
+/* GroceryPrintCard styling */
+.grocery-print-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.print-container__grocery {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.print-header {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.grocery-check {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin: auto 20px;
+  /* border: 1px solid black; */
+}
+
+.grocery-check-icon {
+  margin: auto auto;
+  width: 30px;
+  height: 30px;
+}
+
+.print-btn {
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #c8e6ea;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  padding: 7px 15px;
+  margin: 10px auto;
+  cursor: pointer;
+  width: 200px;
+}
