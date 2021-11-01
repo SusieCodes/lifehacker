@@ -66,13 +66,14 @@ export const ActivityEditForm = () => {
         <div className="form-flex">
           <fieldset className="form">
             <div className="form__group">
-              <label htmlFor="name">Name:</label>
+              <label htmlFor="name">Activity:</label>
               <input
                 type="text"
+                id="name"
+                maxLength="30"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
-                id="name"
                 value={activity.name}
               />
             </div>
@@ -81,10 +82,10 @@ export const ActivityEditForm = () => {
               <label htmlFor="date">Date:</label>
               <input
                 type="text"
+                id="date"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
-                id="date"
                 value={activity.date}
               />
             </div>
@@ -93,10 +94,10 @@ export const ActivityEditForm = () => {
               <label htmlFor="time">Time:</label>
               <input
                 type="time"
+                id="time"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
-                id="time"
                 value={activity.time}
               />
             </div>
@@ -105,10 +106,11 @@ export const ActivityEditForm = () => {
               <label htmlFor="address">Address:</label>
               <input
                 type="text"
+                id="address"
+                maxLength="23"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
-                id="address"
                 value={activity.address}
               />
             </div>
@@ -117,10 +119,11 @@ export const ActivityEditForm = () => {
               <label htmlFor="city">City:</label>
               <input
                 type="text"
+                id="city"
+                maxLength="23"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
-                id="city"
                 value={activity.city}
               />
             </div>
@@ -129,10 +132,11 @@ export const ActivityEditForm = () => {
               <label htmlFor="zipcode">Zip/Postal Code:</label>
               <input
                 type="text"
+                id="zipcode"
+                maxLength="10"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
-                id="zipcode"
                 value={activity.zipcode}
               />
             </div>
@@ -141,10 +145,11 @@ export const ActivityEditForm = () => {
               <label htmlFor="notes">Notes:</label>
               <input
                 type="text"
+                id="notes"
+                maxLength="60"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
-                id="notes"
                 value={activity.notes}
               />
             </div>

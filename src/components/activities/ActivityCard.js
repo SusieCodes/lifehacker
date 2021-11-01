@@ -23,29 +23,31 @@ export const ActivityCard = ({ activity, handleDelete }) => {
             <div className="dash-activity__name bold">{activity?.name}</div>
 
             <div className="da-inner__wrapper">
-              <div className="da-inner__left">
+              <div className="activity-inner__left">
                 <div className="med-bold">Date:</div>
                 <div className="med-bold">Time:</div>
-                <div className="med-bold card-spacer">Address:</div>
-                <div className="transparent card-spacer">City:</div>
-                <div className="med-bold activity-note-spacer">Notes:</div>
+                <div className="med-bold card-spacer left-spacer">Address:</div>
+                <div className="transparent card-spacer left-spacer">City:</div>
+                <div className="med-bold">Notes:</div>
               </div>
 
-              <div className="da-inner__right">
-                <div>{formatStringDate(activity?.date)}</div>
+              <div className="activity-inner__right">
+                <div className="show">{formatStringDate(activity?.date)}</div>
                 {activity?.time ? (
                   <div>{formatTime(activity?.time)}</div>
                 ) : (
                   <div>check time</div>
                 )}
-                <div className="activity-address__highlight card-spacer">
-                  {activity?.address}
+                <div className="address-wrapper">
+                  <div className="card-spacer activity-address__highlight">
+                    <div className="a-text-wrapper">{activity?.address}</div>
+                  </div>
+                  <div className="activity-address__highlight">
+                    {activity?.city}
+                  </div>
                 </div>
-                <div className="activity-address__highlight card-spacer">
-                  {activity?.city}
-                </div>
-                <div className="activity-notes note-spacer">
-                  {activity?.notes}
+                <div className="activity-notes activity-note-spacer">
+                  <div className="a-text-wrapper">{activity?.notes}</div>
                 </div>
               </div>
             </div>

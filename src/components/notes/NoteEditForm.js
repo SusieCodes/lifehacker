@@ -17,6 +17,8 @@ export const NoteEditForm = () => {
   });
 
   const [isLoading, setIsLoading] = useState(false);
+  const [conflictDialog1, setConflictDialog1] = useState(false);
+  const [conflictDialog2, setConflictDialog2] = useState(false);
 
   const { noteId } = useParams();
   const history = useHistory();
@@ -29,7 +31,6 @@ export const NoteEditForm = () => {
 
   const updateExistingNote = (evt) => {
     evt.preventDefault();
-    setIsLoading(true);
 
     // This is an edit, so we need the id
     const editedNote = {
@@ -40,7 +41,13 @@ export const NoteEditForm = () => {
       userId: parseInt(sessionStorage.getItem("lifehacker_user")),
     };
 
-    update(editedNote).then(() => history.push("/notes"));
+    if (note.title === "" || note.text === "") {
+      setConflictDialog1(true);
+    } else if (note.title.length >= 30 || note.text.length >= 30) {
+      setConflictDialog2(true);
+    } else {
+      update(editedNote).then(() => history.push("/notes"));
+    }
   };
 
   useEffect(() => {
@@ -57,14 +64,37 @@ export const NoteEditForm = () => {
 
         <div className="form-flex">
           <fieldset className="form">
+            <dialog className="dialog" open={conflictDialog1}>
+              <div className="dialog-forms">
+                Please make sure title or text is not empty
+              </div>
+              <button
+                className="button-close"
+                onClick={(e) => setConflictDialog1(false)}
+              >
+                Close
+              </button>
+            </dialog>
+            <dialog className="dialog" open={conflictDialog2}>
+              <div className="dialog-forms">
+                Title and text must each be less than 30 characters
+              </div>
+              <button
+                className="button-close"
+                onClick={(e) => setConflictDialog2(false)}
+              >
+                Close
+              </button>
+            </dialog>
             <div className="form__group">
               <label htmlFor="name">Title:</label>
               <input
                 type="text"
+                id="title"
+                maxLength="29"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
-                id="title"
                 value={note.title}
               />
             </div>
@@ -73,10 +103,11 @@ export const NoteEditForm = () => {
               <label htmlFor="text">Text</label>
               <input
                 type="text"
+                id="text"
+                maxLength="29"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
-                id="text"
                 value={note.text}
               />
             </div>

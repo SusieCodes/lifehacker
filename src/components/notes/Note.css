@@ -67,7 +67,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   margin: 0px;
   width: 125px;
   height: 120px;
-  /* border: 1px solid black; */
+  border: 1px solid black;
 }
 
 .note-top-text {

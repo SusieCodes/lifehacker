@@ -200,6 +200,7 @@ body {
 .form-flex {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   /* border: 1px solid red; */
 }
@@ -211,7 +212,7 @@ body {
   background-color: white;
   box-shadow: 2px 3px 7px gray;
   border-radius: 5px;
-  border: none;
+  /* border: 1px solid black; */
 }
 
 input {
@@ -227,6 +228,10 @@ input::placeholder {
   color: rgb(198, 198, 198);
   opacity: 1;
 }
+
+/* .form__group--edit {
+  width: 400px;
+} */
 
 .form__group--edit:focus {
   outline-color: #c4f7fe;

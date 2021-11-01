@@ -9,8 +9,7 @@ import "./Note.css";
 import "../LifeHacker.css";
 
 export const NoteForm = () => {
-  const [conflictDialog1, setConflictDialog1] = useState(false);
-  const [conflictDialog2, setConflictDialog2] = useState(false);
+  const [conflictDialog, setConflictDialog] = useState(false);
 
   // Defining initial state of the form inputs with useState()
   const [note, setNote] = useState({
@@ -50,9 +49,7 @@ export const NoteForm = () => {
     evt.preventDefault(); //Prevents the browser from submitting the form
 
     if (note.title === "" || note.text === "") {
-      setConflictDialog1(true);
-    } else if (note.title.length >= 30 || note.text.length >= 30) {
-      setConflictDialog2(true);
+      setConflictDialog(true);
     } else {
       addNote(note).then(() => history.push("/notes"));
     }
@@ -65,22 +62,11 @@ export const NoteForm = () => {
 
         <div className="form-flex">
           <fieldset className="form">
-            <dialog className="dialog" open={conflictDialog1}>
-              <div className="dialog-forms">Please Fill In Title and Text</div>
+            <dialog className="dialog" open={conflictDialog}>
+              <div className="dialog-forms">Please fill in title and text</div>
               <button
                 className="button-close"
-                onClick={(e) => setConflictDialog1(false)}
-              >
-                Close
-              </button>
-            </dialog>
-            <dialog className="dialog" open={conflictDialog2}>
-              <div className="dialog-forms">
-                Title and text must each be 30 characters or less
-              </div>
-              <button
-                className="button-close"
-                onClick={(e) => setConflictDialog2(false)}
+                onClick={(e) => setConflictDialog(false)}
               >
                 Close
               </button>
@@ -91,6 +77,7 @@ export const NoteForm = () => {
               <input
                 type="text"
                 id="title"
+                maxLength="29"
                 onChange={handleControlledInputChange}
                 required
                 autoFocus
@@ -105,6 +92,7 @@ export const NoteForm = () => {
               <input
                 type="text"
                 id="text"
+                maxLength="29"
                 onChange={handleControlledInputChange}
                 required
                 className="form__group--edit"

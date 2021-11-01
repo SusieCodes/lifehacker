@@ -301,21 +301,20 @@ input.checkbox-todo:hover {
   justify-content: flex-start;
   padding: 0px;
   margin: 0px;
+  /* border: 1px solid black; */
 }
 
 .da-inner__left {
-  font-size: 18px;
-  /* font-weight: 800; */
   text-align: left;
+  font-size: 18px;
   line-height: 1.3em;
   white-space: nowrap;
   margin: 0px;
   padding: 0px;
 }
 
-.activity-address__highlight {
-  background-color: white;
-  padding: 0px 5px;
+.da-left-spacer {
+  margin-top: 13px;
 }
 
 .card-spacer {
@@ -327,13 +326,28 @@ input.checkbox-todo:hover {
 }
 
 .da-inner__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   font-size: 18px;
   font-weight: 300;
   text-align: left;
-  line-height: 1.3em;
-  white-space: nowrap;
-  margin: 0px;
-  padding-left: 10px;
+  line-height: 1em;
+  margin: 0px 5px;
+  max-width: 400px;
+  padding: 4px 0px 0px 10px;
+  /* border: 1px solid pink; */
+}
+
+.da-address__highlight {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  overflow-wrap: break-word;
+  padding: 3px 10px;
+  margin: 0px 5px;
+  /* border: 1px solid green; */
 }
 
 .dash-activity__col2 {

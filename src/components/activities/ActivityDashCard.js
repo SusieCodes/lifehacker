@@ -21,7 +21,7 @@ export const ActivityDashCard = ({ activity, handleDelete }) => {
                 <div className="da-inner__left">
                   <div className="med-bold">Date:</div>
                   <div className="med-bold">Time:</div>
-                  <div className="med-bold">Address:</div>
+                  <div className="med-bold da-left-spacer">Address:</div>
                   <div className="transparent">City:</div>
                 </div>
 
@@ -32,11 +32,13 @@ export const ActivityDashCard = ({ activity, handleDelete }) => {
                   ) : (
                     <div>check time</div>
                   )}
-                  <div className="activity-address__highlight">
-                    {activity?.address}
-                  </div>
-                  <div className="activity-address__highlight">
-                    {activity?.city}
+                  <div className="address-wrapper">
+                    <div className="da-address__highlight">
+                      {activity?.address}
+                    </div>
+                    <div className="da-address__highlight">
+                      {activity?.city}
+                    </div>
                   </div>
                 </div>
               </div>
