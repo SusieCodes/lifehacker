@@ -53,7 +53,7 @@ export const TodoForm = () => {
         <WelcomeBar title="Add New To Do" />
 
         <div className="form-flex">
-          <fieldset className="form">
+          <fieldset className="todo-form">
             <dialog className="dialog" open={conflictDialog}>
               <div className="dialog-forms">
                 Please Fill In A Title and Choose A Date

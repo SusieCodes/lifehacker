@@ -3,7 +3,11 @@
 
 import React, { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
-import { getTodosByUserId, completeTodo } from "../todos/TodoManager";
+import {
+  getTodosByUserId,
+  completeTodo,
+  deleteTodo,
+} from "../todos/TodoManager";
 import { TodoDashCard } from "../todos/TodoDashCard";
 
 export const TodoDashList = () => {
@@ -27,6 +31,12 @@ export const TodoDashList = () => {
     completeTodo(id).then(() => getTodos());
   };
 
+  const handleDelete = (id) => {
+    deleteTodo(id).then(() => {
+      getTodos();
+    });
+  };
+
   useEffect(() => {
     getTodos();
   }, []);
@@ -42,6 +52,7 @@ export const TodoDashList = () => {
               key={todo.id}
               todo={todo}
               handleCompleteTodo={handleCompleteTodo}
+              handleDelete={handleDelete}
             />
           )
         )

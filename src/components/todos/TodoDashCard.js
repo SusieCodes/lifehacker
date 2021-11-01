@@ -3,12 +3,12 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { FaTrash } from "react-icons/fa";
 import { formatStringDate } from "../helper";
 import "../LifeHacker.css";
 import "../dashboard/Dashboard.css";
 
-export const TodoDashCard = ({ todo, handleCompleteTodo }) => {
+export const TodoDashCard = ({ todo, handleCompleteTodo, handleDelete }) => {
   const today = Date.now();
   let byWhen = Date.parse(todo.byWhen);
   byWhen = byWhen + 43200000;
@@ -31,25 +31,28 @@ export const TodoDashCard = ({ todo, handleCompleteTodo }) => {
               {byWhenCheck ? (
                 <div className="dash-todo__bywhen">
                   {" "}
-                  By When: &nbsp;&nbsp;{formatStringDate(todo.byWhen)}
+                  &nbsp;By When: &nbsp;{formatStringDate(todo.byWhen)}
                 </div>
               ) : (
                 <div className="dash-todo__bywhen__red">
                   {" "}
-                  By When: &nbsp;&nbsp;{formatStringDate(todo.byWhen)}
+                  &nbsp;By When: &nbsp;{formatStringDate(todo.byWhen)}
                 </div>
               )}
             </div>
           </Link>
 
           <div className="dash-todo__col2">
-            <div className="todo-complete">
+            <div className="dash-todo-complete">
               <input
                 type="checkbox"
                 className="checkbox-todo"
                 onClick={() => handleCompleteTodo(todo.id)}
               />
               <label>Completed</label>
+            </div>
+            <div className="todo-delete" onClick={() => handleDelete(todo?.id)}>
+              <FaTrash className="td-delete-icon" />
             </div>
           </div>
         </div>
