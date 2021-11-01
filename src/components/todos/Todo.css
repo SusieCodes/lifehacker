@@ -52,7 +52,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 
 .todo-title {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 500;
   padding: 0px;
   margin: 0px;
   white-space: nowrap;
@@ -61,7 +61,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 
 .todo-bywhen {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   padding: 0px;
   margin: 0px;
   white-space: nowrap;
@@ -71,7 +71,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 .todo-bywhen__red {
   font-size: 18px;
   color: #d61212;
-  font-weight: 600;
+  font-weight: 500;
   padding: 0px;
   margin: 0px;
   white-space: nowrap;
@@ -80,12 +80,31 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 
 .todo-complete {
   flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
   padding: 0px;
   margin: 15px;
   white-space: nowrap;
-  /* margin: 0px 20px; */
-  /* border: 1px solid transparent; */
   /* border: 2px solid yellow; */
+}
+
+input.checkbox-todoboard {
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+input.checkbox-todoboard:hover {
+  transform: scale(1.5);
+  color: #27c2d7;
+}
+
+.todo-complete label {
+  font-size: 18px;
+  align-self: center;
 }
 
 .todo-icons {
@@ -139,4 +158,15 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   transform: scale(1.5);
   color: #d61212;
   cursor: pointer;
+}
+
+/* todo form styling */
+.todo-form {
+  font-size: 22px;
+  padding: 30px 50px;
+  margin: 10px;
+  background-color: white;
+  box-shadow: 2px 3px 7px gray;
+  border-radius: 5px;
+  border: none;
 }

@@ -61,6 +61,7 @@ h2 {
   /* border: 1px solid blue; */
 }
 
+/* this targets the white squares in the grid */
 .activity-container,
 .grocery-container,
 .journal-container,
@@ -77,6 +78,7 @@ h2 {
   min-height: 270px;
 }
 
+/* this targets the section headline as link */
 .activity-container a,
 .grocery-container a,
 .journal-container a,
@@ -174,12 +176,13 @@ h2 {
   flex: 1;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-self: stretch;
   padding: 10px 20px;
   margin: 8px 0px;
   background-color: #c8e6ea68;
   border-radius: 5px;
+  /* border: 1px solid black; */
 }
 
 .dash-todo__col1 {
@@ -187,16 +190,17 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* border: 1px solid red; */
 }
 
 .dash-todo__col2 {
   display: flex;
   flex-direction: row;
-  justify-content: right;
-  text-align: center;
+  justify-content: space-evenly;
   white-space: nowrap;
   align-self: center;
-  margin: 0px;
+  margin: 0px 5px 0px 0px;
+  /* border: 1px solid blue; */
 }
 
 .dash-todo__title {
@@ -224,16 +228,32 @@ h2 {
   white-space: nowrap;
 }
 
-.todo-complete {
+.dash-todo-complete {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 0px;
+  margin: 0px 30px 0px 10px;
+  /* border: 1px solid chartreuse; */
 }
 
-.todo-complete label {
-  padding-left: 6px;
+.dash-todo-complete label {
+  padding-right: 5px;
+}
+
+.td-delete-icon {
+  color: #2b2b2b;
+  margin: auto auto;
+  width: 25px;
+  height: 25px;
+  transition: all 0.2s ease-in-out;
+  /* border: 1px solid black; */
+}
+
+.td-delete-icon:hover {
+  transform: scale(1.5);
+  color: #d61212;
+  cursor: pointer;
 }
 
 input.checkbox-todo {
