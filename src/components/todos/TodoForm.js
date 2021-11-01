@@ -1,51 +1,51 @@
 // Author: Susie Stanley
 // Purpose: Creates and displays an input form for user to add a connection
 
-import React, { useState } from 'react'
-import { useHistory } from 'react-router'
-import { addTodo } from './TodoManager'
-import { WelcomeBar } from '../navbar/WelcomeBar'
-import './Todo.css'
-import '../LifeHacker.css'
+import React, { useState } from "react";
+import { useHistory } from "react-router";
+import { addTodo } from "./TodoManager";
+import { WelcomeBar } from "../navbar/WelcomeBar";
+import "./Todo.css";
+import "../LifeHacker.css";
 
 export const TodoForm = () => {
-  const [conflictDialog, setConflictDialog] = useState(false)
+  const [conflictDialog, setConflictDialog] = useState(false);
 
   const [todo, setTodo] = useState({
-    title: '',
-    byWhen: '',
+    title: "",
+    byWhen: "",
     isCompleted: false,
-    userId: parseInt(sessionStorage.getItem('lifehacker_user')),
-  })
+    userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+  });
 
-  const history = useHistory()
+  const history = useHistory();
 
   const ResetForm = () => {
     setTodo({
-      title: '',
-      byWhen: '',
+      title: "",
+      byWhen: "",
       isCompleted: false,
-      userId: parseInt(sessionStorage.getItem('lifehacker_user')),
-    })
-  }
+      userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+    });
+  };
 
   const handleControlledInputChange = (event) => {
-    const newTodo = { ...todo }
-    let selectedVal = event.target.value
+    const newTodo = { ...todo };
+    let selectedVal = event.target.value;
     // selectedVal = parseInt(selectedVal)
 
-    newTodo[event.target.id] = selectedVal
-    setTodo(newTodo)
-  }
+    newTodo[event.target.id] = selectedVal;
+    setTodo(newTodo);
+  };
 
   const handleSave = (event) => {
-    event.preventDefault() //Prevents the browser from submitting the form
-    if (todo.title === '' || todo.byWhen === '') {
-      setConflictDialog(true)
+    event.preventDefault(); //Prevents the browser from submitting the form
+    if (todo.title === "" || todo.byWhen === "") {
+      setConflictDialog(true);
     } else {
-      addTodo(todo).then(() => history.push('/todos'))
+      addTodo(todo).then(() => history.push("/todos"));
     }
-  }
+  };
 
   return (
     <>
@@ -71,6 +71,7 @@ export const TodoForm = () => {
               <input
                 type="text"
                 id="title"
+                maxLength="22"
                 onChange={handleControlledInputChange}
                 required
                 autoFocus
@@ -85,6 +86,7 @@ export const TodoForm = () => {
               <input
                 type="date"
                 id="byWhen"
+                maxLength="22"
                 onChange={handleControlledInputChange}
                 required
                 className="form__group--edit"
@@ -106,7 +108,7 @@ export const TodoForm = () => {
               type="button"
               className="form-btn"
               onClick={() => {
-                history.push('/todos')
+                history.push("/todos");
               }}
             >
               Cancel
@@ -115,5 +117,5 @@ export const TodoForm = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};

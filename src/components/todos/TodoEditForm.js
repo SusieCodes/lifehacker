@@ -1,34 +1,34 @@
 // Author: Susie Stanley
 // Purpose: Displays form to edit existing To-Do
 
-import React, { useEffect, useState } from 'react'
-import { useParams, useHistory } from 'react-router'
-import { getTodoById, update } from './TodoManager'
-import { WelcomeBar } from '../navbar/WelcomeBar'
-import './Todo.css'
-import '../LifeHacker.css'
+import React, { useEffect, useState } from "react";
+import { useParams, useHistory } from "react-router";
+import { getTodoById, update } from "./TodoManager";
+import { WelcomeBar } from "../navbar/WelcomeBar";
+import "./Todo.css";
+import "../LifeHacker.css";
 
 export const TodoEditForm = () => {
   const [todo, setTodo] = useState({
-    title: '',
-    byWhen: '',
+    title: "",
+    byWhen: "",
     isCompleted: false,
-    userId: parseInt(sessionStorage.getItem('lifehacker_user')),
-  })
+    userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+  });
 
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
-  const { todoId } = useParams()
-  const history = useHistory()
+  const { todoId } = useParams();
+  const history = useHistory();
 
   const handleFieldChange = (evt) => {
-    const stateToChange = { ...todo }
-    stateToChange[evt.target.id] = evt.target.value
-    setTodo(stateToChange)
-  }
+    const stateToChange = { ...todo };
+    stateToChange[evt.target.id] = evt.target.value;
+    setTodo(stateToChange);
+  };
   const updateExistingTodo = (evt) => {
-    evt.preventDefault()
-    setIsLoading(true)
+    evt.preventDefault();
+    setIsLoading(true);
 
     const editedTodo = {
       id: todoId,
@@ -36,16 +36,16 @@ export const TodoEditForm = () => {
       byWhen: todo.byWhen,
       isCompleted: todo.isCompleted,
       userId: todo.userId,
-    }
+    };
 
-    update(editedTodo).then(() => history.push('/todos'))
-  }
+    update(editedTodo).then(() => history.push("/todos"));
+  };
   useEffect(() => {
     getTodoById(todoId).then((todo) => {
-      setTodo(todo)
-      setIsLoading(false)
-    })
-  }, [todoId])
+      setTodo(todo);
+      setIsLoading(false);
+    });
+  }, [todoId]);
 
   return (
     <>
@@ -58,10 +58,11 @@ export const TodoEditForm = () => {
               <label htmlFor="title">To-Do</label>
               <input
                 type="text"
+                id="title"
+                maxLength="22"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
-                id="title"
                 value={todo.title}
               />
             </div>
@@ -69,10 +70,11 @@ export const TodoEditForm = () => {
               <label htmlFor="byWhen">By When</label>
               <input
                 type="date"
+                id="byWhen"
+                maxLength="22"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
-                id="byWhen"
                 value={todo.byWhen}
               />
             </div>
@@ -99,5 +101,5 @@ export const TodoEditForm = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};

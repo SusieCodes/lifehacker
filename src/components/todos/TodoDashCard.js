@@ -2,6 +2,8 @@
 // Purpose: Displays list of To-Do items by user
 
 import React from "react";
+import { Link } from "react-router-dom";
+
 import { formatStringDate } from "../helper";
 import "../LifeHacker.css";
 import "../dashboard/Dashboard.css";
@@ -22,21 +24,23 @@ export const TodoDashCard = ({ todo, handleCompleteTodo }) => {
     return (
       <>
         <div className="dash-todo">
-          <div className="dash-todo__col1">
-            <div className="dash-todo__title">{todo.title}</div>
+          <Link to="/todos">
+            <div className="dash-todo__col1">
+              <div className="dash-todo__title">{todo.title}</div>
 
-            {byWhenCheck ? (
-              <div className="dash-todo__bywhen">
-                {" "}
-                By When: &nbsp;&nbsp;{formatStringDate(todo.byWhen)}
-              </div>
-            ) : (
-              <div className="dash-todo__bywhen__red">
-                {" "}
-                By When: &nbsp;&nbsp;{formatStringDate(todo.byWhen)}
-              </div>
-            )}
-          </div>
+              {byWhenCheck ? (
+                <div className="dash-todo__bywhen">
+                  {" "}
+                  By When: &nbsp;&nbsp;{formatStringDate(todo.byWhen)}
+                </div>
+              ) : (
+                <div className="dash-todo__bywhen__red">
+                  {" "}
+                  By When: &nbsp;&nbsp;{formatStringDate(todo.byWhen)}
+                </div>
+              )}
+            </div>
+          </Link>
 
           <div className="dash-todo__col2">
             <div className="todo-complete">

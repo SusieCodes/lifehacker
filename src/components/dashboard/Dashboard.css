@@ -301,21 +301,20 @@ input.checkbox-todo:hover {
   justify-content: flex-start;
   padding: 0px;
   margin: 0px;
+  /* border: 1px solid black; */
 }
 
 .da-inner__left {
-  font-size: 18px;
-  /* font-weight: 800; */
   text-align: left;
+  font-size: 18px;
   line-height: 1.3em;
   white-space: nowrap;
   margin: 0px;
   padding: 0px;
 }
 
-.activity-address__highlight {
-  background-color: white;
-  padding: 0px 5px;
+.da-left-spacer {
+  margin-top: 13px;
 }
 
 .card-spacer {
@@ -327,13 +326,28 @@ input.checkbox-todo:hover {
 }
 
 .da-inner__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   font-size: 18px;
   font-weight: 300;
   text-align: left;
-  line-height: 1.3em;
-  white-space: nowrap;
-  margin: 0px;
-  padding-left: 10px;
+  line-height: 1em;
+  margin: 0px 5px;
+  max-width: 400px;
+  padding: 4px 0px 0px 10px;
+  /* border: 1px solid pink; */
+}
+
+.da-address__highlight {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  overflow-wrap: break-word;
+  padding: 3px 10px;
+  margin: 0px 5px;
+  /* border: 1px solid green; */
 }
 
 .dash-activity__col2 {
@@ -367,7 +381,7 @@ button.activity-delete {
   background-repeat: no-repeat;
   background-position: 40px 25px;
   background-size: 80%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 .note-container h2 {
   background-color: transparent;
@@ -390,7 +404,7 @@ button.activity-delete {
 .dash-note__wrapper a {
   padding-right: 50px;
   /* border: 2px solid pink; */
-  width: 290px;
+  width: 300px;
 }
 
 .dash-note {
@@ -398,7 +412,9 @@ button.activity-delete {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  padding: 25px 0px 0px 0px;
+  align-content: center;
+  padding: 0px;
+  min-height: 190px;
   /* border: 2px solid blue; */
 }
 
@@ -406,28 +422,41 @@ button.activity-delete {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
   margin: 0px;
   width: 200px;
-  /* border: 2px solid yellow; */
+  /* border: 2px solid chartreuse; */
 }
 
 .top-text {
   font-size: 22px;
   font-weight: 500;
   text-align: left;
-  margin: 10px 0px 30px;
-  min-width: 200px;
+  line-height: 1.2;
+  margin: 0px 0px 30px;
+  width: 100%;
+  padding: 0px;
   /* border: 1px solid black; */
+}
+
+.dn-text-wrapper {
+  margin: 0px;
+  width: 100%;
+  padding: 0px 10px;
+  overflow-wrap: break-word;
+  /* border: 1px solid red; */
 }
 
 .bottom-text {
   font-size: 18px;
   min-width: 200px;
   text-align: left;
+  line-height: 1.2;
   padding: 0px;
   margin: 0px;
+  width: 100%;
   /* border: 1px solid aqua; */
 }
 

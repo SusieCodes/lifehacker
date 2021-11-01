@@ -63,7 +63,7 @@ export const NoteForm = () => {
         <div className="form-flex">
           <fieldset className="form">
             <dialog className="dialog" open={conflictDialog}>
-              <div className="dialog-forms">Please Fill In Title and Text</div>
+              <div className="dialog-forms">Please fill in title and text</div>
               <button
                 className="button-close"
                 onClick={(e) => setConflictDialog(false)}
@@ -77,6 +77,7 @@ export const NoteForm = () => {
               <input
                 type="text"
                 id="title"
+                maxLength="29"
                 onChange={handleControlledInputChange}
                 required
                 autoFocus
@@ -91,6 +92,7 @@ export const NoteForm = () => {
               <input
                 type="text"
                 id="text"
+                maxLength="29"
                 onChange={handleControlledInputChange}
                 required
                 className="form__group--edit"

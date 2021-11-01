@@ -65,6 +65,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   margin: 10px 0px;
   border-radius: 5px;
   background-color: #c8e6ea68;
+  /* border: 1px solid black; */
 }
 
 .activity-info {
@@ -72,14 +73,75 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   /* border: 3px solid orange; */
 }
 
+.no-margin {
+  margin: 0px;
+}
+
+.activity-inner__left {
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.3em;
+  white-space: nowrap;
+  margin: 0px;
+  padding: 0px;
+}
+
+.left-spacer {
+  margin-top: 10px;
+}
+
+.activity-inner__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: left;
+  line-height: 1em;
+  margin: 0px 5px;
+  max-width: 400px;
+  padding-top: 4px;
+  /* border: 1px solid pink; */
+}
+
+.address-wrapper {
+  padding: 5px 0px;
+  margin: 5px 0px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.activity-address__highlight {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  overflow-wrap: break-word;
+  padding: 3px 5px;
+  margin: 0px 5px;
+  /* border: 1px solid green; */
+}
+
 .activity-notes {
-  width: 185px;
-  white-space: normal;
-  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 225px;
+  /* width: 100%; */
+  overflow-wrap: break-word;
+  /* border: 3px solid purple; */
 }
 
 .activity-note-spacer {
-  margin-top: 5px;
+  margin-top: 14px;
+}
+
+.a-text-wrapper {
+  margin: 0px;
+  width: 100%;
+  padding: 0px;
+  /* border: 1px solid chartreuse; */
 }
 
 .activity-icons {

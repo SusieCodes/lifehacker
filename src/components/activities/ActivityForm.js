@@ -10,6 +10,7 @@ import "../LifeHacker.css";
 
 export const ActivityForm = () => {
   const [conflictDialog, setConflictDialog] = useState(false);
+  // const [conflictDialog2, setConflictDialog2] = useState(false);
 
   // Defining initial state of the form inputs with useState
   const [activity, setActivity] = useState({
@@ -70,8 +71,6 @@ export const ActivityForm = () => {
     if (activity.name === "" || activity.date === "" || activity.city === "") {
       setConflictDialog(true);
     } else {
-      //invoke addActivity, passing event as an argument
-      //once completed, this changes the url and displays the event list
       addActivity(activity).then(() => history.push("/activities"));
     }
   };
@@ -100,6 +99,7 @@ export const ActivityForm = () => {
               <input
                 type="text"
                 id="name"
+                maxLength="30"
                 onChange={handleControlledInputChange}
                 required
                 autoFocus
@@ -138,6 +138,7 @@ export const ActivityForm = () => {
               <input
                 type="text"
                 id="address"
+                maxLength="23"
                 onChange={handleControlledInputChange}
                 required
                 className="form__group--edit"
@@ -151,6 +152,7 @@ export const ActivityForm = () => {
               <input
                 type="text"
                 id="city"
+                maxLength="23"
                 onChange={handleControlledInputChange}
                 required
                 className="form__group--edit"
@@ -164,6 +166,7 @@ export const ActivityForm = () => {
               <input
                 type="text"
                 id="zipcode"
+                maxLength="10"
                 onChange={handleControlledInputChange}
                 required
                 className="form__group--edit"
@@ -177,6 +180,7 @@ export const ActivityForm = () => {
               <input
                 type="text"
                 id="notes"
+                maxLength="60"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" Bring gloves etc"
