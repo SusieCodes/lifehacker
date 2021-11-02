@@ -49,6 +49,7 @@ export const GroceryBoard = () => {
                 />
               ))}
             </div>
+            <div id="print"></div>
           </div>
         </div>
       </div>

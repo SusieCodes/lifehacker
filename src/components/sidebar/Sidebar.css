@@ -15,7 +15,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 
 .appbar-flex {
   background-color: white;
-  padding: 10px 0px;
+  padding: 20px 0px;
   margin: 0px;
   border-radius: 20px 20px 0px 0px;
   box-shadow: 5px 5px 5px lightgray;
@@ -27,7 +27,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   justify-content: space-between;
   align-items: center;
   padding: 0px 20px;
-  margin: 5px 0px;
+  margin: 0px 0px;
 }
 
 .toolbar-left {

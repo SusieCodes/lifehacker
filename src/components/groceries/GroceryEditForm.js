@@ -52,10 +52,11 @@ export const GroceryEditForm = () => {
             <label htmlFor="text">Grocery Item</label>
             <input
               type="text"
+              id="text"
+              maxLength="20"
               required
               className="form__group--edit"
               onChange={handleFieldChange}
-              id="text"
               value={grocery.text}
             />
           </div>

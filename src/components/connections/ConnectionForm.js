@@ -8,6 +8,7 @@ import { WelcomeBar } from "../../components/navbar/WelcomeBar";
 // import { Upload } from "../uploads/Upload";
 // import Axios from "axios";
 // import { Image } from "cloudinary-react";
+import { AiOutlineInfoCircle } from "react-icons/ai";
 import "./Connections.css";
 import "../LifeHacker.css";
 
@@ -173,6 +174,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="name"
+                maxLength="20"
                 required
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
@@ -215,6 +217,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="email"
+                maxLength="22"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" name@email.com"
@@ -227,6 +230,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="phone"
+                maxLength="12"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" XXX-XXX-XXXX"
@@ -239,6 +243,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="address"
+                maxLength="25"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" Enter Street Address"
@@ -251,6 +256,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="city"
+                maxLength="20"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" Enter City"
@@ -263,6 +269,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="stateProvince"
+                maxLength="2"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" Enter 2 Letter Code"
@@ -275,6 +282,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="zipCode"
+                maxLength="10"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" 90210 or V3C 2XR"
@@ -287,6 +295,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="country"
+                maxLength="15"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" USA, Canada etc"
@@ -299,6 +308,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="work"
+                maxLength="25"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" Company/Industry"
@@ -311,6 +321,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="relationship"
+                maxLength="20"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" Friend, sibling etc"
@@ -323,6 +334,7 @@ export const ConnectionForm = () => {
               <input
                 type="date"
                 id="bday"
+                maxLength="20"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 value={connection.bday}
@@ -334,6 +346,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="family"
+                maxLength="40"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" Spouse, children etc"
@@ -346,6 +359,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="pets"
+                maxLength="40"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" Pet names &#38; bdays"
@@ -358,6 +372,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="howWeMet"
+                maxLength="30"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" How Did You Meet?"
@@ -370,6 +385,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="giftIdeas"
+                maxLength="30"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" Gifts or stores"
@@ -382,6 +398,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="faveDrink"
+                maxLength="25"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" Wine, beer, juice etc"
@@ -394,6 +411,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="faveDessert"
+                maxLength="25"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" Cake, ice cream etc"
@@ -406,6 +424,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="notes"
+                maxLength="50"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" General notes"
@@ -418,6 +437,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="zodiac"
+                maxLength="15"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" Aquarius, Libra etc"
@@ -430,6 +450,7 @@ export const ConnectionForm = () => {
               <input
                 type="text"
                 id="personality"
+                maxLength="20"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" e.g. INTJ"
@@ -437,11 +458,23 @@ export const ConnectionForm = () => {
               />
             </div>
 
-            <div className="form__group">
-              <label htmlFor="enneagram">Enneagram: </label>
+            <div className="form__group--enneagram">
+              <label htmlFor="enneagram" className="enneagram-label">
+                <div className="enneagram-text">Enneagram: </div>
+                <div className="enneagram-icon">
+                  <a
+                    href="https://www.enneagraminstitute.com/how-the-enneagram-system-works"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <AiOutlineInfoCircle className="e-icon" />
+                  </a>
+                </div>
+              </label>
               <input
                 type="text"
                 id="enneagram"
+                maxLength="8"
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" Number"

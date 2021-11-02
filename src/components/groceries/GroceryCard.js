@@ -3,7 +3,8 @@
 
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { MdCheckBoxOutlineBlank } from "react-icons/md";
+import { GrCheckbox } from "react-icons/gr";
+
 import { FaEdit, FaTrash } from "react-icons/fa";
 import "./Grocery.css";
 
@@ -45,13 +46,12 @@ export const GroceryPrintCard = ({ grocery }) => {
   return (
     <>
       <div className="print-grocery-card">
-        <div className="print-grocery-list">
-          <div>{grocery.text}</div>
-        </div>
+        <div className="print-grocery-text">{grocery.text}</div>
 
-        <div className="grocery-icons">
+        <div className="print-grocery-icons">
           <div className="grocery-check">
-            <MdCheckBoxOutlineBlank className="grocery-check-icon" />
+            {/* <MdCheckBoxOutlineBlank className="grocery-check-icon" /> */}
+            <GrCheckbox className="grocery-check-icon" />
           </div>
         </div>
       </div>

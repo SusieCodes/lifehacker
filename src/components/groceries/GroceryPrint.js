@@ -7,6 +7,7 @@ import "./Grocery.css";
 
 export class ComponentToPrint extends React.Component {
   state = { groceries: [] };
+
   componentDidMount() {
     getGroceriesByUserId(sessionStorage.getItem("lifehacker_user")).then(
       (userGroceries) => {
@@ -20,11 +21,16 @@ export class ComponentToPrint extends React.Component {
       <>
         <div className="print-grocery-container">
           <div className="print-grocery-info">
-            <div className="print-header">Grocery List</div>
+            <div className="print-header">
+              {sessionStorage.getItem("lifehacker_username")}&#39;s Grocery List
+            </div>
+
+            <div className="print-grocery-list">
+              {this.state.groceries.map((grocery) => (
+                <GroceryPrintCard key={grocery.id} grocery={grocery} />
+              ))}
+            </div>
           </div>
-          {this.state.groceries.map((grocery) => (
-            <GroceryPrintCard key={grocery.id} grocery={grocery} />
-          ))}
         </div>
       </>
     );
@@ -37,11 +43,13 @@ export const Example = () => {
     content: () => componentRef.current,
   });
   return (
-    <div className="print-wrapper">
-      <ComponentToPrint ref={componentRef} />
-      <button className="print-btn" onClick={handlePrint}>
-        Print
-      </button>
+    <div className="print-page">
+      <div className="print-wrapper">
+        <ComponentToPrint ref={componentRef} />
+        <button className="print-btn" onClick={handlePrint}>
+          Print
+        </button>
+      </div>
     </div>
   );
 };

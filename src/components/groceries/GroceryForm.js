@@ -43,9 +43,7 @@ export const GroceryForm = () => {
         <div className="form-flex">
           <fieldset className="form">
             <dialog className="dialog" open={conflictDialog}>
-              <div className="dialog-forms">
-                Please Fill In A Title and Choose A Date
-              </div>
+              <div className="dialog-forms">Please add a grocery item</div>
               <button
                 className="button-close"
                 onClick={(e) => setConflictDialog(false)}
@@ -59,6 +57,7 @@ export const GroceryForm = () => {
               <input
                 type="text"
                 id="text"
+                maxLength="20"
                 onChange={handleControlledInputChange}
                 required
                 autoFocus
