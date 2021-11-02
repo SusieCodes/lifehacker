@@ -1,8 +1,6 @@
 import React, { useRef } from "react";
 import { render } from "react-dom";
-// import { useHistory } from "react-router-dom";
-import { Link, useHistory } from "react-router-dom";
-
+import { useHistory } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
 import { getGroceriesByUserId } from "./GroceryManager";
 import { GroceryPrintCard } from "./GroceryCard";

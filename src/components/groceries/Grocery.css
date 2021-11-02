@@ -115,8 +115,15 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   flex-direction: row;
   justify-content: center;
   background-color: white;
-  min-height: 95vh;
-  padding-top: 30px;
+  box-shadow: 5px 5px 5px lightgray;
+  /* min-height: 95vh; */
+  /* padding-top: 30px; */
+
+  border-radius: 0px 0px 20px 20px;
+  padding: 50px 30px 30px;
+  margin: 10px 0px;
+  min-width: 1800px;
+  min-height: 1000px;
 }
 
 .print-wrapper {
@@ -176,6 +183,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 
 .print-grocery-text {
   flex: 1;
+  margin: 5px;
   /* border: 1px solid pink; */
 }
 
