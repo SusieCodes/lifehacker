@@ -182,6 +182,8 @@ export const ConnectionEditForm = () => {
               value={connection?.name}
               onChange={handleFieldChange}
               label="Name: "
+              required={true}
+              maxLength="20"
             />
 
             <Input
@@ -189,6 +191,8 @@ export const ConnectionEditForm = () => {
               value={connection?.email}
               onChange={handleFieldChange}
               label="Email: "
+              required={false}
+              maxLength="22"
             />
 
             <Input
@@ -196,6 +200,8 @@ export const ConnectionEditForm = () => {
               value={connection?.phone}
               onChange={handleFieldChange}
               label="Phone: "
+              equired={false}
+              maxLength="12"
             />
 
             <Input
@@ -203,6 +209,8 @@ export const ConnectionEditForm = () => {
               value={connection?.address}
               onChange={handleFieldChange}
               label="Address: "
+              required={false}
+              maxLength="25"
             />
 
             <Input
@@ -210,6 +218,8 @@ export const ConnectionEditForm = () => {
               value={connection?.city}
               onChange={handleFieldChange}
               label="City: "
+              required={false}
+              maxLength="20"
             />
 
             <Input
@@ -217,6 +227,8 @@ export const ConnectionEditForm = () => {
               value={connection?.stateProvince}
               onChange={handleFieldChange}
               label="State/Province: "
+              required={false}
+              maxLength="2"
             />
 
             <Input
@@ -224,6 +236,8 @@ export const ConnectionEditForm = () => {
               value={connection?.zipCode}
               onChange={handleFieldChange}
               label="Zip/Postal Code: "
+              required={false}
+              maxLength="10"
             />
 
             <Input
@@ -231,6 +245,8 @@ export const ConnectionEditForm = () => {
               value={connection?.country}
               onChange={handleFieldChange}
               label="Country: "
+              required={false}
+              maxLength="15"
             />
 
             <Input
@@ -238,6 +254,8 @@ export const ConnectionEditForm = () => {
               value={connection?.work}
               onChange={handleFieldChange}
               label="Work: "
+              required={false}
+              maxLength="25"
             />
 
             <Input
@@ -245,6 +263,8 @@ export const ConnectionEditForm = () => {
               value={connection?.relationship}
               onChange={handleFieldChange}
               label="Relationship: "
+              required={false}
+              maxLength="20"
             />
 
             <Input
@@ -253,6 +273,8 @@ export const ConnectionEditForm = () => {
               value={connection?.bday}
               onChange={handleFieldChange}
               label="Birthday: "
+              required={false}
+              maxLength="20"
             />
 
             <Input
@@ -260,6 +282,8 @@ export const ConnectionEditForm = () => {
               value={connection?.family}
               onChange={handleFieldChange}
               label="Family: "
+              required={false}
+              maxLength="40"
             />
 
             <Input
@@ -267,6 +291,8 @@ export const ConnectionEditForm = () => {
               value={connection?.pets}
               onChange={handleFieldChange}
               label="Pets: "
+              required={false}
+              maxLength="40"
             />
 
             <Input
@@ -274,6 +300,8 @@ export const ConnectionEditForm = () => {
               value={connection?.howWeMet}
               onChange={handleFieldChange}
               label="How/Where We Met: "
+              required={false}
+              maxLength="30"
             />
 
             <Input
@@ -281,6 +309,8 @@ export const ConnectionEditForm = () => {
               value={connection?.giftIdeas}
               onChange={handleFieldChange}
               label="Gift Ideas: "
+              required={false}
+              maxLength="30"
             />
 
             <Input
@@ -288,6 +318,8 @@ export const ConnectionEditForm = () => {
               value={connection?.faveDrink}
               onChange={handleFieldChange}
               label="Favorite Drink: "
+              required={false}
+              maxLength="25"
             />
 
             <Input
@@ -295,6 +327,8 @@ export const ConnectionEditForm = () => {
               value={connection?.faveDessert}
               onChange={handleFieldChange}
               label="Favorite Dessert: "
+              required={false}
+              maxLength="25"
             />
 
             <Input
@@ -302,6 +336,8 @@ export const ConnectionEditForm = () => {
               value={connection?.notes}
               onChange={handleFieldChange}
               label="Notes: "
+              required={false}
+              maxLength="50"
             />
 
             <Input
@@ -309,6 +345,8 @@ export const ConnectionEditForm = () => {
               value={connection?.zodiac}
               onChange={handleFieldChange}
               label="Zodiac: "
+              required={false}
+              maxLength="15"
             />
 
             <Input
@@ -316,6 +354,8 @@ export const ConnectionEditForm = () => {
               value={connection?.personality}
               onChange={handleFieldChange}
               label="Personality: "
+              required={false}
+              maxLength="20"
             />
 
             <Input
@@ -323,6 +363,8 @@ export const ConnectionEditForm = () => {
               value={connection?.enneagram}
               onChange={handleFieldChange}
               label="Enneagram: "
+              required={false}
+              maxLength="8"
             />
           </fieldset>
 

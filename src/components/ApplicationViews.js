@@ -21,6 +21,7 @@ import { GroceryEditForm } from "../../src/components/groceries/GroceryEditForm"
 import { JournalBoard } from "../../src/components/journals/JournalBoard";
 import { JournalForm } from "../../src/components/journals/JournalForm";
 import { JournalEditForm } from "../../src/components/journals/JournalEditForm";
+import { Example } from "../../src/components/groceries/GroceryPrint";
 
 export const ApplicationViews = () => {
   return (
@@ -111,6 +112,10 @@ export const ApplicationViews = () => {
 
       <Route exact path="/journals/:journalId(\d+)/edit">
         <JournalEditForm />
+      </Route>
+
+      <Route exact path="/print">
+        <Example />
       </Route>
     </>
   );

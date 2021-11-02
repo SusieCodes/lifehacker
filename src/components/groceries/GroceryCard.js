@@ -1,16 +1,19 @@
 //Author: Susie Stanley
 //Purpose: Creates and displays individual grocery items for a single item that is passed as a prop
 
-import React from 'react'
-import { useHistory } from 'react-router-dom'
-import { FaEdit, FaTrash } from 'react-icons/fa'
+import React from "react";
+import { useHistory } from "react-router-dom";
+import { GrCheckbox } from "react-icons/gr";
+
+import { FaEdit, FaTrash } from "react-icons/fa";
+import "./Grocery.css";
 
 export const GroceryCard = ({ grocery, handleDelete }) => {
   const handleEdit = () => {
-    history.push(`/groceries/${grocery.id}/edit`)
-  }
+    history.push(`/groceries/${grocery.id}/edit`);
+  };
 
-  const history = useHistory()
+  const history = useHistory();
 
   return (
     <>
@@ -36,5 +39,22 @@ export const GroceryCard = ({ grocery, handleDelete }) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
+
+export const GroceryPrintCard = ({ grocery }) => {
+  return (
+    <>
+      <div className="print-grocery-card">
+        <div className="print-grocery-text">{grocery.text}</div>
+
+        <div className="print-grocery-icons">
+          <div className="grocery-check">
+            {/* <MdCheckBoxOutlineBlank className="grocery-check-icon" /> */}
+            <GrCheckbox className="grocery-check-icon" />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};

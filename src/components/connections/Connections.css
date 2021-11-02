@@ -334,6 +334,55 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   /* border: 1px solid black; */
 }
 
+.form__group--enneagram {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  /* border: 1px solid black; */
+}
+
+.enneagram-label {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  /* border: 1px solid red; */
+  padding: 0px;
+  margin: 0px;
+}
+
+.enneagram-text {
+  align-self: center;
+}
+
+.enneagram-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 0px;
+  margin: auto 0px;
+  /* border: 1px solid blue; */
+}
+
+.enneagram-icon a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px;
+  margin: 0px;
+  /* border: 1px solid red; */
+}
+
+.e-icon {
+  color: rgb(82, 207, 223);
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  align-self: center;
+  margin: 0px 10px 0px 5px;
+  /* border: 1px solid green; */
+}
+
 .upload-btn {
   font-size: 18px;
   font-weight: 600;
