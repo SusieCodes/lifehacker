@@ -115,7 +115,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   flex-direction: row;
   justify-content: center;
   background-color: white;
-  height: 95vh;
+  min-height: 95vh;
   padding-top: 30px;
 }
 
@@ -202,6 +202,12 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   height: 25px;
 }
 
+.print-btn-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .printable-btn {
   align-self: center;
   font-size: 22px;
@@ -222,7 +228,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   border: 2px solid lightgray;
   border-radius: 5px;
   padding: 3px 15px;
-  margin: 40px auto;
+  margin: 40px 20px;
   cursor: pointer;
   /* width: 100px; */
 }

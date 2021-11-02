@@ -24,6 +24,7 @@ h2 {
 
 .med-bold {
   font-weight: 500;
+  margin: 5px;
 }
 
 .dashboard-grid {
@@ -150,7 +151,7 @@ h2 {
 .dashboard-grid__row2__row1 a {
   text-decoration: none;
   color: #2b2b2b;
-  margin: 0px;
+  margin: 5px auto 0px;
 }
 
 .dashboard-grid__row1__col2 h2 {
@@ -179,7 +180,7 @@ h2 {
   justify-content: space-between;
   align-self: stretch;
   padding: 10px 20px;
-  margin: 8px 0px;
+  margin: 9px 0px;
   background-color: #c8e6ea68;
   border-radius: 5px;
   /* border: 1px solid black; */
@@ -207,7 +208,7 @@ h2 {
   font-size: 20px;
   font-weight: 500;
   padding-bottom: 2px;
-  margin: 0px;
+  margin: 5px 5px 0px;
   white-space: nowrap;
 }
 
@@ -215,7 +216,7 @@ h2 {
   font-size: 18px;
   font-weight: 400;
   padding: 0px;
-  margin: 0px;
+  margin: 0px 5px 5px;
   white-space: nowrap;
 }
 
@@ -224,7 +225,7 @@ h2 {
   font-weight: 400;
   color: #d61212;
   padding: 0px;
-  margin: 0px;
+  margin: 0px 5px 5px;
   white-space: nowrap;
 }
 
@@ -238,7 +239,7 @@ h2 {
 }
 
 .dash-todo-complete label {
-  padding-right: 5px;
+  padding: 0px 5px;
 }
 
 .td-delete-icon {
@@ -284,8 +285,8 @@ input.checkbox-todo:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 12px 30px;
-  margin: 8px 30px;
+  padding: 10px 30px;
+  margin: 5px 30px 8px;
   background-color: #c8e6ea68;
   border-radius: 5px;
 }
@@ -310,7 +311,7 @@ input.checkbox-todo:hover {
 
 .dash-activity__name {
   font-weight: 500;
-  margin-bottom: 5px;
+  margin: 0px;
   text-align: left;
   font-size: 22px;
 }
@@ -338,7 +339,7 @@ input.checkbox-todo:hover {
 }
 
 .card-spacer {
-  padding: 3px 0px;
+  padding: 4px 0px 7px;
 }
 
 .transparent {
@@ -402,13 +403,14 @@ button.activity-delete {
   background-position: 40px 25px;
   background-size: 80%;
   min-width: 545px;
+  height: 320px;
   /* border: 1px solid black; */
 }
-.note-container h2 {
+
+/* .note-container h2 {
   background-color: transparent;
   margin: 5px 5px 0px;
-  /* border: 1px solid black; */
-}
+} */
 
 .note-spacing {
   margin-top: 10px;
@@ -418,7 +420,7 @@ button.activity-delete {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  padding-right: 17px;
+  padding-right: 40px;
   /* border: 1px solid red; */
 }
 
@@ -445,7 +447,7 @@ button.activity-delete {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 10px;
+  padding-top: 20px;
   margin: 0px;
   width: 200px;
   /* border: 2px solid chartreuse; */
@@ -456,16 +458,20 @@ button.activity-delete {
   font-weight: 500;
   text-align: left;
   line-height: 1.2;
-  margin: 0px 0px 30px;
+  margin: 0px 0px 10px;
   width: 100%;
   padding: 0px;
   /* border: 1px solid black; */
 }
 
 .dn-text-wrapper {
-  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 20px 0px 5px;
+  margin: auto 0px;
   width: 100%;
-  padding: 0px 10px;
+  min-height: 70px;
   overflow-wrap: break-word;
   /* border: 1px solid red; */
 }
@@ -485,7 +491,8 @@ button.activity-delete {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  padding-top: 20px;
+  padding-top: 30px;
+  /* padding-right: 5px; */
   /* margin: 0px; */
   /* border: 1px solid black; */
 }
@@ -574,7 +581,7 @@ button.note-delete {
   width: 60px;
   height: 60px;
   padding: 0px;
-  margin: 0px;
+  margin: 5px;
 }
 
 .connection-photo {
@@ -714,7 +721,7 @@ button.note-delete {
   flex-direction: row;
   align-content: center;
   padding: 0px 10px;
-  margin: 5px 25px;
+  margin: 7px 25px 4px;
   background-color: #c8e6ea68;
   border-radius: 5px;
   /* border: 1px solid red; */
@@ -737,7 +744,7 @@ button.note-delete {
 
 .dash-grocery__text {
   align-self: center;
-  padding-left: 5px;
+  padding-left: 10px;
   margin: auto 0px;
   text-align: left;
   font-size: 20px;
@@ -808,7 +815,7 @@ button.grocery-delete {
   flex-direction: row;
   justify-content: space-evenly;
   padding: 7px 10px;
-  margin: 6px 25px;
+  margin: 7px 30px 9px;
   background-color: #c8e6ea68;
   border-radius: 5px;
   /* border: 1px solid red; */

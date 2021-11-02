@@ -97,7 +97,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   display: flex;
   justify-content: center;
   position: fixed;
-  top: 30;
+  top: 0;
   left: -100%;
   transition: 850ms;
   box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.2);

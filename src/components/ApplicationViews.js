@@ -1,5 +1,6 @@
 import { Route } from "react-router-dom";
 import { Dashboard } from "../../src/components/dashboard/Dashboard";
+// import { Sidebar } from "../../src/components/sidebar/Sidebar";
 import { ConnectionBoard } from "./connections/ConnectionBoard";
 import { ConnectionForm } from "../../src/components/connections/ConnectionForm";
 import { ConnectionEditForm } from "../../src/components/connections/ConnectionEditForm";
@@ -26,6 +27,12 @@ import { PrintGroceryList } from "../../src/components/groceries/GroceryPrint";
 export const ApplicationViews = () => {
   return (
     <>
+      {/* <Sidebar /> */}
+
+      <Route exact path="/">
+        <Dashboard />
+      </Route>
+
       <Route exact path="/dashboard">
         <Dashboard />
       </Route>
