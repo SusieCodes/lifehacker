@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { render } from "react-dom";
+// import { useHistory } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
 import { getGroceriesByUserId } from "./GroceryManager";
 import { GroceryPrintCard } from "./GroceryCard";
@@ -37,11 +38,14 @@ export class ComponentToPrint extends React.Component {
   }
 }
 
-export const Example = () => {
+export const PrintGroceryList = () => {
   const componentRef = useRef();
+  // const history = useHistory();
+
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+
   return (
     <div className="print-page">
       <div className="print-wrapper">
@@ -54,4 +58,4 @@ export const Example = () => {
   );
 };
 
-render(<Example />, document.querySelector("#root"));
+render(<PrintGroceryList />, document.querySelector("#root"));

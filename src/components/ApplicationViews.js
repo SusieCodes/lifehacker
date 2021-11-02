@@ -21,7 +21,7 @@ import { GroceryEditForm } from "../../src/components/groceries/GroceryEditForm"
 import { JournalBoard } from "../../src/components/journals/JournalBoard";
 import { JournalForm } from "../../src/components/journals/JournalForm";
 import { JournalEditForm } from "../../src/components/journals/JournalEditForm";
-import { Example } from "../../src/components/groceries/GroceryPrint";
+import { PrintGroceryList } from "../../src/components/groceries/GroceryPrint";
 
 export const ApplicationViews = () => {
   return (
@@ -114,8 +114,8 @@ export const ApplicationViews = () => {
         <JournalEditForm />
       </Route>
 
-      <Route exact path="/print">
-        <Example />
+      <Route exact path="/groceries/print">
+        <PrintGroceryList />
       </Route>
     </>
   );

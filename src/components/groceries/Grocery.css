@@ -17,10 +17,16 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-content: center;
+}
+
+.board-container__grocery a {
+  align-self: center;
 }
 
 .grocery-card-list {
   padding: 20px;
+  margin: 20px 0px;
   background-color: white;
   box-shadow: 2px 3px 7px gray;
   border-radius: 5px;
@@ -196,7 +202,20 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   height: 25px;
 }
 
+.printable-btn {
+  align-self: center;
+  font-size: 22px;
+  font-weight: 500;
+  background-color: #c8e6ea;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  padding: 3px 15px;
+  cursor: pointer;
+  /* width: 100px; */
+}
+
 .print-btn {
+  align-self: center;
   font-size: 22px;
   font-weight: 500;
   background-color: #c8e6ea;
@@ -206,4 +225,10 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   margin: 40px auto;
   cursor: pointer;
   /* width: 100px; */
+}
+
+.printable-btn:hover,
+.print-btn:hover {
+  border: 2px solid darkgray;
+  background-color: #c4f7fe;
 }
