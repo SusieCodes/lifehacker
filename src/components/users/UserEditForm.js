@@ -25,6 +25,8 @@ export const UserEditForm = () => {
     timestamp: Date.now(),
   });
 
+  const [conflictDialog, setConflictDialog] = useState(false);
+
   const [isLoading, setIsLoading] = useState(false);
 
   const { userId } = useParams();
@@ -84,10 +86,15 @@ export const UserEditForm = () => {
       timestamp: Date.now(),
     };
 
-    update(editedUser).then(() => {
-      history.goBack();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    if (user.name === "") {
+      setConflictDialog(true);
+      setIsLoading(false);
+    } else {
+      update(editedUser).then(() => {
+        history.goBack();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
   };
 
   useEffect(() => {
@@ -104,6 +111,17 @@ export const UserEditForm = () => {
 
         <div className="form-flex">
           <fieldset className="form">
+            <dialog className="dialog" open={conflictDialog}>
+              <div className="dialog-forms">
+                Please make sure name is filled in
+              </div>
+              <button
+                className="button-close"
+                onClick={(e) => setConflictDialog(false)}
+              >
+                Close
+              </button>
+            </dialog>
             <div className="user-detail-image">
               {user.image !== "" ? (
                 <img
@@ -151,6 +169,7 @@ export const UserEditForm = () => {
 
             <Input
               id="name"
+              required
               value={user?.name}
               onChange={handleFieldChange}
               label="Name: "

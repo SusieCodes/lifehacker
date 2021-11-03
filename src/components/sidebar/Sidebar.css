@@ -35,14 +35,14 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin: 0px 30px 0px 10px;
+  margin: 0px 30px 0px 20px;
 }
 
 .logo-wrapper {
   display: flex;
   flex-direction: row;
   align-content: center;
-  padding-left: 20px;
+  padding-left: 40px;
 }
 
 .logo {
@@ -54,6 +54,35 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  /* border: 1px solid black; */
+}
+
+.user-avatar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  /* border: 1px solid red; */
+}
+
+.user-avatar a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+  margin: auto 0px;
+}
+
+.avatar {
+  margin-right: 20px;
+}
+
+.avatar-photo {
+  align-self: center;
+  margin: 0px 10px;
+  border: 3px solid lightgray;
+  border-radius: 35px;
+  width: 70px;
 }
 
 .logout {
@@ -170,16 +199,4 @@ span {
 .close {
   color: white;
   width: 30px;
-}
-
-.avatar {
-  margin-right: 20px;
-}
-
-.avatar-photo {
-  margin: auto 10px;
-  border: 3px solid lightgray;
-  border-radius: 35px;
-  /* border: 3px solid white; */
-  width: 70px;
 }
