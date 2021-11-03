@@ -17,8 +17,7 @@ export const NoteEditForm = () => {
   });
 
   const [isLoading, setIsLoading] = useState(false);
-  const [conflictDialog1, setConflictDialog1] = useState(false);
-  const [conflictDialog2, setConflictDialog2] = useState(false);
+  const [conflictDialog, setConflictDialog] = useState(false);
 
   const { noteId } = useParams();
   const history = useHistory();
@@ -42,9 +41,8 @@ export const NoteEditForm = () => {
     };
 
     if (note.title === "" || note.text === "") {
-      setConflictDialog1(true);
-    } else if (note.title.length >= 30 || note.text.length >= 30) {
-      setConflictDialog2(true);
+      setConflictDialog(true);
+      setIsLoading(false);
     } else {
       update(editedNote).then(() => history.push("/notes"));
     }
@@ -64,30 +62,19 @@ export const NoteEditForm = () => {
 
         <div className="form-flex">
           <fieldset className="form">
-            <dialog className="dialog" open={conflictDialog1}>
+            <dialog className="dialog" open={conflictDialog}>
               <div className="dialog-forms">
                 Please make sure title or text is not empty
               </div>
               <button
                 className="button-close"
-                onClick={(e) => setConflictDialog1(false)}
-              >
-                Close
-              </button>
-            </dialog>
-            <dialog className="dialog" open={conflictDialog2}>
-              <div className="dialog-forms">
-                Title and text must each be less than 30 characters
-              </div>
-              <button
-                className="button-close"
-                onClick={(e) => setConflictDialog2(false)}
+                onClick={(e) => setConflictDialog(false)}
               >
                 Close
               </button>
             </dialog>
             <div className="form__group">
-              <label htmlFor="name">Title:</label>
+              <label htmlFor="name">Title: </label>
               <input
                 type="text"
                 id="title"
@@ -100,7 +87,7 @@ export const NoteEditForm = () => {
             </div>
 
             <div className="form__group">
-              <label htmlFor="text">Text</label>
+              <label htmlFor="text">Text: </label>
               <input
                 type="text"
                 id="text"

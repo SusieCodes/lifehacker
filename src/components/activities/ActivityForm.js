@@ -10,7 +10,6 @@ import "../LifeHacker.css";
 
 export const ActivityForm = () => {
   const [conflictDialog, setConflictDialog] = useState(false);
-  // const [conflictDialog2, setConflictDialog2] = useState(false);
 
   // Defining initial state of the form inputs with useState
   const [activity, setActivity] = useState({
@@ -66,7 +65,7 @@ export const ActivityForm = () => {
   // }
 
   const handleSave = (evt) => {
-    evt.preventDefault(); //Prevents the browser from submitting the form
+    evt.preventDefault(); // Prevents the browser from submitting the form
 
     if (activity.name === "" || activity.date === "" || activity.city === "") {
       setConflictDialog(true);

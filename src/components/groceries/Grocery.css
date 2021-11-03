@@ -26,11 +26,11 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 
 .grocery-card-list {
   padding: 20px;
-  margin: 20px 0px;
+  margin: 0px 0px 20px;
   background-color: white;
   box-shadow: 2px 3px 7px gray;
   border-radius: 5px;
-  border: none;
+  /* border: 1px solid black; */
 }
 
 /* start of individual grocery card */
@@ -47,6 +47,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 
 .grocery-info {
   flex: 1;
+  align-self: center;
   padding: 0px 20px;
   white-space: nowrap;
   /* border: 1px solid red; */
@@ -109,6 +110,21 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   color: #d61212;
 }
 
+/* grocery form styling */
+.form-grocery {
+  font-size: 22px;
+  padding: 30px 50px;
+  margin: 10px;
+  background-color: white;
+  box-shadow: 2px 3px 7px gray;
+  border-radius: 5px;
+  border: none;
+}
+
+.grocery-item-label {
+  margin-right: 10px;
+}
+
 /* GroceryPrintCard styling */
 .print-page {
   display: flex;
@@ -116,9 +132,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   justify-content: center;
   background-color: white;
   box-shadow: 5px 5px 5px lightgray;
-  /* min-height: 95vh; */
-  /* padding-top: 30px; */
-
   border-radius: 0px 0px 20px 20px;
   padding: 50px 30px 30px;
   margin: 10px 0px;
@@ -140,7 +153,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   display: flex;
   flex-direction: column;
   align-content: center;
-  /* width: 550px; */
   /* border: 2px solid red; */
 }
 
@@ -154,7 +166,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 .print-header {
   font-size: 28px;
   font-weight: 400;
-  margin: 30px auto;
+  margin: 30px auto 0px;
   text-align: center;
   /* border: 1px solid orange; */
 }
@@ -163,7 +175,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   display: flex;
   flex-direction: column;
   align-content: center;
-  padding: 40px 0px 20px 0px;
+  padding: 40px 0px 10px 0px;
   /* border: 1px solid black; */
 }
 

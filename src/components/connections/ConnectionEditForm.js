@@ -36,6 +36,8 @@ export const ConnectionEditForm = () => {
     timestamp: Date.now(),
   });
 
+  const [conflictDialog, setConflictDialog] = useState(false);
+
   const [isLoading, setIsLoading] = useState(false);
 
   const { connectionId } = useParams();
@@ -109,10 +111,19 @@ export const ConnectionEditForm = () => {
       timestamp: Date.now(),
     };
 
-    update(editedConnection).then(() => {
-      history.goBack();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    if (
+      connection.name === "" ||
+      connection.name === null ||
+      connection.name === undefined
+    ) {
+      setConflictDialog(true);
+      setIsLoading(false);
+    } else {
+      update(editedConnection).then(() => {
+        history.goBack();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
   };
 
   useEffect(() => {
@@ -130,6 +141,17 @@ export const ConnectionEditForm = () => {
 
         <div className="form-flex">
           <fieldset className="form">
+            <dialog className="dialog-c" open={conflictDialog}>
+              <div className="dialog-forms__connections">
+                Please Input A Name
+              </div>
+              <button
+                className="button-close"
+                onClick={(e) => setConflictDialog(false)}
+              >
+                Close
+              </button>
+            </dialog>
             <div className="connection-edit-image">
               {connection.image !== "" ? (
                 <img

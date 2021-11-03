@@ -19,34 +19,40 @@ export const ActivityCard = ({ activity, handleDelete }) => {
     <>
       <div className="activity-card">
         <div className="activity-info">
-          <div className="dash-activity__wrapper">
-            <div className="dash-activity__name bold">{activity?.name}</div>
+          <div className="activity-wrapper">
+            <div className="dash-activity__name bold show">
+              {activity?.name}
+            </div>
 
             <div className="da-inner__wrapper">
               <div className="activity-inner__left">
                 <div className="med-bold">Date:</div>
                 <div className="med-bold">Time:</div>
-                <div className="med-bold card-spacer left-spacer">Address:</div>
-                <div className="transparent card-spacer left-spacer">City:</div>
-                <div className="med-bold">Notes:</div>
+                <div className="med-bold address-spacer">Address:</div>
+                <div className="med-bold note-spacer">Notes:</div>
               </div>
 
               <div className="activity-inner__right">
-                <div className="show">{formatStringDate(activity?.date)}</div>
-                {activity?.time ? (
-                  <div>{formatTime(activity?.time)}</div>
-                ) : (
-                  <div>check time</div>
-                )}
+                <div className="right-spacer">
+                  {formatStringDate(activity?.date)}
+                </div>
+                <div className="right-spacer">
+                  {" "}
+                  {activity?.time ? (
+                    <div>{formatTime(activity?.time)}</div>
+                  ) : (
+                    <div>check time</div>
+                  )}
+                </div>
                 <div className="address-wrapper">
-                  <div className="card-spacer activity-address__highlight">
-                    <div className="a-text-wrapper">{activity?.address}</div>
+                  <div className="activity-address__highlight">
+                    {activity?.address}
                   </div>
                   <div className="activity-address__highlight">
                     {activity?.city}
                   </div>
                 </div>
-                <div className="activity-notes activity-note-spacer">
+                <div className="activity-notes">
                   <div className="a-text-wrapper">{activity?.notes}</div>
                 </div>
               </div>

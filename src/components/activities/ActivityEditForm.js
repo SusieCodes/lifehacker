@@ -20,6 +20,7 @@ export const ActivityEditForm = () => {
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
 
+  const [conflictDialog, setConflictDialog] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const { activityId } = useParams();
@@ -48,7 +49,19 @@ export const ActivityEditForm = () => {
       userId: activity?.userId,
     };
 
-    update(editedActivity).then(() => history.push("/activities"));
+    if (
+      activity.name === "" ||
+      activity.date === "" ||
+      activity.time === "" ||
+      activity.address === "" ||
+      activity.city === "" ||
+      activity.zipcode === ""
+    ) {
+      setConflictDialog(true);
+      setIsLoading(false);
+    } else {
+      update(editedActivity).then(() => history.push("/activities"));
+    }
   };
 
   useEffect(() => {
@@ -65,6 +78,17 @@ export const ActivityEditForm = () => {
 
         <div className="form-flex">
           <fieldset className="form">
+            <dialog className="dialog" open={conflictDialog}>
+              <div className="dialog-forms">
+                Please Fill Out All Required Fields
+              </div>
+              <button
+                className="button-close"
+                onClick={(e) => setConflictDialog(false)}
+              >
+                Close
+              </button>
+            </dialog>
             <div className="form__group">
               <label htmlFor="name">Activity:</label>
               <input

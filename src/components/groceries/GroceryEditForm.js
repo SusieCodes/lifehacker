@@ -6,10 +6,12 @@ import "./Grocery.css";
 import "../LifeHacker.css";
 
 export const GroceryEditForm = () => {
-  const [grocery, setgrocery] = useState({
+  const [grocery, setGrocery] = useState({
     text: "",
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
+
+  const [conflictDialog, setConflictDialog] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -19,10 +21,10 @@ export const GroceryEditForm = () => {
   const handleFieldChange = (evt) => {
     const stateToChange = { ...grocery };
     stateToChange[evt.target.id] = evt.target.value;
-    setgrocery(stateToChange);
+    setGrocery(stateToChange);
   };
 
-  const updateExistinggrocery = (evt) => {
+  const updateExistingGrocery = (evt) => {
     evt.preventDefault();
     setIsLoading(true);
 
@@ -33,11 +35,17 @@ export const GroceryEditForm = () => {
       id: groceryId,
     };
 
-    update(editedGrocery).then(() => history.push("/groceries"));
+    if (grocery.text === "") {
+      setConflictDialog(true);
+      setIsLoading(false);
+    } else {
+      update(editedGrocery).then(() => history.push("/groceries"));
+    }
   };
+
   useEffect(() => {
     getGroceryById(groceryId).then((grocery) => {
-      setgrocery(grocery);
+      setGrocery(grocery);
       setIsLoading(false);
     });
   }, [groceryId]);
@@ -47,9 +55,20 @@ export const GroceryEditForm = () => {
       <WelcomeBar title="Edit Groceries" />
 
       <div className="form-flex">
-        <fieldset className="form">
+        <fieldset className="form-grocery">
+          <dialog className="dialog" open={conflictDialog}>
+            <div className="dialog-forms">Please add a grocery item</div>
+            <button
+              className="button-close"
+              onClick={(e) => setConflictDialog(false)}
+            >
+              Close
+            </button>
+          </dialog>
           <div className="form__group">
-            <label htmlFor="text">Grocery Item</label>
+            <label htmlFor="text" className="grocery-item-label">
+              Grocery Item:
+            </label>
             <input
               type="text"
               id="text"
@@ -66,7 +85,7 @@ export const GroceryEditForm = () => {
           <button
             type="button"
             disabled={isLoading}
-            onClick={updateExistinggrocery}
+            onClick={updateExistingGrocery}
             className="form-btn"
           >
             Submit

@@ -67,7 +67,7 @@ export const TodoForm = () => {
             </dialog>
 
             <div className="form__group">
-              <label htmlFor="title">To-Do List Item: </label>
+              <label htmlFor="title">To-Do Item: </label>
               <input
                 type="text"
                 id="title"
@@ -82,7 +82,7 @@ export const TodoForm = () => {
             </div>
 
             <div className="form__group">
-              <label htmlFor="byWhen">Select 'By When': </label>
+              <label htmlFor="byWhen">By When: </label>
               <input
                 type="date"
                 id="byWhen"

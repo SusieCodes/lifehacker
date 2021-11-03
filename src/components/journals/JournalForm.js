@@ -39,8 +39,12 @@ export const JournalForm = () => {
 
   const handleSave = (event) => {
     event.preventDefault(); //Prevents the browser from submitting the form
-    addJournal(journal).then(() => history.push("/journals"));
-    // }
+
+    if (journal.title === "" || journal.post === "") {
+      setConflictDialog(true);
+    } else {
+      addJournal(journal).then(() => history.push("/journals"));
+    }
   };
 
   return (
@@ -51,9 +55,7 @@ export const JournalForm = () => {
         <div className="form-flex">
           <fieldset className="form">
             <dialog className="dialog" open={conflictDialog}>
-              <div className="dialog-forms">
-                Please Fill In All Input Fields
-              </div>
+              <div className="dialog-forms">Please Fill In Title And Post</div>
               <button
                 className="button-close"
                 onClick={(e) => setConflictDialog(false)}
@@ -61,7 +63,6 @@ export const JournalForm = () => {
                 Close
               </button>
             </dialog>
-
             <div className="form__group">
               <label htmlFor="title">Title: </label>
               <input
@@ -70,6 +71,7 @@ export const JournalForm = () => {
                 onChange={handleControlledInputChange}
                 required
                 autoFocus
+                maxLength="60"
                 className="form__group--edit"
                 placeholder="Feeling awesome..."
                 value={journal.title}
@@ -81,6 +83,7 @@ export const JournalForm = () => {
               <input
                 type="text"
                 id="post"
+                maxLength="600"
                 onChange={handleControlledInputChange}
                 required
                 className="form__group--edit"
