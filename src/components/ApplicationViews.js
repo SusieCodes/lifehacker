@@ -1,5 +1,6 @@
 import { Route } from "react-router-dom";
 import { Dashboard } from "../../src/components/dashboard/Dashboard";
+// import { Sidebar } from "../../src/components/sidebar/Sidebar";
 import { ConnectionBoard } from "./connections/ConnectionBoard";
 import { ConnectionForm } from "../../src/components/connections/ConnectionForm";
 import { ConnectionEditForm } from "../../src/components/connections/ConnectionEditForm";
@@ -21,11 +22,15 @@ import { GroceryEditForm } from "../../src/components/groceries/GroceryEditForm"
 import { JournalBoard } from "../../src/components/journals/JournalBoard";
 import { JournalForm } from "../../src/components/journals/JournalForm";
 import { JournalEditForm } from "../../src/components/journals/JournalEditForm";
-import { Example } from "../../src/components/groceries/GroceryPrint";
+import { PrintGroceryList } from "../../src/components/groceries/GroceryPrint";
 
 export const ApplicationViews = () => {
   return (
     <>
+      <Route exact path="/">
+        <Dashboard />
+      </Route>
+
       <Route exact path="/dashboard">
         <Dashboard />
       </Route>
@@ -114,8 +119,8 @@ export const ApplicationViews = () => {
         <JournalEditForm />
       </Route>
 
-      <Route exact path="/print">
-        <Example />
+      <Route exact path="/groceries/print">
+        <PrintGroceryList />
       </Route>
     </>
   );

@@ -49,7 +49,11 @@ export const GroceryBoard = () => {
                 />
               ))}
             </div>
-            <div id="print"></div>
+          </div>
+          <div className="section-flex__content">
+            <Link to={`/groceries/print`}>
+              <button className="printable-btn">Print</button>
+            </Link>
           </div>
         </div>
       </div>

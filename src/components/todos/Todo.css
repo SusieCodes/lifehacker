@@ -20,7 +20,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 }
 
 .todo-card-list {
-  padding: 20px;
+  padding: 30px 20px 20px;
   background-color: white;
   box-shadow: 2px 3px 7px gray;
   border-radius: 5px;

@@ -15,7 +15,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 
 .appbar-flex {
   background-color: white;
-  padding: 20px 0px;
+  padding: 20px 5px;
   margin: 0px;
   border-radius: 20px 20px 0px 0px;
   box-shadow: 5px 5px 5px lightgray;
@@ -86,26 +86,39 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 }
 
 .menu-close {
-  margin-left: 10px;
+  margin-left: 20px;
   font-size: 32px;
   /* color: #fff; */
 }
 
+/* start of side menu styling */
 .side-menu {
-  background-color: white;
-  height: 100vh;
+  /* background-color: white; */
+  /* height: 90vh; */
   display: flex;
-  justify-content: center;
-  position: fixed;
-  top: 30;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 150px;
+  position: absolute;
+  /* top: 100; */
   left: -100%;
   transition: 850ms;
+  height: 100%;
   box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.2);
+  /* border: 1px solid red; */
 }
 
 .side-menu.active {
   left: 0;
   transition: 350ms;
+}
+
+.sidebar-white {
+  background-color: white;
+  /* padding-bottom: 30px; */
+  /* height: 1045px; */
+  height: 100%;
+  /* border: 1px solid aqua; */
 }
 
 .side-text {

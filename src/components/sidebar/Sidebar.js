@@ -95,25 +95,30 @@ export const Sidebar = () => {
           </Box>
         </ThemeProvider>
         {/* start of side menu that slides in & out */}
-        <nav className={sidebar ? "side-menu active" : "side-menu"}>
-          <ul className="side-menu-items" onClick={toggleSidebar}>
-            <li className="sidebar-toggle">
-              <Link to="#" className="menu-close">
-                <AiOutlineClose className="close" />
-              </Link>
-            </li>
-            {SidebarData.map((item, index) => {
-              return (
-                <li key={index} className={item.cName}>
-                  <Link to={item.path}>
-                    {item.icon}
-                    <span>{item.title}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+        {/* <div className="sidebar-hack"> */}
+        {/* <div className="transparent-menu"></div> */}
+        <div className={sidebar ? "side-menu active" : "side-menu"}>
+          <div className="sidebar-white">
+            <ul className="side-menu-items" onClick={toggleSidebar}>
+              <li className="sidebar-toggle">
+                <Link to="#" className="menu-close">
+                  <AiOutlineClose className="close" />
+                </Link>
+              </li>
+              {SidebarData.map((item, index) => {
+                return (
+                  <li key={index} className={item.cName}>
+                    <Link to={item.path}>
+                      {item.icon}
+                      <span>{item.title}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+        {/* </div> */}
       </IconContext.Provider>
     </>
   );
