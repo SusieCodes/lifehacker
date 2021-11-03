@@ -176,6 +176,7 @@ export const ConnectionForm = () => {
                 id="name"
                 maxLength="20"
                 required
+                autoFocus
                 onChange={handleControlledInputChange}
                 className="form__group--edit"
                 placeholder=" First &#38; Last Name"

@@ -202,10 +202,17 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   flex-direction: row;
   justify-content: space-evenly;
   padding: 0px;
-  margin: 10px 5px 0px;
+  margin: 0px 20px;
   background-color: white;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+
+.container-connections {
+  background-color: white;
+  margin: 0px 20px;
+  padding: 0px;
+  border-bottom: 1px solid gray;
 }
 
 .checkbox {
@@ -281,7 +288,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   justify-content: center;
   align-items: flex-start;
   padding: 0px;
-  margin: 5px 5px 0px;
+  margin: 20px 0px 0px;
 }
 
 .upload-wrapper {
@@ -294,7 +301,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 }
 
 .upload-image-text {
-  margin-right: 15px;
+  margin: 0px 10px 0px 0px;
 }
 
 .upload-input {
@@ -330,7 +337,8 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 }
 
 .form__group--email {
-  margin: 0px 5px 5px;
+  /* margin: 0px 5px 5px 0px; */
+  margin: 0px;
   /* border: 1px solid black; */
 }
 
@@ -396,6 +404,9 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 }
 
 /* connection edit form */
+.dialog-connection {
+}
+
 .connection-edit-image {
   padding: 10px;
   margin: auto auto;

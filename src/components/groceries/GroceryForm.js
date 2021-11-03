@@ -30,18 +30,23 @@ export const GroceryForm = () => {
     setGrocery(newGrocery);
   };
 
-  const handleSave = (event) => {
-    event.preventDefault(); //Prevents the browser from submitting the form
-    addGrocery(grocery).then(() => history.push("/groceries"));
-    // }
+  const handleSave = (evt) => {
+    evt.preventDefault(); // Prevents the browser from submitting the form
+
+    if (grocery.text === "") {
+      setConflictDialog(true);
+    } else {
+      addGrocery(grocery).then(() => history.push("/groceries"));
+    }
   };
+
   return (
     <>
       <div className="page">
         <WelcomeBar title="Add New Groceries" />
 
         <div className="form-flex">
-          <fieldset className="form">
+          <fieldset className="form-grocery">
             <dialog className="dialog" open={conflictDialog}>
               <div className="dialog-forms">Please add a grocery item</div>
               <button
@@ -53,7 +58,9 @@ export const GroceryForm = () => {
             </dialog>
 
             <div className="form__group">
-              <label htmlFor="text">Grocery Item: </label>
+              <label htmlFor="text" className="grocery-item-label">
+                Grocery Item:{" "}
+              </label>
               <input
                 type="text"
                 id="text"
@@ -62,7 +69,7 @@ export const GroceryForm = () => {
                 required
                 autoFocus
                 className="form__group--edit"
-                placeholder="Vegetables"
+                placeholder="e.g. Vegetables"
                 value={grocery.text}
               />
             </div>

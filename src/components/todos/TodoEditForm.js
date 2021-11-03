@@ -16,6 +16,8 @@ export const TodoEditForm = () => {
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
 
+  const [conflictDialog, setConflictDialog] = useState(false);
+
   const [isLoading, setIsLoading] = useState(false);
 
   const { todoId } = useParams();
@@ -38,8 +40,14 @@ export const TodoEditForm = () => {
       userId: todo.userId,
     };
 
-    update(editedTodo).then(() => history.push("/todos"));
+    if (todo.title === "" || todo.byWhen === "") {
+      setConflictDialog(true);
+      setIsLoading(false);
+    } else {
+      update(editedTodo).then(() => history.push("/todos"));
+    }
   };
+
   useEffect(() => {
     getTodoById(todoId).then((todo) => {
       setTodo(todo);
@@ -54,6 +62,17 @@ export const TodoEditForm = () => {
 
         <div className="form-flex">
           <fieldset className="form">
+            <dialog className="dialog" open={conflictDialog}>
+              <div className="dialog-forms">
+                Please Fill In A Title and Choose A Date
+              </div>
+              <button
+                className="button-close"
+                onClick={(e) => setConflictDialog(false)}
+              >
+                Close
+              </button>
+            </dialog>
             <div className="form__group">
               <label htmlFor="title">To-Do</label>
               <input

@@ -68,7 +68,7 @@ export const ConnectionBoard = () => {
 
           {/* ternary statement that show cards if they exist and message if none exist yet */}
           {connections[0] ? (
-            <div className="container">
+            <div className="container-connections">
               {connections.map((connection) => (
                 <ConnectionCard
                   key={connection.id}

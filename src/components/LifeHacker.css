@@ -23,7 +23,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 }
 
 html {
-  width: 1880px;
+  /* width: 1880px; */
   margin: 0px;
   padding: 0px;
   margin: 0px 50px;
@@ -41,7 +41,7 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: "Poppins", sans-serif;
-  background-color: red;
+  background-color: white;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -52,7 +52,7 @@ body {
   flex: 1;
   align-self: center;
   background-color: #eeeeee;
-  padding: 10px 15px;
+  padding: 10px 20px;
   margin: 0px;
   display: flex;
   flex-direction: column;
@@ -237,6 +237,7 @@ h2 {
   background-color: white;
   box-shadow: 2px 3px 7px gray;
   border-radius: 5px;
+  border: none;
   /* border: 1px solid black; */
 }
 
@@ -244,6 +245,7 @@ input {
   font-size: 20px;
   color: gray;
   padding: 5px;
+  margin: 5px;
   border: 1px solid darkgray;
   border-radius: 5px;
   width: fit-content;

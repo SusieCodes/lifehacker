@@ -16,6 +16,7 @@ export const JournalEditForm = () => {
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
 
+  const [conflictDialog, setConflictDialog] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const { journalId } = useParams();
@@ -40,8 +41,14 @@ export const JournalEditForm = () => {
       id: journalId,
     };
 
-    update(editedJournal).then(() => history.push("/journals"));
+    if (journal.title === "" || journal.post === "") {
+      setConflictDialog(true);
+      setIsLoading(false);
+    } else {
+      update(editedJournal).then(() => history.push("/journals"));
+    }
   };
+
   useEffect(() => {
     getJournalById(journalId).then((journal) => {
       setJournal(journal);
@@ -55,11 +62,21 @@ export const JournalEditForm = () => {
 
       <div className="form-flex">
         <fieldset className="form">
+          <dialog className="dialog" open={conflictDialog}>
+            <div className="dialog-forms">Please Fill In Title And Post</div>
+            <button
+              className="button-close"
+              onClick={(e) => setConflictDialog(false)}
+            >
+              Close
+            </button>
+          </dialog>
           <div className="form__group">
             <label htmlFor="title">Title:</label>
             <input
               type="text"
               required
+              maxLength="60"
               className="form__group--edit"
               onChange={handleFieldChange}
               id="title"
@@ -71,6 +88,7 @@ export const JournalEditForm = () => {
             <input
               type="text"
               required
+              maxLength="600"
               className="form__group--edit"
               onChange={handleFieldChange}
               id="post"
