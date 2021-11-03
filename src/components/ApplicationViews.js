@@ -27,8 +27,6 @@ import { PrintGroceryList } from "../../src/components/groceries/GroceryPrint";
 export const ApplicationViews = () => {
   return (
     <>
-      {/* <Sidebar /> */}
-
       <Route exact path="/">
         <Dashboard />
       </Route>

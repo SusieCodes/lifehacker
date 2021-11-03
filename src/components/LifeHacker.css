@@ -23,14 +23,16 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 }
 
 html {
-  /* width: 1880px; */
+  width: 1880px;
   margin: 0px;
   padding: 0px;
+  margin: 0px 50px;
   font-family: "Poppins", sans-serif;
   background-color: white;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  border: 2px solid blue;
 }
 
 body {
@@ -39,10 +41,11 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: "Poppins", sans-serif;
-  background-color: white;
+  background-color: red;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  border: 1px solid red;
 }
 
 #root {
@@ -68,9 +71,10 @@ h2 {
   justify-content: flex-start;
   background-color: rgb(228, 228, 228);
   border-radius: 0px 0px 20px 20px;
-  padding: 0px 30px 30px;
+  /* padding: 0px 30px 30px; */
+  padding-bottom: 30px;
   margin: 10px 0px;
-  min-width: 1800px;
+  width: 1800px;
   min-height: 1000px;
   color: #2b2b2b;
   box-shadow: 5px 5px 5px lightgray;

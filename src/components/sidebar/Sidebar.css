@@ -86,26 +86,59 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 }
 
 .menu-close {
-  margin-left: 10px;
+  margin-left: 20px;
   font-size: 32px;
   /* color: #fff; */
 }
 
-.side-menu {
-  background-color: white;
-  height: 100vh;
+/* start of side menu styling */
+/* .sidebar-hack {
+  display: invisible;
+} */
+
+/* nav {
   display: flex;
-  justify-content: center;
-  position: fixed;
-  top: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  background-color: rgb(255, 0, 0, 1);
+} */
+
+/* .transparent-menu {
+  display: none;
+  background-color: blue;
+  width: 100%;
+  height: 100px;
+  border: 1px solid blue;
+} */
+
+.side-menu {
+  /* background-color: white; */
+  /* height: 90vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 150px;
+  position: absolute;
+  /* top: 100; */
   left: -100%;
   transition: 850ms;
+  height: 100%;
   box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.2);
+  /* border: 1px solid red; */
 }
 
 .side-menu.active {
   left: 0;
   transition: 350ms;
+}
+
+.sidebar-white {
+  background-color: white;
+  /* padding-bottom: 30px; */
+  /* height: 1045px; */
+  height: 100%;
+  /* border: 1px solid aqua; */
 }
 
 .side-text {
