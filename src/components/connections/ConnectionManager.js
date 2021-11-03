@@ -2,9 +2,10 @@
 //Purpose: To export multiple components that fetch/update/delete connection info from database
 
 const url = "http://localhost:8088";
+
 export const getConnectionsByUserId = (userId) => {
-  return fetch(`${url}/connections/?userId=${userId}`).then((res) =>
-    res.json()
+  return fetch(`${url}/connections/?userId=${userId}&_sort=timestamp`).then(
+    (res) => res.json()
   );
 };
 

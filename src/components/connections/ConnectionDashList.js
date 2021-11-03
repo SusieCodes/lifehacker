@@ -2,17 +2,38 @@
 //Purpose: Displays all user's connections (friends/family)
 
 import React, { useState, useEffect } from "react";
-import { deleteConnection, getConnectionsByUserId } from "./ConnectionManager";
+import {
+  deleteConnection,
+  getConnectionsByUserId,
+  sortConnectionsByFave,
+} from "./ConnectionManager";
 import { ConnectionDashCard } from "./ConnectionDashCard";
 import { ConnectionDummyCard } from "./ConnectionDummyCard";
 
 export const ConnectionDashList = () => {
   const [connections, setConnections] = useState([]);
 
-  //gets all the user's connections and sets it to state
+  //gets the user's connections and sets it to state
   const getConnections = () => {
     getConnectionsByUserId(sessionStorage.getItem("lifehacker_user")).then(
       (connectionsFromAPI) => {
+        connectionsFromAPI.sort(function (a, b) {
+          return b.timestamp - a.timestamp;
+        });
+        let firstFew = connectionsFromAPI.splice(0, 5);
+        setConnections(firstFew);
+      }
+    );
+  };
+
+  //gets the user's connections sorted by favoritesand sets it to state
+  const getConnectionsByFave = () => {
+    getConnectionsByUserId(sessionStorage.getItem("lifehacker_user")).then(
+      (connectionsFromAPI) => {
+        connectionsFromAPI.sort(function (a, b) {
+          return b.isFave - a.isFave;
+        });
+        console.log(connectionsFromAPI);
         let firstFew = connectionsFromAPI.splice(0, 5);
         setConnections(firstFew);
       }
@@ -48,7 +69,16 @@ export const ConnectionDashList = () => {
             <div className="dc-bday bold">BIRTHDAY</div>
           </div>
 
-          <div className="dc-icons"></div>
+          <div className="dc-icons">
+            <button
+              className="sort-fave"
+              onClick={() => {
+                getConnectionsByFave();
+              }}
+            >
+              Fave
+            </button>
+          </div>
         </div>
 
         {/* ternary statement that show cards if they exist and message if none exist yet */}
