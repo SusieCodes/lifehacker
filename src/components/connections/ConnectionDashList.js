@@ -5,18 +5,53 @@ import React, { useState, useEffect } from "react";
 import { deleteConnection, getConnectionsByUserId } from "./ConnectionManager";
 import { ConnectionDashCard } from "./ConnectionDashCard";
 import { ConnectionDummyCard } from "./ConnectionDummyCard";
+import { justMonthDayForSort } from "../helper";
+import "../dashboard/Dashboard.css";
+import "../LifeHacker.css";
 
 export const ConnectionDashList = () => {
   const [connections, setConnections] = useState([]);
+  const [allBirthdays, setAllBirthdays] = useState([]);
+  const [filteredBdayArr, setFilteredBdayArr] = useState([]);
 
-  //gets all the user's connections and sets it to state
+  //gets the user's connections and sets it to state
   const getConnections = () => {
     getConnectionsByUserId(sessionStorage.getItem("lifehacker_user")).then(
       (connectionsFromAPI) => {
-        let firstFew = connectionsFromAPI.splice(0, 5);
+        let firstFew = connectionsFromAPI.slice(0, 5);
         setConnections(firstFew);
       }
     );
+  };
+
+  //gets the user's connections sorted by favorites and sets it to state
+  const getConnectionsByFave = () => {
+    getConnectionsByUserId(sessionStorage.getItem("lifehacker_user")).then(
+      (connectionsFromAPI) => {
+        connectionsFromAPI.sort(function (a, b) {
+          return b.isFave - a.isFave;
+        });
+        let firstFew = connectionsFromAPI.slice(0, 5);
+        setConnections(firstFew);
+      }
+    );
+  };
+
+  const getConnectionsByBday = () => {
+    getConnectionsByUserId(sessionStorage.getItem("lifehacker_user")).then(
+      (connectionsFromAPI) => {
+        const sortedByBday = connectionsFromAPI.sort(function (a, b) {
+          return justMonthDayForSort(a.bday) - justMonthDayForSort(b.bday);
+        });
+        setAllBirthdays(sortedByBday);
+      }
+    );
+  };
+
+  const filterBdays = (arr) => {
+    const finalArray = arr.filter((obj) => obj.bday !== "");
+    console.log("finalArray ", finalArray);
+    setFilteredBdayArr(finalArray);
   };
 
   const handleDelete = (connectionId) => {
@@ -28,6 +63,17 @@ export const ConnectionDashList = () => {
   useEffect(() => {
     getConnections();
   }, []);
+
+  // invokes filterBdays and watches allBirthdays for changes
+  useEffect(() => {
+    filterBdays(allBirthdays);
+  }, [allBirthdays]);
+
+  // takes the first 5 contacts off the filteredBdayArray
+  useEffect(() => {
+    let firstFew = filteredBdayArr.slice(0, 5);
+    setConnections(firstFew);
+  }, [filteredBdayArr]);
 
   return (
     <>
@@ -48,7 +94,32 @@ export const ConnectionDashList = () => {
             <div className="dc-bday bold">BIRTHDAY</div>
           </div>
 
-          <div className="dc-icons"></div>
+          <div className="dc-icons">
+            <button
+              className="sort-connections"
+              onClick={() => {
+                getConnectionsByFave();
+              }}
+            >
+              Fave
+            </button>
+            <button
+              className="sort-connections"
+              onClick={() => {
+                getConnectionsByBday();
+              }}
+            >
+              Bday
+            </button>
+            <button
+              className="sort-connections"
+              onClick={() => {
+                getConnections();
+              }}
+            >
+              Recent
+            </button>
+          </div>
         </div>
 
         {/* ternary statement that show cards if they exist and message if none exist yet */}

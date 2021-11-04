@@ -33,6 +33,7 @@ export const ConnectionEditForm = () => {
     notes: "",
     personality: "",
     enneagram: "",
+    isFave: false,
     timestamp: Date.now(),
   });
 
@@ -108,6 +109,7 @@ export const ConnectionEditForm = () => {
       zodiac: connection.zodiac,
       personality: connection.personality,
       enneagram: connection.enneagram,
+      isFave: false,
       timestamp: Date.now(),
     };
 

@@ -72,7 +72,7 @@ export const ConnectionDashCard = ({ connection, handleDelete }) => {
 
           <div className="dc-bday">
             <Link to={`/connections/${connection?.id}`}>
-              {connection.bday ? formatJustMonthDay(connection?.bday) : null}
+              {connection.bday ? formatJustMonthDay(connection?.bday) : "*ask*"}
             </Link>
             <div className="checkbox">
               <Checkbox

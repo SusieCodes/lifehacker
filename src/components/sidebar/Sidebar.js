@@ -65,21 +65,23 @@ export const Sidebar = () => {
                   </Link>
                 </div>
                 <div className="toolbar-right">
-                  <Link to={`/users/${user?.id}`}>
-                    {user?.image ? (
-                      <img
-                        src={user?.image}
-                        alt={user?.name}
-                        className="avatar-photo"
-                      />
-                    ) : (
-                      <img
-                        src={require(`../../images/default.png`).default}
-                        alt="default-user"
-                        className="avatar-photo"
-                      />
-                    )}
-                  </Link>
+                  <div className="user-avatar">
+                    <Link to={`/users/${user?.id}`}>
+                      {user?.image ? (
+                        <img
+                          src={user?.image}
+                          alt={user?.name}
+                          className="avatar-photo"
+                        />
+                      ) : (
+                        <img
+                          src={require(`../../images/default.png`).default}
+                          alt="default-user"
+                          className="avatar-photo"
+                        />
+                      )}
+                    </Link>
+                  </div>
                   <button
                     className="logout"
                     onClick={() => {
