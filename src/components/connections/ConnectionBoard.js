@@ -7,7 +7,7 @@ import { deleteConnection, getConnectionsByUserId } from "./ConnectionManager";
 import { ConnectionCard } from "./ConnectionCard";
 import { ConnectionDummyCard } from "./ConnectionDummyCard";
 import { WelcomeBar } from "../../components/navbar/WelcomeBar";
-import { justMonthDayForSort } from "../helper";
+import { justMonthDayForSort, formatMilliForSort } from "../helper";
 import "../dashboard/Dashboard.css";
 import "../LifeHacker.css";
 import "../connections/Connections.css";
@@ -15,7 +15,8 @@ import "../connections/Connections.css";
 export const ConnectionBoard = () => {
   const [connections, setConnections] = useState([]);
   const [allBirthdays, setAllBirthdays] = useState([]);
-  const [filteredBdayArr, setFilteredBdayArr] = useState([]);
+  const [filteredBdays, setFilteredBdays] = useState([]);
+
   const getConnections = () => {
     getConnectionsByUserId(sessionStorage.getItem("lifehacker_user")).then(
       (connectionsFromAPI) => {
@@ -42,16 +43,21 @@ export const ConnectionBoard = () => {
         const sortedByBday = connectionsFromAPI.sort(function (a, b) {
           return justMonthDayForSort(a.bday) - justMonthDayForSort(b.bday);
         });
-        setAllBirthdays(sortedByBday);
-        console.log("allBirthdays after being sorted is ", allBirthdays);
+        const hasBday = sortedByBday.filter((obj) => obj.bday.length > 5);
+        setAllBirthdays(hasBday);
       }
     );
   };
 
-  const filterBdays = (arr) => {
-    const finalArray = arr.filter((obj) => obj.bday !== "");
-    console.log("finalArray ", finalArray);
-    setFilteredBdayArr(finalArray);
+  const orderBdays = (arr) => {
+    let beforeArray = arr.filter(
+      (obj) => justMonthDayForSort(obj.bday) < formatMilliForSort(Date.now())
+    );
+    let afterArray = arr.filter(
+      (obj) => justMonthDayForSort(obj.bday) > formatMilliForSort(Date.now())
+    );
+    const joinedArray = afterArray.concat(beforeArray);
+    setFilteredBdays(joinedArray);
   };
 
   const handleDelete = (connectionId) => {
@@ -63,15 +69,15 @@ export const ConnectionBoard = () => {
     getConnections();
   }, []);
 
-  // invokes getConnections and watches onlyWithBday for changes
+  // invokes orderBdays and watches allBirthdays for changes
   useEffect(() => {
-    filterBdays(allBirthdays);
+    orderBdays(allBirthdays);
   }, [allBirthdays]);
 
   // invokes getConnections and watches onlyWithBday for changes
   useEffect(() => {
-    setConnections(filteredBdayArr);
-  }, [filteredBdayArr]);
+    setConnections(filteredBdays);
+  }, [filteredBdays]);
 
   return (
     <>

@@ -5,14 +5,14 @@ import React, { useState, useEffect } from "react";
 import { deleteConnection, getConnectionsByUserId } from "./ConnectionManager";
 import { ConnectionDashCard } from "./ConnectionDashCard";
 import { ConnectionDummyCard } from "./ConnectionDummyCard";
-import { justMonthDayForSort } from "../helper";
+import { justMonthDayForSort, formatMilliForSort } from "../helper";
 import "../dashboard/Dashboard.css";
 import "../LifeHacker.css";
 
 export const ConnectionDashList = () => {
   const [connections, setConnections] = useState([]);
   const [allBirthdays, setAllBirthdays] = useState([]);
-  const [filteredBdayArr, setFilteredBdayArr] = useState([]);
+  const [filteredBdays, setFilteredBdays] = useState([]);
 
   //gets the user's connections and sets it to state
   const getConnections = () => {
@@ -37,21 +37,31 @@ export const ConnectionDashList = () => {
     );
   };
 
+  //gets the user's connections sorted by bdays and sets it to state
   const getConnectionsByBday = () => {
     getConnectionsByUserId(sessionStorage.getItem("lifehacker_user")).then(
       (connectionsFromAPI) => {
         const sortedByBday = connectionsFromAPI.sort(function (a, b) {
           return justMonthDayForSort(a.bday) - justMonthDayForSort(b.bday);
         });
-        setAllBirthdays(sortedByBday);
+        const hasBday = sortedByBday.filter((obj) => obj.bday.length > 5);
+        setAllBirthdays(hasBday);
       }
     );
   };
 
-  const filterBdays = (arr) => {
-    const finalArray = arr.filter((obj) => obj.bday !== "");
-    console.log("finalArray ", finalArray);
-    setFilteredBdayArr(finalArray);
+  // takes array sorted by bday and filters through to separate them into before and after todays date then joins them together in order (starting today) and sets it to state
+  const orderBdays = (arr) => {
+    // below saves objects with bdays from first of year until today
+    let beforeArray = arr.filter(
+      (obj) => justMonthDayForSort(obj.bday) < formatMilliForSort(Date.now())
+    );
+    // below saves objects with bdays from today until end of year
+    let afterArray = arr.filter(
+      (obj) => justMonthDayForSort(obj.bday) > formatMilliForSort(Date.now())
+    );
+    const joinedArray = afterArray.concat(beforeArray);
+    setFilteredBdays(joinedArray);
   };
 
   const handleDelete = (connectionId) => {
@@ -64,16 +74,16 @@ export const ConnectionDashList = () => {
     getConnections();
   }, []);
 
-  // invokes filterBdays and watches allBirthdays for changes
+  // invokes orderBdays and watches allBirthdays for changes
   useEffect(() => {
-    filterBdays(allBirthdays);
+    orderBdays(allBirthdays);
   }, [allBirthdays]);
 
   // takes the first 5 contacts off the filteredBdayArray
   useEffect(() => {
     let firstFew = filteredBdayArr.slice(0, 5);
     setConnections(firstFew);
-  }, [filteredBdayArr]);
+  }, [filteredBdays]);
 
   return (
     <>
