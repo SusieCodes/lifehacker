@@ -13,7 +13,7 @@ export const NoteDashList = () => {
   const getNote = () => {
     return getNotesByUserId(sessionStorage.getItem("lifehacker_user")).then(
       (notesFromAPI) => {
-        let firstNote = notesFromAPI.splice(0, 1);
+        let firstNote = notesFromAPI.slice(0, 1);
         setRecentNote(firstNote[0]);
       }
     );

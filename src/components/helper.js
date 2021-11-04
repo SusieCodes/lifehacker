@@ -34,13 +34,7 @@ export const formatJustMonthDay = (dateStr) => {
   const newDateStr = new Date(dateStr + "T12:00:00");
   let formattedDate = newDateStr.toDateString();
   let formattedDateNoDay = formattedDate.slice(3);
-  // console.log(
-  // "formattedDateNoDay inside formatJustMonthDay is ",
-  // formattedDateNoDay
-  // );
   let onlyMonthDay = formattedDateNoDay.slice(0, 7);
-  // console.log("onlyMonthDay inside formatJustMonthDay is ", onlyMonthDay);
-  //next line checks to see if the first digit of day is 0
   const checkZero = onlyMonthDay.charAt(5);
   // console.log(
   //   "charAt  inside formatJustMonthDay returns ",
@@ -112,4 +106,12 @@ export const changeDateFormat = (date) => {
   let array = (date || "").toString().split(/-/g);
   array.push(array.shift());
   return array.join("/") || null;
+};
+
+// converts date string (e.g. 2021-01-05) Output is 0105 so it's easy to sort by month/day only
+export const justMonthDayForSort = (dateStr) => {
+  let splitDate = dateStr.split("-");
+  let slicedDate = splitDate.slice(1);
+  let joinedDate = slicedDate.join("");
+  return joinedDate;
 };

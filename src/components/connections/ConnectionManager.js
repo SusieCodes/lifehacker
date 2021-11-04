@@ -4,9 +4,9 @@
 const url = "http://localhost:8088";
 
 export const getConnectionsByUserId = (userId) => {
-  return fetch(`${url}/connections/?userId=${userId}&_sort=timestamp`).then(
-    (res) => res.json()
-  );
+  return fetch(
+    `${url}/connections/?userId=${userId}&_sort=timestamp&_order=desc`
+  ).then((res) => res.json());
 };
 
 export const getConnectionById = (id) => {

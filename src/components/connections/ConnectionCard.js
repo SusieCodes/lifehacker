@@ -55,7 +55,7 @@ export const ConnectionCard = ({ connection, handleDelete }) => {
           <div className="dc-phone">{connection?.phone}</div>
 
           <div className="dc-bday">
-            {connection.bday ? formatJustMonthDay(connection?.bday) : "bday"}
+            {connection.bday ? formatJustMonthDay(connection?.bday) : "*ask*"}
             <div className="checkbox">
               <Checkbox
                 color="error"
