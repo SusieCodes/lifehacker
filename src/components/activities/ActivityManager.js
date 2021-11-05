@@ -5,7 +5,7 @@ const url = "http://localhost:8088";
 
 export const getAllActivitiesByUserId = (UserId) => {
   return fetch(
-    `${url}/activities/?userId=${UserId}&_sort=date&_order=asc`
+    `${url}/activities/?userId=${UserId}&_expand=tag&_sort=date&_order=asc`
   ).then((res) => res.json());
 };
 
@@ -35,7 +35,9 @@ export const deleteActivity = (id) => {
 };
 
 export const getActivityById = (activityId) => {
-  return fetch(`${url}/activities/${activityId}`).then((res) => res.json());
+  return fetch(`${url}/activities/${activityId}?_expand=tag`).then((res) =>
+    res.json()
+  );
 };
 
 export const update = (editedActivity) => {

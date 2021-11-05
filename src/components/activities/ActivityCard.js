@@ -11,6 +11,9 @@ import "./Activity.css";
 export const ActivityCard = ({ activity, handleDelete }) => {
   const history = useHistory();
 
+  console.log("ACTIVITY OBJECT INSIDE CARD IS ", activity);
+  console.log("activity.icon inside card is ", activity?.tag?.icon);
+
   const handleEdit = () => {
     history.push(`/activities/${activity?.id}/edit`);
   };
@@ -20,8 +23,19 @@ export const ActivityCard = ({ activity, handleDelete }) => {
       <div className="activity-card">
         <div className="activity-info">
           <div className="activity-wrapper">
-            <div className="dash-activity__name bold show">
-              {activity?.name}
+            <div className="dash-activity__name bold">
+              <div>{activity?.name}</div>
+              <div className="tag-image">
+                {activity?.tag?.icon !== "" ? (
+                  <img
+                    src={require(`../../images/${activity?.tag?.icon}`).default}
+                    alt=""
+                    className="tag-icon"
+                  />
+                ) : (
+                  ""
+                )}
+              </div>
             </div>
 
             <div className="da-inner__wrapper">

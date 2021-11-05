@@ -310,10 +310,22 @@ input.checkbox-todo:hover {
 }
 
 .dash-activity__name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   font-weight: 500;
   margin: 0px;
   text-align: left;
   font-size: 22px;
+  border: 1px solid black;
+}
+
+.tag-image {
+  width: 50px;
+}
+
+.tag-icon {
+  width: 100%;
 }
 
 .da-inner__wrapper {

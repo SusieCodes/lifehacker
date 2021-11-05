@@ -22,6 +22,7 @@ export const ActivityEditForm = () => {
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
 
+  // const [activityTag, setActivityTag] = useState([]);
   const [selectedValue, setSelectedValue] = useState(null);
   const [conflictDialog, setConflictDialog] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -211,9 +212,9 @@ export const ActivityEditForm = () => {
               <Select
                 onChange={handleChange}
                 id="tag"
-                value={selectedValue}
                 options={tagset}
                 width="300px"
+                value={activity.tag}
                 theme={(theme) => ({
                   ...theme,
                   borderRadius: 5,
