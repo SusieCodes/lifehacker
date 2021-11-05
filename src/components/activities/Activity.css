@@ -193,3 +193,105 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   color: #d61212;
   cursor: pointer;
 }
+
+/* tag dropdown styling */
+.tag-selection {
+  font-size: 22px;
+  align-self: center;
+}
+
+/* .css-1hb7zxy-IndicatorsContainer {
+  font-size: 18px !important;
+} */
+
+.dropdown-flex {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+/* this controls the dropdown container */
+.css-1s2u09g-control {
+  /* border: 1px solid hsl(0, 0%, 38%); */
+  font-size: 18px; /* CONTROLS INPUT SELECT*/
+  color: rgb(230, 230, 230);
+  width: 300px;
+  box-shadow: none;
+  /* outline: rgb(118, 118, 118); */
+}
+
+.css-1s2u09g-control:target {
+  /* border: 1px solid hsl(0, 0%, 80%); */
+  font-size: 18px;
+  color: rgb(230, 230, 230);
+  width: 300px;
+  box-shadow: none;
+  /* outline: rgb(118, 118, 118); */
+}
+
+.css-1s2u09g-control:focus {
+  /* border: 1px solid black; */
+  font-size: 18px;
+  width: 300px;
+  box-shadow: none;
+  outline: rgb(118, 118, 118);
+}
+
+.css-1s2u09g-control:hover {
+  /* border: 1px solid black; */
+  font-size: 18px;
+  width: 300px;
+  box-shadow: none;
+  outline: rgb(118, 118, 118);
+}
+
+/* this controls vertical line before down arrow and font sizing */
+.css-b62m3t-container {
+  box-shadow: none;
+  font-size: 18px; /* CONTROLS DROPDOWN FONT*/
+  margin: 5px;
+  /* border: 1px solid red; */
+}
+
+.css-b62m3t-container input {
+  box-shadow: none;
+  font-size: 18px;
+  /* border: 1px solid red; */
+}
+
+.css-1okebmr-indicatorSeparator {
+  align-self: flex-end;
+  font-size: 18px;
+  /* margin: 16px; */
+  box-shadow: none;
+}
+
+.css-1pahdxg-control {
+  font-size: 18px;
+  box-shadow: none;
+  outline: none;
+  width: 300px;
+  /* border: 1px solid red; */
+}
+
+.css-1pahdxg-control:focus {
+  /* border: 1px solid black; */
+  font-size: 18px;
+  width: 300px;
+  box-shadow: none;
+  /* outline: none; */
+}
+
+.css-1pahdxg-control:hover {
+  /* border: 1px solid darkgray !important; */
+  /* border: 1px solid rgb(118, 118, 118) !important; */
+  font-size: 18px;
+  width: 300px;
+  box-shadow: none;
+}
+
+.css-1ko62if-control,
+.css-1ickqfd-control,
+.css-182gzek-menu {
+  width: 250px;
+}

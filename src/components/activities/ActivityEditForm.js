@@ -2,8 +2,9 @@
 //Purpose: Creates and displays form for user to edit an existing activity
 
 import React, { useState, useEffect } from "react";
-import { update, getActivityById } from "./ActivityManager";
+import { update, getActivityById, getTags } from "./ActivityManager";
 import { useParams, useHistory } from "react-router-dom";
+import Select from "react-select";
 import { WelcomeBar } from "../navbar/WelcomeBar";
 import "./Activity.css";
 import "../LifeHacker.css";
@@ -17,14 +18,30 @@ export const ActivityEditForm = () => {
     city: "",
     zipcode: "",
     notes: "",
+    tag: "",
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
 
+  const [selectedValue, setSelectedValue] = useState(null);
   const [conflictDialog, setConflictDialog] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [tagset, setTagset] = useState([]);
 
   const { activityId } = useParams();
   const history = useHistory();
+
+  const handleChange = (evt) => {
+    setSelectedValue(evt);
+    /* Because we are changing a state object or array,
+		we are creating a copy, making changes, and then setting state */
+    const newActivity = { ...activity };
+    let selectedVal = evt.value;
+    /* Sets the property to the new value
+		using object bracket notation. */
+    newActivity[evt.tag] = selectedVal;
+    // update state
+    setActivity(newActivity);
+  };
 
   const handleFieldChange = (evt) => {
     const stateToChange = { ...activity };
@@ -46,6 +63,7 @@ export const ActivityEditForm = () => {
       city: activity?.city,
       zipcode: activity?.zipcode,
       notes: activity?.notes,
+      tag: activity?.tag,
       userId: activity?.userId,
     };
 
@@ -68,8 +86,18 @@ export const ActivityEditForm = () => {
     getActivityById(activityId).then((activity) => {
       setActivity(activity);
       setIsLoading(false);
+      setSelectedValue(activity.tag);
+      console.log("activity.tag in useEffect is ", activity.tag);
+      console.log("selectedValue in useEffects is ", selectedValue);
+      console.log("activity inside getActivity is ", activity);
     });
   }, [activityId]);
+
+  useEffect(() => {
+    getTags().then((allTags) => {
+      setTagset(allTags);
+    });
+  }, []);
 
   return (
     <>
@@ -175,6 +203,29 @@ export const ActivityEditForm = () => {
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 value={activity.notes}
+              />
+            </div>
+
+            <div className="dropdown-flex">
+              <div className="tag-selection">Select Tag: </div>
+              <Select
+                onChange={handleChange}
+                id="tag"
+                value={selectedValue}
+                options={tagset}
+                width="300px"
+                theme={(theme) => ({
+                  ...theme,
+                  borderRadius: 5,
+                  border: 3,
+                  colors: {
+                    ...theme.colors,
+                    primary25: "#c8e6ea68",
+                    primary: "#c8e6ea",
+                    background: "#c8e6ea68",
+                    color: "#c8e6ea68",
+                  },
+                })}
               />
             </div>
           </fieldset>
