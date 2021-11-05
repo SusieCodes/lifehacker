@@ -50,7 +50,7 @@ export const ConnectionDashList = () => {
     );
   };
 
-  // takes array sorted by bday and filters through to separate them into before and after todays date then joins them together in order (starting today) and sets it to state
+  // takes array sorted by bday and filters through to separate them into before and after today's date then joins them together in order (starting today) and sets it to state
   const orderBdays = (arr) => {
     // below saves objects with bdays from first of year until today
     let beforeArray = arr.filter(
@@ -60,6 +60,7 @@ export const ConnectionDashList = () => {
     let afterArray = arr.filter(
       (obj) => justMonthDayForSort(obj.bday) > formatMilliForSort(Date.now())
     );
+    // joins all objects back together with remaining bdays for this year first, then bdays starting again next year
     const joinedArray = afterArray.concat(beforeArray);
     setFilteredBdays(joinedArray);
   };
@@ -81,7 +82,7 @@ export const ConnectionDashList = () => {
 
   // takes the first 5 contacts off the filteredBdayArray
   useEffect(() => {
-    let firstFew = filteredBdayArr.slice(0, 5);
+    let firstFew = filteredBdays.slice(0, 5);
     setConnections(firstFew);
   }, [filteredBdays]);
 

@@ -2,8 +2,9 @@
 //Purpose: Creates and displays form for user to edit an existing activity
 
 import React, { useState, useEffect } from "react";
-import { update, getActivityById } from "./ActivityManager";
+import { update, getActivityById, getTags } from "./ActivityManager";
 import { useParams, useHistory } from "react-router-dom";
+import { Dropdown } from "semantic-ui-react";
 import { WelcomeBar } from "../navbar/WelcomeBar";
 import "./Activity.css";
 import "../LifeHacker.css";
@@ -17,11 +18,13 @@ export const ActivityEditForm = () => {
     city: "",
     zipcode: "",
     notes: "",
+    tag: "",
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
 
   const [conflictDialog, setConflictDialog] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [tagset, setTagset] = useState([]);
 
   const { activityId } = useParams();
   const history = useHistory();
@@ -46,6 +49,7 @@ export const ActivityEditForm = () => {
       city: activity?.city,
       zipcode: activity?.zipcode,
       notes: activity?.notes,
+      tag: activity?.tag,
       userId: activity?.userId,
     };
 
@@ -70,6 +74,12 @@ export const ActivityEditForm = () => {
       setIsLoading(false);
     });
   }, [activityId]);
+
+  useEffect(() => {
+    getTags().then((allTags) => {
+      setTagset(allTags);
+    });
+  }, []);
 
   return (
     <>
@@ -175,6 +185,28 @@ export const ActivityEditForm = () => {
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 value={activity.notes}
+              />
+            </div>
+
+            <div className="form__group">
+              <label htmlFor="tag">Tag:</label>
+              <input
+                type="text"
+                id="tag"
+                maxLength="10"
+                required
+                className="form__group--edit"
+                onChange={handleFieldChange}
+                value={activity.tag}
+              />
+            </div>
+
+            <div>
+              <Dropdown
+                placeholder="Select Tag"
+                fluid
+                selection
+                options={tagset}
               />
             </div>
           </fieldset>

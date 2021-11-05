@@ -41,6 +41,7 @@ export const NoteForm = () => {
     /* Sets the property to the new value
 		using object bracket notation. */
     newNote[evt.target.id] = selectedVal;
+    console.log("evt.target.id is: ", evt.target.id);
     // update state
     setNote(newNote);
   };

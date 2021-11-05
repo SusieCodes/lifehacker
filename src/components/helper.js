@@ -116,13 +116,10 @@ export const justMonthDayForSort = (dateStr) => {
   return joinedDate;
 };
 
-// used when input is integer string (e.g. 1609826400000) Output is Jan 5, 2021
+// used when input is milliseconds (e.g. 1609826400000) Output format is 0105 for Jan 5th (any year)
 export const formatMilliForSort = (milliseconds) => {
-  console.log("milliseconds put into formatMilliForSort", milliseconds);
   const newDate = new Date(milliseconds);
   const isoDate = newDate.toISOString();
-  console.log("isoDate is ", isoDate);
-
   let splitDate = isoDate.split("-");
   let slicedDate = splitDate.slice(1);
   let joinedDate = slicedDate.join("");

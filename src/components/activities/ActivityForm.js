@@ -1,15 +1,18 @@
 //Author: Susie Stanley
 //Purpose: Creates and displays an input form for user to add an activity
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { addActivity } from "./ActivityManager";
+import { addActivity, getTags } from "./ActivityManager";
+import Select from "react-select";
 import { WelcomeBar } from "../navbar/WelcomeBar";
 import "./Activity.css";
 import "../LifeHacker.css";
 
 export const ActivityForm = () => {
   const [conflictDialog, setConflictDialog] = useState(false);
+  const [selectedValue, setSelectedValue] = useState(null);
+  const [tagset, setTagset] = useState([]);
 
   // Defining initial state of the form inputs with useState
   const [activity, setActivity] = useState({
@@ -20,12 +23,14 @@ export const ActivityForm = () => {
     city: "",
     zipcode: "",
     notes: "",
+    tag: "",
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
 
   const history = useHistory();
 
   const ResetForm = () => {
+    setSelectedValue(null);
     setActivity({
       name: "",
       date: "",
@@ -34,8 +39,22 @@ export const ActivityForm = () => {
       city: "",
       zipcode: "",
       notes: "",
+      tag: "",
       userId: parseInt(sessionStorage.getItem("lifehacker_user")),
     });
+  };
+
+  const handleChange = (evt) => {
+    setSelectedValue(evt);
+    /* Because we are changing a state object or array,
+		we are creating a copy, making changes, and then setting state */
+    const newActivity = { ...activity };
+    let selectedVal = evt.value;
+    /* Sets the property to the new value
+		using object bracket notation. */
+    newActivity[evt.tag] = selectedVal;
+    // update state
+    setActivity(newActivity);
   };
 
   const goBack = () => {
@@ -55,15 +74,6 @@ export const ActivityForm = () => {
     setActivity(newActivity);
   };
 
-  // const FiveDigitZipCode = (zipcode) => {
-  //   var zipcodeformat = /^[0-9]{5}?$/;
-  //   if(zipcode.match(zipcodeformat)) {
-  //   }
-  //   else {
-  //   return false;
-  //   }
-  // }
-
   const handleSave = (evt) => {
     evt.preventDefault(); // Prevents the browser from submitting the form
 
@@ -73,6 +83,13 @@ export const ActivityForm = () => {
       addActivity(activity).then(() => history.push("/activities"));
     }
   };
+
+  useEffect(() => {
+    getTags().then((allTags) => {
+      setTagset(allTags);
+      console.log("tagset is ", tagset);
+    });
+  }, []);
 
   return (
     <>
@@ -184,6 +201,29 @@ export const ActivityForm = () => {
                 className="form__group--edit"
                 placeholder=" Bring gloves etc"
                 value={activity.notes}
+              />
+            </div>
+
+            <div className="dropdown-flex">
+              <div className="tag-selection">Select Tag: </div>
+              <Select
+                onChange={handleChange}
+                id="tag"
+                value={selectedValue}
+                options={tagset}
+                width="300px"
+                theme={(theme) => ({
+                  ...theme,
+                  borderRadius: 5,
+                  border: 3,
+                  colors: {
+                    ...theme.colors,
+                    primary25: "#c8e6ea68",
+                    primary: "#c8e6ea",
+                    background: "#c8e6ea68",
+                    color: "#c8e6ea68",
+                  },
+                })}
               />
             </div>
 
