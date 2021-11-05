@@ -5,11 +5,15 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { formatStringDate, formatTime } from "../helper";
+import logo from "../../images/personal.png";
 import "../LifeHacker.css";
 import "./Activity.css";
 
 export const ActivityCard = ({ activity, handleDelete }) => {
   const history = useHistory();
+
+  console.log("ACTIVITY OBJECT INSIDE CARD IS ", activity);
+  console.log("activity.icon inside card is ", activity?.tag?.icon);
 
   const handleEdit = () => {
     history.push(`/activities/${activity?.id}/edit`);
@@ -20,12 +24,24 @@ export const ActivityCard = ({ activity, handleDelete }) => {
       <div className="activity-card">
         <div className="activity-info">
           <div className="activity-wrapper">
-            <div className="dash-activity__name bold show">
-              {activity?.name}
+            <div className="activity-name bold">
+              <div>{activity?.name}</div>
+              <div className="tag-image">
+                {activity?.tag?.icon ? (
+                  <img
+                    // src={logo}
+                    src={require(`../../images/${activity?.tag?.icon}`).default}
+                    alt="icon"
+                    className="tag-icon"
+                  />
+                ) : (
+                  ""
+                )}
+              </div>
             </div>
 
-            <div className="da-inner__wrapper">
-              <div className="activity-inner__left">
+            <div className="activity-inner-wrapper">
+              <div className="activity-inner-left">
                 <div className="med-bold">Date:</div>
                 <div className="med-bold">Time:</div>
                 <div className="med-bold address-spacer">Address:</div>

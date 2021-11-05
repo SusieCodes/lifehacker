@@ -18,10 +18,11 @@ export const ActivityEditForm = () => {
     city: "",
     zipcode: "",
     notes: "",
-    tag: "",
+    tagId: "",
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
 
+  // const [activityTag, setActivityTag] = useState([]);
   const [selectedValue, setSelectedValue] = useState(null);
   const [conflictDialog, setConflictDialog] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -35,10 +36,10 @@ export const ActivityEditForm = () => {
     /* Because we are changing a state object or array,
 		we are creating a copy, making changes, and then setting state */
     const newActivity = { ...activity };
-    let selectedVal = evt.value;
+    let selectedVal = evt.id;
     /* Sets the property to the new value
 		using object bracket notation. */
-    newActivity[evt.tag] = selectedVal;
+    newActivity[evt.saveTo] = selectedVal;
     // update state
     setActivity(newActivity);
   };
@@ -63,7 +64,7 @@ export const ActivityEditForm = () => {
       city: activity?.city,
       zipcode: activity?.zipcode,
       notes: activity?.notes,
-      tag: activity?.tag,
+      tagId: activity?.tagId,
       userId: activity?.userId,
     };
 
@@ -122,7 +123,7 @@ export const ActivityEditForm = () => {
               <input
                 type="text"
                 id="name"
-                maxLength="30"
+                maxLength="18"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
@@ -211,9 +212,9 @@ export const ActivityEditForm = () => {
               <Select
                 onChange={handleChange}
                 id="tag"
-                value={selectedValue}
                 options={tagset}
                 width="300px"
+                value={activity.tag}
                 theme={(theme) => ({
                   ...theme,
                   borderRadius: 5,

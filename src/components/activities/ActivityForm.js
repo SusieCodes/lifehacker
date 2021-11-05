@@ -23,7 +23,7 @@ export const ActivityForm = () => {
     city: "",
     zipcode: "",
     notes: "",
-    tag: "",
+    tagId: 0,
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
 
@@ -39,20 +39,25 @@ export const ActivityForm = () => {
       city: "",
       zipcode: "",
       notes: "",
-      tag: "",
+      tagId: 0,
       userId: parseInt(sessionStorage.getItem("lifehacker_user")),
     });
   };
 
   const handleChange = (evt) => {
     setSelectedValue(evt);
+    console.log("evt is ", evt);
+
     /* Because we are changing a state object or array,
 		we are creating a copy, making changes, and then setting state */
     const newActivity = { ...activity };
-    let selectedVal = evt.value;
+    let selectedVal = evt.id;
+    console.log("selectedVal is ", selectedVal);
+
     /* Sets the property to the new value
 		using object bracket notation. */
-    newActivity[evt.tag] = selectedVal;
+    newActivity[evt.saveTo] = selectedVal;
+
     // update state
     setActivity(newActivity);
   };
@@ -114,7 +119,7 @@ export const ActivityForm = () => {
               <input
                 type="text"
                 id="name"
-                maxLength="30"
+                maxLength="18"
                 onChange={handleControlledInputChange}
                 required
                 autoFocus

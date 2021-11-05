@@ -50,6 +50,18 @@ export const ActivityDashCard = ({ activity, handleDelete }) => {
         </Link>
 
         <div className="dash-activity__col2">
+          <div className="tag-image">
+            {activity?.tag?.icon ? (
+              <img
+                // src={logo}
+                src={require(`../../images/${activity?.tag?.icon}`).default}
+                alt="icon"
+                className="tag-icon"
+              />
+            ) : (
+              ""
+            )}
+          </div>
           <button
             type="button"
             className="activity-delete"
