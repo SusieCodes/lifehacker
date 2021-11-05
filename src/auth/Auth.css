@@ -23,11 +23,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   border: 2px solid rgb(82, 207, 223);
 }
 
-.dialog-login-content {
-  /* border: 2px solid blue; */
-  /* padding: 30px; */
-}
-
 .dialog-auth {
   border: 2px solid rgb(82, 207, 223);
 }
@@ -45,10 +40,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   border: 1px solid rgb(82, 207, 223);
   background-color: #c4f7fe;
   border-radius: 5px;
-}
-
-.form-flex__inner {
-  /* border: 1px solid black; */
 }
 
 form {
@@ -121,7 +112,6 @@ form {
 }
 
 /* styling for register page */
-
 .form-register__headline {
   text-align: center;
   font-size: 38px;

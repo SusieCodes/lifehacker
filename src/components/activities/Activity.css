@@ -89,6 +89,10 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   width: 100%;
 }
 
+.tag-icon:hover {
+  cursor: pointer;
+}
+
 .no-margin {
   margin: 0px;
 }
