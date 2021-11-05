@@ -87,7 +87,6 @@ export const ActivityForm = () => {
   useEffect(() => {
     getTags().then((allTags) => {
       setTagset(allTags);
-      console.log("tagset is ", tagset);
     });
   }, []);
 
