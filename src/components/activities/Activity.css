@@ -68,11 +68,41 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   padding: 10px 0px;
 }
 
+.activity-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 500;
+  padding: 0px;
+  margin: 0px;
+  text-align: left;
+  font-size: 22px;
+  /* border: 1px solid red; */
+}
+
+.tag-image {
+  width: 40px;
+  height: 40px;
+}
+
+.tag-icon {
+  width: 100%;
+}
+
 .no-margin {
   margin: 0px;
 }
 
-.activity-inner__left {
+.activity-inner-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 0px;
+  margin: 0px;
+  /* border: 1px solid purple; */
+}
+
+.activity-inner-left {
   text-align: left;
   font-size: 18px;
   line-height: 1.3em;

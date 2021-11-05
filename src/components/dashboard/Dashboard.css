@@ -298,6 +298,7 @@ input.checkbox-todo:hover {
   white-space: nowrap;
   padding: 0px;
   margin: 0px;
+  /* border: 1px solid red; */
 }
 
 .dash-activity__wrapper {
@@ -307,6 +308,7 @@ input.checkbox-todo:hover {
   justify-content: center;
   padding: 0px;
   margin: 0px;
+  /* border: 1px solid blue; */
 }
 
 .dash-activity__name {
@@ -314,17 +316,19 @@ input.checkbox-todo:hover {
   flex-direction: row;
   justify-content: space-between;
   font-weight: 500;
+  padding: 0px;
   margin: 0px;
   text-align: left;
   font-size: 22px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
-.tag-image {
-  width: 50px;
+.da-tag-image {
+  width: 40px;
+  height: 40px;
 }
 
-.tag-icon {
+.da-tag-icon {
   width: 100%;
 }
 
@@ -385,9 +389,17 @@ input.checkbox-todo:hover {
 
 .dash-activity__col2 {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-content: center;
+  padding: 7px 5px 0px 0px;
+  /* border: 1px solid black; */
 }
+
+/* .activity-delete {
+  align-self: flex-start;
+  margin: 10px 20px;
+} */
 
 button.activity-delete {
   flex: 1;

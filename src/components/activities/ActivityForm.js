@@ -57,7 +57,6 @@ export const ActivityForm = () => {
     /* Sets the property to the new value
 		using object bracket notation. */
     newActivity[evt.saveTo] = selectedVal;
-    console.log("newActivity is ", newActivity);
 
     // update state
     setActivity(newActivity);
@@ -120,7 +119,7 @@ export const ActivityForm = () => {
               <input
                 type="text"
                 id="name"
-                maxLength="30"
+                maxLength="18"
                 onChange={handleControlledInputChange}
                 required
                 autoFocus
