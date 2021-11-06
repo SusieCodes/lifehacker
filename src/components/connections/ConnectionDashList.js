@@ -105,31 +105,33 @@ export const ConnectionDashList = () => {
             <div className="dc-bday bold">BIRTHDAY</div>
           </div>
 
-          <div className="dc-icons">
-            <button
-              className="sort-connections"
-              onClick={() => {
-                getConnectionsByFave();
-              }}
-            >
-              Fave
-            </button>
-            <button
-              className="sort-connections"
-              onClick={() => {
-                getConnectionsByBday();
-              }}
-            >
-              Bday
-            </button>
-            <button
-              className="sort-connections"
-              onClick={() => {
-                getConnections();
-              }}
-            >
-              Recent
-            </button>
+          <div className="connection-header-icons">
+            <div className="c-board-icons">
+              <div
+                className="sort-connections"
+                onClick={() => {
+                  getConnectionsByFave();
+                }}
+              >
+                Fave
+              </div>
+              <div
+                className="sort-connections"
+                onClick={() => {
+                  getConnectionsByBday();
+                }}
+              >
+                Bday
+              </div>
+              <div
+                className="sort-connections"
+                onClick={() => {
+                  getConnections();
+                }}
+              >
+                Recent
+              </div>
+            </div>
           </div>
         </div>
 

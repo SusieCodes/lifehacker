@@ -125,3 +125,30 @@ export const formatMilliForSort = (milliseconds) => {
   let joinedDate = slicedDate.join("");
   return joinedDate;
 };
+
+// used by dateFormatWithSuffix() below
+const addOrdinalSuffix = (i) => {
+  var j = i % 10,
+    k = i % 100;
+  if (j === 1 && k !== 11) {
+    return i + "st";
+  }
+  if (j === 2 && k !== 12) {
+    return i + "nd";
+  }
+  if (j === 3 && k !== 13) {
+    return i + "rd";
+  }
+  return i + "th";
+};
+
+// formats date with input as milliseconds and output as Fri Jan 5th, 2021
+export const dateFormatWithSuffix = (milliseconds) => {
+  let newDate = new Date(milliseconds);
+  const strDate = newDate.toDateString();
+  const dayMonth = strDate.slice(0, 8);
+  const day = addOrdinalSuffix(newDate.getDate());
+  const year = newDate.getFullYear();
+  let dateString = dayMonth + day + ", " + year;
+  return dateString;
+};

@@ -266,6 +266,7 @@ input.checkbox-todo {
 input.checkbox-todo:hover {
   transform: scale(1.5);
   color: #27c2d7;
+  cursor: pointer;
 }
 
 /* Activity Dash styling */
@@ -332,6 +333,10 @@ input.checkbox-todo:hover {
   width: 100%;
 }
 
+.da-tag-icon:hover {
+  cursor: pointer;
+}
+
 .da-inner__wrapper {
   display: flex;
   flex-direction: row;
@@ -396,11 +401,6 @@ input.checkbox-todo:hover {
   /* border: 1px solid black; */
 }
 
-/* .activity-delete {
-  align-self: flex-start;
-  margin: 10px 20px;
-} */
-
 button.activity-delete {
   flex: 1;
   align-self: center;
@@ -418,6 +418,7 @@ button.activity-delete {
 .a-delete-icon:hover {
   transform: scale(1.5);
   color: #d61212;
+  cursor: pointer;
 }
 
 /* Note Dash styling */
@@ -430,11 +431,6 @@ button.activity-delete {
   height: 335px;
   /* border: 1px solid black; */
 }
-
-/* .note-container h2 {
-  background-color: transparent;
-  margin: 5px 5px 0px;
-} */
 
 .note-spacing {
   margin-top: 10px;
@@ -539,6 +535,7 @@ button.note-delete {
 .n-delete-icon:hover {
   transform: scale(1.5);
   color: #d61212;
+  cursor: pointer;
 }
 
 /* Connections Dash styling */
@@ -699,6 +696,7 @@ button.note-delete {
 .dc-details:hover {
   border: 2px solid darkgray;
   background-color: #c4f7fe;
+  cursor: pointer;
 }
 
 .dc-details a {
@@ -731,6 +729,7 @@ button.note-delete {
 .dc-edit-icon:hover {
   transform: scale(1.5);
   color: #d61212;
+  cursor: pointer;
 }
 
 .dc-delete-icon {
@@ -743,6 +742,7 @@ button.note-delete {
 .dc-delete-icon:hover {
   transform: scale(1.5);
   color: #d61212;
+  cursor: pointer;
 }
 
 /* Groceries Dash styling */
@@ -814,6 +814,7 @@ button.grocery-delete {
 .grocery-delete-icon:hover {
   transform: scale(1.5);
   color: #d61212;
+  cursor: pointer;
 }
 
 .see-more {
@@ -832,6 +833,7 @@ button.grocery-delete {
   color: black;
   background-color: #c8e6ea68;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 /* Journal Dash styling */
@@ -903,4 +905,5 @@ button.journal-delete {
 .journal-delete-icon:hover {
   transform: scale(1.5);
   color: #d61212;
+  cursor: pointer;
 }

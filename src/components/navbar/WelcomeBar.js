@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { formatDate } from "../helper";
+import { dateFormatWithSuffix } from "../helper";
 import "../LifeHacker.css";
 
 export const WelcomeBar = (props) => {
@@ -21,7 +21,7 @@ export const WelcomeBar = (props) => {
 
       <div className="page-title__right">
         Today: &nbsp;&nbsp;
-        <span className="todays-date">{formatDate(Date.now())}</span>
+        <span className="todays-date">{dateFormatWithSuffix(Date.now())}</span>
       </div>
     </div>
   );
