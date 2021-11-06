@@ -220,6 +220,48 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   transition: all 0.2s ease-in-out;
 }
 
+.connection-header-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  /* align-content: flex-end; */
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  margin-right: 30px;
+  width: 300px;
+  /* border: 1px solid red; */
+}
+
+.c-board-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  /* width: 250px; */
+  /* border: 1px solid black; */
+}
+
+.sort-connections {
+  align-self: flex-end;
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+  background-color: #c8e6ea68;
+  background-color: gray;
+  border: none;
+  /* border: 2px solid lightgray; */
+  border-radius: 5px 5px 0px 0px;
+  padding: 3px 20px;
+  margin: 0px 4px;
+  cursor: pointer;
+  /* border: 1px solid blue; */
+}
+
 .connection-icons {
   display: flex;
   flex-direction: row;
@@ -229,6 +271,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   white-space: nowrap;
   margin-right: 30px;
   width: 300px;
+  /* border: 1px solid red; */
 }
 
 .connection-details {

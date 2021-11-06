@@ -107,32 +107,32 @@ export const ConnectionBoard = () => {
               <div className="dc-bday bold">BIRTHDAY</div>
             </div>
 
-            <div className="connection-icons">
-              <div className="dc-icons">
-                <button
+            <div className="connection-header-icons">
+              <div className="c-board-icons">
+                <div
                   className="sort-connections"
                   onClick={() => {
                     getConnectionsByFave();
                   }}
                 >
                   Fave
-                </button>
-                <button
+                </div>
+                <div
                   className="sort-connections"
                   onClick={() => {
                     getConnectionsByBday();
                   }}
                 >
                   Bday
-                </button>
-                <button
+                </div>
+                <div
                   className="sort-connections"
                   onClick={() => {
                     getConnections();
                   }}
                 >
                   Recent
-                </button>
+                </div>
               </div>
             </div>
           </div>
