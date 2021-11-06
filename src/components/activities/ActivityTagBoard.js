@@ -40,30 +40,35 @@ export const ActivityTagBoard = () => {
           return evt.tagId === 1;
         });
         setPersonalActivities(personal);
+        console.log("personal array is", personal);
 
-        // sets personal activities to state
+        // sets family activities to state
         let family = copyOfActivities.filter((evt) => {
           return evt.tagId === 2;
         });
         setFamilyActivities(family);
+        console.log("personal array is", family);
 
-        // sets personal activities to state
+        // sets work activities to state
         let work = copyOfActivities.filter((evt) => {
           return evt.tagId === 3;
         });
         setWorkActivities(work);
+        console.log("personal array is", work);
 
-        // sets personal activities to state
+        // sets community activities to state
         let community = copyOfActivities.filter((evt) => {
           return evt.tagId === 4;
         });
         setCommunityActivities(community);
+        console.log("personal array is", community);
 
-        // sets personal activities to state
+        // sets school activities to state
         let school = copyOfActivities.filter((evt) => {
           return evt.tagId === 5;
         });
         setSchoolActivities(school);
+        console.log("personal array is", school);
       }
     );
   };
