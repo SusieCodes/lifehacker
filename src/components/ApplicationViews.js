@@ -8,6 +8,7 @@ import { ConnectionDetail } from "../../src/components/connections/ConnectionDet
 import { UserDetail } from "./users/UserDetail";
 import { UserEditForm } from "../../src/components/users/UserEditForm";
 import { ActivityBoard } from "../../src/components/activities/ActivityBoard";
+import { ActivityTagBoard } from "../../src/components/activities/ActivityTagBoard";
 import { ActivityForm } from "../../src/components/activities/ActivityForm";
 import { ActivityEditForm } from "../../src/components/activities/ActivityEditForm";
 import { TodoBoard } from "../../src/components/todos/TodoBoard";
@@ -61,6 +62,10 @@ export const ApplicationViews = () => {
 
       <Route exact path="/activities">
         <ActivityBoard />
+      </Route>
+
+      <Route exact path="/activitiestag">
+        <ActivityTagBoard />
       </Route>
 
       <Route exact path="/activities/create">
