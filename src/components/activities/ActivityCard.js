@@ -5,15 +5,11 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { formatStringDate, formatTime } from "../helper";
-import logo from "../../images/personal.png";
 import "../LifeHacker.css";
 import "./Activity.css";
 
 export const ActivityCard = ({ activity, handleDelete }) => {
   const history = useHistory();
-
-  console.log("ACTIVITY OBJECT INSIDE CARD IS ", activity);
-  console.log("activity.icon inside card is ", activity?.tag?.icon);
 
   const handleEdit = () => {
     history.push(`/activities/${activity?.id}/edit`);

@@ -9,15 +9,6 @@ export const getAllActivitiesByUserId = (UserId) => {
   ).then((res) => res.json());
 };
 
-export const getAllActivities = () => {
-  return fetch(`${url}/activities?_sort=date&_order=asc`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then((res) => res.json());
-};
-
 export const addActivity = (newActivity) => {
   return fetch(`${url}/activities`, {
     method: "POST",
