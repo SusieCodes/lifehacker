@@ -79,7 +79,7 @@ export const ActivityEditForm = () => {
       setConflictDialog(true);
       setIsLoading(false);
     } else {
-      update(editedActivity).then(() => history.push("/activities"));
+      update(editedActivity).then(() => history.goBack());
     }
   };
 
