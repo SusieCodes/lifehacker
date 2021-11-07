@@ -20,31 +20,50 @@ export const WishlistCard = ({
   return (
     <>
       <div className="wishlist-card">
-        <div className="wishlist-info">
-          <div>{wishlist?.item}</div>
-        </div>
-        <div className="wishlist-complete">
-          <input
-            type="checkbox"
-            className="checkbox-wishlist"
-            onClick={() => handleCompleteWishlist(wishlist?.id)}
-          />
-          <label className="checkbox-label">Complete </label>
-        </div>
-
-        <div className="wishlist-icons">
-          <div
-            className="wishlist-delete"
-            onClick={() => handleEdit(wishlist?.id)}
-          >
-            <FaEdit className="wishlist-edit-icon" />
+        <div className="wishlist-row1">
+          <div className="wishlist-info">
+            <div className="wishlist-item">{wishlist?.item}</div>
+          </div>
+          <div className="wishlist-complete">
+            <input
+              type="checkbox"
+              className="checkbox-wishlist"
+              onClick={() => handleCompleteWishlist(wishlist?.id)}
+            />
+            <label className="checkbox-label">Complete </label>
           </div>
 
-          <div
-            className="wishlist-delete"
-            onClick={() => handleDeleteWishlist(wishlist?.id)}
-          >
-            <FaTrash className="wishlist-delete-icon" />
+          <div className="wishlist-icons">
+            <div
+              className="wishlist-delete"
+              onClick={() => handleEdit(wishlist?.id)}
+            >
+              <FaEdit className="wishlist-edit-icon" />
+            </div>
+
+            <div
+              className="wishlist-delete"
+              onClick={() => handleDeleteWishlist(wishlist?.id)}
+            >
+              <FaTrash className="wishlist-delete-icon" />
+            </div>
+          </div>
+        </div>
+        <div className="wishlist-row2">
+          <div className="wishlist-info">
+            <div className="wishlist-title">Link To Buy: </div>
+            <div className="wishlist-link">
+              <a href={wishlist?.url} target="_blank" rel="noreferrer">
+                {wishlist?.store}
+              </a>
+            </div>
+          </div>
+
+          <div className="wishlist-row3">
+            <div className="wishlist-info">
+              <div className="wishlist-title">Notes: </div>
+              <div className="wishlist-text">{wishlist?.notes}</div>
+            </div>
           </div>
         </div>
       </div>
