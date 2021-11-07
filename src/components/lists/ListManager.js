@@ -3,6 +3,7 @@
 
 const url = "http://localhost:8088";
 
+// Provider fetch calls
 export const getProvidersByUserId = (userId) => {
   return fetch(`${url}/providers/?userId=${userId}`).then((res) => res.json());
 };
@@ -37,10 +38,11 @@ export const updateProvider = (editedProvider) => {
   }).then((data) => data.json());
 };
 
+// Recommendation fetch calls
 export const getRecommendationsByUserId = (userId) => {
-  return fetch(
-    `${url}/recommendations/?userId=${userId}&_sort=date&_order=asc`
-  ).then((res) => res.json());
+  return fetch(`${url}/recommendations/?userId=${userId}`).then((res) =>
+    res.json()
+  );
 };
 
 export const addRecommendation = (newRecommendation) => {
@@ -75,6 +77,7 @@ export const updateRecommendation = (editedRecommendation) => {
   }).then((data) => data.json());
 };
 
+// Wishlist fetch calls
 export const getWishlistByUserId = (userId) => {
   return fetch(`${url}/wishlists/?userId=${userId}`).then((res) => res.json());
 };

@@ -179,7 +179,107 @@ select.star-options:focus {
   outline-color: #c4f7fe;
 }
 
-/* start of individual wishlist card */
+/* RecommendationCard styling */
+.recommendation-card-lists {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  padding: 8px 20px;
+  margin: 5px 10px 15px;
+  border-radius: 5px;
+  background-color: #c8e6ea68;
+  /* border: 1px solid blue; */
+}
+
+.recommendation-wrapper-lists {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 5px;
+  margin: 0px;
+  /* border: 1px solid black; */
+}
+
+.recommendation-title-lists {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 5px 0px 20px;
+}
+
+.recommendation-type-lists,
+.recommendation-from-lists,
+.recommendation-notes-lists {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 2px 0px;
+}
+
+.rec-bold-lists {
+  font-size: 20px;
+  font-weight: 500;
+  margin-right: 10px;
+  width: 80px;
+  /* border: 1px solid red; */
+}
+
+.rec-right-lists {
+  font-size: 20px;
+}
+
+/* needed this extra div to make word wrap work */
+.text-wrapper-lists {
+  margin: 0px;
+  width: 100%;
+  padding: 0px;
+  /* border: 1px solid chartreuse; */
+}
+
+.recommendation-icons-lists {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0px 5px;
+  /* margin-bottom: 8px; */
+  /* border: 1px solid black; */
+}
+
+.recommendation-edit-icon-lists {
+  color: #2b2b2b;
+  padding: 0px;
+  margin: 0px 15px;
+  width: 35px;
+  height: 35px;
+  transition: all 0.2s ease-in-out;
+  /* border: 1px solid red; */
+}
+
+.recommendation-edit-icon-lists:hover {
+  transform: scale(1.5);
+  color: #41c5d8;
+  cursor: pointer;
+}
+
+.recommendation-delete-icon-lists {
+  color: #2b2b2b;
+  padding: 0px;
+  margin: 0px 15px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.2s ease-in-out;
+  /* border: 1px solid green; */
+}
+
+.recommendation-delete-icon-lists:hover {
+  transform: scale(1.5);
+  color: #d61212;
+  cursor: pointer;
+}
+
+/* Wishlist Card styling */
 .wishlist-card {
   width: 100%;
   display: flex;
@@ -187,7 +287,7 @@ select.star-options:focus {
   justify-content: space-between;
   font-size: 20px;
   padding: 5px 10px;
-  margin: 10px;
+  margin: 5px 10px 10px;
   border-radius: 5px;
   background-color: #c8e6ea68;
 }

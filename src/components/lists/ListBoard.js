@@ -4,12 +4,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ProviderCard } from "./ProviderCard";
-// import { RecommendationCard } from "./RecommendationCard";
+import { RecommendationCard } from "./RecommendationCard";
 import { WishlistCard } from "./WishlistCard";
 import {
   getProvidersByUserId,
+  getRecommendationsByUserId,
   getWishlistByUserId,
   deleteProvider,
+  deleteRecommendation,
   deleteWishlist,
   completeWishlist,
 } from "./ListManager";
@@ -21,7 +23,7 @@ export const ListBoard = () => {
   const user = sessionStorage.getItem("lifehacker_user");
   // The initial states are empty arrays
   const [providers, setProviders] = useState([]);
-  // const [recommendations, setRecommendations] = useState([]);
+  const [recommendations, setRecommendations] = useState([]);
   const [wishlist, setWishlist] = useState([]);
 
   // grabs all Providers from API, and sets it to state
@@ -32,11 +34,11 @@ export const ListBoard = () => {
   };
 
   // grabs all Activities from API, and sets it to state
-  // const getRecommendations = () => {
-  //   getRecommendationsByUserId().then((recommendationsFromAPI) => {
-  //     setRecommendations(recommendationsFromAPI);
-  //   });
-  // };
+  const getRecommendations = () => {
+    getRecommendationsByUserId(user).then((recommendationsFromAPI) => {
+      setRecommendations(recommendationsFromAPI);
+    });
+  };
 
   const getWishlist = () => {
     getWishlistByUserId(user).then((itemsFromAPI) => {
@@ -53,11 +55,11 @@ export const ListBoard = () => {
   };
 
   // deletes recommended when button clicked
-  // const handleDeleteRecommendation = (id) => {
-  //   deleteRecommendation(id).then(() => {
-  //     getRecommendations();
-  //   });
-  // };
+  const handleDeleteRecommendation = (id) => {
+    deleteRecommendation(id).then(() => {
+      getRecommendations();
+    });
+  };
 
   // deletes wishlist item when button clicked
   const handleDeleteWishlist = (id) => {
@@ -73,7 +75,7 @@ export const ListBoard = () => {
   // invokes all 3 functions to pull info from API and saves them to state on first render only
   useEffect(() => {
     getProviders();
-    // getRecommendations();
+    getRecommendations();
     getWishlist();
   }, []);
 
@@ -110,14 +112,14 @@ export const ListBoard = () => {
                 </button>
               </Link>
 
-              {/* {recommendations.map((recommendation) => (
+              {recommendations.map((recommendation) => (
                 <RecommendationCard
                   key={recommendation?.id}
                   recommendation={recommendation}
                   card="card-content-tag"
                   handleDeleteRecommendation={handleDeleteRecommendation}
                 />
-              ))} */}
+              ))}
             </div>
 
             <div className="column-center-lists">

@@ -25,8 +25,8 @@ import { JournalEditForm } from "../../src/components/journals/JournalEditForm";
 import { ListBoard } from "../../src/components/lists/ListBoard";
 import { ProviderForm } from "../../src/components/lists/ProviderForm";
 import { ProviderEditForm } from "../../src/components/lists/ProviderEditForm";
-// import { RecommendationForm } from "../../src/components/lists/RecommendationForm";
-// import { RecommendationEditForm } from "../../src/components/lists/RecommendationEditForm";
+import { RecommendationForm } from "../../src/components/lists/RecommendationForm";
+import { RecommendationEditForm } from "../../src/components/lists/RecommendationEditForm";
 import { WishlistForm } from "../../src/components/lists/WishlistForm";
 import { WishlistEditForm } from "../../src/components/lists/WishlistEditForm";
 import { PrintGroceryList } from "../../src/components/groceries/GroceryPrint";
@@ -142,13 +142,13 @@ export const ApplicationViews = () => {
         <ProviderEditForm />
       </Route>
 
-      {/* <Route exact path="/recommendations/create">
+      <Route exact path="/recommendations/create">
         <RecommendationForm />
       </Route>
 
       <Route exact path="/recommendations/:recommendationId(\d+)/edit">
         <RecommendationEditForm />
-      </Route> */}
+      </Route>
 
       <Route exact path="/wishlists/create">
         <WishlistForm />

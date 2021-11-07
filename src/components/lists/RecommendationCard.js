@@ -1,5 +1,5 @@
 //Author: Susie Stanley
-//Purpose: Creates and displays individual provider cards for a single provider that is passed as a prop
+//Purpose: Creates and displays individual recommendation cards for a single recommendation that is passed as a prop
 
 import React from "react";
 import { useHistory } from "react-router-dom";
@@ -7,49 +7,56 @@ import { FaEdit, FaTrash } from "react-icons/fa";
 import "./List.css";
 import "../LifeHacker.css";
 
-export const ProviderCard = ({ provider, handleDelete }) => {
+export const RecommendationCard = ({
+  recommendation,
+  handleDeleteRecommendation,
+}) => {
   const history = useHistory();
 
   const handleEdit = () => {
-    history.push(`/lists/${provider?.id}/edit`);
+    history.push(`/recommendations/${recommendation?.id}/edit`);
   };
 
   return (
     <>
-      <div className="provider-card-lists">
-        <div className="provider-wrapper-lists">
-          <div className="provider-name-lists provider-title-lists">
-            {provider?.name}
+      <div className="recommendation-card-lists">
+        <div className="recommendation-wrapper-lists">
+          <div className="recommendation-title-lists">
+            {recommendation?.name}
           </div>
 
-          <div className="provider-service-lists">
-            <div className="bold-lists">Service:</div>
-            <div className="right-lists">{provider?.service}</div>
+          <div className="recommendation-type-lists">
+            <div className="rec-bold-lists">Type: </div>
+            <div className="rec-right-lists">{recommendation?.type}</div>
           </div>
 
-          <div className="provider-text-lists">
-            <div className="bold-lists">Notes:</div>
-            <div className="right-lists constrain">{provider?.notes}</div>
+          <div className="recommendation-from-lists">
+            <div className="rec-bold-lists">From: </div>
+            <div className="rec-right-lists constrain">
+              {recommendation?.from}
+            </div>
           </div>
 
-          <div className="provider-stars-lists">
-            <div className="bold-lists city-spacer">Rating:</div>
-            <div className="right-lists city-spacer">{provider?.stars}</div>
+          <div className="recommendation-notes-lists">
+            <div className="rec-bold-lists">Notes: </div>
+            <div className="rec-right-lists constrain">
+              {recommendation?.notes}
+            </div>
           </div>
 
-          <div className="provider-icons-lists">
+          <div className="recommendation-icons-lists">
             <div
-              className="provider-delete-lists"
-              onClick={() => handleEdit(provider?.id)}
+              className="recommendation-delete-lists"
+              onClick={() => handleEdit(recommendation?.id)}
             >
-              <FaEdit className="provider-edit-icon-lists" />
+              <FaEdit className="recommendation-edit-icon-lists" />
             </div>
 
             <div
-              className="provider-delete-lists"
-              onClick={() => handleDelete(provider?.id)}
+              className="recommendation-delete-lists"
+              onClick={() => handleDeleteRecommendation(recommendation?.id)}
             >
-              <FaTrash className="provider-delete-icon-lists" />
+              <FaTrash className="recommendation-delete-icon-lists" />
             </div>
           </div>
         </div>
