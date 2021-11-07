@@ -84,7 +84,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   flex-direction: row;
   justify-content: center;
   align-content: center;
-  padding: 0px;
+  padding-right: 10px;
   margin: 15px;
   white-space: nowrap;
   /* border: 2px solid yellow; */
@@ -105,6 +105,7 @@ input.checkbox-todoboard:hover {
 .todo-complete label {
   font-size: 18px;
   align-self: center;
+  padding-left: 3px;
 }
 
 .todo-icons {

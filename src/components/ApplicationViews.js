@@ -23,7 +23,12 @@ import { JournalBoard } from "../../src/components/journals/JournalBoard";
 import { JournalForm } from "../../src/components/journals/JournalForm";
 import { JournalEditForm } from "../../src/components/journals/JournalEditForm";
 import { ListBoard } from "../../src/components/lists/ListBoard";
+import { ProviderForm } from "../../src/components/lists/ProviderForm";
 import { ProviderEditForm } from "../../src/components/lists/ProviderEditForm";
+import { RecommendationForm } from "../../src/components/lists/RecommendationForm";
+import { RecommendationEditForm } from "../../src/components/lists/RecommendationEditForm";
+import { WishlistForm } from "../../src/components/lists/WishlistForm";
+import { WishlistEditForm } from "../../src/components/lists/WishlistEditForm";
 import { PrintGroceryList } from "../../src/components/groceries/GroceryPrint";
 
 export const ApplicationViews = () => {
@@ -129,8 +134,28 @@ export const ApplicationViews = () => {
         <ListBoard />
       </Route>
 
-      <Route exact path="/activities/:activityId(\d+)/edit">
+      <Route exact path="/providers/create">
+        <ProviderForm />
+      </Route>
+
+      <Route exact path="/providers/:providerId(\d+)/edit">
         <ProviderEditForm />
+      </Route>
+
+      <Route exact path="/recommendations/create">
+        <RecommendationForm />
+      </Route>
+
+      <Route exact path="/recommendations/:recommendationId(\d+)/edit">
+        <RecommendationEditForm />
+      </Route>
+
+      <Route exact path="/wishlists/create">
+        <WishlistForm />
+      </Route>
+
+      <Route exact path="/wishlists/:wishlistId(\d+)/edit">
+        <WishlistEditForm />
       </Route>
 
       <Route exact path="/groceries/print">

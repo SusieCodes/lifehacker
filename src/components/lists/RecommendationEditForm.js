@@ -1,64 +1,73 @@
 //Author: Susie Stanley
-//Purpose: Creates and displays form for user to edit an existing provider
+//Purpose: Creates and displays form for user to edit an existing recommendation
 
 import React, { useState, useEffect } from "react";
-import { updateProvider, getProviderById } from "./ListManager";
+import { updateRecommendation, getRecommendationById } from "./ListManager";
 import { useParams, useHistory } from "react-router-dom";
 import { WelcomeBar } from "../navbar/WelcomeBar";
 import "./List.css";
 import "../LifeHacker.css";
 
-export const ProviderEditForm = () => {
-  const [provider, setProvider] = useState({
-    title: "",
-    text: "",
-    dayTime: Date.now(),
+export const RecommendationEditForm = () => {
+  const [recommendation, setRecommendation] = useState({
+    name: "",
+    type: "",
+    from: "",
+    notes: "",
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
 
   const [isLoading, setIsLoading] = useState(false);
   const [conflictDialog, setConflictDialog] = useState(false);
 
-  const { providerId } = useParams();
+  const { recommendationId } = useParams();
   const history = useHistory();
 
   const handleFieldChange = (evt) => {
-    const stateToChange = { ...provider };
+    const stateToChange = { ...recommendation };
     stateToChange[evt.target.id] = evt.target.value;
-    setProvider(stateToChange);
+    setRecommendation(stateToChange);
   };
 
-  const updateExistingProvider = (evt) => {
+  const updateExistingRecommendation = (evt) => {
     evt.preventDefault();
 
     // This is an edit, so we need the id
-    const editedProvider = {
-      id: providerId,
-      title: provider?.title,
-      text: provider?.text,
-      dayTime: Date.now(),
+    const editedRecommendation = {
+      id: recommendationId,
+      name: recommendation?.name,
+      type: recommendation?.type,
+      from: recommendation?.from,
+      notes: recommendation?.notes,
       userId: parseInt(sessionStorage.getItem("lifehacker_user")),
     };
 
-    if (provider?.title === "" || provider?.text === "") {
+    if (
+      recommendation?.name === "" ||
+      recommendation?.type === "" ||
+      recommendation?.from === "" ||
+      recommendation?.notes === ""
+    ) {
       setConflictDialog(true);
       setIsLoading(false);
     } else {
-      updateProvider(editedProvider).then(() => history.push("/providers"));
+      updateRecommendation(editedRecommendation).then(() =>
+        history.push("/lists")
+      );
     }
   };
 
   useEffect(() => {
-    getProviderById(providerId).then((provider) => {
-      setProvider(provider);
+    getRecommendationById(recommendationId).then((recommendation) => {
+      setRecommendation(recommendation);
       setIsLoading(false);
     });
-  }, [providerId]);
+  }, [recommendationId]);
 
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Edit Provider" />
+        <WelcomeBar title="Edit Recommendation" />
 
         <div className="form-flex">
           <fieldset className="form">
@@ -74,28 +83,54 @@ export const ProviderEditForm = () => {
               </button>
             </dialog>
             <div className="form__group">
-              <label htmlFor="name">Title: </label>
+              <label htmlFor="name">Name: </label>
               <input
                 type="text"
-                id="title"
-                maxLength="29"
+                id="name"
+                maxLength="25"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
-                value={provider?.title}
+                value={recommendation?.name}
               />
             </div>
 
             <div className="form__group">
-              <label htmlFor="text">Text: </label>
+              <label htmlFor="type">Type: </label>
               <input
                 type="text"
-                id="text"
-                maxLength="29"
+                id="type"
+                maxLength="15"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
-                value={provider?.text}
+                value={recommendation?.type}
+              />
+            </div>
+
+            <div className="form__group">
+              <label htmlFor="from">From: </label>
+              <input
+                type="text"
+                id="from"
+                maxLength="20"
+                required
+                className="form__group--edit"
+                onChange={handleFieldChange}
+                value={recommendation?.from}
+              />
+            </div>
+
+            <div className="form__group">
+              <label htmlFor="notes">Notes: </label>
+              <input
+                type="text"
+                id="notes"
+                maxLength="100"
+                required
+                className="form__group--edit"
+                onChange={handleFieldChange}
+                value={recommendation?.notes}
               />
             </div>
           </fieldset>
@@ -104,7 +139,7 @@ export const ProviderEditForm = () => {
             <button
               type="button"
               disabled={isLoading}
-              onClick={updateExistingProvider}
+              onClick={updateExistingRecommendation}
               className="form-btn"
             >
               Submit

@@ -33,6 +33,13 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   /* border: 1px solid black; */
 }
 
+.sort-title-list {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
 /* ProviderCard styling */
 .provider-card-lists {
   display: flex;
@@ -144,15 +151,143 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   cursor: pointer;
 }
 
-/* start of individual wishlist card */
+/* .star-options {
+  font-size: 18px;
+  margin: 0px 10px;
+} */
+
+.star-wrapper {
+}
+
+select.star-options {
+  /* styling */
+  color: rgb(82, 207, 223);
+  width: 150px;
+  margin: 5px;
+  background-color: white;
+  border: thin solid darkgray;
+  border-radius: 5px;
+  display: inline-block;
+  font: inherit;
+  height: 40px;
+  padding: 0px 5px;
+}
+
+select.star-options:focus {
+  /* border: 0; */
+  border: 1px solid #c4f7fe;
+  outline-color: #c4f7fe;
+}
+
+/* RecommendationCard styling */
+.recommendation-card-lists {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  padding: 8px 20px;
+  margin: 5px 10px 15px;
+  border-radius: 5px;
+  background-color: #c8e6ea68;
+  /* border: 1px solid blue; */
+}
+
+.recommendation-wrapper-lists {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 5px;
+  margin: 0px;
+  /* border: 1px solid black; */
+}
+
+.recommendation-title-lists {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 5px 0px 20px;
+}
+
+.recommendation-type-lists,
+.recommendation-from-lists,
+.recommendation-notes-lists {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 2px 0px;
+}
+
+.rec-bold-lists {
+  font-size: 20px;
+  font-weight: 500;
+  margin-right: 10px;
+  width: 80px;
+  /* border: 1px solid red; */
+}
+
+.rec-right-lists {
+  font-size: 20px;
+}
+
+/* needed this extra div to make word wrap work */
+.text-wrapper-lists {
+  margin: 0px;
+  width: 100%;
+  padding: 0px;
+  /* border: 1px solid chartreuse; */
+}
+
+.recommendation-icons-lists {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0px 5px;
+  /* margin-bottom: 8px; */
+  /* border: 1px solid black; */
+}
+
+.recommendation-edit-icon-lists {
+  color: #2b2b2b;
+  padding: 0px;
+  margin: 0px 15px;
+  width: 35px;
+  height: 35px;
+  transition: all 0.2s ease-in-out;
+  /* border: 1px solid red; */
+}
+
+.recommendation-edit-icon-lists:hover {
+  transform: scale(1.5);
+  color: #41c5d8;
+  cursor: pointer;
+}
+
+.recommendation-delete-icon-lists {
+  color: #2b2b2b;
+  padding: 0px;
+  margin: 0px 15px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.2s ease-in-out;
+  /* border: 1px solid green; */
+}
+
+.recommendation-delete-icon-lists:hover {
+  transform: scale(1.5);
+  color: #d61212;
+  cursor: pointer;
+}
+
+/* Wishlist Card styling */
 .wishlist-card {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-size: 20px;
-  padding: 0px 10px;
-  margin: 10px;
+  padding: 5px 10px;
+  margin: 5px 10px 10px;
   border-radius: 5px;
   background-color: #c8e6ea68;
 }
@@ -179,6 +314,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   height: 20px;
   transition: all 0.2s ease-in-out;
   align-self: center;
+  color: #27c2d7;
 }
 
 .checkbox-label {
@@ -187,28 +323,28 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   margin: auto 5px;
 }
 
-input.checkbox-wishlist {
+/* input.checkbox-wishlist {
   align-self: center;
   width: 20px;
   height: 20px;
   transition: all 0.2s ease-in-out;
-}
+} */
 
-input.checkbox-wishlist:hover {
+.checkbox-wishlist:hover {
   transform: scale(1.5);
   color: #27c2d7;
 }
 
-input[type="checkbox"]:checked {
+/* input[type="checkbox"]:checked {
   color: #c8e6ea;
   border: 1px solid #c8e6ea;
-}
+} */
 
-input[type="checkbox"]:checked:after {
+/* input[type="checkbox"]:checked:after {
   background-color: #c8e6ea;
   color: #c8e6ea;
   border: 1px solid #c8e6ea;
-}
+} */
 
 .wishlist-icons {
   display: flex;

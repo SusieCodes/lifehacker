@@ -8,12 +8,10 @@ import "./List.css";
 import "../LifeHacker.css";
 
 export const ProviderCard = ({ provider, handleDeleteProvider }) => {
-  console.log("providercard invoked");
-
   const history = useHistory();
 
   const handleEdit = () => {
-    history.push(`/lists/${provider?.id}/edit`);
+    history.push(`/providers/${provider?.id}/edit`);
   };
 
   return (

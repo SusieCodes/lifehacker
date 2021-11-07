@@ -9,10 +9,12 @@ import "./List.css";
 import "../LifeHacker.css";
 
 export const ProviderEditForm = () => {
+  // Defining initial state of the form inputs with useState()
   const [provider, setProvider] = useState({
-    title: "",
-    text: "",
-    dayTime: Date.now(),
+    name: "",
+    service: "",
+    notes: "",
+    stars: "",
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
 
@@ -34,17 +36,22 @@ export const ProviderEditForm = () => {
     // This is an edit, so we need the id
     const editedProvider = {
       id: providerId,
-      title: provider?.title,
-      text: provider?.text,
-      dayTime: Date.now(),
+      name: provider?.name,
+      service: provider?.service,
+      notes: provider?.notes,
+      stars: provider?.stars,
       userId: parseInt(sessionStorage.getItem("lifehacker_user")),
     };
 
-    if (provider?.title === "" || provider?.text === "") {
+    if (
+      provider.name === "" ||
+      provider.service === "" ||
+      provider.notes === "" ||
+      provider.stars === ""
+    ) {
       setConflictDialog(true);
-      setIsLoading(false);
     } else {
-      updateProvider(editedProvider).then(() => history.push("/providers"));
+      updateProvider(editedProvider).then(() => history.push("/lists"));
     }
   };
 
@@ -73,30 +80,61 @@ export const ProviderEditForm = () => {
                 Close
               </button>
             </dialog>
+
             <div className="form__group">
-              <label htmlFor="name">Title: </label>
+              <label htmlFor="name">Name: </label>{" "}
               <input
                 type="text"
-                id="title"
-                maxLength="29"
+                id="name"
+                maxLength="25"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
-                value={provider?.title}
+                value={provider?.name}
               />
             </div>
 
             <div className="form__group">
-              <label htmlFor="text">Text: </label>
+              <label htmlFor="service">Service: </label>
               <input
                 type="text"
-                id="text"
-                maxLength="29"
+                id="service"
+                maxLength="20"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
-                value={provider?.text}
+                value={provider?.service}
               />
+            </div>
+            <div className="form__group">
+              <label htmlFor="notes">Notes: </label>
+              <input
+                type="text"
+                id="notes"
+                maxLength="200"
+                required
+                className="form__group--edit"
+                onChange={handleFieldChange}
+                value={provider?.notes}
+              />
+            </div>
+            <div className="star-wrapper">
+              <label for="stars">Select # of Stars: </label>
+              <select
+                name="stars"
+                id="stars"
+                required
+                className="star-options"
+                onChange={handleFieldChange}
+                value={provider?.stars}
+              >
+                <option value=""></option>
+                <option value="★">★</option>
+                <option value="★★">★★</option>
+                <option value="★★★">★★★</option>
+                <option value="★★★★">★★★★</option>
+                <option value="★★★★★">★★★★★</option>
+              </select>
             </div>
           </fieldset>
 
