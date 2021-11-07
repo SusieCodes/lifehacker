@@ -1,6 +1,5 @@
 import { Route } from "react-router-dom";
 import { Dashboard } from "../../src/components/dashboard/Dashboard";
-// import { Sidebar } from "../../src/components/sidebar/Sidebar";
 import { ConnectionBoard } from "./connections/ConnectionBoard";
 import { ConnectionForm } from "../../src/components/connections/ConnectionForm";
 import { ConnectionEditForm } from "../../src/components/connections/ConnectionEditForm";
@@ -23,6 +22,8 @@ import { GroceryEditForm } from "../../src/components/groceries/GroceryEditForm"
 import { JournalBoard } from "../../src/components/journals/JournalBoard";
 import { JournalForm } from "../../src/components/journals/JournalForm";
 import { JournalEditForm } from "../../src/components/journals/JournalEditForm";
+import { ListBoard } from "../../src/components/lists/ListBoard";
+import { ProviderEditForm } from "../../src/components/lists/ProviderEditForm";
 import { PrintGroceryList } from "../../src/components/groceries/GroceryPrint";
 
 export const ApplicationViews = () => {
@@ -122,6 +123,14 @@ export const ApplicationViews = () => {
 
       <Route exact path="/journals/:journalId(\d+)/edit">
         <JournalEditForm />
+      </Route>
+
+      <Route exact path="/lists">
+        <ListBoard />
+      </Route>
+
+      <Route exact path="/activities/:activityId(\d+)/edit">
+        <ProviderEditForm />
       </Route>
 
       <Route exact path="/groceries/print">

@@ -134,7 +134,7 @@ export const ActivityEditForm = () => {
             <div className="form__group">
               <label htmlFor="date">Date:</label>
               <input
-                type="text"
+                type="date"
                 id="date"
                 required
                 className="form__group--edit"

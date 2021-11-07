@@ -40,35 +40,30 @@ export const ActivityTagBoard = () => {
           return evt.tagId === 1;
         });
         setPersonalActivities(personal);
-        console.log("personal array is", personal);
 
         // sets family activities to state
         let family = copyOfActivities.filter((evt) => {
           return evt.tagId === 2;
         });
         setFamilyActivities(family);
-        console.log("personal array is", family);
 
         // sets work activities to state
         let work = copyOfActivities.filter((evt) => {
           return evt.tagId === 3;
         });
         setWorkActivities(work);
-        console.log("personal array is", work);
 
         // sets community activities to state
         let community = copyOfActivities.filter((evt) => {
           return evt.tagId === 4;
         });
         setCommunityActivities(community);
-        console.log("personal array is", community);
 
         // sets school activities to state
         let school = copyOfActivities.filter((evt) => {
           return evt.tagId === 5;
         });
         setSchoolActivities(school);
-        console.log("personal array is", school);
       }
     );
   };
@@ -95,6 +90,9 @@ export const ActivityTagBoard = () => {
           <div className="section-flex__content">
             <Link to={`/activities/create`}>
               <button className="add-activity">+ Add Activity</button>
+              <Link to={`/activities`}>
+                <button className="add-activity">Back</button>
+              </Link>
             </Link>
           </div>
 
