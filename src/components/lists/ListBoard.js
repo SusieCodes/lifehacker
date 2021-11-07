@@ -2,10 +2,16 @@
 //Purpose: Defines component ActivityBoard that renders a list of all the upcoming and past activities
 
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { ActivityTagCard } from "../activities/ActivityTagCard";
+// import { Link } from "react-router-dom";
 import { ProviderCard } from "./ProviderCard";
-import { getProvidersByUserId, deleteProvider } from "./ListManager";
+// import { RecommendationCard } from "./RecommendationCard";
+import { WishlistCard } from "./WishlistCard";
+import {
+  getProvidersByUserId,
+  getWishlistByUserId,
+  deleteProvider,
+  deleteWishlist,
+} from "./ListManager";
 import { WelcomeBar } from "../../components/navbar/WelcomeBar";
 import "./List.css";
 import "../LifeHacker.css";
@@ -14,7 +20,7 @@ export const ListBoard = () => {
   // The initial states are empty arrays
   const [providers, setProviders] = useState([]);
   // const [recommendations, setRecommendations] = useState([]);
-  // const [wishlist, setWishlist] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
 
   // grabs all Providers from API, and sets it to state
   const getProviders = () => {
@@ -30,11 +36,11 @@ export const ListBoard = () => {
   //   });
   // };
 
-  // const getWishlist = () => {
-  //   getWishlistByUserId().then((wishlistFromAPI) => {
-  //     setWishlist(wishlistFromAPI);
-  //   });
-  // };
+  const getWishlist = () => {
+    getWishlistByUserId().then((wishlistFromAPI) => {
+      setWishlist(wishlistFromAPI);
+    });
+  };
 
   // deletes Activity when button clicked
   const handleDeleteProvider = (id) => {
@@ -51,17 +57,17 @@ export const ListBoard = () => {
   // };
 
   // deletes Activity when button clicked
-  // const handleDeleteWishlist = (id) => {
-  //   deleteWishlist(id).then(() => {
-  //     getWishlist();
-  //   });
-  // };
+  const handleDeleteWishlist = (id) => {
+    deleteWishlist(id).then(() => {
+      getWishlist();
+    });
+  };
 
   // invokes all 3 functions to pull info from API and saves them to state on first render only
   useEffect(() => {
     getProviders();
     // getRecommendations();
-    // getWishlist();
+    getWishlist();
   }, []);
 
   return (
@@ -104,14 +110,14 @@ export const ListBoard = () => {
                 <div className="sort-title">WISHLIST</div>
               </div>
 
-              {/* {wishlist.map((item) => (
+              {wishlist.map((item) => (
                 <WishlistCard
                   key={item?.id}
                   item={item}
                   card="card-content-tag"
-                  handleDelete={handleDelete}
+                  handleDelete={handleDeleteWishlist}
                 />
-              ))} */}
+              ))}
             </div>
           </div>
         </div>
