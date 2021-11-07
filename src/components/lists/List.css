@@ -33,6 +33,13 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   /* border: 1px solid black; */
 }
 
+.sort-title-list {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
 /* ProviderCard styling */
 .provider-card-lists {
   display: flex;
@@ -151,7 +158,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   flex-direction: row;
   justify-content: space-between;
   font-size: 20px;
-  padding: 0px 10px;
+  padding: 5px 10px;
   margin: 10px;
   border-radius: 5px;
   background-color: #c8e6ea68;
@@ -179,6 +186,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   height: 20px;
   transition: all 0.2s ease-in-out;
   align-self: center;
+  color: #27c2d7;
 }
 
 .checkbox-label {
@@ -187,28 +195,28 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   margin: auto 5px;
 }
 
-input.checkbox-wishlist {
+/* input.checkbox-wishlist {
   align-self: center;
   width: 20px;
   height: 20px;
   transition: all 0.2s ease-in-out;
-}
+} */
 
-input.checkbox-wishlist:hover {
+.checkbox-wishlist:hover {
   transform: scale(1.5);
   color: #27c2d7;
 }
 
-input[type="checkbox"]:checked {
+/* input[type="checkbox"]:checked {
   color: #c8e6ea;
   border: 1px solid #c8e6ea;
-}
+} */
 
-input[type="checkbox"]:checked:after {
+/* input[type="checkbox"]:checked:after {
   background-color: #c8e6ea;
   color: #c8e6ea;
   border: 1px solid #c8e6ea;
-}
+} */
 
 .wishlist-icons {
   display: flex;

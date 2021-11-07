@@ -8,7 +8,7 @@ import { WelcomeBar } from "../navbar/WelcomeBar";
 import "./List.css";
 import "../LifeHacker.css";
 
-export const ProviderEditForm = () => {
+export const WishlistEditForm = () => {
   const [provider, setProvider] = useState({
     title: "",
     text: "",

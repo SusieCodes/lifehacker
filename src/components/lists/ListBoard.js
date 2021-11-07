@@ -2,7 +2,7 @@
 //Purpose: Defines component ActivityBoard that renders a list of all the upcoming and past activities
 
 import React, { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ProviderCard } from "./ProviderCard";
 // import { RecommendationCard } from "./RecommendationCard";
 import { WishlistCard } from "./WishlistCard";
@@ -88,9 +88,12 @@ export const ListBoard = () => {
         <div className="section-flex">
           <div className="board-container__lists">
             <div className="column-center-lists">
-              <div className="sort-title-icon">
-                <div className="sort-title">SERVICE PROVIDERS</div>
-              </div>
+              <div className="sort-title-list">SERVICE PROVIDERS</div>
+
+              <Link to={`/providers/create`}>
+                <button className="add-provider">+ Add Provider</button>
+              </Link>
+
               {providers.map((provider) => (
                 <ProviderCard
                   key={provider?.id}
@@ -102,9 +105,14 @@ export const ListBoard = () => {
             </div>
 
             <div className="column-center-lists">
-              <div className="sort-title-icon">
-                <div className="sort-title">RECOMMENDATIONS</div>
-              </div>
+              <div className="sort-title-list">RECOMMENDATIONS</div>
+
+              <Link to={`/recommendations/create`}>
+                <button className="add-recommendation">
+                  + Add Recommendation
+                </button>
+              </Link>
+
               {/* {recommendations.map((recommendation) => (
                 <RecommendationCard
                   key={recommendation?.id}
@@ -116,9 +124,11 @@ export const ListBoard = () => {
             </div>
 
             <div className="column-center-lists">
-              <div className="sort-title-icon">
-                <div className="sort-title">WISHLIST</div>
-              </div>
+              <div className="sort-title-list">WISHLIST</div>
+
+              <Link to={`/wishlists/create`}>
+                <button className="add-wishlist">+ Add Wishlist</button>
+              </Link>
 
               {wishlist.map((wishlist) => (
                 <WishlistCard
