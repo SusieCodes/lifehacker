@@ -4,9 +4,7 @@
 const url = "http://localhost:8088";
 
 export const getProvidersByUserId = (userId) => {
-  return fetch(`${url}/providers/?userId=${userId}&_sort=date&_order=asc`).then(
-    (res) => res.json()
-  );
+  return fetch(`${url}/providers/?userId=${userId}`).then((res) => res.json());
 };
 
 export const addProvider = (newProvider) => {
@@ -78,9 +76,7 @@ export const updateRecommendation = (editedRecommendation) => {
 };
 
 export const getWishlistByUserId = (userId) => {
-  return fetch(`${url}/wishlists/?userId=${userId}&_sort=date&_order=asc`).then(
-    (res) => res.json()
-  );
+  return fetch(`${url}/wishlists/?userId=${userId}`).then((res) => res.json());
 };
 
 export const addWishlist = (newWishlist) => {
@@ -111,4 +107,16 @@ export const updateWishlist = (editedWishlist) => {
     },
     body: JSON.stringify(editedWishlist),
   }).then((data) => data.json());
+};
+
+export const completeWishlist = (id) => {
+  return fetch(`${url}/wishlists/${id}`, {
+    method: "PATCH",
+    body: JSON.stringify({
+      isCompleted: true,
+    }),
+    headers: {
+      "Content-type": "application/json",
+    },
+  }).then((res) => res.json());
 };

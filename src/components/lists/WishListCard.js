@@ -3,11 +3,16 @@
 
 import React from "react";
 import { useHistory } from "react-router-dom";
-// import { GrCheckbox } from "react-icons/gr";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import "./List.css";
 
-export const WishlistCard = ({ wishlist, handleDelete }) => {
+export const WishlistCard = ({
+  wishlist,
+  handleDeleteWishlist,
+  handleCompleteWishlist,
+}) => {
+  console.log("wishlist.item is ", wishlist?.item);
+
   const handleEdit = () => {
     history.push(`/lists/${wishlist.id}/edit`);
   };
@@ -18,20 +23,32 @@ export const WishlistCard = ({ wishlist, handleDelete }) => {
     <>
       <div className="wishlist-card">
         <div className="wishlist-info">
-          <div>{wishlist.text}</div>
+          <div>{wishlist?.item}</div>
+        </div>
+        <div className="wishlist-complete">
+          {/* <GrCheckbox
+            className="checkbox-wishlist"
+            onClick={() => handleCheckWishlist(wishlist?.id)}
+          /> */}
+          <input
+            type="checkbox"
+            className="checkbox-wishlist"
+            onClick={() => handleCompleteWishlist(wishlist?.id)}
+          />
+          <label className="checkbox-label">Complete </label>
         </div>
 
         <div className="wishlist-icons">
           <div
             className="wishlist-delete"
-            onClick={() => handleEdit(wishlist.id)}
+            onClick={() => handleEdit(wishlist?.id)}
           >
             <FaEdit className="wishlist-edit-icon" />
           </div>
 
           <div
             className="wishlist-delete"
-            onClick={() => handleDelete(wishlist.id)}
+            onClick={() => handleDeleteWishlist(wishlist?.id)}
           >
             <FaTrash className="wishlist-delete-icon" />
           </div>

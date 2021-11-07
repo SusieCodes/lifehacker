@@ -7,7 +7,9 @@ import { FaEdit, FaTrash } from "react-icons/fa";
 import "./List.css";
 import "../LifeHacker.css";
 
-export const ProviderCard = ({ provider, handleDelete }) => {
+export const ProviderCard = ({ provider, handleDeleteProvider }) => {
+  console.log("providercard invoked");
+
   const history = useHistory();
 
   const handleEdit = () => {
@@ -47,7 +49,7 @@ export const ProviderCard = ({ provider, handleDelete }) => {
 
             <div
               className="provider-delete-lists"
-              onClick={() => handleDelete(provider?.id)}
+              onClick={() => handleDeleteProvider(provider?.id)}
             >
               <FaTrash className="provider-delete-icon-lists" />
             </div>
