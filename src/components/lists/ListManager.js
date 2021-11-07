@@ -96,11 +96,11 @@ export const deleteWishlist = (id) => {
 };
 
 export const getWishlistById = (wishlistId) => {
-  return fetch(`${url}/wishlist/${wishlistId}`).then((res) => res.json());
+  return fetch(`${url}/wishlists/${wishlistId}`).then((res) => res.json());
 };
 
 export const updateWishlist = (editedWishlist) => {
-  return fetch(`${url}/wishlist/${editedWishlist.id}`, {
+  return fetch(`${url}/wishlists/${editedWishlist.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

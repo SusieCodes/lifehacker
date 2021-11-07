@@ -1,71 +1,68 @@
 //Author: Susie Stanley
-//Purpose: Creates and displays form for user to edit an existing provider
+//Purpose: Creates and displays form for user to edit an existing wishlist
 
 import React, { useState, useEffect } from "react";
-import { updateProvider, getProviderById } from "./ListManager";
+import { updateWishlist, getWishlistById } from "./ListManager";
 import { useParams, useHistory } from "react-router-dom";
 import { WelcomeBar } from "../navbar/WelcomeBar";
 import "./List.css";
 import "../LifeHacker.css";
 
 export const WishlistEditForm = () => {
-  const [provider, setProvider] = useState({
-    title: "",
-    text: "",
-    dayTime: Date.now(),
+  // Defining initial state of the form inputs with useState()
+  const [wishlist, setWishlist] = useState({
+    item: "",
+    isCompleted: false,
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
 
   const [isLoading, setIsLoading] = useState(false);
   const [conflictDialog, setConflictDialog] = useState(false);
 
-  const { providerId } = useParams();
+  const { wishlistId } = useParams();
   const history = useHistory();
 
   const handleFieldChange = (evt) => {
-    const stateToChange = { ...provider };
+    const stateToChange = { ...wishlist };
     stateToChange[evt.target.id] = evt.target.value;
-    setProvider(stateToChange);
+    setWishlist(stateToChange);
   };
 
-  const updateExistingProvider = (evt) => {
+  const updateExistingWishlist = (evt) => {
     evt.preventDefault();
 
     // This is an edit, so we need the id
-    const editedProvider = {
-      id: providerId,
-      title: provider?.title,
-      text: provider?.text,
-      dayTime: Date.now(),
+    const editedWishlist = {
+      id: wishlistId,
+      item: wishlist?.item,
+      isCompleted: wishlist?.isCompleted,
       userId: parseInt(sessionStorage.getItem("lifehacker_user")),
     };
 
-    if (provider?.title === "" || provider?.text === "") {
+    if (wishlist.item === "") {
       setConflictDialog(true);
       setIsLoading(false);
     } else {
-      updateProvider(editedProvider).then(() => history.push("/providers"));
+      updateWishlist(editedWishlist).then(() => history.push("/lists"));
     }
   };
 
   useEffect(() => {
-    getProviderById(providerId).then((provider) => {
-      setProvider(provider);
+    getWishlistById(wishlistId).then((wishlist) => {
+      setWishlist(wishlist);
       setIsLoading(false);
     });
-  }, [providerId]);
+  }, [wishlistId]);
 
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Edit Provider" />
+        <WelcomeBar title="Edit Wishlist" />
 
         <div className="form-flex">
           <fieldset className="form">
             <dialog className="dialog" open={conflictDialog}>
-              <div className="dialog-forms">
-                Please make sure all fields are filled
-              </div>
+              <div className="dialog-forms">Please enter a wishlist item</div>
               <button
                 className="button-close"
                 onClick={(e) => setConflictDialog(false)}
@@ -74,28 +71,15 @@ export const WishlistEditForm = () => {
               </button>
             </dialog>
             <div className="form__group">
-              <label htmlFor="name">Title: </label>
+              <label htmlFor="item">Item: </label>
               <input
                 type="text"
-                id="title"
-                maxLength="29"
+                id="item"
+                maxLength="25"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
-                value={provider?.title}
-              />
-            </div>
-
-            <div className="form__group">
-              <label htmlFor="text">Text: </label>
-              <input
-                type="text"
-                id="text"
-                maxLength="29"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                value={provider?.text}
+                value={wishlist?.item}
               />
             </div>
           </fieldset>
@@ -104,7 +88,7 @@ export const WishlistEditForm = () => {
             <button
               type="button"
               disabled={isLoading}
-              onClick={updateExistingProvider}
+              onClick={updateExistingWishlist}
               className="form-btn"
             >
               Submit

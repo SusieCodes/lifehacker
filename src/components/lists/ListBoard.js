@@ -26,9 +26,7 @@ export const ListBoard = () => {
 
   // grabs all Providers from API, and sets it to state
   const getProviders = () => {
-    console.log("getproviders invoked");
     getProvidersByUserId(user).then((providersFromAPI) => {
-      console.log("providersFromAPI is", providersFromAPI);
       setProviders(providersFromAPI);
     });
   };
@@ -41,7 +39,6 @@ export const ListBoard = () => {
   // };
 
   const getWishlist = () => {
-    console.log("getwishlist invoked");
     getWishlistByUserId(user).then((itemsFromAPI) => {
       let itemsNeeded = itemsFromAPI.filter((obj) => obj.isCompleted === false);
       setWishlist(itemsNeeded);

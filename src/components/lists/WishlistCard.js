@@ -11,10 +11,8 @@ export const WishlistCard = ({
   handleDeleteWishlist,
   handleCompleteWishlist,
 }) => {
-  console.log("wishlist.item is ", wishlist?.item);
-
   const handleEdit = () => {
-    history.push(`/lists/${wishlist.id}/edit`);
+    history.push(`/wishlists/${wishlist.id}/edit`);
   };
 
   const history = useHistory();
@@ -26,10 +24,6 @@ export const WishlistCard = ({
           <div>{wishlist?.item}</div>
         </div>
         <div className="wishlist-complete">
-          {/* <GrCheckbox
-            className="checkbox-wishlist"
-            onClick={() => handleCheckWishlist(wishlist?.id)}
-          /> */}
           <input
             type="checkbox"
             className="checkbox-wishlist"

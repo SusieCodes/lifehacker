@@ -151,6 +151,34 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   cursor: pointer;
 }
 
+/* .star-options {
+  font-size: 18px;
+  margin: 0px 10px;
+} */
+
+.star-wrapper {
+}
+
+select.star-options {
+  /* styling */
+  color: rgb(82, 207, 223);
+  width: 150px;
+  margin: 5px;
+  background-color: white;
+  border: thin solid darkgray;
+  border-radius: 5px;
+  display: inline-block;
+  font: inherit;
+  height: 40px;
+  padding: 0px 5px;
+}
+
+select.star-options:focus {
+  /* border: 0; */
+  border: 1px solid #c4f7fe;
+  outline-color: #c4f7fe;
+}
+
 /* start of individual wishlist card */
 .wishlist-card {
   width: 100%;
