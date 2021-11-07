@@ -4,6 +4,7 @@ import * as IoIcons from "react-icons/io";
 import * as Io5Icons from "react-icons/io5";
 import * as GoIcons from "react-icons/go";
 import * as MdIcons from "react-icons/md";
+import * as FaIcons from "react-icons/fa";
 
 export const SidebarData = [
   {
@@ -46,6 +47,12 @@ export const SidebarData = [
     title: "Journal",
     path: "/journals",
     icon: <IoIcons.IoIosJournal />,
+    cName: "side-text",
+  },
+  {
+    title: "Extra Lists",
+    path: "/lists",
+    icon: <FaIcons.FaListUl />,
     cName: "side-text",
   },
   {
