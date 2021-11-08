@@ -380,9 +380,30 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 }
 
 .form__group--email {
-  /* margin: 0px 5px 5px 0px; */
   margin: 0px;
   /* border: 1px solid black; */
+}
+
+select.zodiac-options {
+  color: gray;
+  width: 150px;
+  margin: 5px;
+  background-color: white;
+  border: thin solid darkgray;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 20px;
+  height: 40px;
+  padding: 0px 5px;
+}
+
+.zodiac-placeholder {
+  color: rgb(201, 201, 201);
+}
+
+select.zodiac-options:focus {
+  border: 1px solid #c4f7fe;
+  outline-color: #c4f7fe;
 }
 
 .form__group--enneagram {

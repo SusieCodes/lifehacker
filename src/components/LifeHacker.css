@@ -58,7 +58,7 @@ body {
   flex-direction: column;
   align-content: center;
   justify-content: flex-start;
-  min-height: 1300px;
+  /* min-height: 1300px; */
 }
 
 h2 {
@@ -85,7 +85,7 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px 40px 0px;
+  padding: 30px 40px 0px;
   margin: 0px;
 }
 

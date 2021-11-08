@@ -3,6 +3,7 @@ import { getConnectionById, deleteConnection } from "./ConnectionManager";
 import { useParams, useHistory } from "react-router-dom";
 import { WelcomeBar } from "../../components/navbar/WelcomeBar";
 import { formatDateNoWeekday } from "../helper";
+// import { dateFormatWithSuffix } from "../helper";
 import { Checkbox } from "@mui/material";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import { changeFave } from "./ConnectionManager";
@@ -164,7 +165,8 @@ export const ConnectionDetail = () => {
                       <div className="c-indent">
                         {connection.bday !== "" ? (
                           <>{formatDateNoWeekday(connection?.bday)}</>
-                        ) : null}
+                        ) : // <>{dateFormatWithSuffix(connection?.bday)}</>
+                        null}
                       </div>
                     </div>
                   </div>

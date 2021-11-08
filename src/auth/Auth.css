@@ -15,6 +15,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 
 .container-login {
   min-width: 1800px;
+  min-height: 100vh;
   margin: 200px auto;
   /* border: 1px solid pink; */
 }

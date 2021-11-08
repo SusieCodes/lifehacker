@@ -364,14 +364,43 @@ export const ConnectionEditForm = () => {
               maxLength="50"
             />
 
-            <Input
+            <div className="form__group">
+              <div className="zodiac-wrapper">
+                <label htmlFor="zodiac">Zodiac: </label>
+                <select
+                  name="zodiac"
+                  id="zodiac"
+                  className="zodiac-options"
+                  onChange={handleFieldChange}
+                  value={connection?.zodiac}
+                >
+                  <option className="zodiac-placeholder" value="">
+                    Choose...
+                  </option>
+                  <option value="Aries">Aries</option>
+                  <option value="Taurus">Taurus</option>
+                  <option value="Gemini">Gemini</option>
+                  <option value="Cancer">Cancer</option>
+                  <option value="Leo">Leo</option>
+                  <option value="Virgo">Virgo</option>
+                  <option value="Libra">Libra</option>
+                  <option value="Scorpio">Scorpio</option>
+                  <option value="Sagittarius">Sagittarius</option>
+                  <option value="Capricorn">Capricorn</option>
+                  <option value="Aquarius">Aquarius</option>
+                  <option value="Pisces">Pisces</option>
+                </select>
+              </div>
+            </div>
+
+            {/* <Input
               id="zodiac"
               value={connection?.zodiac}
               onChange={handleFieldChange}
               label="Zodiac: "
               required={false}
               maxLength="15"
-            />
+            /> */}
 
             <Input
               id="personality"
