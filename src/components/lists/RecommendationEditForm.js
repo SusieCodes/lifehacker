@@ -2,7 +2,12 @@
 //Purpose: Creates and displays form for user to edit an existing recommendation
 
 import React, { useState, useEffect } from "react";
-import { updateRecommendation, getRecommendationById } from "./ListManager";
+import {
+  updateRecommendation,
+  getRecommendationById,
+  getReclist,
+} from "./ListManager";
+import Select from "react-select";
 import { useParams, useHistory } from "react-router-dom";
 import { WelcomeBar } from "../navbar/WelcomeBar";
 import "./List.css";
@@ -11,7 +16,7 @@ import "../LifeHacker.css";
 export const RecommendationEditForm = () => {
   const [recommendation, setRecommendation] = useState({
     name: "",
-    type: "",
+    reclistId: "",
     from: "",
     notes: "",
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
@@ -19,9 +24,30 @@ export const RecommendationEditForm = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [conflictDialog, setConflictDialog] = useState(false);
+  const [recset, setRecset] = useState([]);
 
   const { recommendationId } = useParams();
   const history = useHistory();
+
+  const handleChange = (evt) => {
+    console.log("evt inside handleChange is ", evt);
+    /* Because we are changing a state object or array,
+		we are creating a copy, making changes, and then setting state */
+    const newRecommendation = { ...recommendation };
+    let selectedVal = evt;
+    console.log("selectedVal inside handleChange is ", selectedVal);
+
+    /* Sets the property to the new value
+		using object bracket notation. */
+    newRecommendation[evt.saveTo] = selectedVal;
+    console.log(
+      "newRecommendation[evt.saveTo] inside handleChange is ",
+      newRecommendation[evt.saveTo]
+    );
+    console.log("newRecommendation inside handleChange is ", newRecommendation);
+    // update state
+    setRecommendation(newRecommendation);
+  };
 
   const handleFieldChange = (evt) => {
     const stateToChange = { ...recommendation };
@@ -31,20 +57,21 @@ export const RecommendationEditForm = () => {
 
   const updateExistingRecommendation = (evt) => {
     evt.preventDefault();
+    setIsLoading(true);
 
     // This is an edit, so we need the id
     const editedRecommendation = {
       id: recommendationId,
       name: recommendation?.name,
-      type: recommendation?.type,
+      reclistId: recommendation?.reclist?.id,
       from: recommendation?.from,
       notes: recommendation?.notes,
-      userId: parseInt(sessionStorage.getItem("lifehacker_user")),
+      userId: recommendation?.userId,
     };
 
     if (
       recommendation?.name === "" ||
-      recommendation?.type === "" ||
+      recommendation?.reclistId === "" ||
       recommendation?.from === "" ||
       recommendation?.notes === ""
     ) {
@@ -63,6 +90,12 @@ export const RecommendationEditForm = () => {
       setIsLoading(false);
     });
   }, [recommendationId]);
+
+  useEffect(() => {
+    getReclist().then((allRecs) => {
+      setRecset(allRecs);
+    });
+  }, []);
 
   return (
     <>
@@ -95,16 +128,27 @@ export const RecommendationEditForm = () => {
               />
             </div>
 
-            <div className="form__group">
-              <label htmlFor="type">Type: </label>
-              <input
-                type="text"
-                id="type"
-                maxLength="15"
-                required
-                className="form__group--edit"
-                onChange={handleFieldChange}
-                value={recommendation?.type}
+            <div className="dropdown-flex">
+              <div className="rec-selection">Select Type: </div>
+              <Select
+                className="recommend"
+                onChange={handleChange}
+                id="reclist"
+                options={recset}
+                width="300px"
+                value={recommendation?.reclist}
+                theme={(theme) => ({
+                  ...theme,
+                  borderRadius: 5,
+                  border: 3,
+                  colors: {
+                    ...theme.colors,
+                    primary25: "#c8e6ea68",
+                    primary: "#c8e6ea",
+                    background: "#c8e6ea68",
+                    color: "#c8e6ea68",
+                  },
+                })}
               />
             </div>
 

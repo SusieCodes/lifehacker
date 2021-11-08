@@ -27,7 +27,9 @@ export const RecommendationCard = ({
 
           <div className="recommendation-type-lists">
             <div className="rec-bold-lists">Type: </div>
-            <div className="rec-right-lists">{recommendation?.type}</div>
+            <div className="rec-right-lists">
+              {recommendation?.reclist?.value}
+            </div>
           </div>
 
           <div className="recommendation-from-lists">

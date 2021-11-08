@@ -4,6 +4,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import { GrCheckbox } from "react-icons/gr";
 import "./List.css";
 
 export const WishlistCard = ({
@@ -52,11 +53,15 @@ export const WishlistCard = ({
         <div className="wishlist-row2">
           <div className="wishlist-info">
             <div className="wishlist-title">Link To Buy: </div>
-            <div className="wishlist-link">
-              <a href={wishlist?.url} target="_blank" rel="noreferrer">
-                {wishlist?.store}
-              </a>
-            </div>
+            {wishlist?.url ? (
+              <div className="wishlist-link">
+                <a href={wishlist?.url} target="_blank" rel="noreferrer">
+                  {wishlist?.store}
+                </a>
+              </div>
+            ) : (
+              <div className="wishlist-link">{wishlist?.store}</div>
+            )}
           </div>
 
           <div className="wishlist-row3">
@@ -71,19 +76,18 @@ export const WishlistCard = ({
   );
 };
 
-// export const wishlistPrintCard = ({ wishlist }) => {
-//   return (
-//     <>
-//       <div className="print-wishlist-card">
-//         <div className="print-wishlist-text">{wishlist.text}</div>
-
-//         <div className="print-wishlist-icons">
-//           <div className="wishlist-check">
-//             {/* <MdCheckBoxOutlineBlank className="wishlist-check-icon" /> */}
-//             <GrCheckbox className="wishlist-check-icon" />
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
+export const WishlistPrintCard = ({ wishlist }) => {
+  return (
+    <>
+      <div className="print-wishlist-card">
+        <div className="print-wishlist-item">{wishlist?.item}</div>
+        <div className="print-wishlist-icons">
+          <div className="print-wishlist-store">@ {wishlist?.store}</div>
+          <div className="wishlist-check">
+            <GrCheckbox className="wishlist-check-icon" />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};

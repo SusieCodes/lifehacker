@@ -229,19 +229,15 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 }
 
 /* tag dropdown styling */
-.tag-selection {
-  font-size: 22px;
-  align-self: center;
-}
-
-/* .css-1hb7zxy-IndicatorsContainer {
-  font-size: 18px !important;
-} */
-
 .dropdown-flex {
   display: flex;
   flex-direction: row;
   align-content: center;
+}
+
+.tag-selection {
+  font-size: 22px;
+  align-self: center;
 }
 
 /* this controls the dropdown container */

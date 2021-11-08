@@ -81,7 +81,7 @@ export const WishlistForm = () => {
               <input
                 type="text"
                 id="item"
-                maxLength="25"
+                maxLength="20"
                 onChange={handleControlledInputChange}
                 required
                 autoFocus
@@ -96,7 +96,7 @@ export const WishlistForm = () => {
               <input
                 type="text"
                 id="store"
-                maxLength="15"
+                maxLength="10"
                 onChange={handleControlledInputChange}
                 required
                 className="form__group--edit"
