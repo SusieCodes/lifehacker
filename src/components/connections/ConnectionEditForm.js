@@ -6,6 +6,7 @@ import { update, getConnectionById } from "./ConnectionManager";
 import { useParams, useHistory } from "react-router-dom";
 import { WelcomeBar } from "../../components/navbar/WelcomeBar";
 import { Input } from "../Input";
+import { AiOutlineInfoCircle } from "react-icons/ai";
 import "./Connections.css";
 import "../LifeHacker.css";
 
@@ -393,32 +394,82 @@ export const ConnectionEditForm = () => {
               </div>
             </div>
 
-            {/* <Input
-              id="zodiac"
-              value={connection?.zodiac}
-              onChange={handleFieldChange}
-              label="Zodiac: "
-              required={false}
-              maxLength="15"
-            /> */}
+            <div className="form__group--personality">
+              <label htmlFor="personality" className="personality-label">
+                <div className="personality-text">Personality: </div>
+                <div className="personality-icon">
+                  <a
+                    href="https://www.16personalities.com/personality-types"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <AiOutlineInfoCircle className="p-icon" />
+                  </a>
+                </div>
+              </label>
+              <select
+                name="personality"
+                id="personality"
+                className="personality-options"
+                onChange={handleFieldChange}
+                value={connection?.personality}
+              >
+                <option className="personality-placeholder" value="">
+                  Choose...
+                </option>
+                <option value="INTJ">INTJ - Architect</option>
+                <option value="INTP">INTP - Logician</option>
+                <option value="ENTJ">ENTJ - Commander</option>
+                <option value="ENTP">ENTP - Debater</option>
+                <option value="INFJ">INFJ - Advocate</option>
+                <option value="INFP">INFP- Mediator</option>
+                <option value="ENFJ">ENFJ - Protagonist</option>
+                <option value="ENFP">ENFP - Campaigner</option>
+                <option value="ISTJ">ISTJ - Logistician</option>
+                <option value="ISFJ">ISFJ - Defender</option>
+                <option value="ESTJ">ESTJ - Executive</option>
+                <option value="ESFJ">ESFJ - Consul</option>
+                <option value="ISTP">ISTP - Virtuoso</option>
+                <option value="ISFP">ISFP - Adventurer</option>
+                <option value="ESTP">ESTP - Entrepreneur</option>
+                <option value="ESFP">ESFP - Entertainer</option>
+              </select>
+            </div>
 
-            <Input
-              id="personality"
-              value={connection?.personality}
-              onChange={handleFieldChange}
-              label="Personality: "
-              required={false}
-              maxLength="20"
-            />
-
-            <Input
-              id="enneagram"
-              value={connection?.enneagram}
-              onChange={handleFieldChange}
-              label="Enneagram: "
-              required={false}
-              maxLength="8"
-            />
+            <div className="form__group--enneagram">
+              <label htmlFor="enneagram" className="enneagram-label">
+                <div className="enneagram-text">Enneagram: </div>
+                <div className="enneagram-icon">
+                  <a
+                    href="https://www.enneagraminstitute.com/how-the-enneagram-system-works"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <AiOutlineInfoCircle className="e-icon" />
+                  </a>
+                </div>
+              </label>
+              <select
+                name="enneagram"
+                id="enneagram"
+                className="enneagram-options"
+                onChange={handleFieldChange}
+                value={connection?.enneagram}
+              >
+                <option className="enneagram-placeholder" value="">
+                  Choose...
+                </option>
+                <option value="1">Type 1</option>
+                <option value="2">Type 2</option>
+                <option value="3">Type 3</option>
+                <option value="4">Type 4</option>
+                <option value="5">Type 5</option>
+                <option value="6">Type 6</option>
+                <option value="7">Type 7</option>
+                <option value="8">Type 8</option>
+                <option value="9">Type 9</option>
+              </select>
+            </div>
           </fieldset>
 
           <div className="form-btns">
