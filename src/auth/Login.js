@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "../components/LifeHacker.css";
+import logo from "../images/lifehackerbanner.svg";
 import "./Auth.css";
 import "../../src/components/LifeHacker.css";
 
@@ -54,25 +55,29 @@ export const Login = () => {
       <div className="form-flex">
         <div className="form-flex__inner">
           <form className="form-login" onSubmit={handleLogin}>
-            <div className="form-login__headline">Welcome To Life Hacker</div>
-            <div className="form-login__subtitle">Please Sign In</div>
+            <div className="form-login__headline">Welcome To</div>
+            <div className="logo-wrapper-login">
+              <img className="logo-login" src={logo} alt="LifeHacker Logo" />
+            </div>
 
             <fieldset className="login-fieldset">
-              <label htmlFor="inputEmail" className="login-label">
-                Email address:
-              </label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                className="form__group--edit"
-                placeholder="name@email.com"
-                required
-                autoFocus
-                value={loginUser.email}
-                onChange={handleInputChange}
-              />
-
+              <div className="form-login__subtitle">Please Sign In</div>
+              <div className="login-wrapper">
+                <label htmlFor="inputEmail" className="login-label">
+                  Email address:
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  className="form__group--edit"
+                  placeholder="name@email.com"
+                  required
+                  autoFocus
+                  value={loginUser.email}
+                  onChange={handleInputChange}
+                />
+              </div>
               <div className="form-btns">
                 <button type="submit" className="login-btn">
                   Sign In

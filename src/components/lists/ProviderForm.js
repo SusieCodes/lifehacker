@@ -132,7 +132,7 @@ export const ProviderForm = () => {
                 onChange={handleControlledInputChange}
                 value={provider?.stars}
               >
-                <option value=""></option>
+                <option value="" selected="selected"></option>
                 <option value="★">★</option>
                 <option value="★★">★★</option>
                 <option value="★★★">★★★</option>

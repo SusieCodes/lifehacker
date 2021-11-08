@@ -126,7 +126,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 }
 
 /* GroceryPrintCard styling */
-.print-page {
+.print-page-grocery {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -136,10 +136,10 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   padding: 50px 30px 30px;
   margin: 10px 0px;
   min-width: 1800px;
-  min-height: 1000px;
+  min-height: 1100px;
 }
 
-.print-wrapper {
+.print-wrapper-grocery {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -147,6 +147,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   height: fit-content;
   border: 1px solid lightgray;
 }
+
 .print-grocery-container {
   align-self: center;
   flex: 1;

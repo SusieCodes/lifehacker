@@ -9,7 +9,9 @@ import { GroceryDashList } from "../groceries/GroceryDashList";
 import { NoteDashList } from "../notes/NoteDashList";
 import { JournalDashList } from "../journals/JournalDashList";
 import { ConnectionDashList } from "../connections/ConnectionDashList";
-import { formatDate } from "../helper";
+// import { formatDate } from "../helper";
+import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+
 import "../LifeHacker.css";
 import "../dashboard/Dashboard.css";
 
@@ -17,21 +19,7 @@ export const Dashboard = () => {
   return (
     <>
       <div className="page">
-        <div className="page-title__flex">
-          <div className="page-title__left">
-            Welcome{" "}
-            <span className="welcome-name">
-              {sessionStorage.getItem("lifehacker_username")}
-            </span>
-          </div>
-
-          <div className="page-title__headline">Dashboard</div>
-
-          <div className="page-title__right">
-            Today: &nbsp;&nbsp;
-            <span className="todays-date">{formatDate(Date.now())}</span>
-          </div>
-        </div>
+        <WelcomeBar title="Dashboard" />
 
         <div className="dashboard-grid">
           <div className="dashboard-grid__row1">

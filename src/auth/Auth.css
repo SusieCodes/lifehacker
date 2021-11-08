@@ -14,7 +14,10 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 */
 
 .container-login {
+  min-width: 1800px;
+  min-height: 100vh;
   margin: 200px auto;
+  /* border: 1px solid pink; */
 }
 
 .dialog {
@@ -42,19 +45,39 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   border-radius: 5px;
 }
 
+.logo-wrapper-login {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin: 0px auto 40px;
+}
+
+.logo-login {
+  width: 500px;
+  margin: auto auto;
+}
+
 form {
   background-color: #c8e6ea68;
 }
 
 .login-fieldset {
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  padding: 0px 30px 30px;
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  background-color: #c8e6ea68;
+}
+
+.login-wrapper {
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 30px;
-  border: none;
-  border-radius: 5px;
-  background-color: #c8e6ea68;
+  margin-bottom: 30px;
 }
 
 .form-login {
@@ -69,14 +92,14 @@ form {
 
 .form-login__headline {
   text-align: center;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 500;
   margin: 20px;
 }
 
 .form-login__subtitle {
   text-align: center;
-  font-size: 34px;
+  font-size: 30px;
   margin: 20px;
 }
 
@@ -117,4 +140,26 @@ form {
   font-size: 38px;
   font-weight: 500;
   margin: 20px;
+}
+
+.register-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  margin: 20px auto 30px;
+}
+
+.register-wrapper label {
+  text-align: left;
+}
+
+.register-name {
+  text-align: left;
+}
+
+.register-label {
+  margin: 0px 10px;
+  font-size: 24px;
+  font-weight: 500;
 }

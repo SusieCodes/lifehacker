@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import logo from "../images/lifehackerbanner.svg";
+
 import "./Auth.css";
 import "../../src/components/LifeHacker.css";
 
@@ -89,40 +91,49 @@ export const Register = () => {
       <div className="form-flex">
         <div className="form-flex__inner">
           <form className="form-login" onSubmit={handleRegister}>
-            <div className="form-register__headline">
-              Please Register for Life Hacker
+            <div className="form-register__headline">Please Register</div>
+            <div className="logo-wrapper-login">
+              <img className="logo-login" src={logo} alt="LifeHacker Logo" />
             </div>
             <fieldset className="login-fieldset">
-              <label htmlFor="name" className="login-label">
-                Name:
-              </label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                className="form__group--edit"
-                placeholder="Full Name"
-                required
-                autoFocus
-                value={registerUser.name}
-                onChange={handleInputChange}
-              />
+              <div className="register-wrapper">
+                <div className="register-name">
+                  <label htmlFor="name" className="register-label">
+                    Name:
+                  </label>
 
-              <label htmlFor="inputEmail" className="login-label login-indent">
-                Email address:
-              </label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                className="form__group--edit"
-                placeholder="name@email.com"
-                required
-                autofocus
-                value={registerUser.email}
-                onChange={handleInputChange}
-              />
-
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    className="form__group--edit"
+                    placeholder="Full Name"
+                    required
+                    autoFocus
+                    value={registerUser.name}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className="register-name">
+                  <label
+                    htmlFor="inputEmail"
+                    className="register-label login-indent"
+                  >
+                    Email address:
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    className="form__group--edit"
+                    placeholder="name@email.com"
+                    required
+                    autofocus
+                    value={registerUser.email}
+                    onChange={handleInputChange}
+                  />
+                </div>
+              </div>
               <div className="form-btns">
                 <button type="submit" className="login-btn">
                   Register

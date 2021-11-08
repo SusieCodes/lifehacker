@@ -434,7 +434,35 @@ export const ConnectionForm = () => {
             </div>
 
             <div className="form__group">
-              <label htmlFor="zodiac">Zodiac: </label>
+              <div className="zodiac-wrapper">
+                <label htmlFor="zodiac">Zodiac: </label>
+                <select
+                  name="zodiac"
+                  id="zodiac"
+                  className="zodiac-options"
+                  onChange={handleControlledInputChange}
+                  value={connection?.zodiac}
+                >
+                  <option className="zodiac-placeholder" value="">
+                    Choose...
+                  </option>
+                  <option value="Aries">Aries</option>
+                  <option value="Taurus">Taurus</option>
+                  <option value="Gemini">Gemini</option>
+                  <option value="Cancer">Cancer</option>
+                  <option value="Leo">Leo</option>
+                  <option value="Virgo">Virgo</option>
+                  <option value="Libra">Libra</option>
+                  <option value="Scorpio">Scorpio</option>
+                  <option value="Sagittarius">Sagittarius</option>
+                  <option value="Capricorn">Capricorn</option>
+                  <option value="Aquarius">Aquarius</option>
+                  <option value="Pisces">Pisces</option>
+                </select>
+              </div>
+            </div>
+
+            {/* <label htmlFor="zodiac">Zodiac: </label>
               <input
                 type="text"
                 id="zodiac"
@@ -443,8 +471,8 @@ export const ConnectionForm = () => {
                 className="form__group--edit"
                 placeholder=" Aquarius, Libra etc"
                 value={connection.zodiac}
-              />
-            </div>
+              /> */}
+            {/* </div> */}
 
             <div className="form__group">
               <label htmlFor="personality">Personality Type: </label>
