@@ -58,6 +58,7 @@ body {
   flex-direction: column;
   align-content: center;
   justify-content: flex-start;
+  min-height: 1300px;
 }
 
 h2 {

@@ -445,6 +445,28 @@ select.star-options:focus {
 }
 
 /* WishlistPrintCard styling */
+.print-page-wishlist {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 5px 5px 5px lightgray;
+  border-radius: 0px 0px 20px 20px;
+  padding: 50px 30px 30px;
+  margin: 10px 0px;
+  min-width: 1800px;
+  min-height: 1000px;
+}
+
+.print-wrapper-wishlist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  height: fit-content;
+  border: 1px solid lightgray;
+}
+
 .print-wishlist-container {
   align-self: center;
   flex: 1;

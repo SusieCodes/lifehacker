@@ -47,8 +47,8 @@ export const PrintGroceryList = () => {
   });
 
   return (
-    <div className="print-page">
-      <div className="print-wrapper">
+    <div className="print-page-grocery">
+      <div className="print-wrapper-grocery">
         <ComponentToPrint ref={componentRef} />
         <div className="print-btn-flex">
           <button className="print-btn" onClick={handlePrint}>

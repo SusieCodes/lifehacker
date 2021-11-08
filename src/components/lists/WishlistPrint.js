@@ -47,8 +47,8 @@ export const PrintWishlist = () => {
   });
 
   return (
-    <div className="print-page">
-      <div className="print-wrapper">
+    <div className="print-page-wishlist ">
+      <div className="print-wrapper-wishlist ">
         <ComponentToPrint ref={componentRef} />
         <div className="print-btn-flex">
           <button className="print-btn" onClick={handlePrint}>
