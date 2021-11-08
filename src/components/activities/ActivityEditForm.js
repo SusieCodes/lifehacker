@@ -22,8 +22,6 @@ export const ActivityEditForm = () => {
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
 
-  // const [activityTag, setActivityTag] = useState([]);
-  const [selectedValue, setSelectedValue] = useState(null);
   const [conflictDialog, setConflictDialog] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [tagset, setTagset] = useState([]);
@@ -32,14 +30,15 @@ export const ActivityEditForm = () => {
   const history = useHistory();
 
   const handleChange = (evt) => {
-    setSelectedValue(evt);
     /* Because we are changing a state object or array,
 		we are creating a copy, making changes, and then setting state */
     const newActivity = { ...activity };
-    let selectedVal = evt.id;
+    let selectedVal = evt;
+
     /* Sets the property to the new value
 		using object bracket notation. */
     newActivity[evt.saveTo] = selectedVal;
+
     // update state
     setActivity(newActivity);
   };
@@ -64,7 +63,7 @@ export const ActivityEditForm = () => {
       city: activity?.city,
       zipcode: activity?.zipcode,
       notes: activity?.notes,
-      tagId: activity?.tagId,
+      tagId: activity?.tag?.id,
       userId: activity?.userId,
     };
 
@@ -87,10 +86,6 @@ export const ActivityEditForm = () => {
     getActivityById(activityId).then((activity) => {
       setActivity(activity);
       setIsLoading(false);
-      setSelectedValue(activity.tag);
-      console.log("activity.tag in useEffect is ", activity.tag);
-      console.log("selectedValue in useEffects is ", selectedValue);
-      console.log("activity inside getActivity is ", activity);
     });
   }, [activityId]);
 
@@ -214,7 +209,8 @@ export const ActivityEditForm = () => {
                 id="tag"
                 options={tagset}
                 width="300px"
-                value={activity.tag}
+                // activity.tag is object that populates dropdown for this activity
+                value={activity?.tag}
                 theme={(theme) => ({
                   ...theme,
                   borderRadius: 5,

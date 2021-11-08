@@ -25,7 +25,6 @@ export const ActivityCard = ({ activity, handleDelete }) => {
               <div className="tag-image">
                 {activity?.tag?.icon ? (
                   <img
-                    // src={logo}
                     src={require(`../../images/${activity?.tag?.icon}`).default}
                     alt="icon"
                     className="tag-icon"

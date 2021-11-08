@@ -97,7 +97,6 @@ export const ListBoard = () => {
                 <ProviderCard
                   key={provider?.id}
                   provider={provider}
-                  card="card-content-tag"
                   handleDeleteProvider={handleDeleteProvider}
                 />
               ))}
@@ -116,7 +115,6 @@ export const ListBoard = () => {
                 <RecommendationCard
                   key={recommendation?.id}
                   recommendation={recommendation}
-                  card="card-content-tag"
                   handleDeleteRecommendation={handleDeleteRecommendation}
                 />
               ))}
@@ -137,6 +135,12 @@ export const ListBoard = () => {
                   handleCompleteWishlist={handleCompleteWishlist}
                 />
               ))}
+
+              <div className="section-flex__content">
+                <Link to={`/wishlists/print`}>
+                  <button className="wishlist-printable-btn">Print</button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

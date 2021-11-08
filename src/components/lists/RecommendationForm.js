@@ -1,20 +1,23 @@
 //Author: Susie Stanley
 //Purpose: Creates and displays an input form for user to add a recommendation
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { addRecommendation } from "./ListManager";
+import { addRecommendation, getReclist } from "./ListManager";
+import Select from "react-select";
 import { WelcomeBar } from "../../components/navbar/WelcomeBar";
 import "./List.css";
 import "../LifeHacker.css";
 
 export const RecommendationForm = () => {
   const [conflictDialog, setConflictDialog] = useState(false);
+  const [selectedValue, setSelectedValue] = useState(null);
+  const [recset, setRecset] = useState([]);
 
   // Defining initial state of the form inputs with useState()
   const [recommendation, setRecommendation] = useState({
     name: "",
-    type: "",
+    reclistId: "",
     from: "",
     notes: "",
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
@@ -25,16 +28,39 @@ export const RecommendationForm = () => {
   // When a field changes, it updates state
   // The return will re-render and display based on the values in state
   const ResetForm = () => {
+    setSelectedValue(null);
     setRecommendation({
       name: "",
-      type: "",
+      reclistId: "",
       from: "",
       notes: "",
       userId: parseInt(sessionStorage.getItem("lifehacker_user")),
     });
   };
 
-  const handleControlledInputChange = (evt) => {
+  const handleChange = (evt) => {
+    setSelectedValue(evt);
+    console.log("evt inside handlechange is ", evt);
+
+    /* Because we are changing a state object or array,
+		we are creating a copy, making changes, and then setting state */
+    const newRecommendation = { ...recommendation };
+    let selectedVal = evt.id;
+    console.log("selectedVal is inside handleChange", selectedVal);
+
+    /* Sets the property to the new value
+		using object bracket notation. */
+    newRecommendation[evt.saveTo] = selectedVal;
+    console.log(
+      "newRecommendation[evt.saveTo] inside handleChange is :",
+      newRecommendation[evt.saveTo]
+    );
+
+    // update state
+    setRecommendation(newRecommendation);
+  };
+
+  const handleFieldChange = (evt) => {
     /* Because we are changing a state object or array,
 		we are creating a copy, making changes, and then setting state */
     const newRecommendation = { ...recommendation };
@@ -43,7 +69,6 @@ export const RecommendationForm = () => {
     /* Sets the property to the new value
 		using object bracket notation. */
     newRecommendation[evt.target.id] = selectedVal;
-    console.log("evt.target.id is: ", evt.target.id);
     // update state
     setRecommendation(newRecommendation);
   };
@@ -62,6 +87,12 @@ export const RecommendationForm = () => {
       addRecommendation(recommendation).then(() => history.push("/lists"));
     }
   };
+
+  useEffect(() => {
+    getReclist().then((allRecs) => {
+      setRecset(allRecs);
+    });
+  }, []);
 
   return (
     <>
@@ -86,7 +117,7 @@ export const RecommendationForm = () => {
                 type="text"
                 id="name"
                 maxLength="25"
-                onChange={handleControlledInputChange}
+                onChange={handleFieldChange}
                 required
                 autoFocus
                 className="form__group--edit"
@@ -95,7 +126,30 @@ export const RecommendationForm = () => {
               />
             </div>
 
-            <div className="form__group">
+            <div className="dropdown-flex">
+              <div className="rec-selection">Select Type: </div>
+              <Select
+                onChange={handleChange}
+                id="reclist"
+                value={selectedValue}
+                options={recset}
+                width="300px"
+                theme={(theme) => ({
+                  ...theme,
+                  borderRadius: 5,
+                  border: 3,
+                  colors: {
+                    ...theme.colors,
+                    primary25: "#c8e6ea68",
+                    primary: "#c8e6ea",
+                    background: "#c8e6ea68",
+                    color: "#c8e6ea68",
+                  },
+                })}
+              />
+            </div>
+
+            {/* <div className="form__group">
               <label htmlFor="text">Type: </label>
               <input
                 type="text"
@@ -107,7 +161,7 @@ export const RecommendationForm = () => {
                 placeholder="Book, music..."
                 value={recommendation?.type}
               />
-            </div>
+            </div> */}
 
             <div className="form__group">
               <label htmlFor="from">From: </label>
@@ -115,7 +169,7 @@ export const RecommendationForm = () => {
                 type="text"
                 id="from"
                 maxLength="20"
-                onChange={handleControlledInputChange}
+                onChange={handleFieldChange}
                 required
                 className="form__group--edit"
                 placeholder="Who suggested?"
@@ -129,7 +183,7 @@ export const RecommendationForm = () => {
                 type="text"
                 id="notes"
                 maxLength="100"
-                onChange={handleControlledInputChange}
+                onChange={handleFieldChange}
                 required
                 className="form__group--edit"
                 placeholder="More Info"

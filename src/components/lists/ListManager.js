@@ -40,8 +40,8 @@ export const updateProvider = (editedProvider) => {
 
 // Recommendation fetch calls
 export const getRecommendationsByUserId = (userId) => {
-  return fetch(`${url}/recommendations/?userId=${userId}`).then((res) =>
-    res.json()
+  return fetch(`${url}/recommendations/?userId=${userId}&_expand=reclist`).then(
+    (res) => res.json()
   );
 };
 
@@ -62,9 +62,9 @@ export const deleteRecommendation = (id) => {
 };
 
 export const getRecommendationById = (recommendationId) => {
-  return fetch(`${url}/recommendations/${recommendationId}`).then((res) =>
-    res.json()
-  );
+  return fetch(
+    `${url}/recommendations/${recommendationId}?_expand=reclist`
+  ).then((res) => res.json());
 };
 
 export const updateRecommendation = (editedRecommendation) => {
@@ -75,6 +75,15 @@ export const updateRecommendation = (editedRecommendation) => {
     },
     body: JSON.stringify(editedRecommendation),
   }).then((data) => data.json());
+};
+
+export const getReclist = () => {
+  return fetch(`${url}/reclists`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((res) => res.json());
 };
 
 // Wishlist fetch calls

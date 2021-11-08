@@ -34,7 +34,9 @@ export const ProviderCard = ({ provider, handleDeleteProvider }) => {
 
           <div className="provider-stars-lists">
             <div className="bold-lists city-spacer">Rating:</div>
-            <div className="right-lists city-spacer">{provider?.stars}</div>
+            <div className="right-lists city-spacer star-color">
+              {provider?.stars}
+            </div>
           </div>
 
           <div className="provider-icons-lists">

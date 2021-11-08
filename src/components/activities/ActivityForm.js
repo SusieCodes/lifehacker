@@ -62,11 +62,12 @@ export const ActivityForm = () => {
     setActivity(newActivity);
   };
 
+  //takes user back to list
   const goBack = () => {
     history.push("/activities");
-  }; //takes user back to list
+  };
 
-  const handleControlledInputChange = (evt) => {
+  const handleFieldChange = (evt) => {
     /* Because we are changing a state object or array,
 		we are creating a copy, making changes, and then setting state */
     const newActivity = { ...activity };
@@ -120,7 +121,7 @@ export const ActivityForm = () => {
                 type="text"
                 id="name"
                 maxLength="18"
-                onChange={handleControlledInputChange}
+                onChange={handleFieldChange}
                 required
                 autoFocus
                 className="form__group--edit"
@@ -134,7 +135,7 @@ export const ActivityForm = () => {
               <input
                 type="date"
                 id="date"
-                onChange={handleControlledInputChange}
+                onChange={handleFieldChange}
                 required
                 className="form__group--edit"
                 value={activity.date}
@@ -146,7 +147,7 @@ export const ActivityForm = () => {
               <input
                 type="time"
                 id="time"
-                onChange={handleControlledInputChange}
+                onChange={handleFieldChange}
                 required
                 className="form__group--edit"
                 value={activity.time}
@@ -159,7 +160,7 @@ export const ActivityForm = () => {
                 type="text"
                 id="address"
                 maxLength="23"
-                onChange={handleControlledInputChange}
+                onChange={handleFieldChange}
                 required
                 className="form__group--edit"
                 placeholder=" Address of Activity"
@@ -173,7 +174,7 @@ export const ActivityForm = () => {
                 type="text"
                 id="city"
                 maxLength="23"
-                onChange={handleControlledInputChange}
+                onChange={handleFieldChange}
                 required
                 className="form__group--edit"
                 placeholder=" Name of City"
@@ -187,7 +188,7 @@ export const ActivityForm = () => {
                 type="text"
                 id="zipcode"
                 maxLength="10"
-                onChange={handleControlledInputChange}
+                onChange={handleFieldChange}
                 required
                 className="form__group--edit"
                 placeholder=" 90210 or V3C 2XR"
@@ -201,7 +202,7 @@ export const ActivityForm = () => {
                 type="text"
                 id="notes"
                 maxLength="60"
-                onChange={handleControlledInputChange}
+                onChange={handleFieldChange}
                 className="form__group--edit"
                 placeholder=" Bring gloves etc"
                 value={activity.notes}
