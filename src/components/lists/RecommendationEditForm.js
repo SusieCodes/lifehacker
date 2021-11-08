@@ -78,9 +78,7 @@ export const RecommendationEditForm = () => {
       setConflictDialog(true);
       setIsLoading(false);
     } else {
-      updateRecommendation(editedRecommendation).then(() =>
-        history.push("/lists")
-      );
+      updateRecommendation(editedRecommendation).then(() => history.goBack());
     }
   };
 

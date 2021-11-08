@@ -384,7 +384,9 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   /* border: 1px solid black; */
 }
 
-select.zodiac-options {
+select.zodiac-options,
+select.enneagram-options,
+select.personality-options {
   color: gray;
   width: 150px;
   margin: 5px;
@@ -397,23 +399,37 @@ select.zodiac-options {
   padding: 0px 5px;
 }
 
-.zodiac-placeholder {
+select.personality-options {
+  width: 240px;
+}
+
+select.enneagram-options {
+  width: 110px;
+}
+
+.zodiac-placeholder,
+.enneagram-placeholder,
+.personality-placeholder {
   color: rgb(201, 201, 201);
 }
 
-select.zodiac-options:focus {
+select.zodiac-options:focus,
+select.enneagram-options:focus,
+select.personality-options:focus {
   border: 1px solid #c4f7fe;
   outline-color: #c4f7fe;
 }
 
-.form__group--enneagram {
+.form__group--enneagram,
+.form__group--personality {
   display: flex;
   flex-direction: row;
   align-content: center;
   /* border: 1px solid black; */
 }
 
-.enneagram-label {
+.enneagram-label,
+.personality-label {
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -422,11 +438,13 @@ select.zodiac-options:focus {
   margin: 0px;
 }
 
-.enneagram-text {
+.enneagram-text,
+.personality-text {
   align-self: center;
 }
 
-.enneagram-icon {
+.enneagram-icon,
+.personality-icon {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -436,7 +454,8 @@ select.zodiac-options:focus {
   /* border: 1px solid blue; */
 }
 
-.enneagram-icon a {
+.enneagram-icon a,
+.personality-icon a {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -445,7 +464,8 @@ select.zodiac-options:focus {
   /* border: 1px solid red; */
 }
 
-.e-icon {
+.e-icon,
+.p-icon {
   color: rgb(82, 207, 223);
   cursor: pointer;
   width: 28px;

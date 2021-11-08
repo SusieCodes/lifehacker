@@ -462,29 +462,46 @@ export const ConnectionForm = () => {
               </div>
             </div>
 
-            {/* <label htmlFor="zodiac">Zodiac: </label>
-              <input
-                type="text"
-                id="zodiac"
-                maxLength="15"
-                onChange={handleControlledInputChange}
-                className="form__group--edit"
-                placeholder=" Aquarius, Libra etc"
-                value={connection.zodiac}
-              /> */}
-            {/* </div> */}
-
-            <div className="form__group">
-              <label htmlFor="personality">Personality Type: </label>
-              <input
-                type="text"
+            <div className="form__group--personality">
+              <label htmlFor="personality" className="personality-label">
+                <div className="personality-text">Personality: </div>
+                <div className="personality-icon">
+                  <a
+                    href="https://www.16personalities.com/personality-types"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <AiOutlineInfoCircle className="p-icon" />
+                  </a>
+                </div>
+              </label>
+              <select
+                name="personality"
                 id="personality"
-                maxLength="20"
+                className="personality-options"
                 onChange={handleControlledInputChange}
-                className="form__group--edit"
-                placeholder=" e.g. INTJ"
-                value={connection.personality}
-              />
+                value={connection?.personality}
+              >
+                <option className="personality-placeholder" value="">
+                  Choose...
+                </option>
+                <option value="INTJ">INTJ - Architect</option>
+                <option value="INTP">INTP - Logician</option>
+                <option value="ENTJ">ENTJ - Commander</option>
+                <option value="ENTP">ENTP - Debater</option>
+                <option value="INFJ">INFJ - Advocate</option>
+                <option value="INFP">INFP- Mediator</option>
+                <option value="ENFJ">ENFJ - Protagonist</option>
+                <option value="ENFP">ENFP - Campaigner</option>
+                <option value="ISTJ">ISTJ - Logistician</option>
+                <option value="ISFJ">ISFJ - Defender</option>
+                <option value="ESTJ">ESTJ - Executive</option>
+                <option value="ESFJ">ESFJ - Consul</option>
+                <option value="ISTP">ISTP - Virtuoso</option>
+                <option value="ISFP">ISFP - Adventurer</option>
+                <option value="ESTP">ESTP - Entrepreneur</option>
+                <option value="ESFP">ESFP - Entertainer</option>
+              </select>
             </div>
 
             <div className="form__group--enneagram">
@@ -500,15 +517,26 @@ export const ConnectionForm = () => {
                   </a>
                 </div>
               </label>
-              <input
-                type="text"
+              <select
+                name="enneagram"
                 id="enneagram"
-                maxLength="8"
+                className="enneagram-options"
                 onChange={handleControlledInputChange}
-                className="form__group--edit"
-                placeholder=" Number"
-                value={connection.enneagram}
-              />
+                value={connection?.enneagram}
+              >
+                <option className="enneagram-placeholder" value="">
+                  Choose...
+                </option>
+                <option value="1">Type 1</option>
+                <option value="2">Type 2</option>
+                <option value="3">Type 3</option>
+                <option value="4">Type 4</option>
+                <option value="5">Type 5</option>
+                <option value="6">Type 6</option>
+                <option value="7">Type 7</option>
+                <option value="8">Type 8</option>
+                <option value="9">Type 9</option>
+              </select>
             </div>
           </fieldset>
 
