@@ -176,7 +176,168 @@ select.star-options:focus {
   outline-color: #c4f7fe;
 }
 
+/* RecommendBoard styling */
+.board-container__rec {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  /* border: 1px solid green; */
+}
+
+/* this controls if blue cards start on left or are centered */
+.column-center-rec {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  padding: 10px 25px;
+  margin: 5px;
+  background-color: white;
+  border-radius: 5px;
+  /* border: 1px solid blue; */
+}
+
+.rec-icon-sort {
+  margin: auto auto;
+  width: 100%;
+  /* border: 1px solid yellow; */
+}
+
+.rec-card-wrapper {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: flex-start; */
+  flex-wrap: wrap;
+  /* border: 1px solid red; */
+}
+
+.rec-sort-title-icon {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  padding: 0px 30px;
+  margin: 10px 0px;
+  /* border: 5px solid blue; */
+}
+
+.rec-sort-title {
+  text-align: center;
+  align-self: center;
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0px 10px;
+  /* border: 5px solid black; */
+}
+
+.rec-sort-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  width: 60px;
+  height: 60px;
+  margin: 0px 10px;
+  /* border: 5px solid red; */
+}
+
+/* RecommendSortCard styling */
+.recommendation-card-sort {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  width: 400px;
+  padding: 12px 25px;
+  margin: 10px 10px 20px;
+  border-radius: 5px;
+  background-color: #c8e6ea68;
+  /* border: 1px solid blue; */
+}
+
+.recommendation-wrapper-sort {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  padding: 5px;
+  margin: 0px;
+  height: 100%;
+  /* border: 1px solid black; */
+}
+
+.recommendation-title-sort {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 2px 0px;
+  /* border: 3px solid aqua; */
+}
+
+.recommendation-name-sort,
+.recommendation-from-sort,
+.recommendation-note-sort {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  /* border: 1px solid black; */
+}
+
+.rec-from-notes-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  margin-top: 5px;
+  /* border: 1px solid red; */
+}
+
+.bold-sort {
+  font-weight: 500;
+  margin-right: 10px;
+  width: 70px;
+  /* border: 1px solid red; */
+}
+
+.rec-icons-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* border: 2px solid pink; */
+}
+
+.rec-icons-sort {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  color: #2b2b2b;
+  padding: 0px;
+  margin: 20px auto 0px;
+  transition: all 0.2s ease-in-out;
+  /* border: 3px solid yellow; */
+}
+
+.rec-delete-sort {
+  margin: auto 10px;
+}
+
+.rec-edit-icon-sort,
+.rec-delete-icon-sort {
+  width: 25px;
+  height: 25px;
+}
+
 /* RecommendationCard styling */
+.rec-button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
 .recommendation-card-lists {
   display: flex;
   flex-direction: column;

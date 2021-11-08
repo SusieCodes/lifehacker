@@ -446,9 +446,9 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   width: 80%;
 }
 
-.tag-icon-sort:hover {
+/* .tag-icon-sort:hover {
   cursor: pointer;
-}
+} */
 
 .activity-inner-wrapper-sort {
   display: flex;

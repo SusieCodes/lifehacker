@@ -105,11 +105,17 @@ export const ListBoard = () => {
             <div className="column-center-lists">
               <div className="sort-title-list">RECOMMENDATIONS</div>
 
-              <Link to={`/recommendations/create`}>
-                <button className="add-recommendation">
-                  + Add Recommendation
-                </button>
-              </Link>
+              <div className="rec-button-wrapper">
+                <Link to={`/recommendations/create`}>
+                  <button className="add-recommendation">
+                    + Add Recommendation
+                  </button>
+                </Link>
+
+                <Link to={`/recommendations`}>
+                  <button className="add-recommendation">Sort</button>
+                </Link>
+              </div>
 
               {recommendations.map((recommendation) => (
                 <RecommendationCard
