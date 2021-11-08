@@ -151,10 +151,7 @@ export const ProviderForm = () => {
               Reset Form
             </button>
 
-            <button
-              className="form-btn"
-              onClick={() => history.push("/providers")}
-            >
+            <button className="form-btn" onClick={() => history.push("/lists")}>
               Cancel
             </button>
           </div>

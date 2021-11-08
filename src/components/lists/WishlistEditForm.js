@@ -13,6 +13,9 @@ export const WishlistEditForm = () => {
   const [wishlist, setWishlist] = useState({
     item: "",
     isCompleted: false,
+    store: "",
+    url: "",
+    notes: "",
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
 
@@ -36,6 +39,9 @@ export const WishlistEditForm = () => {
       id: wishlistId,
       item: wishlist?.item,
       isCompleted: wishlist?.isCompleted,
+      store: wishlist?.store,
+      url: wishlist?.url,
+      notes: wishlist?.notes,
       userId: parseInt(sessionStorage.getItem("lifehacker_user")),
     };
 
@@ -80,6 +86,45 @@ export const WishlistEditForm = () => {
                 className="form__group--edit"
                 onChange={handleFieldChange}
                 value={wishlist?.item}
+              />
+            </div>
+
+            <div className="form__group">
+              <label htmlFor="store">Store: </label>
+              <input
+                type="text"
+                id="store"
+                maxLength="25"
+                required
+                className="form__group--edit"
+                onChange={handleFieldChange}
+                value={wishlist?.store}
+              />
+            </div>
+
+            <div className="form__group">
+              <label htmlFor="url">URL: </label>
+              <input
+                type="text"
+                id="url"
+                maxLength="400"
+                required
+                className="form__group--edit"
+                onChange={handleFieldChange}
+                value={wishlist?.url}
+              />
+            </div>
+
+            <div className="form__group">
+              <label htmlFor="notes">Notes: </label>
+              <input
+                type="text"
+                id="notes"
+                maxLength="120"
+                required
+                className="form__group--edit"
+                onChange={handleFieldChange}
+                value={wishlist?.notes}
               />
             </div>
           </fieldset>
