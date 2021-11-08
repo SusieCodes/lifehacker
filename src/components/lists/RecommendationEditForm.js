@@ -118,7 +118,7 @@ export const RecommendationEditForm = () => {
               <input
                 type="text"
                 id="name"
-                maxLength="25"
+                maxLength="28"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}

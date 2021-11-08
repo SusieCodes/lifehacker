@@ -24,12 +24,12 @@ export const RecommendSortCard = ({ recommendation, handleDelete }) => {
 
           <div className="rec-from-notes-wrapper">
             <div className="recommendation-from-sort">
-              <div className="bold-sort">From:</div>
+              <div className="rec-bold-sort">From:</div>
               <div className="right-sort">{recommendation?.from}</div>
             </div>
 
             <div className="recommendation-note-sort">
-              <div className="bold-sort">Notes:</div>
+              <div className="rec-bold-sort">Notes:</div>
               <div className="right-sort constrain">
                 {recommendation?.notes}
               </div>
