@@ -181,42 +181,29 @@ select.star-options:focus {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-content: flex-start;
+  align-content: center;
   /* border: 1px solid green; */
 }
 
 /* this controls if blue cards start on left or are centered */
 .column-center-rec {
-  flex: 1;
+  align-self: center;
+  width: 1316px;
   display: flex;
   flex-direction: column;
   align-content: flex-start;
   padding: 10px 25px;
-  margin: 5px;
+  margin: 7px 5px;
   background-color: white;
   border-radius: 5px;
   /* border: 1px solid blue; */
-}
-
-.rec-icon-sort {
-  margin: auto auto;
-  width: 100%;
-  /* border: 1px solid yellow; */
-}
-
-.rec-card-wrapper {
-  display: flex;
-  flex-direction: row;
-  /* justify-content: flex-start; */
-  flex-wrap: wrap;
-  /* border: 1px solid red; */
 }
 
 .rec-sort-title-icon {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-content: center;
   padding: 0px 30px;
   margin: 10px 0px;
@@ -243,6 +230,20 @@ select.star-options:focus {
   /* border: 5px solid red; */
 }
 
+.rec-icon-sort {
+  margin: auto auto;
+  width: 100%;
+  /* border: 1px solid yellow; */
+}
+
+.rec-card-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  /* border: 1px solid red; */
+}
+
 /* RecommendSortCard styling */
 .recommendation-card-sort {
   display: flex;
@@ -251,7 +252,7 @@ select.star-options:focus {
   align-content: flex-start;
   width: 400px;
   padding: 12px 25px;
-  margin: 10px 10px 20px;
+  margin: 10px 11px 20px;
   border-radius: 5px;
   background-color: #c8e6ea68;
   /* border: 1px solid blue; */
@@ -292,10 +293,10 @@ select.star-options:focus {
   /* border: 1px solid red; */
 }
 
-.bold-sort {
+.rec-bold-sort {
   font-weight: 500;
   margin-right: 10px;
-  width: 70px;
+  width: 60px;
   /* border: 1px solid red; */
 }
 
