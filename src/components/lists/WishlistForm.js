@@ -1,9 +1,9 @@
 //Author: Susie Stanley
-//Purpose: Creates and displays an input form for user to add a recommendation
+//Purpose: Creates and displays an input form for user to add a wishlist
 
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { addRecommendation } from "./ListManager";
+import { addWishlist } from "./ListManager";
 import { WelcomeBar } from "../../components/navbar/WelcomeBar";
 import "./List.css";
 import "../LifeHacker.css";
@@ -12,10 +12,11 @@ export const WishlistForm = () => {
   const [conflictDialog, setConflictDialog] = useState(false);
 
   // Defining initial state of the form inputs with useState()
-  const [recommendation, setRecommendation] = useState({
-    name: "",
-    type: "",
-    from: "",
+  const [wishlist, setWishlist] = useState({
+    item: "",
+    isCompleted: false,
+    store: "",
+    url: "",
     notes: "",
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
@@ -25,10 +26,11 @@ export const WishlistForm = () => {
   // When a field changes, it updates state
   // The return will re-render and display based on the values in state
   const ResetForm = () => {
-    setRecommendation({
-      name: "",
-      type: "",
-      from: "",
+    setWishlist({
+      item: "",
+      isCompleted: false,
+      store: "",
+      url: "",
       notes: "",
       userId: parseInt(sessionStorage.getItem("lifehacker_user")),
     });
@@ -37,36 +39,30 @@ export const WishlistForm = () => {
   const handleControlledInputChange = (evt) => {
     /* Because we are changing a state object or array,
 		we are creating a copy, making changes, and then setting state */
-    const newRecommendation = { ...recommendation };
+    const newWishlist = { ...wishlist };
     let selectedVal = evt.target.value;
 
     /* Sets the property to the new value
 		using object bracket notation. */
-    newRecommendation[evt.target.id] = selectedVal;
-    console.log("evt.target.id is: ", evt.target.id);
+    newWishlist[evt.target.id] = selectedVal;
     // update state
-    setRecommendation(newRecommendation);
+    setWishlist(newWishlist);
   };
 
   const handleSave = (evt) => {
     evt.preventDefault(); //Prevents the browser from submitting the form
 
-    if (
-      recommendation.name === "" ||
-      recommendation.type === "" ||
-      recommendation.from === "" ||
-      recommendation.notes === ""
-    ) {
+    if (wishlist.item === "" || wishlist.store === "") {
       setConflictDialog(true);
     } else {
-      addRecommendation(recommendation).then(() => history.push("/lists"));
+      addWishlist(wishlist).then(() => history.push("/lists"));
     }
   };
 
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Add New Recommendation" />
+        <WelcomeBar title="Add New Wishlist" />
 
         <div className="form-flex">
           <fieldset className="form">
@@ -81,45 +77,44 @@ export const WishlistForm = () => {
             </dialog>
 
             <div className="form__group">
-              <label htmlFor="name">Name: </label>
+              <label htmlFor="item">Item: </label>
               <input
                 type="text"
-                id="name"
+                id="item"
                 maxLength="25"
                 onChange={handleControlledInputChange}
                 required
                 autoFocus
                 className="form__group--edit"
-                placeholder="Recommendation"
-                value={recommendation?.name}
+                placeholder="Wishlist item"
+                value={wishlist?.item}
               />
             </div>
 
             <div className="form__group">
-              <label htmlFor="text">Type: </label>
+              <label htmlFor="store">Store: </label>
               <input
                 type="text"
-                id="type"
+                id="store"
                 maxLength="15"
                 onChange={handleControlledInputChange}
                 required
                 className="form__group--edit"
-                placeholder="Book, music..."
-                value={recommendation?.type}
+                placeholder="Where to buy?"
+                value={wishlist?.store}
               />
             </div>
 
             <div className="form__group">
-              <label htmlFor="from">From: </label>
+              <label htmlFor="url">URL: </label>
               <input
                 type="text"
-                id="from"
-                maxLength="20"
+                id="url"
+                maxLength="400"
                 onChange={handleControlledInputChange}
-                required
                 className="form__group--edit"
-                placeholder="Who suggested?"
-                value={recommendation?.from}
+                placeholder="Add link here"
+                value={wishlist?.url}
               />
             </div>
 
@@ -128,12 +123,11 @@ export const WishlistForm = () => {
               <input
                 type="text"
                 id="notes"
-                maxLength="100"
+                maxLength="120"
                 onChange={handleControlledInputChange}
-                required
                 className="form__group--edit"
                 placeholder="More Info"
-                value={recommendation?.notes}
+                value={wishlist?.notes}
               />
             </div>
           </fieldset>
