@@ -5,6 +5,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import { SidebarData } from "./SidebarData";
+import { SidebarLogout } from "./SidebarData";
+
 import { getUserById } from "../users/UserManager";
 import { IconContext } from "react-icons";
 import logo from "../../images/lifehackerbanner.svg";
@@ -65,32 +67,38 @@ export const Sidebar = () => {
                   </Link>
                 </div>
                 <div className="toolbar-right">
-                  <div className="user-avatar">
-                    <Link to={`/users/${user?.id}`}>
-                      {user?.image ? (
-                        <img
-                          src={user?.image}
-                          alt={user?.name}
-                          className="avatar-photo"
-                        />
-                      ) : (
-                        <img
-                          src={require(`../../images/default.png`).default}
-                          alt="default-user"
-                          className="avatar-photo"
-                        />
-                      )}
-                    </Link>
-                  </div>
-                  <button
-                    className="logout"
-                    onClick={() => {
-                      sessionStorage.removeItem("lifehacker_user");
-                      history.push("/login");
-                    }}
-                  >
-                    Logout
-                  </button>
+                  {sessionStorage.getItem("lifehacker_user") ? (
+                    <>
+                      <div className="user-avatar">
+                        {user?.image ? (
+                          <Link to={`/users/${user?.id}`}>
+                            <img
+                              src={user?.image}
+                              alt={user?.name}
+                              className="avatar-photo"
+                            />
+                          </Link>
+                        ) : (
+                          <img
+                            src={require(`../../images/default.png`).default}
+                            alt="default-user"
+                            className="avatar-photo"
+                          />
+                        )}
+                      </div>
+                      <button
+                        className="logout"
+                        onClick={() => {
+                          sessionStorage.removeItem("lifehacker_user");
+                          history.push("/login");
+                        }}
+                      >
+                        Logout
+                      </button>
+                    </>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
             </div>
@@ -111,6 +119,22 @@ export const Sidebar = () => {
                 return (
                   <li key={index} className={item.cName}>
                     <Link to={item.path}>
+                      {item.icon}
+                      <span>{item.title}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+              {SidebarLogout.map((item, index) => {
+                return (
+                  <li key={index} className={item.cName}>
+                    <Link
+                      to={item.path}
+                      onClick={() => {
+                        sessionStorage.removeItem("lifehacker_user");
+                        history.push("/login");
+                      }}
+                    >
                       {item.icon}
                       <span>{item.title}</span>
                     </Link>

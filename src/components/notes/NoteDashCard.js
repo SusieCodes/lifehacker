@@ -4,8 +4,14 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { Checkbox } from "@mui/material";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
+import { changeFave } from "./NoteManager";
 
 export const NoteDashCard = ({ recentNote, handleDelete }) => {
+  const handleFave = (e) => {
+    changeFave(recentNote.id, e.target.checked);
+  };
   return (
     <>
       <div className="dash-note__wrapper">
@@ -25,13 +31,21 @@ export const NoteDashCard = ({ recentNote, handleDelete }) => {
         </Link>
 
         <div className="dash-note__delete">
-          <button
-            type="button"
+          <div
             className="note-delete"
             onClick={() => handleDelete(recentNote.id)}
           >
             <FaTrash className="n-delete-icon" />
-          </button>
+          </div>
+          <div className="dn-checkbox">
+            <Checkbox
+              color="error"
+              icon={<FavoriteBorder />}
+              checkedIcon={<Favorite />}
+              defaultChecked={recentNote.isFave}
+              onChange={(e) => handleFave(e)}
+            />
+          </div>
         </div>
       </div>
     </>

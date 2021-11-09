@@ -142,6 +142,11 @@ button.note-delete {
   /* border: 1px solid purple; */
 }
 
+.noteboard-checkbox {
+  padding-right: 15px;
+  margin: 0px;
+}
+
 .noteboard-delete {
   margin: auto 0px;
   padding-top: 6px;
@@ -163,8 +168,8 @@ button.note-delete {
 }
 
 .noteboard-delete-icon {
-  margin: 3px 0px;
-  margin-left: 10px;
+  margin: 0px;
+  margin: 0px 10px;
   width: 25px;
   height: 25px;
   cursor: pointer;

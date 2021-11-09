@@ -55,6 +55,9 @@ export const SidebarData = [
     icon: <FaIcons.FaListUl />,
     cName: "side-text",
   },
+];
+
+export const SidebarLogout = [
   {
     title: "Logout",
     path: "/login",
@@ -62,5 +65,3 @@ export const SidebarData = [
     cName: "side-text",
   },
 ];
-
-export default SidebarData;

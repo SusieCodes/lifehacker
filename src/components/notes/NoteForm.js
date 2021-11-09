@@ -15,6 +15,7 @@ export const NoteForm = () => {
   const [note, setNote] = useState({
     title: "",
     text: "",
+    isFave: "",
     dayTime: Date.now(),
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
@@ -27,6 +28,7 @@ export const NoteForm = () => {
     setNote({
       title: "",
       text: "",
+      isFave: "",
       dayTime: Date.now(),
       userId: parseInt(sessionStorage.getItem("lifehacker_user")),
     });

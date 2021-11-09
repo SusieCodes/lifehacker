@@ -440,14 +440,14 @@ button.activity-delete {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  padding-right: 40px;
+  padding-right: 30px;
   /* border: 1px solid red; */
 }
 
 .dash-note__wrapper a {
   padding-right: 50px;
   /* border: 2px solid pink; */
-  width: 300px;
+  width: 290px;
 }
 
 .dash-note {
@@ -473,17 +473,6 @@ button.activity-delete {
   /* border: 2px solid chartreuse; */
 }
 
-.top-text {
-  font-size: 22px;
-  font-weight: 500;
-  text-align: left;
-  line-height: 1.2;
-  margin: 0px 0px 10px;
-  width: 100%;
-  padding: 0px;
-  /* border: 1px solid black; */
-}
-
 .dn-text-wrapper {
   display: flex;
   flex-direction: column;
@@ -494,6 +483,17 @@ button.activity-delete {
   min-height: 70px;
   overflow-wrap: break-word;
   /* border: 1px solid red; */
+}
+
+.top-text {
+  font-size: 22px;
+  font-weight: 500;
+  text-align: left;
+  line-height: 1.2;
+  margin: 0px 0px 10px;
+  width: 100%;
+  padding: 0px;
+  /* border: 1px solid black; */
 }
 
 .bottom-text {
@@ -509,27 +509,35 @@ button.activity-delete {
 
 .dash-note__delete {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
-  padding-top: 30px;
+  align-content: center;
+  align-items: center;
+  /* padding-top: 30px; */
   /* padding-right: 5px; */
   /* margin: 0px; */
   /* border: 1px solid black; */
 }
 
-button.note-delete {
-  flex: 1;
-  align-self: flex-start;
-  border: none;
-  background-color: transparent;
+.dn-checkbox {
   margin: 0px;
   padding: 0px;
+  /* border: 1px solid black; */
+}
+
+.note-delete {
+  border: none;
+  background-color: transparent;
+  margin: 0px auto 20px;
+  padding: 0px;
+  /* border: 1px solid red; */
 }
 
 .n-delete-icon {
   width: 25px;
   height: 25px;
   transition: all 0.2s ease-in-out;
+  /* border: 1px solid red; */
 }
 
 .n-delete-icon:hover {

@@ -2,7 +2,25 @@
 
 ![Project Image](https://github.com/SusieCodes/lifehacker/blob/main/src/images/lifehackerdashboard.png)
 
-> Everything you need to keep up with your friends in a Nutshell!
+> The Ultimate Life Planner to track and organize all of life's details including:
+
+- Connections (sort by favorites, bdays, or recent)
+- Activities (can sort by tags)
+- To-Do List
+- Groceries (digital & printable)
+- Digital Sticky Notes
+- Journal
+- Service Providers
+- Recommendations for:
+  - movies
+  - tv shows
+  - books
+  - podcasts
+  - activities
+  - restaurants
+  - providers
+  - other
+- Wishlist (digital & printable)
 
 ---
 
