@@ -22,6 +22,8 @@ export const ActivityEditForm = () => {
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
 
+  const [selectedValue, setSelectedValue] = useState(null);
+
   const [conflictDialog, setConflictDialog] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [tagset, setTagset] = useState([]);
@@ -33,12 +35,13 @@ export const ActivityEditForm = () => {
     /* Because we are changing a state object or array,
 		we are creating a copy, making changes, and then setting state */
     const newActivity = { ...activity };
-    let selectedVal = evt;
-
+    let selectedVal = evt.id;
+    console.log("selectedVal is ", selectedVal);
     /* Sets the property to the new value
 		using object bracket notation. */
     newActivity[evt.saveTo] = selectedVal;
-
+    setSelectedValue(evt);
+    console.log("newActivity is ", newActivity);
     // update state
     setActivity(newActivity);
   };
@@ -63,7 +66,7 @@ export const ActivityEditForm = () => {
       city: activity?.city,
       zipcode: activity?.zipcode,
       notes: activity?.notes,
-      tagId: activity?.tag?.id,
+      tagId: activity?.tagId,
       userId: activity?.userId,
     };
 
@@ -86,6 +89,7 @@ export const ActivityEditForm = () => {
     getActivityById(activityId).then((activity) => {
       setActivity(activity);
       setIsLoading(false);
+      setSelectedValue(activity?.tag);
     });
   }, [activityId]);
 
@@ -118,7 +122,7 @@ export const ActivityEditForm = () => {
               <input
                 type="text"
                 id="name"
-                maxLength="18"
+                maxLength="25"
                 required
                 className="form__group--edit"
                 onChange={handleFieldChange}
@@ -210,7 +214,7 @@ export const ActivityEditForm = () => {
                 options={tagset}
                 width="300px"
                 // activity.tag is object that populates dropdown for this activity
-                value={activity?.tag}
+                value={selectedValue}
                 theme={(theme) => ({
                   ...theme,
                   borderRadius: 5,

@@ -362,9 +362,27 @@ select.star-options:focus {
 }
 
 .recommendation-title-lists {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.recommendation-name-lists {
   font-size: 24px;
   font-weight: 600;
   margin: 5px 0px 20px;
+}
+
+.recommendation-icon-lists {
+  width: 40px;
+  height: 50px;
+  padding-top: 5px;
+  /* border: 1px solid blue; */
+}
+
+.rec-icon {
+  width: 100%;
+  /* border: 1px solid red; */
 }
 
 .recommendation-type-lists,

@@ -23,7 +23,7 @@ export const ActivityForm = () => {
     city: "",
     zipcode: "",
     notes: "",
-    tagId: 0,
+    tagId: "",
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
 
@@ -39,7 +39,7 @@ export const ActivityForm = () => {
       city: "",
       zipcode: "",
       notes: "",
-      tagId: 0,
+      tagId: "",
       userId: parseInt(sessionStorage.getItem("lifehacker_user")),
     });
   };
@@ -47,7 +47,6 @@ export const ActivityForm = () => {
   const handleChange = (evt) => {
     setSelectedValue(evt);
     console.log("evt is ", evt);
-
     /* Because we are changing a state object or array,
 		we are creating a copy, making changes, and then setting state */
     const newActivity = { ...activity };
@@ -120,7 +119,7 @@ export const ActivityForm = () => {
               <input
                 type="text"
                 id="name"
-                maxLength="18"
+                maxLength="25"
                 onChange={handleFieldChange}
                 required
                 autoFocus

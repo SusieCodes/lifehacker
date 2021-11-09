@@ -41,7 +41,6 @@ export const RecommendationForm = () => {
   const handleChange = (evt) => {
     setSelectedValue(evt);
     console.log("evt inside handlechange is ", evt);
-
     /* Because we are changing a state object or array,
 		we are creating a copy, making changes, and then setting state */
     const newRecommendation = { ...recommendation };
@@ -51,10 +50,6 @@ export const RecommendationForm = () => {
     /* Sets the property to the new value
 		using object bracket notation. */
     newRecommendation[evt.saveTo] = selectedVal;
-    console.log(
-      "newRecommendation[evt.saveTo] inside handleChange is :",
-      newRecommendation[evt.saveTo]
-    );
 
     // update state
     setRecommendation(newRecommendation);

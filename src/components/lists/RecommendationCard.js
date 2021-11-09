@@ -22,7 +22,24 @@ export const RecommendationCard = ({
       <div className="recommendation-card-lists">
         <div className="recommendation-wrapper-lists">
           <div className="recommendation-title-lists">
-            {recommendation?.name}
+            <div className="recommendation-name-lists">
+              {recommendation?.name}
+            </div>
+
+            <div className="recommendation-icon-lists">
+              {recommendation?.reclist?.image ? (
+                <img
+                  src={
+                    require(`../../images/${recommendation?.reclist?.image}`)
+                      .default
+                  }
+                  alt="icon"
+                  className="rec-icon"
+                />
+              ) : (
+                ""
+              )}
+            </div>
           </div>
 
           <div className="recommendation-type-lists">
