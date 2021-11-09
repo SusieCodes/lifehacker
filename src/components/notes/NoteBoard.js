@@ -15,7 +15,7 @@ export const NoteBoard = () => {
   const getNotes = () => {
     getNotesByUserId(sessionStorage.getItem("lifehacker_user")).then(
       (notesFromAPI) => {
-        setNotes(notesFromAPI);
+        setNotes(notesFromAPI.reverse());
       }
     );
   };

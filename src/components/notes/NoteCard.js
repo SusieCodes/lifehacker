@@ -3,12 +3,18 @@
 
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { Checkbox } from "@mui/material";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
+import { changeFave } from "./NoteManager";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import "../LifeHacker.css";
 import "../dashboard/Dashboard.css";
 import "./Note.css";
 
 export const NoteCard = ({ note, handleDelete }) => {
+  const handleFave = (e) => {
+    changeFave(note.id, e.target.checked);
+  };
   const handleEdit = () => {
     history.push(`/notes/${note?.id}/edit`);
   };
@@ -33,6 +39,16 @@ export const NoteCard = ({ note, handleDelete }) => {
         </div>
 
         <div className="noteboard-icons">
+          <div className="noteboard-checkbox">
+            <Checkbox
+              color="error"
+              icon={<FavoriteBorder />}
+              checkedIcon={<Favorite />}
+              defaultChecked={note.isFave}
+              onChange={(e) => handleFave(e)}
+            />
+          </div>
+
           <div
             className="noteboard-delete"
             onClick={() => handleEdit(note?.id)}

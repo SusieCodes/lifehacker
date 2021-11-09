@@ -91,18 +91,18 @@ export const ConnectionDashList = () => {
       <div className="section-connections">
         {/* this section is the category headers for the contact cards (using same div names as cards so spacing is identical) */}
         <div className="dash-connections-header">
-          <div className="dc-info">
-            <div className="pic-name">
-              <div className="dc-image"></div>
+          <div className="dc-header-info">
+            <div className="dc-header-pic-name">
+              <div className="dc-header-image"></div>
 
-              <div className="dc-name bold">NAME</div>
+              <div className="dc-header-name bold">NAME</div>
             </div>
 
-            <div className="dc-email bold">EMAIL</div>
+            <div className="dc-header-email bold">EMAIL</div>
 
-            <div className="dc-phone bold">PHONE</div>
+            <div className="dc-header-phone bold">PHONE</div>
 
-            <div className="dc-bday bold">BIRTHDAY</div>
+            <div className="dc-header-bday bold">BIRTHDAY</div>
           </div>
 
           <div className="connection-header-icons">

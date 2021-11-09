@@ -101,7 +101,7 @@ export const ActivityBoard = () => {
               <button className="add-activity">+ Add Activity</button>
             </Link>
             <Link to={`/activitiestag`}>
-              <button className="add-activity">+ Sort By Tag</button>
+              <button className="add-activity">Sort By Tag</button>
             </Link>
           </div>
 

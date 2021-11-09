@@ -333,9 +333,9 @@ input.checkbox-todo:hover {
   width: 100%;
 }
 
-.da-tag-icon:hover {
+/* .da-tag-icon:hover {
   cursor: pointer;
-}
+} */
 
 .da-inner__wrapper {
   display: flex;
@@ -440,14 +440,14 @@ button.activity-delete {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  padding-right: 40px;
+  padding-right: 30px;
   /* border: 1px solid red; */
 }
 
 .dash-note__wrapper a {
   padding-right: 50px;
   /* border: 2px solid pink; */
-  width: 300px;
+  width: 290px;
 }
 
 .dash-note {
@@ -473,17 +473,6 @@ button.activity-delete {
   /* border: 2px solid chartreuse; */
 }
 
-.top-text {
-  font-size: 22px;
-  font-weight: 500;
-  text-align: left;
-  line-height: 1.2;
-  margin: 0px 0px 10px;
-  width: 100%;
-  padding: 0px;
-  /* border: 1px solid black; */
-}
-
 .dn-text-wrapper {
   display: flex;
   flex-direction: column;
@@ -494,6 +483,17 @@ button.activity-delete {
   min-height: 70px;
   overflow-wrap: break-word;
   /* border: 1px solid red; */
+}
+
+.top-text {
+  font-size: 22px;
+  font-weight: 500;
+  text-align: left;
+  line-height: 1.2;
+  margin: 0px 0px 10px;
+  width: 100%;
+  padding: 0px;
+  /* border: 1px solid black; */
 }
 
 .bottom-text {
@@ -509,27 +509,35 @@ button.activity-delete {
 
 .dash-note__delete {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
-  padding-top: 30px;
+  align-content: center;
+  align-items: center;
+  /* padding-top: 30px; */
   /* padding-right: 5px; */
   /* margin: 0px; */
   /* border: 1px solid black; */
 }
 
-button.note-delete {
-  flex: 1;
-  align-self: flex-start;
-  border: none;
-  background-color: transparent;
+.dn-checkbox {
   margin: 0px;
   padding: 0px;
+  /* border: 1px solid black; */
+}
+
+.note-delete {
+  border: none;
+  background-color: transparent;
+  margin: 0px auto 20px;
+  padding: 0px;
+  /* border: 1px solid red; */
 }
 
 .n-delete-icon {
   width: 25px;
   height: 25px;
   transition: all 0.2s ease-in-out;
+  /* border: 1px solid red; */
 }
 
 .n-delete-icon:hover {
@@ -579,6 +587,70 @@ button.note-delete {
   border-top: 1px solid gray;
 }
 
+.dc-header-info {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-size: 20px;
+  margin: 0px 0px 0px 15px;
+  /* border: 3px solid yellow; */
+}
+
+.dc-header-pic-name {
+  width: 345px;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  flex-wrap: nowrap;
+  /* border: 3px solid orange; */
+}
+
+.dc-header-image {
+  width: 60px;
+  height: 60px;
+  padding: 0px;
+  margin: 5px;
+  /* border: 1px solid red; */
+}
+
+.dc-header-name {
+  font-size: 22px;
+  font-weight: 500;
+  padding-left: 10px;
+  margin: auto 0px;
+  white-space: nowrap;
+  text-align: left;
+  /* border: 1px solid aqua; */
+}
+
+.dc-header-email {
+  width: 345px;
+  margin: auto 0px;
+  white-space: nowrap;
+  text-align: left;
+  /* border: 3px solid black; */
+}
+
+.dc-header-phone {
+  width: 345px;
+  margin: auto 0px;
+  white-space: nowrap;
+  text-align: left;
+  /* border: 3px solid black; */
+}
+
+.dc-header-bday {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto 0px;
+  white-space: nowrap;
+  text-align: left;
+  /* border: 1px solid black; */
+}
+
 .dc-info {
   flex: 1;
   display: flex;
@@ -586,7 +658,7 @@ button.note-delete {
   justify-content: center;
   font-size: 20px;
   margin: 0px 0px 0px 15px;
-  /* border: 1px solid yellow; */
+  /* border: 3px solid yellow; */
 }
 
 .pic-name {
@@ -595,7 +667,7 @@ button.note-delete {
   flex-direction: row;
   align-self: center;
   flex-wrap: nowrap;
-  /* border: 1px solid orange; */
+  /* border: 3px solid orange; */
 }
 
 .dc-image {
@@ -639,7 +711,7 @@ button.note-delete {
   margin: auto 0px;
   white-space: nowrap;
   text-align: left;
-  /* border: 1px solid black; */
+  /* border: 3px solid black; */
 }
 
 .dc-phone {
@@ -647,7 +719,7 @@ button.note-delete {
   margin: auto 0px;
   white-space: nowrap;
   text-align: left;
-  /* border: 1px solid black; */
+  /* border: 3px solid black; */
 }
 
 .dc-bday {

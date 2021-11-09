@@ -12,6 +12,7 @@ export const NoteEditForm = () => {
   const [note, setNote] = useState({
     title: "",
     text: "",
+    isFave: "",
     dayTime: Date.now(),
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
   });
@@ -36,6 +37,8 @@ export const NoteEditForm = () => {
       id: noteId,
       title: note.title,
       text: note.text,
+      isFave: note.isFave,
+
       dayTime: Date.now(),
       userId: parseInt(sessionStorage.getItem("lifehacker_user")),
     };
