@@ -4,23 +4,28 @@
 
 > The Ultimate Life Planner to track and organize all of life's details including:
 
-- Connections (sort by favorites, bdays, or recent)
-- Activities (can sort by tags)
-- To-Do List
-- Grocery List (digital & printable)
-- Digital Sticky Notes
-- Journal
-- Service Providers
-- Recommendations for:
-  - movies
-  - tv shows
-  - books
-  - podcasts
-  - activities
-  - restaurants
-  - providers
-  - other
-- Wishlist (digital & printable)
+➡ Connections (sort by favorites, bdays, or recent)
+➡ Activities sorted by:
+• personal
+• family
+• work
+• community
+• school
+➡ To➡Do List
+➡ Grocery List (digital & printable)
+➡ Digital Sticky Notes
+➡ Journal
+➡ Service Providers
+➡ Recommendations sorted by:
+• movies
+• tv shows
+• books
+• podcasts
+• activities
+• restaurants
+• providers
+• other
+➡ Wishlist (digital & printable)
 
 ---
 

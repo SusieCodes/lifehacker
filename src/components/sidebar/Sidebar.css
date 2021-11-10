@@ -140,7 +140,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 .side-menu.active {
   left: 0;
   transition: 350ms;
-  z-index: 5;
+  z-index: 5; /* z-index makes side-menu cover everything behind it (heart checkbox) */
 }
 
 .sidebar-white {
