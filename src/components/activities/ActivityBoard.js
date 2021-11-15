@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ActivityCard } from "./ActivityCard";
 import { getAllActivitiesByUserId, deleteActivity } from "./ActivityManager";
-import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import { WelcomeBar2 } from "../../components/navbar/WelcomeBar2";
 import "./Activity.css";
 import "../LifeHacker.css";
 
@@ -93,7 +93,7 @@ export const ActivityBoard = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Activities" />
+        <WelcomeBar2 title="Activities" />
 
         <div className="section-flex">
           <div className="section-flex__content">

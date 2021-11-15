@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { deleteGrocery, getGroceriesByUserId } from "./GroceryManager";
 import { GroceryCard } from "./GroceryCard";
-import { WelcomeBar } from "../navbar/WelcomeBar";
+import { WelcomeBar2 } from "../navbar/WelcomeBar2";
 import "../LifeHacker.css";
 import "./Grocery.css";
 
@@ -30,7 +30,7 @@ export const GroceryBoard = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Groceries" />
+        <WelcomeBar2 title="Groceries" />
 
         <div className="section-flex">
           <div className="section-flex__content">

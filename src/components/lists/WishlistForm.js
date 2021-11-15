@@ -4,7 +4,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { addWishlist } from "./ListManager";
-import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import { WelcomeBar2 } from "../../components/navbar/WelcomeBar2";
 import "./List.css";
 import "../LifeHacker.css";
 
@@ -62,7 +62,7 @@ export const WishlistForm = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Add New Wishlist" />
+        <WelcomeBar2 title="Add New Wishlist" />
 
         <div className="form-flex">
           <fieldset className="form">

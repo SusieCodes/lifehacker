@@ -4,7 +4,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import { addConnection } from "./ConnectionManager";
-import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import { WelcomeBar2 } from "../../components/navbar/WelcomeBar2";
 // import { Upload } from "../uploads/Upload";
 // import Axios from "axios";
 // import { Image } from "cloudinary-react";
@@ -153,7 +153,7 @@ export const ConnectionForm = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Add New Connection" />
+        <WelcomeBar2 title="Add New Connection" />
 
         <div className="form-flex">
           <fieldset className="form">

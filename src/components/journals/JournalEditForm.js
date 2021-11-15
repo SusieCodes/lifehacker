@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react";
 import { update, getJournalById } from "./JournalManager";
 import { useParams, useHistory } from "react-router-dom";
-import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import { WelcomeBar2 } from "../../components/navbar/WelcomeBar2";
 import "./Journal.css";
 import "../LifeHacker.css";
 
@@ -58,7 +58,7 @@ export const JournalEditForm = () => {
 
   return (
     <div className="page">
-      <WelcomeBar title="Edit Journal Entry" />
+      <WelcomeBar2 title="Edit Journal Entry" />
 
       <div className="form-flex">
         <fieldset className="form">

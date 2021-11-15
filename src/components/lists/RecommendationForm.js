@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { addRecommendation, getReclist } from "./ListManager";
 import Select from "react-select";
-import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import { WelcomeBar2 } from "../../components/navbar/WelcomeBar2";
 import "./List.css";
 import "../LifeHacker.css";
 
@@ -92,7 +92,7 @@ export const RecommendationForm = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Add New Recommendation" />
+        <WelcomeBar2 title="Add New Recommendation" />
 
         <div className="form-flex">
           <fieldset className="form">

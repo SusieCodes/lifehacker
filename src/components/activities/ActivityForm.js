@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { addActivity, getTags } from "./ActivityManager";
 import Select from "react-select";
-import { WelcomeBar } from "../navbar/WelcomeBar";
+import { WelcomeBar2 } from "../navbar/WelcomeBar2";
 import "./Activity.css";
 import "../LifeHacker.css";
 
@@ -98,7 +98,7 @@ export const ActivityForm = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Add A New Activity" />
+        <WelcomeBar2 title="Add A New Activity" />
 
         <div className="form-flex">
           <fieldset className="form">

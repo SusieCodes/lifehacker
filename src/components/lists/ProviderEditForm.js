@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react";
 import { updateProvider, getProviderById } from "./ListManager";
 import { useParams, useHistory } from "react-router-dom";
-import { WelcomeBar } from "../navbar/WelcomeBar";
+import { WelcomeBar2 } from "../navbar/WelcomeBar2";
 import "./List.css";
 import "../LifeHacker.css";
 
@@ -65,7 +65,7 @@ export const ProviderEditForm = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Edit Provider" />
+        <WelcomeBar2 title="Edit Provider" />
 
         <div className="form-flex">
           <fieldset className="form">

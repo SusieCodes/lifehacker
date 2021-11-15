@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react";
 import { updateWishlist, getWishlistById } from "./ListManager";
 import { useParams, useHistory } from "react-router-dom";
-import { WelcomeBar } from "../navbar/WelcomeBar";
+import { WelcomeBar2 } from "../navbar/WelcomeBar2";
 import "./List.css";
 import "../LifeHacker.css";
 
@@ -63,7 +63,7 @@ export const WishlistEditForm = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Edit Wishlist" />
+        <WelcomeBar2 title="Edit Wishlist" />
 
         <div className="form-flex">
           <fieldset className="form">

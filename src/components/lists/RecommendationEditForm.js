@@ -9,7 +9,7 @@ import {
 } from "./ListManager";
 import Select from "react-select";
 import { useParams, useHistory } from "react-router-dom";
-import { WelcomeBar } from "../navbar/WelcomeBar";
+import { WelcomeBar2 } from "../navbar/WelcomeBar2";
 import "./List.css";
 import "../LifeHacker.css";
 
@@ -98,7 +98,7 @@ export const RecommendationEditForm = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Edit Recommendation" />
+        <WelcomeBar2 title="Edit Recommendation" />
 
         <div className="form-flex">
           <fieldset className="form">

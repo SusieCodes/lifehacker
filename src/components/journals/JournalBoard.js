@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { deleteJournal, getJournalsByUserId } from "./JournalManager";
 import { JournalCard } from "./JournalCard";
-import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import { WelcomeBar2 } from "../../components/navbar/WelcomeBar2";
 import "../LifeHacker.css";
 import "./Journal.css";
 
@@ -32,7 +32,7 @@ export const JournalBoard = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Journal" />
+        <WelcomeBar2 title="Journal" />
 
         <div className="section-flex">
           <div className="section-flex__content">

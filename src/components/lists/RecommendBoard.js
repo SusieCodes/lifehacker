@@ -9,7 +9,7 @@ import {
   deleteRecommendation,
   getReclist,
 } from "./ListManager";
-import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import { WelcomeBar2 } from "../../components/navbar/WelcomeBar2";
 import "./List.css";
 import "../LifeHacker.css";
 
@@ -105,7 +105,7 @@ export const RecommendBoard = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Recommendations" />
+        <WelcomeBar2 title="Recommendations" />
 
         <div className="section-flex">
           <div className="section-flex__content">

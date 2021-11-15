@@ -4,7 +4,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { addNote } from "./NoteManager";
-import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import { WelcomeBar2 } from "../../components/navbar/WelcomeBar2";
 import "./Note.css";
 import "../LifeHacker.css";
 
@@ -61,7 +61,7 @@ export const NoteForm = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Add New Note" />
+        <WelcomeBar2 title="Add New Note" />
 
         <div className="form-flex">
           <fieldset className="form">

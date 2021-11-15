@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { TodoCard } from "./TodoCard";
 import { completeTodo, deleteTodo, getTodosByUserId } from "./TodoManager";
-import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import { WelcomeBar2 } from "../../components/navbar/WelcomeBar2";
 
 export const TodoBoard = () => {
   const [todos, setTodos] = useState([]);
@@ -36,7 +36,7 @@ export const TodoBoard = () => {
 
   return (
     <div className="page">
-      <WelcomeBar title="To Do List" />
+      <WelcomeBar2 title="To Do List" />
       <div className="section-flex">
         <div className="section-flex__content">
           <Link to={`todos/create`}>

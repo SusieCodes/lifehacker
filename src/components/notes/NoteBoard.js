@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { deleteNote, getNotesByUserId } from "./NoteManager";
 import { NoteCard } from "./NoteCard";
-import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import { WelcomeBar2 } from "../../components/navbar/WelcomeBar2";
 import "../LifeHacker.css";
 import "./Note.css";
 
@@ -33,7 +33,7 @@ export const NoteBoard = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Notes" />
+        <WelcomeBar2 title="Notes" />
 
         <div className="section-flex">
           <div className="section-flex__content">

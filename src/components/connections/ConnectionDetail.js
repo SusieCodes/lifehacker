@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getConnectionById, deleteConnection } from "./ConnectionManager";
 import { useParams, useHistory } from "react-router-dom";
-import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import { WelcomeBar2 } from "../../components/navbar/WelcomeBar2";
 import { formatDateNoWeekday } from "../helper";
 // import { dateFormatWithSuffix } from "../helper";
 import { Checkbox } from "@mui/material";
@@ -95,7 +95,7 @@ export const ConnectionDetail = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Connection Details" />
+        <WelcomeBar2 title="Connection Details" />
 
         <div className="connection-flex">
           <div className="connection-outer-flex">
