@@ -4,7 +4,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import { addJournal } from "./JournalManager";
-import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import { WelcomeBar2 } from "../../components/navbar/WelcomeBar2";
 import "./Journal.css";
 import "../LifeHacker.css";
 
@@ -50,7 +50,7 @@ export const JournalForm = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Add New Journal Entry" />
+        <WelcomeBar2 title="Add New Journal Entry" />
 
         <div className="form-flex">
           <fieldset className="form">

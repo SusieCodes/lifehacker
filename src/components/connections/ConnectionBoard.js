@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { deleteConnection, getConnectionsByUserId } from "./ConnectionManager";
 import { ConnectionCard } from "./ConnectionCard";
 import { ConnectionDummyCard } from "./ConnectionDummyCard";
-import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import { WelcomeBar2 } from "../../components/navbar/WelcomeBar2";
 import { justMonthDayForSort, formatMilliForSort } from "../helper";
 import "../dashboard/Dashboard.css";
 import "../LifeHacker.css";
@@ -82,7 +82,7 @@ export const ConnectionBoard = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Connections" />
+        <WelcomeBar2 title="Connections" />
 
         <div className="section-flex">
           <div className="section-flex__content">

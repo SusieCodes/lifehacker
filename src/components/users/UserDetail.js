@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getUserById } from "./UserManager";
 import { useParams, useHistory } from "react-router-dom";
-import { WelcomeBar } from "../navbar/WelcomeBar";
+import { WelcomeBar2 } from "../navbar/WelcomeBar2";
 import { formatDateNoWeekday } from "../helper";
 import "../LifeHacker.css";
 import "../connections/Connections.css";
@@ -56,7 +56,7 @@ export const UserDetail = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Your Account Details" />
+        <WelcomeBar2 title="Your Account Details" />
 
         <div className="user-flex">
           <div className="user-outer-flex">

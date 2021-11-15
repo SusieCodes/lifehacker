@@ -26,7 +26,7 @@ html {
   /* width: 1880px; */
   margin: 0px;
   padding: 0px;
-  margin: 0px 50px;
+  margin: 0px;
   font-family: "Poppins", sans-serif;
   background-color: white;
   display: flex;
@@ -36,8 +36,6 @@ html {
 }
 
 body {
-  /* width: 1880px; */
-  /* width: 100%; */
   margin: 0px;
   padding: 0px;
   font-family: "Poppins", sans-serif;
@@ -46,6 +44,11 @@ body {
   flex-direction: row;
   justify-content: center;
   /* border: 1px solid red; */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera but still able to scroll */
+body::-webkit-scrollbar {
+  display: none;
 }
 
 #root {
@@ -58,7 +61,6 @@ body {
   flex-direction: column;
   align-content: center;
   justify-content: flex-start;
-  /* min-height: 1300px; */
 }
 
 h2 {
@@ -107,6 +109,22 @@ h2 {
 .welcome-name a {
   text-decoration: none;
   color: #41c5d8;
+  cursor: pointer;
+}
+
+.welcome-back {
+  color: #41c5d8;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 0px;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.welcome-back a {
+  text-decoration: none;
+  color: #41c5d8;
+  cursor: pointer;
 }
 
 .page-title__headline {
@@ -233,6 +251,8 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0px;
+  margin: 0px;
   /* border: 1px solid red; */
 }
 

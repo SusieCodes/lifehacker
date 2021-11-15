@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react";
 import { update, getUserById } from "./UserManager";
 import { useParams, useHistory } from "react-router-dom";
-import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import { WelcomeBar2 } from "../../components/navbar/WelcomeBar2";
 import { Input } from "../Input";
 import "../connections/Connections.css";
 import "../LifeHacker.css";
@@ -107,7 +107,7 @@ export const UserEditForm = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Edit Your Account Details" />
+        <WelcomeBar2 title="Edit Your Account Details" />
 
         <div className="form-flex">
           <fieldset className="form">

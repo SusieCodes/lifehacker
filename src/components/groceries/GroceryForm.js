@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import { addGrocery } from "./GroceryManager";
-import { WelcomeBar } from "../navbar/WelcomeBar";
+import { WelcomeBar2 } from "../navbar/WelcomeBar2";
 import "./Grocery.css";
 import "../LifeHacker.css";
 
@@ -43,7 +43,7 @@ export const GroceryForm = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Add New Groceries" />
+        <WelcomeBar2 title="Add New Groceries" />
 
         <div className="form-flex">
           <fieldset className="form-grocery">

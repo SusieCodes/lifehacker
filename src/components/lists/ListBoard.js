@@ -15,7 +15,7 @@ import {
   deleteWishlist,
   completeWishlist,
 } from "./ListManager";
-import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import { WelcomeBar2 } from "../../components/navbar/WelcomeBar2";
 import "./List.css";
 import "../LifeHacker.css";
 
@@ -82,7 +82,7 @@ export const ListBoard = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="List Hub" />
+        <WelcomeBar2 title="List Hub" />
 
         <div className="section-flex">
           <div className="board-container__lists">

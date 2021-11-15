@@ -4,7 +4,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import { addTodo } from "./TodoManager";
-import { WelcomeBar } from "../navbar/WelcomeBar";
+import { WelcomeBar2 } from "../navbar/WelcomeBar2";
 import "./Todo.css";
 import "../LifeHacker.css";
 
@@ -50,7 +50,7 @@ export const TodoForm = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Add New To Do" />
+        <WelcomeBar2 title="Add New To Do" />
 
         <div className="form-flex">
           <fieldset className="todo-form">

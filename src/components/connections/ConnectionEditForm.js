@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react";
 import { update, getConnectionById } from "./ConnectionManager";
 import { useParams, useHistory } from "react-router-dom";
-import { WelcomeBar } from "../../components/navbar/WelcomeBar";
+import { WelcomeBar2 } from "../../components/navbar/WelcomeBar2";
 import { Input } from "../Input";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import "./Connections.css";
@@ -140,7 +140,7 @@ export const ConnectionEditForm = () => {
   return (
     <>
       <div className="page">
-        <WelcomeBar title="Edit Connection" />
+        <WelcomeBar2 title="Edit Connection" />
 
         <div className="form-flex">
           <fieldset className="form">
