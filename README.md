@@ -4,7 +4,10 @@
 
 > The Ultimate Life Planner to track and organize all of life's details including:
 
-- Connections (sort by favorites, bdays, or recent)
+- Connections sorted by:
+  • favorites
+  • bdays
+  • recently changed
 - Activities sorted by:
   • personal
   • family
