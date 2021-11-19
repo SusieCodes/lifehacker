@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import Axios from "axios";
 
 export const Upload = () => {
   const [image, setImage] = useState("");
