@@ -19,7 +19,9 @@ export const Login = () => {
 
   const existingUserCheck = () => {
     // If your json-server URL is different, please change it below
-    return fetch(`http://localhost:8088/users?email=${loginUser.email}`)
+    return fetch(
+      `https://lifehacker-api.herokuapp.com//users?email=${loginUser.email}`
+    )
       .then((res) => res.json())
       .then((user) => (user.length ? user[0] : false));
   };

@@ -1,7 +1,7 @@
 //Author: Susie Stanley
 //Purpose: To export multiple components that fetch/update/delete notes from database
 
-const url = "http://localhost:8088";
+const url = "https://lifehacker-api.herokuapp.com/";
 
 export const getNotesByUserId = (userId) => {
   return fetch(`${url}/notes/?userId=${userId}&_sort=isFave&_order=desc`).then(

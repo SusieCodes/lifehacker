@@ -1,7 +1,7 @@
 //Author: Susie Stanley
 //Purpose: Fetch calls to get User info
 
-const url = "http://localhost:8088";
+const url = "https://lifehacker-api.herokuapp.com/";
 
 export const getAllUsers = () => {
   return fetch(`${url}/users`).then((res) => res.json());
