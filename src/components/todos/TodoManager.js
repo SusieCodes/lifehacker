@@ -1,8 +1,6 @@
 // Author: Susie Stanley
 //Purpose: To export multiple components that fetch/update/delete To-Dos info from database
 
-// const remoteUrl = 'http://localhost:8088'
-
 const remoteUrl = "https://lifehacker-api.herokuapp.com/";
 
 export const getTodosByUserId = (userId) => {
