@@ -1,7 +1,7 @@
 //Author: Susie Stanley
 //Purpose: To export multiple components that fetch/update/delete connection info from database
 
-const url = "http://localhost:8088";
+const url = "https://lifehacker-api.herokuapp.com/";
 
 export const getConnectionsByUserId = (userId) => {
   return fetch(

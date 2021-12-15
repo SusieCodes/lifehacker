@@ -29,7 +29,9 @@ export const Register = () => {
   };
 
   const existingUserCheck = () => {
-    return fetch(`http://localhost:8088/users?email=${registerUser.email}`)
+    return fetch(
+      `https://lifehacker-api.herokuapp.com//users?email=${registerUser.email}`
+    )
       .then((res) => res.json())
       .then((user) => !!user.length);
   };
@@ -39,7 +41,7 @@ export const Register = () => {
 
     existingUserCheck().then((userExists) => {
       if (!userExists) {
-        fetch("http://localhost:8088/users", {
+        fetch("https://lifehacker-api.herokuapp.com//users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

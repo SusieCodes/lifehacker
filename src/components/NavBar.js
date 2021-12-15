@@ -4,7 +4,6 @@ import logo from "../images/lifehackerbanner.svg";
 import { useHistory } from "react-router";
 import "./LifeHacker.css"
 
-
 export const NavBar = () => {
 
 const history = useHistory();  
