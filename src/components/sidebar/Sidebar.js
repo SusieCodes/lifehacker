@@ -105,8 +105,6 @@ export const Sidebar = () => {
           </Box>
         </ThemeProvider>
         {/* start of side menu that slides in & out */}
-        {/* <div className="sidebar-hack"> */}
-        {/* <div className="transparent-menu"></div> */}
         <div className={sidebar ? "side-menu active" : "side-menu"}>
           <div className="sidebar-white">
             <ul className="side-menu-items" onClick={toggleSidebar}>
@@ -144,7 +142,6 @@ export const Sidebar = () => {
             </ul>
           </div>
         </div>
-        {/* </div> */}
       </IconContext.Provider>
     </>
   );
