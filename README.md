@@ -48,29 +48,23 @@ Life Hacker is a React App I built to track my activities, journal entries, groc
 
 ---
 
-#### Technologies
+#### Tools & Technologies
 
-- React.js
-- CSS
-- dbdiagram
+- HTML/CSS
+- Javascript
+- React
+- JSON server
+- ERD using dbdiagram
 - Figma
 - Canva
 - Git/Github
 - Postman
+- Wireframing
 
 ---
 
 ## How To Use
 
-### Installations
-
-Run commands inside of LifeHacker Directory.
-
-```
-npm install
-```
-
----
 
 ### Starting the webpage
 
@@ -79,8 +73,13 @@ npm install
    ```
    git clone git@github.com:SusieCodes/lifehacker.git
    ```
+   
+2. From inside the LifeHacker directory on your terminal, enter:
+   ```
+   npm install
+   ```
 
-2. To login, use email address 'me@me.com' to see full functionality using dummy data from the database OR register as a new user to create all your own content
+3. To login, use email address 'me@me.com' to see full functionality using dummy data from the database OR register as a new user to create all your own content
 
 ---
 
