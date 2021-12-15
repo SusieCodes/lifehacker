@@ -487,10 +487,6 @@ select.personality-options:focus {
   cursor: pointer;
 }
 
-/* connection edit form */
-.dialog-connection {
-}
-
 .connection-edit-image {
   padding: 10px;
   margin: auto auto;
@@ -508,8 +504,9 @@ select.personality-options:focus {
 
 .user-detail-photo {
   width: 100%;
+  height: 100%;
   margin: auto auto;
-  border-radius: 100px;
+  border-radius: 50%;
   border: 5px solid #99e3eda5;
 }
 
