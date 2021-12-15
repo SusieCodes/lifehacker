@@ -1,7 +1,7 @@
 //Author: Susie Stanley
 //Purpose: To export multiple components that fetch/update/delete activity info from database
 
-const url = "https://lifehacker-api.herokuapp.com/";
+const url = "https://lifehacker-api.herokuapp.com";
 
 // Provider fetch calls
 export const getProvidersByUserId = (userId) => {

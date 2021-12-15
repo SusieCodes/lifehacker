@@ -1,7 +1,7 @@
 //Author: Susie Stanley
 //Purpose: To export multiple components that fetch/update/delete grocery info from database
 
-const url = "https://lifehacker-api.herokuapp.com/";
+const url = "https://lifehacker-api.herokuapp.com";
 
 export const getGroceriesByUserId = (UserId) => {
   return fetch(`${url}/groceries/?userId=${UserId}`).then((res) => res.json());
