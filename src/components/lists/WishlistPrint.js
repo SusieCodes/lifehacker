@@ -27,9 +27,9 @@ export class ComponentToPrint extends React.Component {
             </div>
 
             <div className="print-wishlist-list">
-              {this.state.wishlist.map((wishlist) => (
+              {/* {this.state.wishlist.map((wishlist) => (
                 <WishlistPrintCard key={wishlist.id} wishlist={wishlist} />
-              ))}
+              ))} */}
             </div>
           </div>
         </div>

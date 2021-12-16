@@ -30,8 +30,8 @@ import { RecommendationForm } from "../../src/components/lists/RecommendationFor
 import { RecommendationEditForm } from "../../src/components/lists/RecommendationEditForm";
 import { WishlistForm } from "../../src/components/lists/WishlistForm";
 import { WishlistEditForm } from "../../src/components/lists/WishlistEditForm";
-import { PrintGroceryList } from "../../src/components/groceries/GroceryPrint";
-import { PrintWishlist } from "../../src/components/lists/WishlistPrint";
+// import { PrintGroceryList } from "../../src/components/groceries/GroceryPrint";
+// import { PrintWishlist } from "../../src/components/lists/WishlistPrint";
 
 export const ApplicationViews = () => {
   return (
@@ -164,13 +164,13 @@ export const ApplicationViews = () => {
         <WishlistEditForm />
       </Route>
 
-      <Route exact path="/groceries/print">
+      {/* <Route exact path="/groceries/print">
         <PrintGroceryList />
       </Route>
 
       <Route exact path="/wishlists/print">
         <PrintWishlist />
-      </Route>
+      </Route> */}
     </>
   );
 };
