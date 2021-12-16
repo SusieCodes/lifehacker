@@ -159,8 +159,9 @@ export const UserEditForm = () => {
                 <div className="uploaded-image-wrapper">
                   <img
                     src={image}
-                    alt=""
+                    alt="user"
                     width="150"
+                    height="150"
                     className={clickedStyle}
                   />
                 </div>

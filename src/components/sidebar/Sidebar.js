@@ -18,7 +18,15 @@ export const Sidebar = () => {
   const [user, setUser] = useState({
     name: "",
     email: "",
+    phone: "",
+    address: "",
+    city: "",
+    stateProvince: "",
+    zipCode: "",
+    country: "",
+    bday: "",
     image: "",
+    timestamp: "",
     id: 1,
   });
 
