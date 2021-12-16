@@ -83,6 +83,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   border: 3px solid lightgray;
   border-radius: 35px;
   width: 70px;
+  height: 70px;
 }
 
 .logout {
