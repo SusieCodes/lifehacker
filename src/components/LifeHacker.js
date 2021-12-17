@@ -8,19 +8,19 @@ import { Register } from "../auth/Register";
 export const LifeHacker = () => {
   return (
     <>
-      <Route path="/">
+      {/* <Route path="/">
         {sessionStorage.getItem("lifehacker_user") ? (
           <>
-            {/* <Sidebar />
-            <ApplicationViews /> */}
+            <Sidebar />
+            <ApplicationViews />
             <Redirect to="/login" />
           </>
         ) : (
           <Redirect to="/login" />
         )}
-      </Route>
+      </Route> */}
 
-      <Route path="/login">
+      <Route path="/">
         <Login />
       </Route>
 
