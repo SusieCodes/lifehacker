@@ -11,11 +11,7 @@ export const LifeHacker = () => {
       <Route
         render={() => {
           if (sessionStorage.getItem("lifehacker_user")) {
-            return (
-              <>
-                <Sidebar />
-              </>
-            );
+            return <></>;
           } else {
             return <Redirect to="/login" />;
           }
