@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-// import { Sidebar } from "./sidebar/Sidebar";
+import { Sidebar } from "./sidebar/Sidebar";
 // import { ApplicationViews } from "./ApplicationViews"
 import { Login } from "../auth/Login";
 import { Register } from "../auth/Register";
@@ -10,21 +10,19 @@ export const LifeHacker = () => {
     <>
       <Route
         render={() => {
-          // if (sessionStorage.getItem("lifehacker_user")) {
-          //   return (
-          //     <>
-          //       {/* <Sidebar /> */}
-          //       {/* <ApplicationViews /> */}
-          //     </>
-          //   );
-          // } else {
-          //   return <Redirect to="/login" />;
-          // }
+          if (sessionStorage.getItem("lifehacker_user")) {
+            return (
+              <>
+                <Sidebar />
+              </>
+            );
+          } else {
+            return <Redirect to="/login" />;
+          }
         }}
       />
 
-      {/* <Route path="/login"> */}
-      <Route path="/">
+      <Route path="/login">
         <Login />
       </Route>
 
