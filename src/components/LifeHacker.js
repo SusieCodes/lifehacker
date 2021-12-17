@@ -11,8 +11,9 @@ export const LifeHacker = () => {
       <Route path="/">
         {sessionStorage.getItem("lifehacker_user") ? (
           <>
-            <Sidebar />
-            <ApplicationViews />
+            {/* <Sidebar />
+            <ApplicationViews /> */}
+            <Redirect to="/login" />
           </>
         ) : (
           <Redirect to="/login" />
