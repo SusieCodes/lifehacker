@@ -2,7 +2,7 @@
   "name": "lifehacker",
   "version": "0.1.0",
   "private": true,
-  "description": "Life Hacker App: Your Ultimate Life Planner - React web site created by Susie Stanley",
+  "description": "Life Hacker App: Your Ultimate Life Planner - React app created by Susie Stanley",
   "author": "Susie Stanley",
   "dependencies": {
     "@emotion/react": "^11.5.0",
