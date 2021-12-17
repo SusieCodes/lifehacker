@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-// import { Sidebar } from "./sidebar/Sidebar";
+import { Sidebar } from "./sidebar/Sidebar";
 // import { ApplicationViews } from "./ApplicationViews";
 import { Login } from "../auth/Login";
 import { Register } from "../auth/Register";
@@ -8,19 +8,18 @@ import { Register } from "../auth/Register";
 export const LifeHacker = () => {
   return (
     <>
-      {/* <Route path="/">
+      <Route path="/">
         {sessionStorage.getItem("lifehacker_user") ? (
           <>
             <Sidebar />
-            <ApplicationViews />
-            <Redirect to="/login" />
+            {/* <ApplicationViews /> */}
           </>
         ) : (
           <Redirect to="/login" />
         )}
-      </Route> */}
+      </Route>
 
-      <Route path="/">
+      <Route path="/login">
         <Login />
       </Route>
 
