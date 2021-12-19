@@ -149,7 +149,7 @@ export const ConnectionBoard = () => {
               ))}
             </div>
           ) : (
-            <div className="container">
+            <div className="dummy-container">
               <ConnectionDummyCard />
             </div>
           )}

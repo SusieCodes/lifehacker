@@ -11,12 +11,6 @@ import { formatJustMonthDay } from "../helper";
 import "./Connections.css";
 import "../dashboard/Dashboard.css";
 
-// const formatDate = (date) => {
-//   var array = date.toString().split(/-/g);
-//   array.push(array.shift());
-//   return array.join("/");
-// };
-
 export const ConnectionDashCard = ({ connection, handleDelete }) => {
   const history = useHistory();
 

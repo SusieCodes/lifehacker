@@ -36,19 +36,19 @@ export const UserDetail = () => {
 
   useEffect(() => {
     //use getuserById() from userManager to grab info  and set it to state
-    getUserById(userId).then((user) => {
+    getUserById(userId).then((userInfo) => {
       setUser({
         userId: sessionStorage.getItem("lifehacker_user"),
-        name: user.name,
-        image: user.image,
-        email: user.email,
-        phone: user.phone,
-        address: user.address,
-        city: user.city,
-        stateProvince: user.stateProvince,
-        zipCode: user.zipCode,
-        country: user.country,
-        bday: user.bday,
+        name: userInfo.name,
+        image: userInfo.image,
+        email: userInfo.email,
+        phone: userInfo.phone,
+        address: userInfo.address,
+        city: userInfo.city,
+        stateProvince: userInfo.stateProvince,
+        zipCode: userInfo.zipCode,
+        country: userInfo.country,
+        bday: userInfo.bday,
       });
     });
   }, [userId]);
@@ -61,7 +61,7 @@ export const UserDetail = () => {
         <div className="user-flex">
           <div className="user-outer-flex">
             <div className="user-detail-image">
-              {user.image !== "" ? (
+              {user.image ? (
                 <img
                   src={user.image}
                   alt={user.name}
@@ -110,7 +110,7 @@ export const UserDetail = () => {
                     <div className="user-info__bday">
                       <div className="c-bold">Birthday:</div>
                       <div className="c-indent">
-                        {user.bday !== "" ? (
+                        {user.bday ? (
                           <>{formatDateNoWeekday(user?.bday)}</>
                         ) : null}
                       </div>

@@ -165,8 +165,7 @@ export const ConnectionDetail = () => {
                       <div className="c-indent">
                         {connection.bday !== "" ? (
                           <>{formatDateNoWeekday(connection?.bday)}</>
-                        ) : // <>{dateFormatWithSuffix(connection?.bday)}</>
-                        null}
+                        ) : null}
                       </div>
                     </div>
                   </div>
