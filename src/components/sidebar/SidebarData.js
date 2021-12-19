@@ -60,7 +60,7 @@ export const SidebarData = [
 export const SidebarLogout = [
   {
     title: "Logout",
-    path: "/login",
+    path: "/",
     icon: <Io5Icons.IoLogOut />,
     cName: "side-text",
   },

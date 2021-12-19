@@ -1,4 +1,7 @@
 import { Route } from "react-router-dom";
+import { Login } from "../auth/Login";
+import { Register } from "../auth/Register";
+import { Sidebar } from "../components/sidebar/Sidebar";
 import { Dashboard } from "../../src/components/dashboard/Dashboard";
 import { ConnectionBoard } from "./connections/ConnectionBoard";
 import { ConnectionForm } from "../../src/components/connections/ConnectionForm";
@@ -33,11 +36,26 @@ import { WishlistEditForm } from "../../src/components/lists/WishlistEditForm";
 // import { PrintGroceryList } from "../../src/components/groceries/GroceryPrint";
 // import { PrintWishlist } from "../../src/components/lists/WishlistPrint";
 
-export const ApplicationViews = () => {
+export const ApplicationViews = ({
+  setAuthUser,
+  isAuthenticated,
+  clearUser,
+}) => {
+  console.log("isAuthenticated is: ", isAuthenticated);
   return (
     <>
+      <Route path="/">
+        {isAuthenticated ? (
+          <Sidebar isAuthenticated={isAuthenticated} clearUser={clearUser} />
+        ) : null}
+      </Route>
+
       <Route exact path="/">
-        <Dashboard />
+        <Login setAuthUser={setAuthUser} />
+      </Route>
+
+      <Route exact path="/register">
+        <Register setAuthUser={setAuthUser} />
       </Route>
 
       <Route exact path="/dashboard">

@@ -13,20 +13,12 @@ import logo from "../../images/lifehackerbanner.svg";
 import "./Sidebar.css";
 import "../LifeHacker.css";
 
-export const Sidebar = () => {
+export const Sidebar = ({ clearUser, isAuthenticated }) => {
   const [sidebar, setSidebar] = useState(false);
   const [user, setUser] = useState({
     name: "",
     email: "",
-    phone: "",
-    address: "",
-    city: "",
-    stateProvince: "",
-    zipCode: "",
-    country: "",
-    bday: "",
     image: "",
-    timestamp: "",
     id: 1,
   });
 
@@ -97,8 +89,9 @@ export const Sidebar = () => {
                       <button
                         className="logout"
                         onClick={() => {
-                          sessionStorage.removeItem("lifehacker_user");
-                          history.push("/login");
+                          // sessionStorage.removeItem("lifehacker_user");
+                          clearUser();
+                          history.push("/");
                         }}
                       >
                         Logout
@@ -137,8 +130,9 @@ export const Sidebar = () => {
                     <Link
                       to={item.path}
                       onClick={() => {
-                        sessionStorage.removeItem("lifehacker_user");
-                        history.push("/login");
+                        // sessionStorage.removeItem("lifehacker_user");
+                        history.push("/");
+                        clearUser();
                       }}
                     >
                       {item.icon}
