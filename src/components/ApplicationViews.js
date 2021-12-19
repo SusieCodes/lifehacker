@@ -1,4 +1,7 @@
 import { Route } from "react-router-dom";
+import { Login } from "../auth/Login";
+import { Register } from "../auth/Register";
+import { Sidebar } from "../components/sidebar/Sidebar";
 import { Dashboard } from "../../src/components/dashboard/Dashboard";
 import { ConnectionBoard } from "./connections/ConnectionBoard";
 import { ConnectionForm } from "../../src/components/connections/ConnectionForm";
@@ -30,14 +33,28 @@ import { RecommendationForm } from "../../src/components/lists/RecommendationFor
 import { RecommendationEditForm } from "../../src/components/lists/RecommendationEditForm";
 import { WishlistForm } from "../../src/components/lists/WishlistForm";
 import { WishlistEditForm } from "../../src/components/lists/WishlistEditForm";
-import { PrintGroceryList } from "../../src/components/groceries/GroceryPrint";
-import { PrintWishlist } from "../../src/components/lists/WishlistPrint";
+// import { PrintGroceryList } from "../../src/components/groceries/GroceryPrint";
+// import { PrintWishlist } from "../../src/components/lists/WishlistPrint";
 
-export const ApplicationViews = () => {
+export const ApplicationViews = ({
+  setAuthUser,
+  isAuthenticated,
+  clearUser,
+}) => {
   return (
     <>
+      <Route path="/">
+        {isAuthenticated ? (
+          <Sidebar isAuthenticated={isAuthenticated} clearUser={clearUser} />
+        ) : null}
+      </Route>
+
       <Route exact path="/">
-        <Dashboard />
+        <Login setAuthUser={setAuthUser} />
+      </Route>
+
+      <Route exact path="/register">
+        <Register setAuthUser={setAuthUser} />
       </Route>
 
       <Route exact path="/dashboard">
@@ -164,13 +181,13 @@ export const ApplicationViews = () => {
         <WishlistEditForm />
       </Route>
 
-      <Route exact path="/groceries/print">
+      {/* <Route exact path="/groceries/print">
         <PrintGroceryList />
       </Route>
 
       <Route exact path="/wishlists/print">
         <PrintWishlist />
-      </Route>
+      </Route> */}
     </>
   );
 };

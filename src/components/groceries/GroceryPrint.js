@@ -27,9 +27,9 @@ export class ComponentToPrint extends React.Component {
             </div>
 
             <div className="print-grocery-list">
-              {this.state.groceries.map((grocery) => (
+              {/* {this.state.groceries.map((grocery) => (
                 <GroceryPrintCard key={grocery.id} grocery={grocery} />
-              ))}
+              ))} */}
             </div>
           </div>
         </div>

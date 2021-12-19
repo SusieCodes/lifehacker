@@ -1,35 +1,30 @@
-import React from "react"
-import { Route, Redirect } from "react-router-dom"
-import { Sidebar }from './sidebar/Sidebar'
-import { ApplicationViews } from "./ApplicationViews"
-import { Login } from "../auth/Login"
-import { Register } from "../auth/Register"
+import React, { useState } from "react";
+import { ApplicationViews } from "./ApplicationViews";
 
 export const LifeHacker = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    sessionStorage.getItem("lifehacker_user") !== null
+  );
+
+  const setAuthUser = (user) => {
+    sessionStorage.setItem("lifehacker_user", user.id);
+    const [firstname] = user.name.split(" ");
+    sessionStorage.setItem("lifehacker_username", firstname);
+    setIsAuthenticated(sessionStorage.getItem("lifehacker_user") !== null);
+  };
+
+  const clearUser = () => {
+    sessionStorage.clear();
+    setIsAuthenticated(sessionStorage.getItem("lifehacker_user") !== null);
+  };
+
   return (
     <>
-    <Route
-      render={() => {
-        if (sessionStorage.getItem("lifehacker_user")) {
-          return (
-            <>
-              <Sidebar />
-              <ApplicationViews />
-            </>
-          )
-        } else {
-          return <Redirect to="/login" />
-        }
-      }}
-    />
-
-    <Route path="/login">
-      <Login />
-    </Route>
-
-    <Route path="/register">
-      <Register />
-    </Route>
+      <ApplicationViews
+        setAuthUser={setAuthUser}
+        isAuthenticated={isAuthenticated}
+        clearUser={clearUser}
+      />
     </>
-  )
-}
+  );
+};
