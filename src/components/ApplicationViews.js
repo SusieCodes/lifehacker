@@ -41,7 +41,6 @@ export const ApplicationViews = ({
   isAuthenticated,
   clearUser,
 }) => {
-  console.log("isAuthenticated is: ", isAuthenticated);
   return (
     <>
       <Route path="/">
