@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/lifehacker/static/css/main.8bd80a5e.chunk.css",
-    "main.js": "/lifehacker/static/js/main.ceffef2c.chunk.js",
-    "main.js.map": "/lifehacker/static/js/main.ceffef2c.chunk.js.map",
+    "main.js": "/lifehacker/static/js/main.68d2aab6.chunk.js",
+    "main.js.map": "/lifehacker/static/js/main.68d2aab6.chunk.js.map",
     "runtime-main.js": "/lifehacker/static/js/runtime-main.c331f639.js",
     "runtime-main.js.map": "/lifehacker/static/js/runtime-main.c331f639.js.map",
-    "static/js/2.fdd4d7b7.chunk.js": "/lifehacker/static/js/2.fdd4d7b7.chunk.js",
-    "static/js/2.fdd4d7b7.chunk.js.map": "/lifehacker/static/js/2.fdd4d7b7.chunk.js.map",
+    "static/js/2.66335a7a.chunk.js": "/lifehacker/static/js/2.66335a7a.chunk.js",
+    "static/js/2.66335a7a.chunk.js.map": "/lifehacker/static/js/2.66335a7a.chunk.js.map",
     "index.html": "/lifehacker/index.html",
     "static/css/main.8bd80a5e.chunk.css.map": "/lifehacker/static/css/main.8bd80a5e.chunk.css.map",
-    "static/js/2.fdd4d7b7.chunk.js.LICENSE.txt": "/lifehacker/static/js/2.fdd4d7b7.chunk.js.LICENSE.txt",
+    "static/js/2.66335a7a.chunk.js.LICENSE.txt": "/lifehacker/static/js/2.66335a7a.chunk.js.LICENSE.txt",
     "static/media/ movie.png": "/lifehacker/static/media/ movie.812c267e.png",
     "static/media/ActivityBoard.png": "/lifehacker/static/media/ActivityBoard.e87fbe23.png",
     "static/media/ConnectionBoard.png": "/lifehacker/static/media/ConnectionBoard.37afafce.png",
@@ -63,8 +63,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.c331f639.js",
-    "static/js/2.fdd4d7b7.chunk.js",
+    "static/js/2.66335a7a.chunk.js",
     "static/css/main.8bd80a5e.chunk.css",
-    "static/js/main.ceffef2c.chunk.js"
+    "static/js/main.68d2aab6.chunk.js"
   ]
 }
