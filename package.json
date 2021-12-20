@@ -2,7 +2,7 @@
   "name": "lifehacker",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://lifehacker.herokuapp.com/",
+  "homepage": "https://susiecodes.github.io/lifehacker",
   "description": "Life Hacker App: Your Ultimate Life Planner - React app created by Susie Stanley",
   "author": "Susie Stanley",
   "dependencies": {

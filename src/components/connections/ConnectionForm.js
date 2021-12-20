@@ -11,6 +11,8 @@ import "../LifeHacker.css";
 
 export const ConnectionForm = () => {
   const [conflictDialog, setConflictDialog] = useState(false);
+  // const [uploadName, setUploadName] = useState("Choose Image");
+  // const uploadName = "Choose Image";
   // Defining initial state of the form inputs with useState
   const [connection, setConnection] = useState({
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
@@ -45,7 +47,7 @@ export const ConnectionForm = () => {
   // start of upload function
   const [clickedStyle, setClickedStyle] = useState("no-uploaded-image");
   const [image, setImage] = useState("");
-
+  const [uploadName, setUploadName] = useState("Choose Image");
   const [loading, setLoading] = useState(false);
 
   const uploadImage = async (evt) => {
@@ -65,15 +67,16 @@ export const ConnectionForm = () => {
 
     const file = await res.json();
     setImage(file.secure_url);
-    // console.log("image is ", image);
-    // console.log("file.secure_url is ", file.secure_url);
-    // console.log("image type is ", typeof image);
     setLoading(false);
     setClickedStyle("uploaded-image");
   };
   // end of upload function
 
   const ResetForm = () => {
+    setClickedStyle("no-uploaded-image");
+    setUploadName("Choose Image");
+    setImage("");
+    setLoading(false);
     setConnection({
       userId: parseInt(sessionStorage.getItem("lifehacker_user")),
       name: "",
@@ -187,10 +190,10 @@ export const ConnectionForm = () => {
                 <input
                   type="file"
                   id="image"
-                  name="file"
+                  name={uploadName}
                   className="upload-input"
                   placeholder="Choose Image"
-                  // value={connection.image}
+                  // value=""
                   onChange={uploadImage}
                 />
               </div>

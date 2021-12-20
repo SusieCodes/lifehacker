@@ -755,6 +755,17 @@ button.activity-delete {
   /* border: 1px solid black; */
 }
 
+.dc-dummy-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  width: 330px;
+  /* border: 1px solid black; */
+}
+
 .dc-details {
   margin: auto 0px;
   font-size: 16px;
