@@ -67,6 +67,7 @@ export const ConnectionBoard = () => {
 
   useEffect(() => {
     getConnections();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   // invokes orderBdays and watches allBirthdays for changes
