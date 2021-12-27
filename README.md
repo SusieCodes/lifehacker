@@ -1,4 +1,5 @@
 # Life Hacker
+I build my Life Hacker app from scratch for my 3 month capstone at Nashville Software School.
 
 ![Project Image](https://github.com/SusieCodes/lifehacker/blob/main/src/images/lifehackerdashboard.png)
 
