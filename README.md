@@ -1,5 +1,8 @@
 # Life Hacker
-I built my Life Hacker app from scratch for my 3 month capstone at Nashville Software School. It is intended for desktop only at this time.
+I built my Life Hacker desktop app from scratch for my 3 month capstone at Nashville Software School.
+
+## See the Video Walkthrough
+![Project Video](https://youtu.be/yYP9dOdY4Fw)
 
 ![Project Image](https://github.com/SusieCodes/lifehacker/blob/main/src/images/lifehackerdashboard.png)
 
