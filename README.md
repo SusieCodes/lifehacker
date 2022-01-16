@@ -1,8 +1,8 @@
 # Life Hacker
 I built my Life Hacker desktop app from scratch for my 3 month capstone at Nashville Software School.
 
-## See the Video Walkthrough on YouTube
-[Life Hacker Video Demo](https://youtu.be/yYP9dOdY4Fw)
+### See the Video Walkthrough on YouTube
+• [Life Hacker Video Demo](https://youtu.be/yYP9dOdY4Fw)
 
 
 ![Project Image](https://github.com/SusieCodes/lifehacker/blob/main/src/images/lifehackerdashboard.png)
