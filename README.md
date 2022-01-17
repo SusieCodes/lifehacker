@@ -1,5 +1,5 @@
 # Life Hacker
-I built my Life Hacker desktop app from scratch for my 3 month capstone at Nashville Software School.
+I built this React app from scratch for my 3 month capstone at Nashville Software School.
 
 ### See the Video Walkthrough on YouTube
 • [Life Hacker Video Demo](https://youtu.be/yYP9dOdY4Fw)
@@ -49,7 +49,7 @@ I built my Life Hacker desktop app from scratch for my 3 month capstone at Nashv
 
 ## Description
 
-Life Hacker is a React App I built to track my activities, journal entries, grocery list, digital sticky notes, to-do list, service providers, recommendations, and a wishlist. My app centers around a robust contact list that lets me keep track of important information about the people I care about so I'll never forget significant dates and information. Different shades of blue were used throughout the site to instill a feeling of calm, trust, and serenity while using this web-based app.
+Life Hacker is a React App I built to track my activities, journal entries, grocery list, digital sticky notes, to-do list, service providers, recommendations, and a wishlist. My app centers around a robust contact list that lets me keep track of important information about the people I care about so I'll never forget significant dates and personal details. Different shades of blue were used throughout the site to instill a feeling of calm, trust, and serenity while using this web-based app.
 
 ---
 
