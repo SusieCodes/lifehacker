@@ -157,14 +157,6 @@ export const UserEditForm = () => {
                 <div className="loading">Loading...</div>
               ) : (
                 <div className="uploaded-image-wrapper">
-                  {/* <img
-                    src={image}
-                    alt="user"
-                    width="150"
-                    height="150"
-                    className={clickedStyle}
-                  /> */}
-
                   {image ? (
                     <img
                       src={image}

@@ -9,15 +9,6 @@ export const getJournalsByUserId = (UserId) => {
   ).then((res) => res.json());
 };
 
-// export const getAllJournals = () => {
-//   return fetch(`${url}/journals`, {
-//     method: "GET",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//   }).then((res) => res.json());
-// };
-
 export const addJournal = (newJournal) => {
   return fetch(`${url}/journals`, {
     method: "POST",

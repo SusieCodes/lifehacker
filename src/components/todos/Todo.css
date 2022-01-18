@@ -1,16 +1,6 @@
 /* 
 Author: Susie Stanley
 Purpose: To-Do pages styling
-
-Site colors used:
-Light Blue: #c8e6ea
-Light Blue: #c8e6ea68 (faded)
-Dark Blue: rgb(82, 207, 223) Details button border
-Red: #D61212
-Light Gray: rgba(211, 211, 211, 0.468) Dashboard Connections header
-Dark Gray: #2b2b2b font color throughout
-Shadow: box-shadow: 5px 5px 5px lightgray;
-Bright Blue: #c4f7fe highlights, hover on links, and buttons
 */
 
 .board-container__todo {
@@ -41,13 +31,11 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 .todo-info {
   flex: 3;
   margin: 15px;
-  /* border: 3px solid orange; */
 }
 
 .todo-section {
   padding: 0px;
   margin: 0px;
-  /* border: 2px solid pink; */
 }
 
 .todo-title {
@@ -56,7 +44,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   padding: 0px;
   margin: 0px;
   white-space: nowrap;
-  /* border: 1px solid black; */
 }
 
 .todo-bywhen {
@@ -65,7 +52,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   padding: 0px;
   margin: 0px;
   white-space: nowrap;
-  /* border: 1px solid black; */
 }
 
 .todo-bywhen__red {
@@ -75,7 +61,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   padding: 0px;
   margin: 0px;
   white-space: nowrap;
-  /* border: 1px solid red; */
 }
 
 .todo-complete {
@@ -87,7 +72,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   padding-right: 10px;
   margin: 15px;
   white-space: nowrap;
-  /* border: 2px solid yellow; */
 }
 
 input.checkbox-todoboard {
@@ -118,19 +102,16 @@ input.checkbox-todoboard:hover {
   white-space: nowrap;
   padding: 0px;
   margin: 15px;
-  /* border: 2px solid green; */
 }
 
 .todo-delete {
   margin: auto 0px;
   padding-top: 2px;
-  /* border: 1px solid black; */
 }
 
 .todo-edit {
   margin: auto 0px;
   padding: 0px;
-  /* border: 1px solid black; */
 }
 
 .todo-edit-icon {

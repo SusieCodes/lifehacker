@@ -1,16 +1,6 @@
 /* 
 Author: Susie Stanley
 Purpose: Activity pages styling
-
-Site colors used:
-Light Blue: #c8e6ea
-Light Blue: #c8e6ea68 (faded)
-Dark Blue: rgb(82, 207, 223) Details button border
-Red: #D61212
-Light Gray: rgba(211, 211, 211, 0.468) Dashboard Connections header
-Dark Gray: #2b2b2b font color throughout
-Shadow: box-shadow: 5px 5px 5px lightgray;
-Bright Blue: #c4f7fe highlights, hover on links, and buttons
 */
 
 .board-container__activity {
@@ -18,7 +8,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  /* border: 1px solid green; */
 }
 
 .upcoming-past-wrapper {
@@ -36,7 +25,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   background-color: white;
   border-radius: 5px;
   box-shadow: 5px 5px 5px lightgray;
-  /* border: 2px solid black; */
 }
 
 .column-center {
@@ -44,7 +32,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 1px solid pink; */
 }
 
 .activity-card {
@@ -56,12 +43,10 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   margin: 10px 0px;
   border-radius: 5px;
   background-color: #c8e6ea68;
-  /* border: 1px solid black; */
 }
 
 .activity-info {
   padding-bottom: 10px;
-  /* border: 3px solid orange; */
 }
 
 .activity-wrapper {
@@ -77,7 +62,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   margin: 0px;
   text-align: left;
   font-size: 22px;
-  /* border: 1px solid red; */
 }
 
 .tag-image {
@@ -89,10 +73,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   width: 100%;
 }
 
-/* .tag-icon:hover {
-  cursor: pointer;
-} */
-
 .no-margin {
   margin: 0px;
 }
@@ -103,7 +83,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   justify-content: flex-start;
   padding: 0px;
   margin: 0px;
-  /* border: 1px solid purple; */
 }
 
 .activity-inner-left {
@@ -113,7 +92,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   white-space: nowrap;
   margin: 0px;
   padding: 0px;
-  /* border: 1px solid lime; */
 }
 
 .address-spacer {
@@ -145,7 +123,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   margin: 0px 5px;
   max-width: 400px;
   padding-top: 4px;
-  /* border: 1px solid pink; */
 }
 
 .address-wrapper {
@@ -153,7 +130,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   margin: 5px 0px;
   background-color: white;
   border-radius: 5px;
-  /* border: 1px solid pink; */
 }
 
 .activity-address__highlight {
@@ -164,7 +140,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   overflow-wrap: break-word;
   padding: 3px 5px;
   margin: 0px 5px;
-  /* border: 1px solid blue; */
 }
 
 .activity-notes {
@@ -175,7 +150,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   width: 225px;
   margin-top: 13px;
   overflow-wrap: break-word;
-  /* border: 3px solid purple; */
 }
 
 /* needed this extra div to make word wrap work */
@@ -183,7 +157,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   margin: 0px;
   width: 100%;
   padding: 0px;
-  /* border: 1px solid chartreuse; */
 }
 
 .activity-icons {
@@ -193,7 +166,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   align-items: center;
   padding: 0px;
   margin-bottom: 8px;
-  /* border: 1px solid black; */
 }
 
 .activity-edit-icon {
@@ -203,7 +175,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   width: 35px;
   height: 35px;
   transition: all 0.2s ease-in-out;
-  /* border: 1px solid red; */
 }
 
 .activity-edit-icon:hover {
@@ -219,7 +190,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   width: 30px;
   height: 30px;
   transition: all 0.2s ease-in-out;
-  /* border: 1px solid green; */
 }
 
 .activity-delete-icon:hover {
@@ -242,25 +212,20 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 
 /* this controls the dropdown container */
 .css-1s2u09g-control {
-  /* border: 1px solid hsl(0, 0%, 38%); */
   font-size: 18px; /* CONTROLS INPUT SELECT*/
   color: rgb(230, 230, 230);
   width: 300px;
   box-shadow: none;
-  /* outline: rgb(118, 118, 118); */
 }
 
 .css-1s2u09g-control:target {
-  /* border: 1px solid hsl(0, 0%, 80%); */
   font-size: 18px;
   color: rgb(230, 230, 230);
   width: 300px;
   box-shadow: none;
-  /* outline: rgb(118, 118, 118); */
 }
 
 .css-1s2u09g-control:focus {
-  /* border: 1px solid black; */
   font-size: 18px;
   width: 300px;
   box-shadow: none;
@@ -268,7 +233,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 }
 
 .css-1s2u09g-control:hover {
-  /* border: 1px solid black; */
   font-size: 18px;
   width: 300px;
   box-shadow: none;
@@ -280,19 +244,16 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   box-shadow: none;
   font-size: 18px; /* CONTROLS DROPDOWN FONT*/
   margin: 5px;
-  /* border: 1px solid red; */
 }
 
 .css-b62m3t-container input {
   box-shadow: none;
   font-size: 18px;
-  /* border: 1px solid red; */
 }
 
 .css-1okebmr-indicatorSeparator {
   align-self: flex-end;
   font-size: 18px;
-  /* margin: 16px; */
   box-shadow: none;
 }
 
@@ -301,20 +262,15 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   box-shadow: none;
   outline: none;
   width: 300px;
-  /* border: 1px solid red; */
 }
 
 .css-1pahdxg-control:focus {
-  /* border: 1px solid black; */
   font-size: 18px;
   width: 300px;
   box-shadow: none;
-  /* outline: none; */
 }
 
 .css-1pahdxg-control:hover {
-  /* border: 1px solid darkgray !important; */
-  /* border: 1px solid rgb(118, 118, 118) !important; */
   font-size: 18px;
   width: 300px;
   box-shadow: none;
@@ -332,7 +288,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  /* border: 1px solid green; */
 }
 
 .column-center-sort {
@@ -357,7 +312,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   margin: 5px 10px 15px;
   border-radius: 5px;
   background-color: #c8e6ea68;
-  /* border: 1px solid blue; */
 }
 
 .activity-wrapper-sort {
@@ -366,7 +320,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   justify-content: flex-start;
   padding: 5px;
   margin: 0px;
-  /* border: 1px solid black; */
 }
 
 .activity-title-sort {
@@ -389,14 +342,12 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 .activity-address-sort,
 .activity-note-sort {
   margin-top: 10px;
-  /* border: 1px solid aqua; */
 }
 
 .bold-sort {
   font-weight: 500;
   margin-right: 10px;
   width: 70px;
-  /* border: 1px solid red; */
 }
 
 .highlight-sort {
@@ -416,7 +367,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   align-content: center;
   padding: 0px 30px;
   margin: 10px auto;
-  /* border: 1px solid blue; */
 }
 
 .sort-title {
@@ -425,7 +375,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   align-self: center;
   font-size: 26px;
   font-weight: 600;
-  /* border: 1px solid black; */
 }
 
 .sort-image {
@@ -437,8 +386,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   height: 50px;
   background-color: #c8e6ea68;
   border-radius: 10px;
-  /* margin-left: 10px; */
-  /* border: 1px solid red; */
 }
 
 .tag-icon-sort {
@@ -452,7 +399,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   justify-content: flex-start;
   padding: 0px;
   margin: 0px;
-  /* border: 1px solid purple; */
 }
 
 .activity-inner-left-sort {
@@ -462,7 +408,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   white-space: nowrap;
   margin: 0px;
   padding: 0px;
-  /* border: 1px solid lime; */
 }
 
 .address-wrapper-sort {
@@ -470,7 +415,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   margin: 5px 0px;
   background-color: white;
   border-radius: 5px;
-  /* border: 1px solid pink; */
 }
 
 .constrain {
@@ -480,9 +424,7 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   justify-content: flex-start;
   flex-wrap: wrap;
   width: 100%;
-  /* margin-top: 13px; */
   overflow-wrap: break-word;
-  /* border: 3px solid purple; */
 }
 
 /* needed this extra div to make word wrap work */
@@ -490,7 +432,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   margin: 0px;
   width: 100%;
   padding: 0px;
-  /* border: 1px solid chartreuse; */
 }
 
 .activity-icons-sort {
@@ -499,8 +440,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   justify-content: center;
   align-items: center;
   padding: 15px 0px 5px;
-  /* margin-bottom: 8px; */
-  /* border: 1px solid black; */
 }
 
 .activity-edit-icon-sort {
@@ -510,7 +449,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   width: 35px;
   height: 35px;
   transition: all 0.2s ease-in-out;
-  /* border: 1px solid red; */
 }
 
 .activity-edit-icon-sort:hover {
@@ -526,7 +464,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   width: 30px;
   height: 30px;
   transition: all 0.2s ease-in-out;
-  /* border: 1px solid green; */
 }
 
 .activity-delete-icon-sort:hover {

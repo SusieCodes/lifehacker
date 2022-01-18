@@ -25,7 +25,6 @@ export const GroceryForm = () => {
   const handleControlledInputChange = (event) => {
     const newGrocery = { ...grocery };
     let selectedVal = event.target.value;
-    // selectedVal = parseInt(selectedVal);
     newGrocery[event.target.id] = selectedVal;
     setGrocery(newGrocery);
   };

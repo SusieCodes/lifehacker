@@ -2,7 +2,6 @@
 //Purpose: Defines component TodoDashList that renders a list of todo's in chronological order to the dashboard
 
 import React, { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
 import {
   getTodosByUserId,
   completeTodo,

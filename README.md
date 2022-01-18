@@ -1,5 +1,11 @@
 # Life Hacker
 
+I built this React app from scratch for my 3 month capstone at Nashville Software School.
+
+### See the Video Walkthrough on YouTube
+
+• [Life Hacker Video Demo](https://youtu.be/yYP9dOdY4Fw)
+
 ![Project Image](https://github.com/SusieCodes/lifehacker/blob/main/src/images/lifehackerdashboard.png)
 
 > The Ultimate Life Planner to track and organize all of life's details including:
@@ -44,7 +50,7 @@
 
 ## Description
 
-Life Hacker is a React App I built to track my activities, journal entries, grocery list, digital sticky notes, to-do list, service providers, recommendations, and a wishlist. My app centers around a robust contact list that lets me keep track of important information about the people I care about so I'll never forget significant dates and information. Different shades of blue were used throughout the site to instill a feeling of calm, trust, and serenity while using this web-based app.
+Life Hacker is a React App I built to track my activities, journal entries, grocery list, digital sticky notes, to-do list, service providers, recommendations, and a wishlist. My app centers around a robust contact list that lets me keep track of important information about the people I care about so I'll never forget significant dates and personal details. Different shades of blue were used throughout the site to instill a feeling of calm, trust, and serenity while using this web-based app.
 
 ---
 
@@ -65,7 +71,6 @@ Life Hacker is a React App I built to track my activities, journal entries, groc
 
 ## How To Use
 
-
 ### Starting the webpage
 
 1. Clone the repo
@@ -73,8 +78,9 @@ Life Hacker is a React App I built to track my activities, journal entries, groc
    ```
    git clone git@github.com:SusieCodes/lifehacker.git
    ```
-   
+
 2. From inside the LifeHacker directory on your terminal, enter:
+
    ```
    npm install
    ```

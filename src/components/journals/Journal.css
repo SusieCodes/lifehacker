@@ -1,16 +1,6 @@
 /* 
 Author: Susie Stanley
 Purpose: Journal pages styling
-
-Site colors used:
-Light Blue: #c8e6ea
-Light Blue: #c8e6ea68 (faded)
-Dark Blue: rgb(82, 207, 223) Details button border
-Red: #D61212
-Light Gray: rgba(211, 211, 211, 0.468) Dashboard Connections header
-Dark Gray: #2b2b2b font color throughout
-Shadow: box-shadow: 5px 5px 5px lightgray;
-Bright Blue: #c4f7fe highlights, hover on links, and buttons
 */
 
 .board-container__journal {
@@ -44,7 +34,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   padding: 10px 15px;
   white-space: wrap;
   width: 700px;
-  /* border: 1px solid red; */
 }
 
 .journal-title {
@@ -84,14 +73,11 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   align-items: center;
   flex-wrap: nowrap;
   white-space: nowrap;
-  /* width: 300px; */
-  /* border: 1px solid red; */
 }
 
 .journal-delete {
   margin: auto 0px;
   padding-top: 6px;
-  /* border: 1px solid black; */
 }
 
 .journal-edit-icon {

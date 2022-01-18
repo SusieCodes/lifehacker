@@ -1,16 +1,6 @@
 /* 
 Author: Susie Stanley
 Purpose: Note pages styling
-
-Site colors used:
-Light Blue: #c8e6ea
-Light Blue: #c8e6ea68 (faded)
-Dark Blue: rgb(82, 207, 223) Details button border
-Red: #D61212
-Light Gray: rgba(211, 211, 211, 0.468) Dashboard Connections header
-Dark Gray: #2b2b2b font color throughout
-Shadow: box-shadow: 5px 5px 5px lightgray;
-Bright Blue: #c4f7fe highlights, hover on links, and buttons
 */
 
 /* NoteBoard Note styling */
@@ -21,7 +11,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   flex-wrap: wrap;
   margin: 20px 0px 0px;
   border-radius: 5px;
-  /* border: 2px solid aqua; */
 }
 
 .note-card-list {
@@ -31,7 +20,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   border-radius: 5px;
   border: none;
   box-shadow: 2px 3px 7px gray;
-  /* border: 2px solid lime; */
 }
 
 .noteboard-note__wrapper {
@@ -46,7 +34,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   margin: 0px 10px;
   min-width: 350px;
   min-height: 200px;
-  /* border: 3px solid yellow; */
 }
 
 .noteboard-note {
@@ -55,7 +42,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   flex-direction: row;
   justify-content: center;
   padding: 55px 0px 50px 60px;
-  /* border: 3px solid pink; */
 }
 
 .noteboard-note__text {
@@ -67,7 +53,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   margin: 0px;
   width: 125px;
   height: 120px;
-  /* border: 1px solid black; */
 }
 
 .note-top-text {
@@ -84,7 +69,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   width: 100%;
   max-height: 60px;
   overflow: hidden;
-  /* border: 2px solid red; */
 }
 
 .text-wrapper {
@@ -92,7 +76,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   width: 100%;
   padding: 0px;
   overflow-wrap: break-word;
-  /* border: 1px solid chartreuse; */
 }
 
 .note-bottom-text {
@@ -108,7 +91,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   width: 100%;
   max-height: 60px;
   overflow: hidden;
-  /* border: 1px solid blue; */
 }
 
 .note__delete {
@@ -139,7 +121,6 @@ button.note-delete {
   padding: 0px;
   padding-bottom: 10px;
   margin: 0px;
-  /* border: 1px solid purple; */
 }
 
 .noteboard-checkbox {
@@ -150,7 +131,6 @@ button.note-delete {
 .noteboard-delete {
   margin: auto 0px;
   padding-top: 6px;
-  /* border: 1px solid black; */
 }
 
 .noteboard-edit-icon {

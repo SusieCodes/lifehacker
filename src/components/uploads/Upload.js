@@ -11,12 +11,6 @@ export const Upload = () => {
     data.append("file", files[0]);
     data.append("upload_preset", "wp84lxqy");
     setLoading(true);
-    // Axios.post(
-    //   "http://api.cloudinary.com/v1_1/dllowdq2w/image/upload",
-    //   data
-    // ).then((response) => {
-    //   console.log(response);
-    // });
 
     const res = await fetch(
       "	https://api.cloudinary.com/v1_1/dllowdq2w/image/upload",

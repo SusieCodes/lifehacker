@@ -3,7 +3,6 @@ import { getConnectionById, deleteConnection } from "./ConnectionManager";
 import { useParams, useHistory } from "react-router-dom";
 import { WelcomeBar2 } from "../../components/navbar/WelcomeBar2";
 import { formatDateNoWeekday } from "../helper";
-// import { dateFormatWithSuffix } from "../helper";
 import { Checkbox } from "@mui/material";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import { changeFave } from "./ConnectionManager";

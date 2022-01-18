@@ -1,16 +1,6 @@
 /* 
 Author: Susie Stanley
 Purpose: provider pages styling
-
-Site colors used:
-Light Blue: #c8e6ea
-Light Blue: #c8e6ea68 (faded)
-Dark Blue: rgb(82, 207, 223) Details button border
-Red: #D61212
-Light Gray: rgba(211, 211, 211, 0.468) Dashboard Connections header
-Dark Gray: #2b2b2b font color throughout
-Shadow: box-shadow: 5px 5px 5px lightgray;
-Bright Blue: #c4f7fe highlights, hover on links, and buttons
 */
 
 .board-container__lists {
@@ -18,7 +8,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  /* border: 1px solid green; */
 }
 
 .column-center-lists {
@@ -30,7 +19,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   margin: 20px;
   background-color: white;
   border-radius: 5px;
-  /* border: 1px solid black; */
 }
 
 .sort-title-list {
@@ -51,7 +39,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   margin: 5px 10px 15px;
   border-radius: 5px;
   background-color: #c8e6ea68;
-  /* border: 1px solid blue; */
 }
 
 .provider-wrapper-lists {
@@ -60,7 +47,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   justify-content: flex-start;
   padding: 5px;
   margin: 0px;
-  /* border: 1px solid black; */
 }
 
 .provider-title-lists {
@@ -83,7 +69,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   font-weight: 500;
   margin-right: 10px;
   width: 100px;
-  /* border: 1px solid red; */
 }
 
 .right-lists {
@@ -98,7 +83,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   flex-wrap: wrap;
   width: 100%;
   overflow-wrap: break-word;
-  /* border: 3px solid purple; */
 }
 
 /* needed this extra div to make word wrap work */
@@ -106,7 +90,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   margin: 0px;
   width: 100%;
   padding: 0px;
-  /* border: 1px solid chartreuse; */
 }
 
 .provider-icons-lists {
@@ -115,8 +98,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   justify-content: center;
   align-items: center;
   padding: 15px 0px 5px;
-  /* margin-bottom: 8px; */
-  /* border: 1px solid black; */
 }
 
 .provider-edit-icon-lists {
@@ -126,7 +107,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   width: 35px;
   height: 35px;
   transition: all 0.2s ease-in-out;
-  /* border: 1px solid red; */
 }
 
 .provider-edit-icon-lists:hover {
@@ -142,7 +122,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
   width: 30px;
   height: 30px;
   transition: all 0.2s ease-in-out;
-  /* border: 1px solid green; */
 }
 
 .provider-delete-icon-lists:hover {
@@ -157,7 +136,6 @@ Bright Blue: #c4f7fe highlights, hover on links, and buttons
 }
 
 select.star-options {
-  /* styling */
   color: rgb(82, 207, 223);
   width: 150px;
   margin: 5px;
@@ -171,7 +149,6 @@ select.star-options {
 }
 
 select.star-options:focus {
-  /* border: 0; */
   border: 1px solid #c4f7fe;
   outline-color: #c4f7fe;
 }
@@ -182,7 +159,6 @@ select.star-options:focus {
   flex-direction: column;
   justify-content: flex-start;
   align-content: center;
-  /* border: 1px solid green; */
 }
 
 /* this controls if blue cards start on left or are centered */
@@ -196,7 +172,6 @@ select.star-options:focus {
   margin: 7px 5px;
   background-color: white;
   border-radius: 5px;
-  /* border: 1px solid blue; */
 }
 
 .rec-sort-title-icon {
@@ -207,7 +182,6 @@ select.star-options:focus {
   align-content: center;
   padding: 0px 30px;
   margin: 10px 0px;
-  /* border: 5px solid blue; */
 }
 
 .rec-sort-title {
@@ -216,7 +190,6 @@ select.star-options:focus {
   font-size: 26px;
   font-weight: 600;
   margin: 0px 10px;
-  /* border: 5px solid black; */
 }
 
 .rec-sort-image {
@@ -227,13 +200,11 @@ select.star-options:focus {
   width: 60px;
   height: 60px;
   margin: 0px 10px;
-  /* border: 5px solid red; */
 }
 
 .rec-icon-sort {
   margin: auto auto;
   width: 100%;
-  /* border: 1px solid yellow; */
 }
 
 .rec-card-wrapper {
@@ -241,7 +212,6 @@ select.star-options:focus {
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
-  /* border: 1px solid red; */
 }
 
 /* RecommendSortCard styling */
@@ -255,24 +225,20 @@ select.star-options:focus {
   margin: 10px 11px 20px;
   border-radius: 5px;
   background-color: #c8e6ea68;
-  /* border: 1px solid blue; */
 }
 
 .recommendation-wrapper-sort {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   padding: 5px;
   margin: 0px;
   height: 100%;
-  /* border: 1px solid black; */
 }
 
 .recommendation-title-sort {
   font-size: 22px;
   font-weight: 500;
   margin: 2px 0px;
-  /* border: 3px solid aqua; */
 }
 
 .recommendation-name-sort,
@@ -281,7 +247,6 @@ select.star-options:focus {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  /* border: 1px solid black; */
 }
 
 .rec-from-notes-wrapper {
@@ -290,14 +255,12 @@ select.star-options:focus {
   justify-content: center;
   align-content: flex-start;
   margin-top: 5px;
-  /* border: 1px solid red; */
 }
 
 .rec-bold-sort {
   font-weight: 500;
   margin-right: 10px;
   width: 60px;
-  /* border: 1px solid red; */
 }
 
 .rec-icons-wrapper {
@@ -305,7 +268,6 @@ select.star-options:focus {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  /* border: 2px solid pink; */
 }
 
 .rec-icons-sort {
@@ -318,7 +280,6 @@ select.star-options:focus {
   padding: 0px;
   margin: 20px auto 0px;
   transition: all 0.2s ease-in-out;
-  /* border: 3px solid yellow; */
 }
 
 .rec-delete-sort {
@@ -349,7 +310,6 @@ select.star-options:focus {
   margin: 5px 10px 15px;
   border-radius: 5px;
   background-color: #c8e6ea68;
-  /* border: 1px solid blue; */
 }
 
 .recommendation-wrapper-lists {
@@ -358,7 +318,6 @@ select.star-options:focus {
   justify-content: flex-start;
   padding: 5px;
   margin: 0px;
-  /* border: 1px solid black; */
 }
 
 .recommendation-title-lists {
@@ -377,12 +336,10 @@ select.star-options:focus {
   width: 40px;
   height: 50px;
   padding-top: 5px;
-  /* border: 1px solid blue; */
 }
 
 .rec-icon {
   width: 100%;
-  /* border: 1px solid red; */
 }
 
 .recommendation-type-lists,
@@ -399,7 +356,6 @@ select.star-options:focus {
   font-weight: 500;
   margin-right: 10px;
   width: 80px;
-  /* border: 1px solid red; */
 }
 
 .rec-right-lists {
@@ -411,7 +367,6 @@ select.star-options:focus {
   margin: 0px;
   width: 100%;
   padding: 0px;
-  /* border: 1px solid chartreuse; */
 }
 
 .recommendation-icons-lists {
@@ -420,8 +375,6 @@ select.star-options:focus {
   justify-content: center;
   align-items: center;
   padding: 15px 0px 5px;
-  /* margin-bottom: 8px; */
-  /* border: 1px solid black; */
 }
 
 .recommendation-edit-icon-lists {
@@ -431,7 +384,6 @@ select.star-options:focus {
   width: 35px;
   height: 35px;
   transition: all 0.2s ease-in-out;
-  /* border: 1px solid red; */
 }
 
 .recommendation-edit-icon-lists:hover {
@@ -447,7 +399,6 @@ select.star-options:focus {
   width: 30px;
   height: 30px;
   transition: all 0.2s ease-in-out;
-  /* border: 1px solid green; */
 }
 
 .recommendation-delete-icon-lists:hover {
@@ -490,7 +441,6 @@ select.star-options:focus {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* border: 1px solid black; */
 }
 
 .wishlist-info {
@@ -500,7 +450,6 @@ select.star-options:focus {
   align-content: center;
   padding: 0px 10px;
   white-space: nowrap;
-  /* border: 1px solid red; */
 }
 
 .wishlist-item {
@@ -514,7 +463,6 @@ select.star-options:focus {
   flex-direction: row;
   justify-content: center;
   align-content: center;
-  /* border: 1px solid blue; */
 }
 
 .checkbox-wishlist {
@@ -543,14 +491,11 @@ select.star-options:focus {
   align-items: center;
   flex-wrap: nowrap;
   white-space: nowrap;
-  /* width: 300px; */
-  /* border: 1px solid red; */
 }
 
 .wishlist-delete {
   margin: auto 5px;
   padding-top: 6px;
-  /* border: 1px solid black; */
 }
 
 .wishlist-edit-icon {
@@ -680,13 +625,11 @@ select.star-options:focus {
   width: 440px;
   padding: 0px;
   margin: 0px;
-  /* border: 1px solid aqua; */
 }
 .print-wishlist-item {
   flex: 1;
   margin: 5px;
   white-space: nowrap;
-  /* border: 1px solid blue; */
 }
 
 .print-wishlist-icons {
@@ -695,7 +638,6 @@ select.star-options:focus {
   flex-direction: row;
   justify-content: flex-end;
   align-content: center;
-  /* border: 1px solid orange; */
   flex-wrap: nowrap;
 }
 
@@ -705,7 +647,6 @@ select.star-options:focus {
   justify-content: center;
   align-content: center;
   margin: auto 0px;
-  /* border: 1px solid red; */
 }
 
 .wishlist-check-icon {
@@ -720,10 +661,3 @@ select.star-options:focus {
   white-space: nowrap;
   margin-left: 20px;
 }
-
-/* .print-header {
-  font-size: 28px;
-  font-weight: 400;
-  margin: 30px auto 0px;
-  text-align: center;
-} */

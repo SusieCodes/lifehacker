@@ -44,9 +44,7 @@ export const ApplicationViews = ({
   return (
     <>
       <Route path="/">
-        {isAuthenticated ? (
-          <Sidebar isAuthenticated={isAuthenticated} clearUser={clearUser} />
-        ) : null}
+        {isAuthenticated ? <Sidebar clearUser={clearUser} /> : null}
       </Route>
 
       <Route exact path="/">
