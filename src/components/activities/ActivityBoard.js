@@ -120,7 +120,6 @@ export const ActivityBoard = () => {
               </div>
             </div>
 
-            {/* <div className="upcoming-past-wrapper"> */}
             <div className="remaining-upcoming">
               <div className="column-center">
                 <h2>UPCOMING ACTIVITIES</h2>
@@ -149,7 +148,6 @@ export const ActivityBoard = () => {
                 ))}
               </div>
             </div>
-            {/* </div> */}
           </div>
         </div>
       </div>

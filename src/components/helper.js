@@ -4,7 +4,6 @@ export const formatDate = (obj) => {
   let formattedDate = date.toDateString();
   //next line checks to see if the first digit of day is 0
   const checkZero = formattedDate.charAt(8);
-  // console.log("charAt inside formatDate returns", formattedDate.charAt(8));
   if (checkZero === "0") {
     // this part takes off the leading 0
     formattedDate = formattedDate.slice(0, 8) + formattedDate.slice(7);
@@ -16,10 +15,6 @@ export const formatDate = (obj) => {
 export const formatStringDate = (dateStr) => {
   const newDateStr = new Date(dateStr + "T12:00:00");
   let formattedDate = newDateStr.toDateString();
-  // this next part adds comma after day of the month
-  // formattedDate = formattedDate.slice(0, 10) + ", " + formattedDate.slice(10);
-  // this next part adds a space after day of the month
-  // formattedDate = formattedDate.slice(0, 10) + "  " + formattedDate.slice(10);
   //next line checks to see if the first digit of day is 0
   const checkZero = formattedDate.charAt(8);
   if (checkZero === "0") {
@@ -36,10 +31,6 @@ export const formatJustMonthDay = (dateStr) => {
   let formattedDateNoDay = formattedDate.slice(3);
   let onlyMonthDay = formattedDateNoDay.slice(0, 7);
   const checkZero = onlyMonthDay.charAt(5);
-  // console.log(
-  //   "charAt  inside formatJustMonthDay returns ",
-  //   onlyMonthDay.charAt(5)
-  // );
   if (checkZero === "0") {
     // this part takes off the leading 0
     onlyMonthDay = onlyMonthDay.slice(0, 5) + onlyMonthDay.slice(6);
@@ -69,9 +60,6 @@ export const formatDateFromIntStr = (milliseconds) => {
   const newDateStr = new Date(milliseconds + 43200000);
   let formattedDate = newDateStr.toDateString();
   let formattedDateNoDay = formattedDate.slice(3);
-  // this next part adds comma after day of the month
-  // formattedDateNoDay =
-  // formattedDateNoDay.slice(0, 7) + "," + formattedDateNoDay.slice(7);
   const checkZero = formattedDateNoDay.charAt(5);
   if (checkZero === "0") {
     // this part takes off the leading 0

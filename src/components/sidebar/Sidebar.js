@@ -13,7 +13,7 @@ import logo from "../../images/lifehackerbanner.svg";
 import "./Sidebar.css";
 import "../LifeHacker.css";
 
-export const Sidebar = ({ clearUser, isAuthenticated }) => {
+export const Sidebar = ({ clearUser }) => {
   const [sidebar, setSidebar] = useState(false);
   const [user, setUser] = useState({
     name: "",

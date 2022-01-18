@@ -144,20 +144,6 @@ export const RecommendationForm = () => {
               />
             </div>
 
-            {/* <div className="form__group">
-              <label htmlFor="text">Type: </label>
-              <input
-                type="text"
-                id="type"
-                maxLength="15"
-                onChange={handleControlledInputChange}
-                required
-                className="form__group--edit"
-                placeholder="Book, music..."
-                value={recommendation?.type}
-              />
-            </div> */}
-
             <div className="form__group">
               <label htmlFor="from">From: </label>
               <input

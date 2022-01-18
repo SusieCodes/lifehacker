@@ -11,8 +11,6 @@ import "../LifeHacker.css";
 
 export const ConnectionForm = () => {
   const [conflictDialog, setConflictDialog] = useState(false);
-  // const [uploadName, setUploadName] = useState("Choose Image");
-  // const uploadName = "Choose Image";
   // Defining initial state of the form inputs with useState
   const [connection, setConnection] = useState({
     userId: parseInt(sessionStorage.getItem("lifehacker_user")),
@@ -193,7 +191,6 @@ export const ConnectionForm = () => {
                   name={uploadName}
                   className="upload-input"
                   placeholder="Choose Image"
-                  // value=""
                   onChange={uploadImage}
                 />
               </div>

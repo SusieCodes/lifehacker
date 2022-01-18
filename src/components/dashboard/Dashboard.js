@@ -9,7 +9,6 @@ import { GroceryDashList } from "../groceries/GroceryDashList";
 import { NoteDashList } from "../notes/NoteDashList";
 import { JournalDashList } from "../journals/JournalDashList";
 import { ConnectionDashList } from "../connections/ConnectionDashList";
-// import { formatDate } from "../helper";
 import { WelcomeBar } from "../../components/navbar/WelcomeBar";
 
 import "../LifeHacker.css";

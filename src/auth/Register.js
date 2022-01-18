@@ -46,10 +46,6 @@ export const Register = ({ setAuthUser }) => {
           .then((res) => res.json())
           .then((createdUser) => {
             if (createdUser.hasOwnProperty("id")) {
-              // The user id is saved under the key lifehacker_user in session Storage
-              // sessionStorage.setItem("lifehacker_user", createdUser.id);
-              // const [firstname] = createdUser.name.split(" ");
-              // sessionStorage.setItem("lifehacker_username", firstname);
               setAuthUser(createdUser);
               history.push("/dashboard");
             }

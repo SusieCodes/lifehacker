@@ -32,7 +32,6 @@ export const TodoForm = () => {
   const handleControlledInputChange = (event) => {
     const newTodo = { ...todo };
     let selectedVal = event.target.value;
-    // selectedVal = parseInt(selectedVal)
 
     newTodo[event.target.id] = selectedVal;
     setTodo(newTodo);

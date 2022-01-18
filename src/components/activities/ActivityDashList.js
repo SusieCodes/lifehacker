@@ -2,7 +2,6 @@
 //Purpose: Defines component ActivityDashList that renders the next upcoming activity to the dashboard
 
 import React, { useState, useEffect } from "react";
-// import { Link } from 'react-router-dom';
 import { ActivityDashCard } from "./ActivityDashCard";
 import { getAllActivitiesByUserId, deleteActivity } from "./ActivityManager";
 

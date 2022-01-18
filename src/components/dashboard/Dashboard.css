@@ -1,16 +1,6 @@
 /* 
 Author: Susie Stanley
 Purpose: Dashboard styling
-
-Site colors used:
-Light Blue: #c8e6ea
-Light Blue: #c8e6ea68 (faded)
-Dark Blue: rgb(82, 207, 223) Details button border
-Red: #D61212
-Light Gray: rgba(211, 211, 211, 0.468) Dashboard Connections header
-Dark Gray: #2b2b2b font color throughout
-Shadow: box-shadow: 5px 5px 5px lightgray;
-Bright Blue: #c4f7fe highlights, hover on links, and buttons
 */
 
 h2 {
@@ -49,7 +39,6 @@ h2 {
   justify-content: center;
   padding: 0px;
   margin: 0px;
-  /* border: 1px solid purple; */
 }
 
 /* this holds activities & groceries */
@@ -59,7 +48,6 @@ h2 {
   justify-content: space-evenly;
   padding: 0px;
   margin: 0px;
-  /* border: 1px solid blue; */
 }
 
 /* this targets the white squares in the grid */
@@ -96,7 +84,6 @@ h2 {
   justify-content: space-evenly;
   padding: 0px;
   margin: 0px;
-  /* border: 1px solid red; */
 }
 
 /* this holds todos */
@@ -110,7 +97,6 @@ h2 {
   border-radius: 5px;
   background-color: white;
   box-shadow: 2px 3px 7px gray;
-  /* border: 1px solid black; */
 }
 
 .dashboard-grid__row1__col2 a {
@@ -133,7 +119,6 @@ h2 {
   padding: 0px;
   margin: 0px;
   min-width: 1350px;
-  /* border: 3px solid pink; */
 }
 
 /* this is inner div of connections */
@@ -170,7 +155,6 @@ h2 {
   flex-direction: column;
   align-items: center;
   padding: 0px 30px;
-  /* border: 1px solid red; */
 }
 
 .dash-todo {
@@ -183,7 +167,6 @@ h2 {
   margin: 9px 0px;
   background-color: #c8e6ea68;
   border-radius: 5px;
-  /* border: 1px solid black; */
 }
 
 .dash-todo__col1 {
@@ -191,7 +174,6 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* border: 1px solid red; */
 }
 
 .dash-todo__col2 {
@@ -201,7 +183,6 @@ h2 {
   white-space: nowrap;
   align-self: center;
   margin: 0px 5px 0px 0px;
-  /* border: 1px solid blue; */
 }
 
 .dash-todo__title {
@@ -235,7 +216,6 @@ h2 {
   justify-content: center;
   align-items: center;
   margin: 0px 30px 0px 10px;
-  /* border: 1px solid chartreuse; */
 }
 
 .dash-todo-complete label {
@@ -248,7 +228,6 @@ h2 {
   width: 25px;
   height: 25px;
   transition: all 0.2s ease-in-out;
-  /* border: 1px solid black; */
 }
 
 .td-delete-icon:hover {
@@ -299,7 +278,6 @@ input.checkbox-todo:hover {
   white-space: nowrap;
   padding: 0px;
   margin: 0px;
-  /* border: 1px solid red; */
 }
 
 .dash-activity__wrapper {
@@ -309,7 +287,6 @@ input.checkbox-todo:hover {
   justify-content: center;
   padding: 0px;
   margin: 0px;
-  /* border: 1px solid blue; */
 }
 
 .dash-activity__name {
@@ -321,7 +298,6 @@ input.checkbox-todo:hover {
   margin: 0px;
   text-align: left;
   font-size: 22px;
-  /* border: 1px solid black; */
 }
 
 .da-tag-image {
@@ -333,17 +309,12 @@ input.checkbox-todo:hover {
   width: 100%;
 }
 
-/* .da-tag-icon:hover {
-  cursor: pointer;
-} */
-
 .da-inner__wrapper {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   padding: 0px;
   margin: 0px;
-  /* border: 1px solid black; */
 }
 
 .da-inner__left {
@@ -378,7 +349,6 @@ input.checkbox-todo:hover {
   margin: 0px 5px;
   max-width: 400px;
   padding: 4px 0px 0px 10px;
-  /* border: 1px solid pink; */
 }
 
 .da-address__highlight {
@@ -389,7 +359,6 @@ input.checkbox-todo:hover {
   overflow-wrap: break-word;
   padding: 3px 10px;
   margin: 0px 5px;
-  /* border: 1px solid green; */
 }
 
 .dash-activity__col2 {
@@ -398,7 +367,6 @@ input.checkbox-todo:hover {
   justify-content: center;
   align-content: center;
   padding: 7px 5px 0px 0px;
-  /* border: 1px solid black; */
 }
 
 button.activity-delete {
@@ -429,7 +397,6 @@ button.activity-delete {
   background-size: 80%;
   min-width: 545px;
   height: 335px;
-  /* border: 1px solid black; */
 }
 
 .note-spacing {
@@ -441,12 +408,10 @@ button.activity-delete {
   flex-direction: row;
   justify-content: flex-end;
   padding-right: 30px;
-  /* border: 1px solid red; */
 }
 
 .dash-note__wrapper a {
   padding-right: 50px;
-  /* border: 2px solid pink; */
   width: 290px;
 }
 
@@ -458,7 +423,6 @@ button.activity-delete {
   align-content: center;
   padding: 0px;
   min-height: 190px;
-  /* border: 2px solid blue; */
 }
 
 .dash-note__text {
@@ -470,7 +434,6 @@ button.activity-delete {
   padding-top: 20px;
   margin: 0px;
   width: 200px;
-  /* border: 2px solid chartreuse; */
 }
 
 .dn-text-wrapper {
@@ -482,7 +445,6 @@ button.activity-delete {
   width: 100%;
   min-height: 70px;
   overflow-wrap: break-word;
-  /* border: 1px solid red; */
 }
 
 .top-text {
@@ -493,7 +455,6 @@ button.activity-delete {
   margin: 0px 0px 10px;
   width: 100%;
   padding: 0px;
-  /* border: 1px solid black; */
 }
 
 .bottom-text {
@@ -504,7 +465,6 @@ button.activity-delete {
   padding: 0px;
   margin: 0px;
   width: 100%;
-  /* border: 1px solid aqua; */
 }
 
 .dash-note__delete {
@@ -513,16 +473,11 @@ button.activity-delete {
   justify-content: flex-start;
   align-content: center;
   align-items: center;
-  /* padding-top: 30px; */
-  /* padding-right: 5px; */
-  /* margin: 0px; */
-  /* border: 1px solid black; */
 }
 
 .dn-checkbox {
   margin: 0px;
   padding: 0px;
-  /* border: 1px solid black; */
 }
 
 .note-delete {
@@ -530,14 +485,12 @@ button.activity-delete {
   background-color: transparent;
   margin: 0px auto 20px;
   padding: 0px;
-  /* border: 1px solid red; */
 }
 
 .n-delete-icon {
   width: 25px;
   height: 25px;
   transition: all 0.2s ease-in-out;
-  /* border: 1px solid red; */
 }
 
 .n-delete-icon:hover {
@@ -566,7 +519,6 @@ button.activity-delete {
   background-color: rgba(211, 211, 211, 0.468);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  /* border: 1px solid red; */
 }
 
 .container {
@@ -583,7 +535,6 @@ button.activity-delete {
   padding: 0px;
   margin: 0px;
   background-color: #c8e6ea5d;
-  /* background-color: transparent; */
   border-top: 1px solid gray;
 }
 
@@ -594,7 +545,6 @@ button.activity-delete {
   justify-content: flex-start;
   font-size: 20px;
   margin: 0px 0px 0px 15px;
-  /* border: 3px solid yellow; */
 }
 
 .dc-header-pic-name {
@@ -603,7 +553,6 @@ button.activity-delete {
   flex-direction: row;
   align-self: center;
   flex-wrap: nowrap;
-  /* border: 3px solid orange; */
 }
 
 .dc-header-image {
@@ -611,7 +560,6 @@ button.activity-delete {
   height: 60px;
   padding: 0px;
   margin: 5px;
-  /* border: 1px solid red; */
 }
 
 .dc-header-name {
@@ -621,7 +569,6 @@ button.activity-delete {
   margin: auto 0px;
   white-space: nowrap;
   text-align: left;
-  /* border: 1px solid aqua; */
 }
 
 .dc-header-email {
@@ -629,7 +576,6 @@ button.activity-delete {
   margin: auto 0px;
   white-space: nowrap;
   text-align: left;
-  /* border: 3px solid black; */
 }
 
 .dc-header-phone {
@@ -637,7 +583,6 @@ button.activity-delete {
   margin: auto 0px;
   white-space: nowrap;
   text-align: left;
-  /* border: 3px solid black; */
 }
 
 .dc-header-bday {
@@ -648,7 +593,6 @@ button.activity-delete {
   margin: auto 0px;
   white-space: nowrap;
   text-align: left;
-  /* border: 1px solid black; */
 }
 
 .dc-info {
@@ -658,7 +602,6 @@ button.activity-delete {
   justify-content: center;
   font-size: 20px;
   margin: 0px 0px 0px 15px;
-  /* border: 3px solid yellow; */
 }
 
 .pic-name {
@@ -667,7 +610,6 @@ button.activity-delete {
   flex-direction: row;
   align-self: center;
   flex-wrap: nowrap;
-  /* border: 3px solid orange; */
 }
 
 .dc-image {
@@ -675,7 +617,6 @@ button.activity-delete {
   height: 60px;
   padding: 0px;
   margin: 5px;
-  /* border: 1px solid red; */
 }
 
 .connection-photo {
@@ -692,7 +633,6 @@ button.activity-delete {
   margin: auto 0px;
   white-space: nowrap;
   text-align: left;
-  /* border: 1px solid aqua; */
 }
 
 .dc-name a {
@@ -700,7 +640,6 @@ button.activity-delete {
   color: #2b2b2b;
   font-size: 22px;
   font-weight: 500;
-  /* padding-left: 15px; */
   margin: auto 0px;
   white-space: nowrap;
   text-align: left;
@@ -711,7 +650,6 @@ button.activity-delete {
   margin: auto 0px;
   white-space: nowrap;
   text-align: left;
-  /* border: 3px solid black; */
 }
 
 .dc-phone {
@@ -719,7 +657,6 @@ button.activity-delete {
   margin: auto 0px;
   white-space: nowrap;
   text-align: left;
-  /* border: 3px solid black; */
 }
 
 .dc-bday {
@@ -731,7 +668,6 @@ button.activity-delete {
   margin: auto 0px;
   white-space: nowrap;
   text-align: left;
-  /* border: 1px solid black; */
 }
 
 .dc-bday a {
@@ -752,7 +688,6 @@ button.activity-delete {
   flex-wrap: nowrap;
   white-space: nowrap;
   width: 250px;
-  /* border: 1px solid black; */
 }
 
 .dc-dummy-icons {
@@ -763,7 +698,6 @@ button.activity-delete {
   flex-wrap: nowrap;
   white-space: nowrap;
   width: 330px;
-  /* border: 1px solid black; */
 }
 
 .dc-details {
@@ -792,14 +726,12 @@ button.activity-delete {
   margin: auto 0px;
   margin-right: 30px;
   padding-top: 6px;
-  /* border: 1px solid black; */
 }
 
 .dc-edit {
   margin: auto 0px;
   margin-left: 10px;
   padding-top: 6px;
-  /* border: 1px solid black; */
 }
 
 .dc-edit-icon {
@@ -844,7 +776,6 @@ button.activity-delete {
   margin: 7px 25px 4px;
   background-color: #c8e6ea68;
   border-radius: 5px;
-  /* border: 1px solid red; */
 }
 
 .dash-grocery a {
@@ -859,7 +790,6 @@ button.activity-delete {
   align-content: center;
   white-space: nowrap;
   padding: 0px;
-  /* border: 2px solid green; */
 }
 
 .dash-grocery__text {
@@ -868,7 +798,6 @@ button.activity-delete {
   margin: auto 0px;
   text-align: left;
   font-size: 20px;
-  /* border: 1px solid black; */
 }
 
 .dash-grocery__col2 {
@@ -878,7 +807,6 @@ button.activity-delete {
   justify-content: flex-end;
   padding: 0px;
   margin: 0px;
-  /* border: 1px solid black; */
 }
 
 button.grocery-delete {
@@ -887,7 +815,6 @@ button.grocery-delete {
   background-color: transparent;
   padding-top: 5px;
   margin: 0px;
-  /* border: 1px solid black; */
 }
 
 .grocery-delete-icon {
@@ -940,7 +867,6 @@ button.grocery-delete {
   margin: 7px 30px 9px;
   background-color: #c8e6ea68;
   border-radius: 5px;
-  /* border: 1px solid red; */
 }
 
 .dash-journal__col1 {
@@ -950,7 +876,6 @@ button.grocery-delete {
   white-space: nowrap;
   padding: 0px;
   margin: 0px;
-  /* border: 1px solid green; */
 }
 
 .dash-journal__text {
@@ -958,7 +883,6 @@ button.grocery-delete {
   margin: auto 0px;
   text-align: left;
   font-size: 20px;
-  /* border: 1px solid black; */
 }
 
 .dash-journal__col2 {
@@ -976,7 +900,6 @@ button.journal-delete {
   background-color: transparent;
   padding-top: 5px;
   margin: 0px auto;
-  /* border: 1px solid black; */
 }
 
 .journal-delete-icon {

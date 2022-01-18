@@ -5,6 +5,12 @@ I built this React app from scratch for my 3 month capstone at Nashville Softwar
 • [Life Hacker Video Demo](https://youtu.be/yYP9dOdY4Fw)
 
 
+I built this React app from scratch for my 3 month capstone at Nashville Software School.
+
+### See the Video Walkthrough on YouTube
+
+• [Life Hacker Video Demo](https://youtu.be/yYP9dOdY4Fw)
+
 ![Project Image](https://github.com/SusieCodes/lifehacker/blob/main/src/images/lifehackerdashboard.png)
 
 > The Ultimate Life Planner to track and organize all of life's details including:
@@ -70,7 +76,6 @@ Life Hacker is a React App I built to track my activities, journal entries, groc
 
 ## How To Use
 
-
 ### Starting the webpage
 
 1. Clone the repo
@@ -78,8 +83,9 @@ Life Hacker is a React App I built to track my activities, journal entries, groc
    ```
    git clone git@github.com:SusieCodes/lifehacker.git
    ```
-   
+
 2. From inside the LifeHacker directory on your terminal, enter:
+
    ```
    npm install
    ```

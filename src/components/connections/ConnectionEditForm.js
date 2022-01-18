@@ -133,7 +133,6 @@ export const ConnectionEditForm = () => {
     getConnectionById(connectionId).then((connection) => {
       setConnection(connection);
       setIsLoading(false);
-      // setImage(connection.image);
     });
   }, [connectionId]); //wont cause infinite loop because it comes from params
 

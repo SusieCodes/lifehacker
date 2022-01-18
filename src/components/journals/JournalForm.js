@@ -32,7 +32,6 @@ export const JournalForm = () => {
   const handleControlledInputChange = (event) => {
     const newJournal = { ...journal };
     let selectedVal = event.target.value;
-    // selectedVal = parseInt(selectedVal)
     newJournal[event.target.id] = selectedVal;
     setJournal(newJournal);
   };

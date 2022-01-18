@@ -53,7 +53,6 @@ export const ActivityDashCard = ({ activity, handleDelete }) => {
           <div className="da-tag-image">
             {activity?.tag?.icon ? (
               <img
-                // src={logo}
                 src={require(`../../images/${activity?.tag?.icon}`).default}
                 alt="icon"
                 className="da-tag-icon"
