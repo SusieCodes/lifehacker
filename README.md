@@ -4,9 +4,6 @@ I built this React app from scratch for my 3 month capstone at Nashville Softwar
 ### See the Video Walkthrough on YouTube
 • [Life Hacker Video Demo](https://youtu.be/yYP9dOdY4Fw)
 
-
-I built this React app from scratch for my 3 month capstone at Nashville Software School.
-
 ### See the Video Walkthrough on YouTube
 
 • [Life Hacker Video Demo](https://youtu.be/yYP9dOdY4Fw)
