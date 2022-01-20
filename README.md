@@ -4,10 +4,6 @@ I built this React app from scratch for my 3 month capstone at Nashville Softwar
 ### See the Video Walkthrough on YouTube
 • [Life Hacker Video Demo](https://youtu.be/yYP9dOdY4Fw)
 
-### See the Video Walkthrough on YouTube
-
-• [Life Hacker Video Demo](https://youtu.be/yYP9dOdY4Fw)
-
 ![Project Image](https://github.com/SusieCodes/lifehacker/blob/main/src/images/lifehackerdashboard.png)
 
 > The Ultimate Life Planner to track and organize all of life's details including:
