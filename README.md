@@ -6,7 +6,18 @@ I built this React app from scratch for my 3 month capstone at Nashville Softwar
 
 ![Project Image](https://github.com/SusieCodes/lifehacker/blob/main/src/images/lifehackerdashboard.png)
 
-> The Ultimate Life Planner to track and organize all of life's details including:
+### Table of Contents
+
+- [Description](#description)
+- [Technologies](#technologies)
+- [How To Use](#how-to-use)
+- [License](#license)
+- [Author Info](#author-info)
+
+---
+
+## Description
+The Ultimate Life Planner to track and organize all of life's details including:
 
 - Connections sorted by:
   • favorites
@@ -34,25 +45,11 @@ I built this React app from scratch for my 3 month capstone at Nashville Softwar
   • other
 - Wishlist (digital & printable)
 
----
-
-### Table of Contents
-
-- [Description](#description)
-- [Technologies](#technologies)
-- [How To Use](#how-to-use)
-- [License](#license)
-- [Author Info](#author-info)
+Different shades of blue were used throughout the site to instill a feeling of calm, trust, and serenity while using this web-based app.
 
 ---
 
-## Description
-
-Life Hacker is a React App I built to track my activities, journal entries, grocery list, digital sticky notes, to-do list, service providers, recommendations, and a wishlist. My app centers around a robust contact list that lets me keep track of important information about the people I care about so I'll never forget significant dates and personal details. Different shades of blue were used throughout the site to instill a feeling of calm, trust, and serenity while using this web-based app.
-
----
-
-#### Tools & Technologies
+## Technologies
 
 - HTML/CSS
 - Javascript
@@ -109,8 +106,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ---
 
-## Created by Susie Stanley
-
+## Author Info
+### Created by Susie Stanley
 #### If you have any questions about this project, please reach out via Linkedin and I would be more than happy to address any queries or comments
 
 - LinkedIn - [Susie Stanley](https://www.linkedin.com/in/susie-stanley/)
