@@ -1,5 +1,5 @@
 // Author: Susie Stanley
-// Purpose: To display relevant info from database on landing page
+// Purpose: To display user relevant info when first logging in
 
 import React from "react";
 import { Link } from "react-router-dom";

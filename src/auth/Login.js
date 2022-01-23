@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import "../components/LifeHacker.css";
 import logo from "../images/lifehackerbanner.svg";
 import "./Auth.css";
 import "../../src/components/LifeHacker.css";
