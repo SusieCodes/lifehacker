@@ -266,7 +266,7 @@ input {
   border-radius: 5px;
   width: fit-content;
 }
-
+/* targets placeholder font color */
 input::placeholder {
   color: rgb(198, 198, 198);
   opacity: 1;

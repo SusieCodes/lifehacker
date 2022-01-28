@@ -89,7 +89,6 @@ export const Sidebar = ({ clearUser }) => {
                       <button
                         className="logout"
                         onClick={() => {
-                          // sessionStorage.removeItem("lifehacker_user");
                           clearUser();
                           history.push("/");
                         }}
@@ -130,9 +129,8 @@ export const Sidebar = ({ clearUser }) => {
                     <Link
                       to={item.path}
                       onClick={() => {
-                        // sessionStorage.removeItem("lifehacker_user");
-                        history.push("/");
                         clearUser();
+                        history.push("/");
                       }}
                     >
                       {item.icon}
@@ -144,6 +142,7 @@ export const Sidebar = ({ clearUser }) => {
             </ul>
           </div>
         </div>
+        {/* end of side menu */}
       </IconContext.Provider>
     </>
   );
